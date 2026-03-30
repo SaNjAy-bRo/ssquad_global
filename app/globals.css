@@ -35,10 +35,13 @@ body {
 
 html {
   scroll-behavior: smooth;
+  overflow-x: hidden;
 }
 
 body {
   font-family: 'Inter', sans-serif;
+  overflow-x: hidden;
+  max-width: 100vw;
 }
 
 h1,
@@ -1601,19 +1604,143 @@ footer li strong {
   }
 }
 
+@keyframes certScroll {
+  0% { transform: translateX(0); }
+  100% { transform: translateX(calc(-50% - 0.45rem)); }
+}
+
+@keyframes drawLine {
+  0% { stroke-dashoffset: 760; }
+  45% { stroke-dashoffset: 0; }
+  100% { stroke-dashoffset: 0; }
+}
+
+@keyframes drawLineSecondary {
+  0% { stroke-dashoffset: 680; }
+  55% { stroke-dashoffset: 0; }
+  100% { stroke-dashoffset: 0; }
+}
+
+@keyframes areaPulse {
+  0%, 100% { opacity: 0.5; }
+  50% { opacity: 0.78; }
+}
+
+@keyframes pointPulse {
+  0% { box-shadow: 0 0 0 0 rgba(236, 32, 36, 0.45); transform: scale(1); }
+  70% { box-shadow: 0 0 0 10px rgba(236, 32, 36, 0); transform: scale(1.08); }
+  100% { box-shadow: 0 0 0 0 rgba(236, 32, 36, 0); transform: scale(1); }
+}
+
+@keyframes panelFloat {
+  0%, 100% { transform: translateY(0px); }
+  50% { transform: translateY(-4px); }
+}
+
+@keyframes heroBlobA {
+  0% { transform: translate3d(0, 0, 0) scale(1); }
+  100% { transform: translate3d(70px, 34px, 0) scale(1.08); }
+}
+
+@keyframes heroBlobB {
+  0% { transform: translate3d(0, 0, 0) scale(1); }
+  100% { transform: translate3d(-80px, -40px, 0) scale(1.1); }
+}
+
+@keyframes networkDrift {
+  0% { background-position: 0 0, 20px 40px; }
+  100% { background-position: 180px 120px, -220px 170px; }
+}
+
+@keyframes signalJump {
+  0%, 100% { transform: scaleY(0.7); opacity: 0.6; }
+  50% { transform: scaleY(1.1); opacity: 1; }
+}
+
+@keyframes wavePulse {
+  0% { opacity: 0; transform: scale(0.55); }
+  22% { opacity: 0.36; }
+  100% { opacity: 0; transform: scale(1.2); }
+}
+
+@keyframes waveGridShift {
+  0% { background-position: 0 0, 0 0; }
+  100% { background-position: 52px 0, 0 34px; }
+}
+
+@keyframes scanSweep {
+  0% { transform: translateX(-120%); }
+  100% { transform: translateX(120%); }
+}
+
+.cert-track {
+  display: flex;
+  width: max-content;
+  gap: 0.9rem;
+  animation: certScroll 24s linear infinite;
+}
+
+.cert-carousel:hover .cert-track {
+  animation-play-state: paused;
+}
+
+.intel-area {
+  fill: url(#intelArea);
+  animation: areaPulse 4.2s ease-in-out infinite;
+}
+
+.intel-line {
+  fill: none;
+  stroke: url(#intelLine);
+  stroke-width: 3.2;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+  stroke-dasharray: 760;
+  stroke-dashoffset: 760;
+  animation: drawLine 5.2s ease-in-out infinite;
+}
+
+.intel-line-secondary {
+  fill: none;
+  stroke: rgba(63, 18, 108, 0.5);
+  stroke-width: 2.1;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+  stroke-dasharray: 680;
+  stroke-dashoffset: 680;
+  animation: drawLineSecondary 5.2s ease-in-out infinite;
+}
+
+.intel-point {
+  position: absolute;
+  z-index: 2;
+  width: 0.62rem;
+  height: 0.62rem;
+  border-radius: 999px;
+  background: #ec2024;
+  box-shadow: 0 0 0 0 rgba(236, 32, 36, 0.45);
+  animation: pointPulse 2.1s ease-out infinite;
+}
+
+@keyframes cubeFloat {
+  0%, 100% { transform: rotateX(10deg) rotateY(-25deg) translateY(0); }
+  50% { transform: rotateX(14deg) rotateY(-20deg) translateY(-6px); }
+}
+
+@keyframes ringSpin {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
+}
+
+@keyframes chatPulse {
+  0%, 100% { box-shadow: 0 12px 30px rgba(11, 15, 25, 0.35), 0 0 0 0 rgba(236, 32, 36, 0.28); }
+  50% { box-shadow: 0 12px 30px rgba(11, 15, 25, 0.35), 0 0 0 8px rgba(236, 32, 36, 0); }
+}
+
 @keyframes plusPulse {
-  0% {
-    box-shadow: 0 0 0 0 rgba(255, 255, 255, 0.5);
-    transform: scale(1);
-  }
-  70% {
-    box-shadow: 0 0 0 8px rgba(255, 255, 255, 0);
-    transform: scale(1.06);
-  }
-  100% {
-    box-shadow: 0 0 0 0 rgba(255, 255, 255, 0);
-    transform: scale(1);
-  }
+  0% { box-shadow: 0 0 0 0 rgba(255, 255, 255, 0.5); transform: scale(1); }
+  70% { box-shadow: 0 0 0 8px rgba(255, 255, 255, 0); transform: scale(1.06); }
+  100% { box-shadow: 0 0 0 0 rgba(255, 255, 255, 0); transform: scale(1); }
 }
 
 @media (prefers-reduced-motion: reduce) {

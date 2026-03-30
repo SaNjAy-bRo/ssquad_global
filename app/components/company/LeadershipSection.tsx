@@ -47,28 +47,29 @@ export default function LeadershipSection() {
           </p>
         </div>
 
-        <div className="flex flex-wrap justify-center gap-8 lg:gap-10">
+        <div className="grid sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-5 gap-6">
           {leaders.map((leader, idx) => (
-            <div key={idx} className="reveal group w-full sm:w-[calc(50%-20px)] lg:w-[calc(33.33%-27px)] bg-slate-50 rounded-3xl p-6 border border-slate-100 transition-all duration-300 hover:shadow-premium hover:-translate-y-2 hover:bg-white text-center">
-               <div className="relative w-36 h-36 mx-auto mb-6 rounded-full overflow-hidden border-4 border-white shadow-xl group-hover:border-ssg-red/20 transition-colors">
+            <div key={idx} className="reveal group bg-ssg-dark/5 rounded-2xl p-6 border border-slate-100 transition-all duration-300 hover:shadow-premium hover:-translate-y-2 hover:bg-ssg-dark hover:border-ssg-red/30">
+               <div className="relative w-full aspect-square mb-6 rounded-xl overflow-hidden bg-slate-200">
                   <Image 
                      src={leader.image}
                      alt={leader.name}
                      fill
-                     className="object-cover transition-transform duration-500 group-hover:scale-110"
+                     className="object-cover opacity-80 group-hover:opacity-100 transition-all duration-500 group-hover:scale-110"
                      unoptimized
                   />
+                  <div className="absolute inset-0 bg-gradient-to-t from-ssg-dark/80 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity"></div>
                </div>
                
-               <h3 className="font-heading font-bold text-xl text-slate-900">{leader.name}</h3>
-               <p className="text-ssg-red font-medium text-sm mt-1">{leader.title}</p>
+               <h3 className="font-heading font-bold text-lg text-slate-900 group-hover:text-white transition-colors">{leader.name}</h3>
+               <p className="text-ssg-red font-semibold text-xs mt-1 uppercase tracking-wider">{leader.title}</p>
                
-               <div className="mt-6 flex justify-center">
+               <div className="mt-6 flex">
                   <Link 
                      href={leader.link}
-                     className="w-10 h-10 rounded-full bg-slate-200 flex items-center justify-center text-slate-600 hover:bg-[#0077b5] hover:text-white transition-colors duration-300"
+                     className="w-8 h-8 rounded-lg bg-slate-200 flex items-center justify-center text-slate-600 group-hover:bg-ssg-red group-hover:text-white transition-all duration-300"
                   >
-                     <i className="ph-fill ph-linkedin-logo text-xl"></i>
+                     <i className="ph-fill ph-linkedin-logo text-lg"></i>
                   </Link>
                </div>
             </div>

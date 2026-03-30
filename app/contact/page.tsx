@@ -81,7 +81,7 @@ export default function ContactPage() {
             </p>
           </div>
           
-          <div className="reveal bg-white p-8 md:p-12 border border-slate-100 shadow-[0_8px_40px_-12px_rgba(0,0,0,0.1)] rounded-[2rem] relative">
+          <div className="reveal bg-white p-8 md:p-12 border border-slate-100 shadow-[0_8px_40px_-12px_rgba(0,0,0,0.1)] rounded-[2rem] relative overflow-hidden">
             <div className="absolute -top-12 -right-12 w-24 h-24 bg-red-100 rounded-full blur-3xl opacity-50 pointer-events-none"></div>
             <div className="absolute -bottom-12 -left-12 w-32 h-32 bg-slate-200 rounded-full blur-3xl opacity-50 pointer-events-none"></div>
 

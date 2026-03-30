@@ -40,16 +40,20 @@ export default function Footer() {
           <div className="lg:col-span-2 footer-col">
             <h3>Company</h3>
             <ul>
-              <li>About Us</li>
-              <li>Industries</li>
-              <li>Insights</li>
-              <li>Contact</li>
+              <li><Link href="/company" className="hover:text-ssg-red transition-colors">About Us</Link></li>
+              <li><Link href="/industries" className="hover:text-ssg-red transition-colors">Industries</Link></li>
+              <li><Link href="/insights" className="hover:text-ssg-red transition-colors">Insights</Link></li>
+              <li><Link href="/contact" className="hover:text-ssg-red transition-colors">Contact</Link></li>
             </ul>
           </div>
         </div>
 
-        <div className="mt-12 pt-6 border-t border-white/10 text-sm text-slate-500">
-          © {currentYear} SSquad Global. All rights reserved.
+        <div className="mt-12 pt-6 border-t border-white/10 text-sm text-slate-500 flex flex-col md:flex-row justify-between items-center gap-4">
+          <p>© {currentYear} SSquad Global. All rights reserved.</p>
+          <div className="flex gap-6">
+            <Link href="/privacy" className="hover:text-ssg-red transition-colors">Privacy Policy</Link>
+            <Link href="/terms" className="hover:text-ssg-red transition-colors">Terms of Service</Link>
+          </div>
         </div>
       </div>
     </footer>

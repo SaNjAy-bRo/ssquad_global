@@ -53,6 +53,7 @@ export default function Header() {
   const [scrollProgress, setScrollProgress] = useState(0);
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
   const [activeService, setActiveService] = useState('cyber');
+  const [activeMobileCategory, setActiveMobileCategory] = useState<string | null>(null);
   const [isMegaOpen, setIsMegaOpen] = useState(false);
   const [isSwitching, setIsSwitching] = useState(false);
   const closeTimerRef = useRef<NodeJS.Timeout | null>(null);
@@ -117,6 +118,15 @@ export default function Header() {
     setIsMegaOpen(false);
   };
 
+  const toggleMobileCategory = (key: string) => {
+    setActiveMobileCategory(activeMobileCategory === key ? null : key);
+  };
+
+  const closeMobileMenu = () => {
+    setIsMobileMenuOpen(false);
+    setActiveMobileCategory(null);
+  };
+
   const handleMouseEnterShell = () => {
     if (closeTimerRef.current) clearTimeout(closeTimerRef.current);
   };
@@ -142,12 +152,16 @@ export default function Header() {
         style={{ width: `${scrollProgress}%` }}
       ></div>
       <div className="max-w-container mx-auto px-6 lg:px-8">
-        <div 
-          ref={headerShellRef}
-          className="header-shell mt-4 rounded-2xl border border-white/10 bg-white/5 backdrop-blur-md"
-          onMouseEnter={handleMouseEnterShell}
-          onMouseLeave={handleMouseLeaveShell}
-        >
+          <div 
+            ref={headerShellRef}
+            className={`header-shell transition-all duration-300 ${
+              isMobileMenuOpen || isScrolled 
+              ? 'bg-ssg-dark border-white/20 shadow-2xl mt-0 rounded-none lg:rounded-2xl lg:mt-4' 
+              : 'mt-4 rounded-2xl border border-white/10 bg-white/5 backdrop-blur-md'
+            }`}
+            onMouseEnter={handleMouseEnterShell}
+            onMouseLeave={handleMouseLeaveShell}
+          >
           <div className="flex items-center justify-between px-5 py-4 lg:px-7">
             <Link href="/" className="flex items-center gap-3 shrink-0" aria-label="SSquad Global Home">
               <Image src="/images/logon.png" alt="SSquad Global logo" width={144} height={36} className="h-9 w-auto" priority />
@@ -227,16 +241,41 @@ export default function Header() {
             </div>
           </div>
 
-          <div id="mobile-menu" className={`lg:hidden border-t border-white/10 px-5 pb-5 ${isMobileMenuOpen ? 'block' : 'hidden'}`}>
-            <nav className="pt-4 flex flex-col gap-3 text-sm text-slate-100/90">
-              <Link href="/company" className="mobile-link">Company</Link>
-              <Link href="#solutions" className="mobile-link">Cyber Security</Link>
-              <Link href="#" className="mobile-link">Infrastructure</Link>
-              <Link href="#" className="mobile-link">Cloud</Link>
-              <Link href="#" className="mobile-link">Application</Link>
-              <a href="https://www.harpydefence.com/" target="_blank" rel="noopener noreferrer" className="mobile-link">Harpy Defence</a>
-              <Link href="#contact" className="mobile-link">Contact</Link>
-              <Link href="#contact" className="btn-outline-violet mt-2 inline-flex justify-center">
+          <div id="mobile-menu" className={`lg:hidden border-t border-white/10 px-5 pb-8 max-h-[85vh] overflow-y-auto ${isMobileMenuOpen ? 'block animate-in fade-in slide-in-from-top-4 duration-300' : 'hidden'}`}>
+            <nav className="pt-6 flex flex-col gap-1 text-sm text-white font-medium">
+              <Link href="/company" className="mobile-link" onClick={closeMobileMenu}>Company</Link>
+              
+              {(['cyber', 'infra', 'cloud', 'app'] as const).map((key) => (
+                <div key={key} className="flex flex-col">
+                  <button 
+                    onClick={() => toggleMobileCategory(key)}
+                    className={`mobile-link flex items-center justify-between w-full text-left ${activeMobileCategory === key ? 'text-ssg-red font-bold' : ''}`}
+                  >
+                    {serviceLabels[key]}
+                    <i className={`ph ph-caret-down transition-transform duration-300 ${activeMobileCategory === key ? 'rotate-180' : ''}`}></i>
+                  </button>
+                  
+                  <div className={`overflow-hidden transition-all duration-300 ease-in-out ${activeMobileCategory === key ? 'max-h-[500px] opacity-100 mt-2 pb-2' : 'max-h-0 opacity-0'}`}>
+                    <div className="pl-4 flex flex-col gap-3 border-l border-white/10 ml-1 py-1">
+                      {serviceData[key].map((item, idx) => (
+                        <Link 
+                          key={idx} 
+                          href={item.href} 
+                          className="text-white/60 hover:text-ssg-red transition-colors py-1.5"
+                          onClick={closeMobileMenu}
+                        >
+                          {item.title}
+                        </Link>
+                      ))}
+                    </div>
+                  </div>
+                </div>
+              ))}
+
+              <a href="https://www.harpydefence.com/" target="_blank" rel="noopener noreferrer" className="mobile-link" onClick={closeMobileMenu}>Harpy Defence</a>
+              <Link href="/contact" className="mobile-link" onClick={closeMobileMenu}>Contact</Link>
+              
+              <Link href="/contact" className="btn-outline-violet mt-4 inline-flex justify-center" onClick={closeMobileMenu}>
                 Talk to an Expert <i className="ph ph-arrow-up-right"></i>
               </Link>
             </nav>
