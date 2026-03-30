@@ -6,7 +6,7 @@ import OverviewSection from '@/app/components/services/app-security/OverviewSect
 import ImperativeSection from '@/app/components/services/app-security/ImperativeSection';
 import SolutionsGrid from '@/app/components/services/app-security/SolutionsGrid';
 import ProviderSelection from '@/app/components/services/app-security/ProviderSelection';
-import IndustriesSection from '@/app/components/services/app-security/IndustriesSection';
+import GlobalIndustriesSection from '@/app/components/services/shared/GlobalIndustriesSection';
 
 export default function ApplicationSecurityPage() {
   useEffect(() => {
@@ -54,11 +54,10 @@ export default function ApplicationSecurityPage() {
         </div>
       </section>
       
-      {/* Container wrapper for these two to manage spacing nicely */}
-      <div className="bg-slate-50 relative z-10">
+      <section className="bg-slate-50 relative z-10 pb-0">
         <ProviderSelection />
-        <IndustriesSection />
-      </div>
+      </section>
+      <GlobalIndustriesSection />
     </main>
   );
 }

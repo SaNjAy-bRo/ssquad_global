@@ -7,35 +7,37 @@ import Image from 'next/image';
 const serviceData: Record<string, { title: string; desc: string; href: string }[]> = {
   cyber: [
     { title: 'Application Security', desc: 'Comprehensive protection for modern software and digital applications.', href: '/services/application-security' },
-    { title: 'AI-Powered Cybersecurity Solutions', desc: 'AI-assisted detection and response against fast-moving cyber threats.', href: '#' },
-    { title: 'Threat Intelligence and Analytics', desc: 'Intelligence-led monitoring with risk-prioritized defensive actions.', href: '#' },
-    { title: 'Penetration Testing Services', desc: 'Adversarial validation to uncover exploitable weaknesses early.', href: '#' },
-    { title: 'Identity and Access Management (IAM)', desc: 'Identity-first access controls and governance for enterprise systems.', href: '#' },
-    { title: 'OT Security Services', desc: 'Tailored security controls for industrial and operational technology.', href: '#' },
+    { title: 'AI-Powered Cybersecurity Solutions', desc: 'AI-assisted detection and response against fast-moving cyber threats.', href: '/services/ai-cybersecurity' },
+    { title: 'Threat Intelligence and Analytics', desc: 'Intelligence-led monitoring with risk-prioritized defensive actions.', href: '/services/threat-intelligence' },
+    { title: 'Penetration Testing Services', desc: 'Adversarial validation to uncover exploitable weaknesses early.', href: '/services/penetration-testing' },
+    { title: 'Identity and Access Management (IAM)', desc: 'Identity-first access controls and governance for enterprise systems.', href: '/services/iam' },
+    { title: 'OT Security Services', desc: 'Tailored security controls for industrial and operational technology.', href: '/services/ot-security' },
   ],
   infra: [
-    { title: 'End-to-End IT Infrastructure Management', desc: 'Modernize and operate resilient enterprise infrastructure at scale.', href: '#' },
-    { title: 'Third-Party Maintenance (TPM) Services', desc: 'Extend asset life and optimize IT cost with expert support.', href: '#' },
-    { title: 'Auxiliary Services', desc: 'Specialized technology services aligned with business priorities.', href: '#' },
-    { title: 'End-User Computing', desc: 'Secure and flexible end-user environments for enterprise teams.', href: '#' },
-    { title: 'IoT Services', desc: 'Connect data and devices to improve operations and reduce risk.', href: '#' },
-    { title: 'Network as a Platform', desc: 'Stabilize and modernize data center and enterprise networks.', href: '#' },
+    { title: 'End-to-End IT Infrastructure Management', desc: 'Modernize and operate resilient enterprise infrastructure at scale.', href: '/services/infrastructure-management' },
+    { title: 'Third-Party Maintenance (TPM) Services', desc: 'Extend asset life and optimize IT cost with expert support.', href: '/services/tpm-services' },
+    { title: 'Auxiliary Services', desc: 'Specialized technology services aligned with business priorities.', href: '/services/auxiliary-services' },
+    { title: 'End-User Computing', desc: 'Secure and flexible end-user environments for enterprise teams.', href: '/services/end-user-computing' },
+    { title: 'IoT Services', desc: 'Connect data and devices to improve operations and reduce risk.', href: '/services/iot-services' },
+    { title: 'Network as a Platform', desc: 'Stabilize and modernize data center and enterprise networks.', href: '/services/network-as-a-platform' },
   ],
   cloud: [
-    { title: 'Cloud Data Migration and Modernization', desc: 'Seamless cloud migration with modernized architecture and controls.', href: '#' },
-    { title: 'Cloud Consulting Services', desc: 'Strategic guidance for scalable, high-confidence cloud decisions.', href: '#' },
-    { title: 'Cloud Native Solutions', desc: 'Cloud-native engineering for agility, scalability, and innovation.', href: '#' },
-    { title: 'Cloud Assurance Services', desc: 'Secure, compliant, and resilient cloud operating environments.', href: '#' },
-    { title: 'Cloud Security', desc: 'Layered cloud protection with proactive threat defense.', href: '#' },
-    { title: 'Cloud Operations and Intelligent Automation', desc: 'Automated cloud operations to improve reliability and speed.', href: '#' },
+    { title: 'Cloud Data Migration & Modernization', desc: 'Seamless cloud migration with modernized architecture and controls.', href: '/services/cloud-data-migration' },
+    { title: 'Cloud Consulting Services', desc: 'Strategic guidance for scalable, high-confidence cloud decisions.', href: '/services/cloud-consulting' },
+    { title: 'Cloud Native Solutions', desc: 'Cloud-native engineering for agility, scalability, and innovation.', href: '/services/cloud-native-solutions' },
+    { title: 'Cloud Assurance Services', desc: 'Secure, compliant, and resilient cloud operating environments.', href: '/services/cloud-assurance' },
+    { title: 'Cloud Security', desc: 'Layered cloud protection with proactive threat defense.', href: '/services/cloud-security' },
+    { title: 'Cloud Operations & Intelligent Automation', desc: 'Automated cloud operations to improve reliability and speed.', href: '/services/cloud-operations' },
+    { title: 'Distributed & Hybrid Cloud Solutions', desc: 'Flexibility, performance, and control wherever you need it.', href: '/services/distributed-hybrid-cloud' },
+    { title: 'Industry Cloud Solutions', desc: 'Tailored cloud platforms designed for your industry unique needs.', href: '/services/industry-cloud' },
   ],
   app: [
-    { title: 'Custom Application Development', desc: 'Tailor-built applications aligned to unique business workflows.', href: '#' },
-    { title: 'Legacy Application Modernization', desc: 'Re-engineer legacy systems for modern platforms and outcomes.', href: '#' },
-    { title: 'Application Integration Services', desc: 'Connect systems and data sources for unified digital operations.', href: '#' },
-    { title: 'API Development and Integration', desc: 'Build secure APIs that extend platform capabilities.', href: '#' },
-    { title: 'Workflow Automation and Optimization', desc: 'Automate repetitive work to improve speed and efficiency.', href: '#' },
-    { title: 'Security and Compliance Customization', desc: 'Align applications with security and regulatory controls.', href: '#' },
+    { title: 'Custom Application Development', desc: 'Tailor-built applications aligned to unique business workflows.', href: '/services/custom-app-development' },
+    { title: 'Legacy Application Modernization', desc: 'Re-engineer legacy systems for modern platforms and outcomes.', href: '/services/legacy-app-modernization' },
+    { title: 'Application Integration Services', desc: 'Connect systems and data sources for unified digital operations.', href: '/services/application-integration' },
+    { title: 'API Development & Integration', desc: 'Build secure APIs that extend platform capabilities.', href: '/services/api-development' },
+    { title: 'Workflow Automation & Optimization', desc: 'Automate repetitive work to improve speed and efficiency.', href: '/services/workflow-automation' },
+    { title: 'Security & Compliance Customization', desc: 'Align applications with security and regulatory controls.', href: '/services/security-compliance' },
   ],
 };
 
@@ -167,11 +169,11 @@ export default function Header() {
                 </button>
               ))}
               <a className="nav-link" href="https://www.harpydefence.com/" target="_blank" rel="noopener noreferrer" onMouseEnter={closeMega}>Harpy Defence</a>
-              <Link className="nav-link" href="#contact" onMouseEnter={closeMega}>Contact</Link>
+              <Link className="nav-link" href="/contact" onMouseEnter={closeMega}>Contact</Link>
             </nav>
 
             <div className="hidden lg:block">
-              <Link href="#contact" className="btn-outline-violet">
+              <Link href="/contact" className="btn-outline-violet">
                 Talk to an Expert <i className="ph ph-arrow-up-right"></i>
               </Link>
             </div>
