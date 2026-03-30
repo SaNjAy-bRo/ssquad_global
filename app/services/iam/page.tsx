@@ -6,6 +6,7 @@ import ServiceOverviewBlock from '@/app/components/services/shared/ServiceOvervi
 import ServiceFeatureGrid from '@/app/components/services/shared/ServiceFeatureGrid';
 import ServiceDarkGrid from '@/app/components/services/shared/ServiceDarkGrid';
 import ServiceCTA from '@/app/components/services/shared/ServiceCTA';
+import ServiceFAQ from '@/app/components/services/shared/ServiceFAQ';
 import GlobalIndustriesSection from '@/app/components/services/shared/GlobalIndustriesSection';
 
 export default function IamSolutionsPage() {
@@ -85,6 +86,9 @@ export default function IamSolutionsPage() {
 
       <ServiceCTA />
       
+
+      <ServiceFAQ />
+
       <GlobalIndustriesSection />
     </main>
   );

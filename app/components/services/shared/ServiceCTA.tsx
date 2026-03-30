@@ -25,7 +25,7 @@ export default function ServiceCTA({ variant = 'dark' }: ServiceCTAProps) {
           ${isWhite ? 'text-ssg-dark' : 'text-white'}
           text-3xl md:text-4xl font-heading font-bold mb-4
         `}>
-          Secure your environment today
+          Secure your Environment Today
         </h2>
         <p className={`
           ${isWhite ? 'text-slate-600' : 'text-slate-300'}

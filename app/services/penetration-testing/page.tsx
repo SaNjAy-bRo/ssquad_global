@@ -6,6 +6,7 @@ import ServiceOverviewBlock from '@/app/components/services/shared/ServiceOvervi
 import ServiceFeatureGrid from '@/app/components/services/shared/ServiceFeatureGrid';
 import ServiceDarkGrid from '@/app/components/services/shared/ServiceDarkGrid';
 import ServiceCTA from '@/app/components/services/shared/ServiceCTA';
+import ServiceFAQ from '@/app/components/services/shared/ServiceFAQ';
 import GlobalIndustriesSection from '@/app/components/services/shared/GlobalIndustriesSection';
 
 export default function PenetrationTestingPage() {
@@ -57,6 +58,9 @@ export default function PenetrationTestingPage() {
           { title: "Blue Team Response Evaluation", description: "Measures how well internal teams detect and respond to sophisticated threats." }
         ]}
       />
+
+
+      <ServiceFAQ />
 
       <GlobalIndustriesSection />
 
