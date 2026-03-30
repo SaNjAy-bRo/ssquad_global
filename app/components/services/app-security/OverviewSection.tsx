@@ -40,11 +40,10 @@ export default function OverviewSection() {
                 src="https://images.unsplash.com/photo-1526374965328-7f61d4dc18c5?auto=format&fit=crop&w=1000"
                 alt="Cybersecurity red digital lock visualization"
                 fill
-                className="object-cover transition-transform duration-700 ease-out group-hover:scale-110"
+                className="object-cover transition-transform duration-700 ease-out group-hover:scale-105 grayscale opacity-70"
                 unoptimized
               />
-              <div className="absolute inset-0 bg-gradient-to-tr from-ssg-red/30 to-transparent mix-blend-multiply pointer-events-none" />
-              <div className="absolute inset-x-0 bottom-0 h-1/3 bg-gradient-to-t from-ssg-dark/50 to-transparent pointer-events-none" />
+              <div className="absolute inset-x-0 bottom-0 h-1/2 bg-gradient-to-t from-slate-900 to-transparent pointer-events-none" />
             </div>
           </div>
         </div>

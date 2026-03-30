@@ -152,7 +152,7 @@ export default function Header() {
             </Link>
 
             <nav id="desktop-nav" className="hidden lg:flex items-center gap-8 text-sm text-slate-100/90 font-medium">
-              <Link className="nav-link" href="#">Company</Link>
+              <Link className="nav-link" href="/company" onMouseEnter={closeMega}>Company</Link>
               {(['cyber', 'infra', 'cloud', 'app'] as const).map((key) => (
                 <button 
                   key={key}
@@ -166,8 +166,8 @@ export default function Header() {
                   {serviceLabels[key].replace(' Services', '')}
                 </button>
               ))}
-              <a className="nav-link" href="https://www.harpydefence.com/" target="_blank" rel="noopener noreferrer">Harpy Defence</a>
-              <Link className="nav-link" href="#contact">Contact</Link>
+              <a className="nav-link" href="https://www.harpydefence.com/" target="_blank" rel="noopener noreferrer" onMouseEnter={closeMega}>Harpy Defence</a>
+              <Link className="nav-link" href="#contact" onMouseEnter={closeMega}>Contact</Link>
             </nav>
 
             <div className="hidden lg:block">
@@ -227,7 +227,7 @@ export default function Header() {
 
           <div id="mobile-menu" className={`lg:hidden border-t border-white/10 px-5 pb-5 ${isMobileMenuOpen ? 'block' : 'hidden'}`}>
             <nav className="pt-4 flex flex-col gap-3 text-sm text-slate-100/90">
-              <Link href="#" className="mobile-link">Company</Link>
+              <Link href="/company" className="mobile-link">Company</Link>
               <Link href="#solutions" className="mobile-link">Cyber Security</Link>
               <Link href="#" className="mobile-link">Infrastructure</Link>
               <Link href="#" className="mobile-link">Cloud</Link>

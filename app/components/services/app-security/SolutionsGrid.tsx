@@ -46,7 +46,7 @@ export default function SolutionsGrid() {
     <section className="bg-slate-50 py-20 lg:py-24">
       <div className="max-w-container mx-auto px-6 lg:px-8">
         <div className="arc-heading text-center max-w-3xl mx-auto reveal">
-          <span className="arc-icon violet"><i className="ph ph-shield-plus"></i></span>
+          <span className="arc-icon text-ssg-red bg-ssg-red/10 border-ssg-red/20"><i className="ph ph-shield-plus"></i></span>
           <p className="section-eyebrow">Enterprise Defences</p>
           <h2 className="section-title text-slate-900">Comprehensive Application Security Solutions</h2>
           <p className="mt-4 text-slate-600">
