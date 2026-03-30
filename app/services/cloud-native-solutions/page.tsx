@@ -58,9 +58,9 @@ Cloud native refers to building and running applications that fully leverage clo
         ]}
       />
 
-      <ServiceCTA />
-      
       <GlobalIndustriesSection />
+
+      <ServiceCTA variant="white" />
     </main>
   );
 }

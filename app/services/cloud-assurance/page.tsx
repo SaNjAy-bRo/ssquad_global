@@ -58,9 +58,9 @@ As enterprises increase their cloud adoption, the need for a robust assurance st
         ]}
       />
 
-      <ServiceCTA />
-      
       <GlobalIndustriesSection />
+
+      <ServiceCTA variant="white" />
     </main>
   );
 }

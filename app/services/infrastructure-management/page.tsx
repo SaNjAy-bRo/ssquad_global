@@ -53,9 +53,9 @@ Operating 24/7, 365 days a year, we safeguard operations for telecom providers, 
         ]}
       />
 
-      <ServiceCTA />
-      
       <GlobalIndustriesSection />
+
+      <ServiceCTA variant="white" />
     </main>
   );
 }

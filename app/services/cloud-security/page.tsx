@@ -60,9 +60,9 @@ The shift to cloud computing introduces new security challenges, including data 
         ]}
       />
 
-      <ServiceCTA />
-      
       <GlobalIndustriesSection />
+      
+      <ServiceCTA variant="white" />
     </main>
   );
 }

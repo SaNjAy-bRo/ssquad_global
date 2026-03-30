@@ -81,9 +81,9 @@ Whether you're building from scratch or enhancing existing systems, our team hel
         ]}
       />
 
-      <ServiceCTA />
-      
       <GlobalIndustriesSection />
+
+      <ServiceCTA variant="white" />
     </main>
   );
 }

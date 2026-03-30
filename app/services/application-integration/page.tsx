@@ -60,9 +60,9 @@ We enable seamless connectivity between your internal systems, third-party appli
         ]}
       />
 
-      <ServiceCTA />
-      
       <GlobalIndustriesSection />
+
+      <ServiceCTA variant="white" />
     </main>
   );
 }

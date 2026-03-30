@@ -68,9 +68,9 @@ Ssquad's Cloud Operations services offer a comprehensive, end-to-end approach to
         </div>
       </section>
 
-      <ServiceCTA />
-      
       <GlobalIndustriesSection />
+
+      <ServiceCTA variant="white" />
     </main>
   );
 }

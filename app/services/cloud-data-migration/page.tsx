@@ -58,9 +58,9 @@ Whether you're migrating on-premises databases to the cloud, modernizing data wa
         ]}
       />
 
-      <ServiceCTA />
-      
       <GlobalIndustriesSection />
+
+      <ServiceCTA variant="white" />
     </main>
   );
 }

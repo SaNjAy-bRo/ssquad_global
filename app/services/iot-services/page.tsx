@@ -53,9 +53,9 @@ These services play a critical role in collecting and analyzing real-time data f
         ]}
       />
 
-      <ServiceCTA />
-      
       <GlobalIndustriesSection />
+
+      <ServiceCTA variant="white" />
     </main>
   );
 }

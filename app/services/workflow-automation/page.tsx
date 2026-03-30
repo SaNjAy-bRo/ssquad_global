@@ -60,9 +60,9 @@ At Ssquad, we help organizations streamline their workflows using intelligent au
         ]}
       />
 
-      <ServiceCTA />
-      
       <GlobalIndustriesSection />
+
+      <ServiceCTA variant="white" />
     </main>
   );
 }

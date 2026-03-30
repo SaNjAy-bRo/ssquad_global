@@ -58,9 +58,9 @@ Industry Cloud refers to cloud platforms and services that are customized for th
         ]}
       />
 
-      <ServiceCTA />
-      
       <GlobalIndustriesSection />
+
+      <ServiceCTA variant="white" />
     </main>
   );
 }

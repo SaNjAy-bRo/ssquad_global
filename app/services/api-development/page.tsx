@@ -81,9 +81,9 @@ Whether you're building a new product, connecting legacy systems, or integrating
         ]}
       />
 
-      <ServiceCTA />
-      
       <GlobalIndustriesSection />
+
+      <ServiceCTA variant="white" />
     </main>
   );
 }

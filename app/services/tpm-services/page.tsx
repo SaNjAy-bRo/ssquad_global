@@ -74,9 +74,9 @@ OEM contracts can be expensive, restrictive, and often provide limited flexibili
         ]}
       />
 
-      <ServiceCTA />
-      
       <GlobalIndustriesSection />
+
+      <ServiceCTA variant="white" />
     </main>
   );
 }

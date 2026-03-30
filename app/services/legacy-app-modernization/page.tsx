@@ -60,9 +60,9 @@ Ssquad offers comprehensive Legacy Application Modernization services designed t
         ]}
       />
 
-      <ServiceCTA />
-      
       <GlobalIndustriesSection />
+
+      <ServiceCTA variant="white" />
     </main>
   );
 }

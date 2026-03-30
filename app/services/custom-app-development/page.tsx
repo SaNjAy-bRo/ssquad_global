@@ -60,9 +60,9 @@ At Ssquad, we specialize in building custom applications that go beyond generic 
         ]}
       />
 
-      <ServiceCTA />
-      
       <GlobalIndustriesSection />
+
+      <ServiceCTA variant="white" />
     </main>
   );
 }

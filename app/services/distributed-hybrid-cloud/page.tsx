@@ -59,9 +59,9 @@ At Ssquad, we help enterprises architect, deploy, and manage distributed and hyb
         ]}
       />
 
-      <ServiceCTA />
-      
       <GlobalIndustriesSection />
+
+      <ServiceCTA variant="white" />
     </main>
   );
 }

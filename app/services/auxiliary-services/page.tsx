@@ -53,9 +53,9 @@ export default function AuxiliaryServicesPage() {
         ]}
       />
 
-      <ServiceCTA />
-      
       <GlobalIndustriesSection />
+
+      <ServiceCTA variant="white" />
     </main>
   );
 }

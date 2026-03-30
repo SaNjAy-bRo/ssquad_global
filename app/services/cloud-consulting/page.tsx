@@ -58,9 +58,9 @@ Adopting a cloud-first approach is no longer optional—it’s a strategic imper
         ]}
       />
 
-      <ServiceCTA />
-      
       <GlobalIndustriesSection />
+
+      <ServiceCTA variant="white" />
     </main>
   );
 }

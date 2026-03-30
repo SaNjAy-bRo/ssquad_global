@@ -59,9 +59,9 @@ At its core, NaaP leverages technologies such as Software-Defined Networking (SD
         </div>
       </section>
 
-      <ServiceCTA />
-      
       <GlobalIndustriesSection />
+
+      <ServiceCTA variant="white" />
     </main>
   );
 }

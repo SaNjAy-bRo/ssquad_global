@@ -58,9 +58,9 @@ export default function PenetrationTestingPage() {
         ]}
       />
 
-      <ServiceCTA />
-      
       <GlobalIndustriesSection />
+
+      <ServiceCTA variant="white" />
     </main>
   );
 }

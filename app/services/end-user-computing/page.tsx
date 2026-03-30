@@ -54,9 +54,9 @@ EUC empowers employees across departments—such as finance, operations, marketi
         ]}
       />
 
-      <ServiceCTA />
-      
       <GlobalIndustriesSection />
+
+      <ServiceCTA variant="white" />
     </main>
   );
 }
