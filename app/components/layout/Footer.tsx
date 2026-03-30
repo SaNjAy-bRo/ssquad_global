@@ -14,9 +14,8 @@ export default function Footer() {
               SSquad Global delivers enterprise-grade cybersecurity, infrastructure, cloud, and managed security services for organizations operating in high-stakes environments.
             </p>
             <div className="mt-6 flex items-center gap-3 text-xl text-slate-300">
-              <Link href="#" aria-label="LinkedIn" className="social"><i className="ph ph-linkedin-logo"></i></Link>
-              <Link href="#" aria-label="X" className="social"><i className="ph ph-x-logo"></i></Link>
-              <Link href="#" aria-label="Facebook" className="social"><i className="ph ph-facebook-logo"></i></Link>
+              <a href="https://www.linkedin.com/company/ssquad-global/" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn" className="social"><i className="ph ph-linkedin-logo"></i></a>
+              <a href="https://www.facebook.com/people/Ssquad-Global/100063703443364/#" target="_blank" rel="noopener noreferrer" aria-label="Facebook" className="social"><i className="ph ph-facebook-logo"></i></a>
             </div>
           </div>
 
