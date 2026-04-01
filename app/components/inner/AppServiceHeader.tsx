@@ -1,6 +1,6 @@
 "use client";
 
-import { useEffect, useRef } from "react";
+import { useEffect, useRef, useState } from "react";
 import Link from "next/link";
 
 interface AppServiceHeaderProps {
@@ -8,6 +8,31 @@ interface AppServiceHeaderProps {
   subtitle?: string;
   breadcrumbs: { label: string; href: string }[];
 }
+
+const DecryptingTitle = ({ text }: { text: string }) => {
+  const [display, setDisplay] = useState("");
+  
+  useEffect(() => {
+    let iter = 0;
+    const interval = setInterval(() => {
+      let newStr = "";
+      for (let i = 0; i < text.length; i++) {
+        if (text[i] === " ") { newStr += " "; continue; }
+        if (i < iter / 3) {
+          newStr += text[i];
+        } else {
+          newStr += Math.random() > 0.5 ? "0" : "1";
+        }
+      }
+      setDisplay(newStr);
+      iter += 1;
+      if (iter >= text.length * 3 + 10) clearInterval(interval);
+    }, 30);
+    return () => clearInterval(interval);
+  }, [text]);
+
+  return <>{display || text.replace(/[a-zA-Z]/g, '0')}</>;
+};
 
 export default function AppServiceHeader({ title, subtitle, breadcrumbs }: AppServiceHeaderProps) {
   const canvasRef = useRef<HTMLCanvasElement>(null);
@@ -18,8 +43,33 @@ export default function AppServiceHeader({ title, subtitle, breadcrumbs }: AppSe
     const ctx = canvas.getContext("2d");
     if (!ctx) return;
 
-    let particles: { x: number; y: number; vx: number; vy: number; radius: number; alpha: number }[] = [];
+    let particles: { x: number; y: number; vx: number; vy: number; baseRadius: number; radius: number; alpha: number }[] = [];
     let animationFrameId: number;
+    let scanLineX = -200;
+    
+    // Track mouse safely over document body
+    const mouse = { x: -1000, y: -1000 };
+
+    const handleMouseMove = (e: MouseEvent) => {
+      if (!canvasRef.current) return;
+      const rect = canvasRef.current.getBoundingClientRect();
+      // Only track if mouse is over or near the canvas height
+      if (e.clientY <= rect.bottom + 100) {
+          mouse.x = e.clientX - rect.left;
+          mouse.y = e.clientY - rect.top;
+      } else {
+          mouse.x = -1000;
+          mouse.y = -1000;
+      }
+    };
+
+    const handleMouseLeave = () => {
+      mouse.x = -1000;
+      mouse.y = -1000;
+    };
+
+    window.addEventListener("mousemove", handleMouseMove);
+    canvas.addEventListener("mouseleave", handleMouseLeave);
 
     const resize = () => {
       canvas.width = canvas.offsetWidth;
@@ -29,47 +79,113 @@ export default function AppServiceHeader({ title, subtitle, breadcrumbs }: AppSe
 
     const initParticles = () => {
       particles = [];
-      const numParticles = Math.floor((canvas.width * canvas.height) / 15000);
+      const numParticles = Math.floor((canvas.width * canvas.height) / 12000);
       for (let i = 0; i < numParticles; i++) {
         particles.push({
           x: Math.random() * canvas.width,
           y: Math.random() * canvas.height,
-          vx: (Math.random() - 0.5) * 0.5,
-          vy: (Math.random() - 0.5) * 0.5,
-          radius: Math.random() * 2 + 0.5,
-          alpha: Math.random() * 0.5 + 0.1
+          vx: (Math.random() - 0.5) * 0.4,
+          vy: (Math.random() - 0.5) * 0.4,
+          baseRadius: Math.random() * 1.5 + 0.5,
+          radius: 0,
+          alpha: Math.random() * 0.3 + 0.1
         });
       }
     };
 
     const drawParticles = () => {
       ctx.clearRect(0, 0, canvas.width, canvas.height);
+      
+      // Radar Scanner Sweep
+      scanLineX += 3.5;
+      if (scanLineX > canvas.width + 300) scanLineX = -300;
+
+      const scanGradient = ctx.createLinearGradient(scanLineX - 150, 0, scanLineX, 0);
+      scanGradient.addColorStop(0, "rgba(236, 32, 36, 0)");
+      scanGradient.addColorStop(1, "rgba(236, 32, 36, 0.12)");
+      ctx.fillStyle = scanGradient;
+      ctx.fillRect(scanLineX - 150, 0, 150, canvas.height);
+      
+      ctx.beginPath();
+      ctx.moveTo(scanLineX, 0);
+      ctx.lineTo(scanLineX, canvas.height);
+      ctx.strokeStyle = "rgba(236, 32, 36, 0.4)";
+      ctx.lineWidth = 1.5;
+      ctx.stroke();
+
       particles.forEach((p, i) => {
         p.x += p.vx;
         p.y += p.vy;
 
-        if (p.x < 0 || p.x > canvas.width) p.vx *= -1;
-        if (p.y < 0 || p.y > canvas.height) p.vy *= -1;
+        if (p.x < 0) p.x = canvas.width;
+        if (p.x > canvas.width) p.x = 0;
+        if (p.y < 0) p.y = canvas.height;
+        if (p.y > canvas.height) p.y = 0;
 
-        ctx.beginPath();
-        ctx.arc(p.x, p.y, p.radius, 0, Math.PI * 2);
-        ctx.fillStyle = `rgba(255, 255, 255, ${p.alpha})`;
-        ctx.fill();
+        const distToScan = Math.abs(p.x - scanLineX);
+        const distToMouse = Math.hypot(p.x - mouse.x, p.y - mouse.y);
+        
+        // Base alpha and radius
+        let intensity = p.alpha;
+        
+        // Scan line collision
+        if (distToScan < 120 && (scanLineX - p.x > 0)) { 
+            intensity = Math.max(intensity, 1 - distToScan / 120);
+        }
 
-        // Connect particles
+        // Mouse collision
+        if (distToMouse < 200) {
+            intensity = Math.max(intensity, 1.2 - distToMouse / 200);
+            
+            if (distToMouse < 100) {
+              const angle = Math.atan2(p.y - mouse.y, p.x - mouse.x);
+              p.x += Math.cos(angle) * 0.8;
+              p.y += Math.sin(angle) * 0.8;
+            }
+        }
+        
+        p.radius = p.baseRadius * (1 + intensity * 1.5);
+
+        // Connections
         for (let j = i + 1; j < particles.length; j++) {
           const p2 = particles[j];
           const dist = Math.hypot(p.x - p2.x, p.y - p2.y);
-          if (dist < 100) {
+          if (dist < 110) {
             ctx.beginPath();
             ctx.moveTo(p.x, p.y);
             ctx.lineTo(p2.x, p2.y);
-            ctx.strokeStyle = `rgba(255, 255, 255, ${(100 - dist) / 100 * 0.2})`;
-            ctx.lineWidth = 0.5;
+            
+            const connectionAlpha = ((110 - dist) / 110) * (0.15 + intensity * 0.2);
+            if (distToMouse < 200) {
+               ctx.strokeStyle = `rgba(91, 46, 255, ${connectionAlpha * 1.5})`; 
+            } else if (distToScan < 100 && (scanLineX - p.x > 0)) {
+               ctx.strokeStyle = `rgba(236, 32, 36, ${connectionAlpha})`;
+            } else {
+               ctx.strokeStyle = `rgba(255, 255, 255, ${connectionAlpha * 0.5})`;
+            }
+            ctx.lineWidth = 0.6 + intensity * 0.4;
             ctx.stroke();
           }
         }
+
+        ctx.beginPath();
+        ctx.arc(p.x, p.y, p.radius, 0, Math.PI * 2);
+        
+        if (intensity > 0.8) {
+            ctx.fillStyle = `rgba(236, 32, 36, ${intensity})`; // ssg-red
+            
+            ctx.beginPath();
+            ctx.arc(p.x, p.y, p.radius * 3.5, 0, Math.PI * 2);
+            ctx.fillStyle = `rgba(236, 32, 36, ${intensity * 0.25})`;
+            ctx.fill();
+        } else if (distToMouse < 200 && intensity > 0.5) {
+            ctx.fillStyle = `rgba(91, 46, 255, ${intensity})`; // ssg-cyber
+        } else {
+            ctx.fillStyle = `rgba(148, 163, 184, ${intensity})`; // slate
+        }
+        ctx.fill();
       });
+      
       animationFrameId = requestAnimationFrame(drawParticles);
     };
 
@@ -79,59 +195,86 @@ export default function AppServiceHeader({ title, subtitle, breadcrumbs }: AppSe
 
     return () => {
       window.removeEventListener("resize", resize);
+      window.removeEventListener("mousemove", handleMouseMove);
+      canvas.removeEventListener("mouseleave", handleMouseLeave);
       cancelAnimationFrame(animationFrameId);
     };
   }, []);
 
   return (
-    <div 
-      className="hero relative overflow-hidden pt-56 pb-32 lg:pt-72 lg:pb-48"
-    >
-      {/* Background Image */}
+    <div className="hero relative overflow-hidden pt-44 pb-20 lg:pt-52 lg:pb-28 bg-ssg-dark">
+      {/* Background Image Texture */}
       <div 
         className="absolute inset-0 z-0 bg-cover bg-center"
-        style={{ backgroundImage: 'url(/images/banner.jpg)' }}
+        style={{ backgroundImage: 'url(/images/banner.jpeg)' }}
       ></div>
 
-      {/* Dark Overlay for Readability */}
-      <div className="absolute inset-0 z-0 bg-ssg-dark/80 mix-blend-multiply"></div>
+      {/* Dark Context Overlay */}
+      <div className="absolute inset-0 z-0 bg-[#060912]/80 mix-blend-multiply"></div>
 
-      {/* Particle Overlay */}
-      <canvas 
-        ref={canvasRef} 
-        className="absolute inset-0 z-0 w-full h-full pointer-events-none opacity-60"
-      ></canvas>
-
-      {/* Wavy Animation Flow & other existing overlays with slight opacity */}
-      <div className="absolute inset-0 z-0 opacity-40 pointer-events-none mix-blend-screen">
-        <div className="hero-grid-overlay"></div>
-        <div className="hero-glow"></div>
-        <div className="hero-network-lines"></div>
-        <div className="hero-signal-waves"></div>
-        <div className="hero-3d-waves"></div>
-        <div className="hero-scan-sweep"></div>
+      {/* Cyber Grid Overlays */}
+      <div className="absolute inset-0 z-0 opacity-20 pointer-events-none">
+         <div className="hero-grid-overlay !opacity-50"></div>
+         <div className="hero-3d-waves !opacity-30"></div>
+         {/* Hex overlay pattern */}
+         <div className="absolute inset-0 bg-[url('data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIyMCIgaGVpZ2h0PSIyMCI+CjxyZWN0IHdpZHRoPSIyMCIgaGVpZ2h0PSIyMCIgZmlsbD0ibm9uZSI+PC9yZWN0Pgo8cGF0aCBkPSJNMTAgMEwyMCAxMEwxMCAyMEwwIDEweiIgZmlsbD0ibm9uZSIgc3Ryb2tlPSJyZ2JhKDIwMCwyMDAsMjAwLDAuMSkiIHN0cm9rZS13aWR0aD0iMC41Ij48L3BhdGg+Cjwvc3ZnPg==')] opacity-[0.07]"></div>
       </div>
 
-      <div className="max-w-container mx-auto px-6 lg:px-8 relative z-10 text-center">
-        {/* Breadcrumbs */}
+      {/* Interactive Shield Node Canvas */}
+      <canvas 
+        ref={canvasRef} 
+        className="absolute inset-0 z-0 w-full h-full pointer-events-auto"
+        style={{ cursor: 'crosshair' }}
+      ></canvas>
+
+      <div className="max-w-container mx-auto px-6 lg:px-8 relative z-10 text-center pointer-events-none">
+        
         {breadcrumbs && breadcrumbs.length > 0 && (
-          <nav className="flex justify-center items-center gap-2 mb-6 reveal opacity-80">
+          <nav className="flex justify-center items-center gap-2 mb-6 reveal opacity-90 pointer-events-auto">
              {breadcrumbs.map((crumb, idx) => (
-                <div key={idx} className="flex items-center gap-2 text-sm text-white/90 font-medium drop-shadow-md">
-                   {idx > 0 && <i className="ph ph-caret-right text-[10px]"></i>}
-                   <Link href={crumb.href} className="hover:text-ssg-red transition-colors">{crumb.label}</Link>
+                <div key={idx} className="flex items-center gap-2 text-sm text-ssg-grayLight font-mono">
+                   {idx > 0 && <i className="ph ph-caret-right text-ssg-red text-[10px]"></i>}
+                   <Link href={crumb.href} className="hover:text-white transition-colors uppercase tracking-widest">{crumb.label}</Link>
                 </div>
              ))}
           </nav>
         )}
 
-        <h1 className="font-heading text-4xl md:text-5xl lg:text-6xl text-white font-bold tracking-tight reveal drop-shadow-lg">
-          {title}
+        {/* Decrypting Headline */}
+        <h1 className="font-mono text-4xl md:text-5xl lg:text-7xl text-white font-bold tracking-tight reveal drop-shadow-lg flex flex-col gap-3">
+          <span className="text-ssg-red/90 text-[0.95rem] md:text-xl block tracking-[0.3em] uppercase mb-1 font-heading">
+            [ SECURE // PROTOCOL // ACTIVE ]
+          </span>
+          <span className="tracking-tight text-white drop-shadow-[0_0_15px_rgba(255,255,255,0.2)]">
+            <DecryptingTitle text={title} />
+          </span>
         </h1>
+        
+        {/* Terminal Subtitle Box */}
         {subtitle && (
-          <p className="mt-6 text-slate-100 text-lg lg:text-xl leading-relaxed max-w-2xl mx-auto reveal drop-shadow-md font-medium">
-            {subtitle}
-          </p>
+          <div className="mt-8 flex justify-center reveal delay-300 pointer-events-auto">
+            <div className="bg-[#0B0F19]/60 backdrop-blur-xl border border-ssg-cyber/30 rounded-xl py-3 flex items-start gap-4 max-w-3xl shadow-[0_0_30px_rgba(91,46,255,0.15)] relative overflow-hidden group hover:border-ssg-cyber/60 transition-colors duration-500 pl-5 pr-7">
+              
+              {/* Terminal glass reflection */}
+              <div className="absolute inset-0 bg-gradient-to-br from-white/5 to-transparent pointer-events-none"></div>
+              
+              <div className="bg-ssg-cyber/20 p-2 rounded-lg shrink-0 border border-ssg-cyber/30 relative shadow-[0_0_15px_rgba(91,46,255,0.4)]">
+                 <i className="ph-fill ph-terminal-window text-cyan-300 text-xl md:text-xl animate-pulse"></i>
+              </div>
+              
+              <div className="text-left font-mono mt-0.5 text-sm md:text-[0.95rem]">
+                <p className="text-slate-300 leading-relaxed drop-shadow-sm font-medium">
+                  <span className="text-cyan-400 font-bold mr-2">&gt;_</span>
+                  {subtitle}
+                  <span className="inline-block w-2.5 h-[14px] ml-2 bg-ssg-red animate-pulse align-middle opacity-80"></span>
+                </p>
+              </div>
+
+              {/* Decorative terminal edge styling */}
+              <div className="absolute bottom-0 right-0 w-6 h-[2px] bg-ssg-cyber/50"></div>
+              <div className="absolute bottom-0 right-0 w-[2px] h-6 bg-ssg-cyber/50"></div>
+            </div>
+          </div>
         )}
       </div>
     </div>

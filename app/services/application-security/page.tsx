@@ -33,7 +33,11 @@ export default function ApplicationSecurityPage() {
 
   return (
     <main className="bg-white">
-      <AppServiceHeader title="Application Security" breadcrumbs={[]} />
+      <AppServiceHeader 
+        title="Application Security" 
+        subtitle="Comprehensive protection for your software lifecycle. Secure your applications from code development to cloud deployment."
+        breadcrumbs={[]} 
+      />
 
       <OverviewSection />
       <ImperativeSection />
