@@ -4,9 +4,17 @@ import { useState, useEffect, useRef, useMemo, useCallback } from "react";
 
 const CHARS = "ABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789!@#$%^&*()_+-=[]{}|;:,.<>?/\\";
 
+const centerPad = (str: string, len: number) => {
+  const padLen = len - str.length;
+  if (padLen <= 0) return str;
+  const leftPad = Math.floor(padLen / 2);
+  const rightPad = padLen - leftPad;
+  return "\u00A0".repeat(leftPad) + str + "\u00A0".repeat(rightPad);
+};
+
 export default function HackingText({ words, duration = 3000 }: { words: string[], duration?: number }) {
   const maxLen = useMemo(() => Math.max(...words.map(w => w.length)), [words]);
-  const [displayText, setDisplayText] = useState(() => words[0].padEnd(maxLen, "\u00A0"));
+  const [displayText, setDisplayText] = useState(() => centerPad(words[0], maxLen));
   const indexRef = useRef(0);
   const timeoutRef = useRef<NodeJS.Timeout | null>(null);
   const intervalRef = useRef<NodeJS.Timeout | null>(null);
@@ -19,7 +27,12 @@ export default function HackingText({ words, duration = 3000 }: { words: string[
   const scrambleTo = useCallback((nextWord: string) => {
     let iter = 0;
     const totalFrames = 30;
-    const padded = nextWord.padEnd(maxLen, "\u00A0");
+    const padded = centerPad(nextWord, maxLen);
+    
+    // Calculate padding sizes to know where to scramble
+    const padLen = maxLen - nextWord.length;
+    const leftPad = Math.floor(padLen / 2);
+    const rightPad = padLen - leftPad;
 
     if (intervalRef.current) clearInterval(intervalRef.current);
 
@@ -41,13 +54,16 @@ export default function HackingText({ words, duration = 3000 }: { words: string[
       const scrambled = Array(maxLen)
         .fill(0)
         .map((_, i) => {
-          if (i < (iter / totalFrames) * maxLen && i < nextWord.length) {
-            return nextWord[i];
-          }
-          if (i < nextWord.length) {
+          if (i < leftPad || i >= maxLen - rightPad) return "\u00A0"; // It's padding
+          
+          const charIdxInWord = i - leftPad;
+          const resolveProgress = (iter / totalFrames) * nextWord.length;
+          
+          if (charIdxInWord < resolveProgress) {
+            return nextWord[charIdxInWord];
+          } else {
             return CHARS[Math.floor(Math.random() * CHARS.length)];
           }
-          return "\u00A0";
         })
         .join("");
 
