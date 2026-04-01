@@ -1,9 +1,9 @@
 "use client";
 
 import { useEffect } from 'react';
-import InnerHeader from '@/app/components/inner/InnerHeader';
-import ServiceOverviewBlock from '@/app/components/services/shared/ServiceOverviewBlock';
-import ServiceDarkGrid from '@/app/components/services/shared/ServiceDarkGrid';
+import AppServiceHeader from '@/app/components/inner/AppServiceHeader';
+import ServiceOverviewCards from '@/app/components/services/shared/ServiceOverviewCards';
+import ServiceSolutionsGrid from '@/app/components/services/shared/ServiceSolutionsGrid';
 import ServiceCTA from '@/app/components/services/shared/ServiceCTA';
 import GlobalIndustriesSection from '@/app/components/services/shared/GlobalIndustriesSection';
 
@@ -26,35 +26,71 @@ export default function CloudConsultingPage() {
 
   return (
     <main className="bg-white">
-      <InnerHeader title="Cloud Consulting Services" breadcrumbs={[]} />
+      <AppServiceHeader 
+        title="Cloud Consulting Services" 
+        subtitle="Architect your cloud vision. Expert guidance to navigate multi-cloud complexities and build resilient, scalable digital foundations."
+        breadcrumbs={[]} 
+      />
 
-      <ServiceOverviewBlock 
+      <ServiceOverviewCards 
+        eyebrow="Strategic Advisory"
         title="Strategic Guidance For Smarter, Scalable Cloud Solutions"
         description={`Partner with seasoned cloud experts at Ssquad to develop and execute a cloud strategy tailored to your business vision and IT landscape. Whether you're taking your first steps toward the cloud, managing a multi-cloud ecosystem, or enhancing cloud performance and security, our consulting services ensure your environment is optimized, resilient, and future-ready. 
 
-Adopting a cloud-first approach is no longer optional—it’s a strategic imperative. For IT to meet evolving business demands and for businesses to deliver exceptional customer experiences, the cloud must become a foundational enabler of innovation, agility, and scalability. Ssquad’s Cloud Consulting Services are designed to help enterprises confidently embrace cloud technologies and unlock their full potential.`}
+Adopting a cloud-first approach is no longer optional—it’s a strategic imperative. For IT to meet evolving business demands and for businesses to deliver exceptional customer experiences, the cloud must become a foundational enabler of innovation, agility, and scalability.`}
         points={[
-          "Strategic Cloud Planning",
-          "Migration Assessment & Execution",
-          "Multi-Cloud & Hybrid Optimization",
-          "Security & Compliance Frameworks",
-          "Performance & Cost Efficiency"
+          { title: "Strategic Cloud Planning", icon: "ph-strategy" },
+          { title: "Migration Assessment", icon: "ph-magnifying-glass" },
+          { title: "Multi-Cloud Optimization", icon: "ph-cloud-network" },
+          { title: "Cloud FinOps & Efficiency", icon: "ph-currency-dollar" }
         ]}
-        imageUrl="https://placehold.co/1200x800/e2e8f0/a0aec0?text=Service+Visual"
-        imageAlt="Cloud Architecture Network"
-        imageAlignment="right"
       />
 
-      <ServiceDarkGrid 
+      <ServiceSolutionsGrid 
         title="What We Deliver"
         eyebrow="Expert Consulting"
-        icon="ph-strategy"
-        cards={[
-          { title: "Strategic Cloud Planning", description: "Define a clear cloud roadmap that aligns with your business goals and maximizes long term value." },
-          { title: "Migration Assessment & Execution", description: "Evaluate readiness, choose the right cloud model (public, private, or hybrid), and seamlessly migrate applications and data." },
-          { title: "Multi-Cloud & Hybrid Optimization", description: "Optimize operations across multiple platforms (AWS, Azure, GCP, private cloud) for performance, compliance, and cost control." },
-          { title: "Security & Compliance Frameworks", description: "Identify risks and implement robust cloud security policies to ensure regulatory compliance and data protection." },
-          { title: "Performance & Cost Efficiency", description: "Analyze cloud consumption patterns, eliminate waste, and ensure maximum ROI through cloud cost optimization and FinOps strategies." }
+        subtitle="Actionable intelligence to accelerate your cloud transformation journey."
+        solutions={[
+          { 
+            title: "Strategic Cloud Planning", 
+            description: "Define a clear cloud roadmap that aligns with your ultimate business objectives and maximizes long-term technological value.",
+            icon: "ph-map-trifold",
+            features: [
+              "Cloud Readiness Assessments",
+              "Executive Roadmap Design",
+              "Vendor Selection Strategy"
+            ]
+          },
+          { 
+            title: "Migration Assessment & Execution", 
+            description: "Evaluate architectural readiness, choose the optimal deployment model (public, private, hybrid), and confidently migrate workloads.",
+            icon: "ph-rocket",
+            features: [
+              "Workload Profiling",
+              "Risk Mitigation Playbooks",
+              "Zero-Downtime Planning"
+            ]
+          },
+          { 
+            title: "Multi-Cloud Optimization", 
+            description: "Standardize operations across disparate platforms (AWS, Azure, GCP) to enforce compliance and eliminate vendor lock-in.",
+            icon: "ph-infinity",
+            features: [
+              "Platform Interoperability",
+              "Cross-Cloud Networking",
+              "Unified Governance Model"
+            ]
+          },
+          { 
+            title: "Security & Cost Efficiency", 
+            description: "Implement zero-trust security policies while utilizing FinOps frameworks to identify waste and dramatically reduce OpEx.",
+            icon: "ph-shield-check",
+            features: [
+              "Regulatory Auditing",
+              "FinOps Consumption Tuning",
+              "Resource Right-Sizing"
+            ]
+          }
         ]}
       />
 

@@ -2,8 +2,8 @@
 
 import { useEffect } from 'react';
 import AppServiceHeader from '@/app/components/inner/AppServiceHeader';
-import ServiceOverviewBlock from '@/app/components/services/shared/ServiceOverviewBlock';
-import ServiceDarkGrid from '@/app/components/services/shared/ServiceDarkGrid';
+import ServiceOverviewCards from '@/app/components/services/shared/ServiceOverviewCards';
+import ServiceSolutionsGrid from '@/app/components/services/shared/ServiceSolutionsGrid';
 import ServiceCTA from '@/app/components/services/shared/ServiceCTA';
 import GlobalIndustriesSection from '@/app/components/services/shared/GlobalIndustriesSection';
 
@@ -26,56 +26,61 @@ export default function SecurityCompliancePage() {
 
   return (
     <main className="bg-white">
-      <AppServiceHeader title="Security & Compliance Customization" breadcrumbs={[]} />
+      <AppServiceHeader 
+        title="Security & Compliance Customization" 
+        subtitle="Align enterprise architecture with global regulatory frameworks. Rapidly deploy hardened, fully compliant systems."
+        breadcrumbs={[]} 
+      />
 
-      <ServiceOverviewBlock 
+      <ServiceOverviewCards 
+        eyebrow="Holistic Compliance Strategy"
         title="Secure By Design. Compliant By Default"
         description={`In an era where data breaches and regulatory pressures are escalating, application security and compliance are no longer optional—they're essential. At Ssquad, we specialize in custom security and compliance solutions tailored to your business applications, ensuring you meet industry regulations and protect your digital assets at every level.
 
-Whether you're building from scratch or enhancing existing systems, our team helps you integrate robust security frameworks and align with relevant standards such as GDPR, HIPAA, SOC 2, ISO 27001, PCI-DSS, and more. Our Services Include:`}
+Whether you're building from scratch or enhancing existing systems, our team helps you integrate robust security frameworks and align with relevant standards such as GDPR, HIPAA, SOC 2, ISO 27001, PCI-DSS, and more.`}
         points={[
-          "Custom Security Implementation",
-          "Compliance Enablement",
-          "Security Hardening & Monitoring"
+          { title: "Custom Security Implementation", icon: "ph-shield-check" },
+          { title: "Compliance Enablement Frameworks", icon: "ph-certificate" },
+          { title: "Security Hardening & Monitoring", icon: "ph-radar" }
         ]}
-        imageUrl="https://placehold.co/1200x800/e2e8f0/a0aec0?text=Service+Visual"
-        imageAlt="Security Locks Dashboard"
-        imageAlignment="right"
       />
 
-      <ServiceDarkGrid 
-        title="Our Services Include"
+      <ServiceSolutionsGrid 
+        title="Comprehensive Compliance Frameworks"
         eyebrow="Application Defense"
-        icon="ph-shield-check"
-        cards={[
+        subtitle="Empower your enterprise with tailored security implementations that exceed regulatory demands."
+        solutions={[
           { 
-            title: "Custom Security Implementation", 
-            description: "",
-            points: [
-              "Identity & Access Management (IAM)",
-              "Role-based access controls (RBAC)",
-              "Data encryption at rest and in transit",
-              "Secure API development and integration for reliable, scalable, and protected data exchange"
+            title: "Custom Security Architecture", 
+            description: "Deploy robust, tailored security frameworks perfectly aligned with your business logic.",
+            icon: "ph-shield-check",
+            features: [
+              "Zero-Trust Identity (IAM)",
+              "Granular Access Controls",
+              "End-to-End Encryption",
+              "Secure API Gateways"
             ]
           },
           { 
             title: "Compliance Enablement", 
-            description: "",
-            points: [
-              "Audit preparation and gap assessments",
-              "Compliance mapping for regulatory frameworks",
-              "Policy enforcement automation and reporting",
-              "Documentation and evidence management for audits"
+            description: "Streamline audit readiness and automate regulatory adherence across your enterprise.",
+            icon: "ph-certificate",
+            features: [
+              "Automated Gap Assessments",
+              "Framework Mapping",
+              "Continuous Policy Enforcement",
+              "Audit Evidence Management"
             ]
           },
           { 
-            title: "Security Hardening & Monitoring", 
-            description: "",
-            points: [
-              "Application vulnerability assessments",
-              "Integration with SIEM and log management platforms",
-              "Real-time threat detection and incident response",
-              "Secure DevOps (DevSecOps) practices"
+            title: "Active Threat Monitoring", 
+            description: "Maintain complete visibility with continuous monitoring and rapid response protocols.",
+            icon: "ph-activity",
+            features: [
+              "Proactive Vulnerability Scans",
+              "Enterprise SIEM Integration",
+              "Real-time Threat Detection",
+              "DevSecOps CI/CD Pipelines"
             ]
           }
         ]}

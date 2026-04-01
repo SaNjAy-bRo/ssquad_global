@@ -2,8 +2,8 @@
 
 import { useEffect } from 'react';
 import AppServiceHeader from '@/app/components/inner/AppServiceHeader';
-import ServiceOverviewBlock from '@/app/components/services/shared/ServiceOverviewBlock';
-import ServiceDarkGrid from '@/app/components/services/shared/ServiceDarkGrid';
+import ServiceOverviewCards from '@/app/components/services/shared/ServiceOverviewCards';
+import ServiceSolutionsGrid from '@/app/components/services/shared/ServiceSolutionsGrid';
 import ServiceCTA from '@/app/components/services/shared/ServiceCTA';
 import GlobalIndustriesSection from '@/app/components/services/shared/GlobalIndustriesSection';
 
@@ -26,37 +26,71 @@ export default function CustomAppDevelopmentPage() {
 
   return (
     <main className="bg-white">
-      <AppServiceHeader title="Custom Application Development" breadcrumbs={[]} />
-
-      <ServiceOverviewBlock 
-        title="Tailored Software Solutions For Unique Business Needs"
-        description={`In today's fast-evolving digital landscape, off-the-shelf software often falls short in meeting the unique demands of your organization. That's where Custom Application Development comes in—delivering solutions specifically designed around your business processes, objectives, and growth strategies. 
-
-At Ssquad, we specialize in building custom applications that go beyond generic capabilities. Our expert development teams work closely with you to understand your operational challenges, user requirements, and technology environment to design, develop, and deploy applications that are efficient, scalable, and future-ready. What We Offer:`}
-        points={[
-          "End-to-End Development",
-          "Business-Driven Design",
-          "Cross-Platform Capabilities",
-          "Agile & Scalable Architecture",
-          "Seamless Integration",
-          "Built-In Security & Compliance"
-        ]}
-        imageUrl="https://placehold.co/1200x800/e2e8f0/a0aec0?text=Service+Visual"
-        imageAlt="Custom Mobile Application Wireframes"
-        imageAlignment="right"
+      <AppServiceHeader 
+        title="Custom Application Development" 
+        subtitle="Build bespoke digital architecture. Engineer scalable, agile, and high-performance applications designed specifically for your operational realities."
+        breadcrumbs={[]} 
       />
 
-      <ServiceDarkGrid 
+      <ServiceOverviewCards 
+        eyebrow="Bespoke Software"
+        title="Tailored Software Solutions For Unique Business Needs"
+        description={`In today's hyper-competitive digital landscape, off-the-shelf SaaS compromises agility. Our Custom Application Development capabilities deliver zero-compromise ecosystems designed strictly around your proprietary business logic, operational challenges, and growth trajectory.
+
+Ssquad's elite engineering squads build software that transcends generic functionality. We rapidly prototype, develop, and deploy cloud-native applications that serve as foundational engines for enterprise digital transformation—securely embedded into your existing tech stack.`}
+        points={[
+          { title: "End-to-End Build & Deployment", icon: "ph-code" },
+          { title: "UX/UI Strategy & Design", icon: "ph-pen-nib" },
+          { title: "Cross-Platform Delivery", icon: "ph-devices" },
+          { title: "Enterprise API Integrations", icon: "ph-plugs-connected" }
+        ]}
+      />
+
+      <ServiceSolutionsGrid 
         title="What We Offer"
-        eyebrow="Custom Software"
-        icon="ph-terminal-window"
-        cards={[
-          { title: "End-To-End Development", description: "From concept to deployment, we manage the entire software development lifecycle—ensuring speed, quality, and transparency at every stage." },
-          { title: "Business-Driven Design", description: "Every application we build is tailored to your specific workflows, helping you automate tasks, increase productivity, and support better decision-making." },
-          { title: "Cross-Platform Capabilities", description: "Whether it's mobile, web, or desktop applications, we develop custom software that works across platforms and devices." },
-          { title: "Agile & Scalable Architecture", description: "Our modular and flexible architectures ensure that your applications can evolve as your business grows and changes." },
-          { title: "Seamless Integration", description: "We ensure your custom application integrates smoothly with your existing tools, databases, and enterprise systems." },
-          { title: "Built-In Security & Compliance", description: "Security is embedded into the development process to meet your industry's compliance standards and protect your data." }
+        eyebrow="Custom Engineering"
+        subtitle="Uncompromising software design focused entirely on competitive market advantages."
+        solutions={[
+          { 
+            title: "End-To-End Platform Build", 
+            description: "From rapid prototyping to production deployment, we govern the entire SLDC ensuring aggressive speed, supreme quality, and absolute transparency.",
+            icon: "ph-terminal-window",
+            features: [
+              "Full-Stack Development",
+              "Agile Methodology",
+              "Cloud-Native Pipelines"
+            ]
+          },
+          { 
+            title: "Business-Driven Architecture", 
+            description: "Applications engineered strictly around your workflows. We automate critical tasks to directly elevate enterprise productivity.",
+            icon: "ph-buildings",
+            features: [
+              "Workflow Automations",
+              "Domain-Driven Design",
+              "Data Visualization"
+            ]
+          },
+          { 
+            title: "Omnichannel Delivery", 
+            description: "Deploy robust application experiences consistently across mobile, web, and internal desktop ecosystems.",
+            icon: "ph-device-mobile",
+            features: [
+              "React Native & Flutter",
+              "Progressive Web Apps",
+              "Responsive UI/UX"
+            ]
+          },
+          { 
+            title: "Embedded Security & Scale", 
+            description: "Security and scalability are shift-led into the architecture, guaranteeing regulatory compliance and friction-less growth.",
+            icon: "ph-shield-check",
+            features: [
+              "DevSecOps Integration",
+              "Dynamic Auto-Scaling",
+              "ISO/GDPR Compliance"
+            ]
+          }
         ]}
       />
 

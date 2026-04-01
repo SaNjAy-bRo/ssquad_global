@@ -1,9 +1,9 @@
 "use client";
 
 import { useEffect } from 'react';
-import InnerHeader from '@/app/components/inner/InnerHeader';
-import ServiceOverviewBlock from '@/app/components/services/shared/ServiceOverviewBlock';
-import ServiceDarkGrid from '@/app/components/services/shared/ServiceDarkGrid';
+import AppServiceHeader from '@/app/components/inner/AppServiceHeader';
+import ServiceOverviewCards from '@/app/components/services/shared/ServiceOverviewCards';
+import ServiceSolutionsGrid from '@/app/components/services/shared/ServiceSolutionsGrid';
 import ServiceCTA from '@/app/components/services/shared/ServiceCTA';
 import GlobalIndustriesSection from '@/app/components/services/shared/GlobalIndustriesSection';
 
@@ -26,35 +26,71 @@ export default function CloudAssurancePage() {
 
   return (
     <main className="bg-white">
-      <InnerHeader title="Cloud Assurance Services" breadcrumbs={[]} />
-
-      <ServiceOverviewBlock 
-        title="Secure, Compliant, And Resilient Cloud Environments"
-        description={`In today's digital era, cloud technology is a cornerstone of innovation and business acceleration. From enabling AI and machine learning to supporting advanced data analytics, the cloud offers powerful capabilities that help organizations scale faster and operate smarter. Yet with these benefits come new challenges, particularly around security, compliance, and operational risk.
-
-As enterprises increase their cloud adoption, the need for a robust assurance strategy becomes essential. Ensuring the integrity, availability, and security of cloud environments is vital—not only to protect sensitive data and maintain compliance but also to uphold customer trust and business continuity. Our Cloud Assurance Capabilities Include:`}
-        points={[
-          "Security Posture Evaluation",
-          "Quality Engineering & Application Testing",
-          "Risk Management & Incident Readiness",
-          "Compliance & Governance Support",
-          "Infrastructure Resilience & Monitoring"
-        ]}
-        imageUrl="https://placehold.co/1200x800/e2e8f0/a0aec0?text=Service+Visual"
-        imageAlt="Cloud Security Lock Graphic"
-        imageAlignment="right"
+      <AppServiceHeader 
+        title="Cloud Assurance Services" 
+        subtitle="Fortify your digital operations. Comprehensive verification, compliance, and resilience engineering for mission-critical cloud environments."
+        breadcrumbs={[]} 
       />
 
-      <ServiceDarkGrid 
-        title="Our Cloud Assurance Capabilities Include"
+      <ServiceOverviewCards 
         eyebrow="Continuous Verification"
-        icon="ph-shield-check"
-        cards={[
-          { title: "Security Posture Evaluation", description: "Identify vulnerabilities, misconfigurations, and risks through continuous monitoring and threat assessments." },
-          { title: "Compliance & Governance Support", description: "Ensure adherence to industry regulations and standards such as ISO, GDPR, HIPAA, and others." },
-          { title: "Quality Engineering & Application Testing", description: "Maintain application reliability and performance with comprehensive testing strategies across cloud-native and hybrid environments." },
-          { title: "Infrastructure Resilience & Monitoring", description: "Optimize uptime and detect anomalies early with automated monitoring and reliability engineering practices." },
-          { title: "Risk Management & Incident Readiness", description: "Develop response frameworks to minimize business impact from emerging threats and operational disruptions." }
+        title="Secure, Compliant, And Highly Resilient Cloud Ecosystems"
+        description={`In today's digital era, cloud technology is the cornerstone of innovation. From enabling complex AI models to supporting advanced data analytics, the cloud offers powerful velocity that helps organizations scale faster. Yet, dynamic cloud architectures introduce severe challenges around security, compliance, and operational reliability.
+
+As enterprises scale their cloud adoption, a robust assurance strategy becomes a non-negotiable imperative. Guaranteeing the integrity, availability, and hardened security of cloud environments is vital to protect sensitive data, outmaneuver threats, and uphold absolute customer trust.`}
+        points={[
+          { title: "Security Posture Evaluation", icon: "ph-shield-check" },
+          { title: "Quality Engineering & Testing", icon: "ph-test-tube" },
+          { title: "Risk Management & Readiness", icon: "ph-warning-circle" },
+          { title: "Compliance & Governance", icon: "ph-certificate" }
+        ]}
+      />
+
+      <ServiceSolutionsGrid 
+        title="Our Cloud Assurance Capabilities"
+        eyebrow="Operational Integrity"
+        subtitle="Uncompromising verification methodologies that guarantee your infrastructure performs flawlessly under stress."
+        solutions={[
+          { 
+            title: "Security Posture Evaluation", 
+            description: "Identify complex vulnerabilities and dangerous misconfigurations through continuous cloud telemetry monitoring and automated threat assessments.",
+            icon: "ph-crosshair",
+            features: [
+              "Vulnerability Scanning",
+              "Misconfiguration Detection",
+              "Penetration Testing"
+            ]
+          },
+          { 
+            title: "Compliance & Governance", 
+            description: "Automate adherence to stringent industry regulations and standards to ensure your environments are constantly audit-ready.",
+            icon: "ph-scroll",
+            features: [
+              "ISO 27001 / GDPR / HIPAA",
+              "Governance Dashboards",
+              "Automated Evidence Collection"
+            ]
+          },
+          { 
+            title: "Quality Engineering & Testing", 
+            description: "Maintain flawless application reliability and extreme performance with comprehensive chaos engineering and load testing.",
+            icon: "ph-gauge",
+            features: [
+              "Chaos Engineering",
+              "Automated Load Testing",
+              "Resilience Benchmarking"
+            ]
+          },
+          { 
+            title: "Incident Readiness & Monitoring", 
+            description: "Optimize uptime and detect devastating anomalies within seconds, backed by rigorous incident response frameworks.",
+            icon: "ph-activity",
+            features: [
+              "24/7 Threat Monitoring",
+              "Incident Response Playbooks",
+              "Disaster Recovery Drills"
+            ]
+          }
         ]}
       />
 

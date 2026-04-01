@@ -2,8 +2,8 @@
 
 import { useEffect } from 'react';
 import AppServiceHeader from '@/app/components/inner/AppServiceHeader';
-import ServiceOverviewBlock from '@/app/components/services/shared/ServiceOverviewBlock';
-import ServiceDarkGrid from '@/app/components/services/shared/ServiceDarkGrid';
+import ServiceOverviewCards from '@/app/components/services/shared/ServiceOverviewCards';
+import ServiceSolutionsGrid from '@/app/components/services/shared/ServiceSolutionsGrid';
 import ServiceCTA from '@/app/components/services/shared/ServiceCTA';
 import GlobalIndustriesSection from '@/app/components/services/shared/GlobalIndustriesSection';
 
@@ -26,37 +26,71 @@ export default function AppIntegrationPage() {
 
   return (
     <main className="bg-white">
-      <AppServiceHeader title="Application Integration Services" breadcrumbs={[]} />
-
-      <ServiceOverviewBlock 
-        title="Unify Systems. Streamline Workflows. Maximize Business Value"
-        description={`In today's complex IT environments, businesses rely on multiple applications—often siloed and disconnected—to perform essential functions. This fragmentation creates inefficiencies, data inconsistencies, and operational roadblocks. Application Integration Services from Ssquad help you break down those silos and bring your technology ecosystem together.
-
-We enable seamless connectivity between your internal systems, third-party applications, cloud platforms, and data sources—creating a unified digital environment that supports agility, scalability, and smarter decision-making. What We Deliver:`}
-        points={[
-          "System & Data Integration",
-          "Cloud & Hybrid Integration",
-          "API Development & Management",
-          "Real-Time Data Synchronization",
-          "Third-Party Software Integration",
-          "Middleware & ESB Solutions"
-        ]}
-        imageUrl="https://placehold.co/1200x800/e2e8f0/a0aec0?text=Service+Visual"
-        imageAlt="Data Integration Flows"
-        imageAlignment="right"
+      <AppServiceHeader 
+        title="Application Integration Services" 
+        subtitle="Unify your digital ecosystem. Eradicate data silos and orchestrate seamless interoperability across cloud and legacy infrastructure."
+        breadcrumbs={[]} 
       />
 
-      <ServiceDarkGrid 
+      <ServiceOverviewCards 
+        eyebrow="Ecosystem Synchronization"
+        title="Unify Systems. Streamline Workflows. Maximize Business Velocity."
+        description={`In today's complex IT environments, scale is often bottlenecked by fragmented software. Businesses relying on disconnected, siloed applications suffer from severe data latency, operational friction, and costly inefficiencies. Application Integration Services from Ssquad engineer absolute connectivity—fusing your disparate technology layers into a single, high-velocity operational engine.
+
+We deploy robust middleware and API architectures to orchestrate seamless data exchange between your internal core systems, specialized third-party SaaS vendors, and expansive cloud platforms—ensuring total agility and smarter, real-time decision-making.`}
+        points={[
+          { title: "Enterprise System Integration", icon: "ph-building" },
+          { title: "Cloud & Hybrid Connectivity", icon: "ph-cloud-network" },
+          { title: "Real-Time Data Streaming", icon: "ph-database" },
+          { title: "Middleware & ESB Solutions", icon: "ph-arrows-left-right" }
+        ]}
+      />
+
+      <ServiceSolutionsGrid 
         title="What We Deliver"
         eyebrow="Seamless Connectivity"
-        icon="ph-plugs"
-        cards={[
-          { title: "System & Data Integration", description: "Connect your ERP, CRM, HR, finance, and other mission-critical systems for a consolidated view and synchronized data flow." },
-          { title: "Cloud & Hybrid Integration", description: "Integrate cloud-based applications with on-premise systems to ensure smooth hybrid operations across your IT infrastructure." },
-          { title: "API Development & Management", description: "Design, develop, and manage custom APIs to enable secure, real-time data exchange between applications." },
-          { title: "Real-Time Data Synchronization", description: "Enable accurate, real-time information flow between systems for timely insights and faster decision-making." },
-          { title: "Third-Party Software Integration", description: "Seamlessly integrate SaaS platforms, partner tools, and industry-specific software into your existing workflows." },
-          { title: "Middleware & ESB Solutions", description: "Leverage middleware platforms and enterprise service bus (ESB) architecture to enable scalable and structured integration." }
+        subtitle="Architectural solutions designed to forge unbreakable links across your IT landscape."
+        solutions={[
+          { 
+            title: "Core System Integration", 
+            description: "Synchronize massive data flows across your ERP, CRM, HR, and finance mainframes to secure a consolidated, real-time operational view.",
+            icon: "ph-cpu",
+            features: [
+              "ERP/CRM Synchronization",
+              "Legacy System Bridging",
+              "Data Consistency Enforcement"
+            ]
+          },
+          { 
+            title: "Hybrid Cloud Orchestration", 
+            description: "Seamlessly bind elastic cloud-based applications with rigid on-premise infrastructure for high-performance hybrid operations.",
+            icon: "ph-cloud-arrow-up",
+            features: [
+              "Public/Private Convergence",
+              "Multi-Cloud Routing",
+              "Secure Tunneling"
+            ]
+          },
+          { 
+            title: "API & Middleware Engineering", 
+            description: "Design custom API gateways and deploy robust Enterprise Service Bus (ESB) architectures for structured, scalable data routing.",
+            icon: "ph-plugs-connected",
+            features: [
+              "Custom API Development",
+              "MuleSoft / Boomi Integration",
+              "Microservices Orchestration"
+            ]
+          },
+          { 
+            title: "Real-Time Synchronization", 
+            description: "Eliminate batch-processing delays. Stream continuous, real-time telemetry across your enterprise to authorize instantaneous business intelligence.",
+            icon: "ph-clock-counter-clockwise",
+            features: [
+              "Event-Driven Architecture",
+              "Kafka Data Streaming",
+              "Instant BI Analytics"
+            ]
+          }
         ]}
       />
 

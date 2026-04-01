@@ -1,9 +1,9 @@
 "use client";
 
 import { useEffect } from 'react';
-import InnerHeader from '@/app/components/inner/InnerHeader';
-import ServiceOverviewBlock from '@/app/components/services/shared/ServiceOverviewBlock';
-import ServiceDarkGrid from '@/app/components/services/shared/ServiceDarkGrid';
+import AppServiceHeader from '@/app/components/inner/AppServiceHeader';
+import ServiceOverviewCards from '@/app/components/services/shared/ServiceOverviewCards';
+import ServiceSolutionsGrid from '@/app/components/services/shared/ServiceSolutionsGrid';
 import ServiceCTA from '@/app/components/services/shared/ServiceCTA';
 import GlobalIndustriesSection from '@/app/components/services/shared/GlobalIndustriesSection';
 
@@ -26,31 +26,61 @@ export default function EndUserComputingPage() {
 
   return (
     <main className="bg-white">
-      <InnerHeader title="End-User Computing" breadcrumbs={[]} />
-
-      <ServiceOverviewBlock 
-        title="What Is End User Computing"
-        description={`End User Computing (EUC) refers to systems, tools, and approaches that allow non-programmers or non-IT professionals (end users) to create, manage, or customize applications or data without direct involvement from the IT department. 
-
-EUC empowers employees across departments—such as finance, operations, marketing, and HR—to build simple applications, generate reports, or automate tasks using platforms like spreadsheets, low-code/no-code tools, and business intelligence software. This accelerates decision-making and innovation by enabling faster responses to business needs without waiting for IT development cycles.`}
-        points={[
-          "Desktop Deployment and Management",
-          "Identity Management",
-          "Systems Management"
-        ]}
-        imageUrl="https://placehold.co/1200x800/e2e8f0/a0aec0?text=Service+Visual"
-        imageAlt="Red Shield Over Device"
-        imageAlignment="right"
+      <AppServiceHeader 
+        title="End-User Computing" 
+        subtitle="Empower your workforce. Deploy zero-friction, highly secure desktop and identity environments to accelerate enterprise productivity."
+        breadcrumbs={[]} 
       />
 
-      <ServiceDarkGrid 
-        title="We Provide Below List Of End Use Computing"
+      <ServiceOverviewCards 
+        eyebrow="Workforce Empowerment"
+        title="Frictionless Access, Uncompromising Security"
+        description={`End User Computing (EUC) is the foundational layer of modern operational velocity. As enterprises shift toward distributed, agile workflows, employees demand instantaneous, secure access to enterprise data and applications—directly from any device, anywhere in the world.
+
+Ssquad's elite EUC frameworks empower your teams to execute at the highest level. By rapidly provisioning secure digital workspaces, centralizing device management, and locking down identity access, we eliminate operational friction and IT bottlenecks, allowing true business innovation to scale unimpeded.`}
+        points={[
+          { title: "Rapid Desktop Provisioning", icon: "ph-desktop" },
+          { title: "Zero-Trust Identity Control", icon: "ph-fingerprint" },
+          { title: "Centralized Remote Mgmt", icon: "ph-broadcast" },
+          { title: "Seamless Application Access", icon: "ph-app-window" }
+        ]}
+      />
+
+      <ServiceSolutionsGrid 
+        title="Our EUC Ecosystem"
         eyebrow="User-Centric Architecture"
-        icon="ph-devices"
-        cards={[
-          { title: "Desktop Deployment and Management", description: "Involves the centralized provisioning, configuration, maintenance, and monitoring of desktop environments across an organization. This includes setting up new systems, managing operating system images, installing necessary software, applying security patches, and ensuring consistent performance and compliance. Efficient desktop management streamlines IT operations, enhances user productivity, and reduces downtime by enabling quick troubleshooting, remote support, and automated updates across multiple devices." },
-          { title: "Identity Management", description: "Refers to the policies, processes, and technologies used to manage and secure access to digital resources within an organization. It ensures that the right individuals have appropriate access to systems, applications, and data by handling user authentication, authorization, and lifecycle management. This includes creating, updating, and deleting user identities, managing roles and permissions, and enforcing security protocols such as multi-factor authentication (MFA) and single sign-on (SSO). Effective identity management enhances security, simplifies access control, and supports regulatory compliance." },
-          { title: "Systems Management", description: "Encompasses the administration and oversight of an organization's IT systems to ensure they operate efficiently, securely, and reliably. It involves monitoring and maintaining servers, networks, applications, and other infrastructure components, including tasks like performance tuning, patch management, backup and recovery, and incident response. By implementing robust systems management practices, organizations can reduce downtime, quickly identify and resolve issues, and ensure their IT environment supports business continuity and scalability." }
+        subtitle="Deploying robust, user-friendly architectures engineered for modern distributed workforces."
+        solutions={[
+          { 
+            title: "Desktop Deployment & MDM", 
+            description: "Execute centralized provisioning, hyper-secure configuration, and automated fleet monitoring across the entire global device matrix.",
+            icon: "ph-devices",
+            features: [
+              "Zero-Touch Provisioning",
+              "Automated Security Patching",
+              "Remote Troubleshooting"
+            ]
+          },
+          { 
+            title: "Identity & Access Management", 
+            description: "Enforce rigorous Zero-Trust architectures governing access to critical digital assets alongside seamless multi-factor authentication (MFA).",
+            icon: "ph-identification-badge",
+            features: [
+              "SSO & MFA Deployment",
+              "Role-Based Access Control",
+              "Identity Lifecycle Policies"
+            ]
+          },
+          { 
+            title: "Enterprise Systems Management", 
+            description: "Command absolute oversight over applications and infrastructure via performance telemetry, dynamic tuning, and rapid incident response.",
+            icon: "ph-control",
+            features: [
+              "Fleet Uptime Optimization",
+              "Predictive Resolution Systems",
+              "Asset Lifecycle Auditing"
+            ]
+          }
         ]}
       />
 

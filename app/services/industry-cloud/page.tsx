@@ -1,9 +1,9 @@
 "use client";
 
 import { useEffect } from 'react';
-import InnerHeader from '@/app/components/inner/InnerHeader';
-import ServiceOverviewBlock from '@/app/components/services/shared/ServiceOverviewBlock';
-import ServiceDarkGrid from '@/app/components/services/shared/ServiceDarkGrid';
+import AppServiceHeader from '@/app/components/inner/AppServiceHeader';
+import ServiceOverviewCards from '@/app/components/services/shared/ServiceOverviewCards';
+import ServiceSolutionsGrid from '@/app/components/services/shared/ServiceSolutionsGrid';
 import ServiceCTA from '@/app/components/services/shared/ServiceCTA';
 import GlobalIndustriesSection from '@/app/components/services/shared/GlobalIndustriesSection';
 
@@ -26,35 +26,71 @@ export default function IndustryCloudPage() {
 
   return (
     <main className="bg-white">
-      <InnerHeader title="Industry Cloud Solutions" breadcrumbs={[]} />
-
-      <ServiceOverviewBlock 
-        title="Tailored Cloud Platforms Designed For Your Industry's Unique Needs"
-        description={`Industry Cloud brings specialized cloud solutions built to meet the distinct requirements, compliance standards, and operational challenges of specific industries. By combining cloud scalability with deep domain expertise, Industry Cloud empowers organizations to accelerate innovation, improve efficiency, and deliver exceptional customer experiences. 
-
-Industry Cloud refers to cloud platforms and services that are customized for the unique workflows, data types, regulations, and business models of particular sectors, such as healthcare, finance, manufacturing, retail, and more. These solutions integrate industry-specific applications, compliance frameworks, and analytics tools to provide a comprehensive, ready-to-use environment. Benefits of Industry Cloud:`}
-        points={[
-          "Industry-Specific Functionality",
-          "Faster Time-To-Market",
-          "Enhanced Compliance",
-          "Scalability and Flexibility",
-          "Integrated Ecosystem"
-        ]}
-        imageUrl="https://placehold.co/1200x800/e2e8f0/a0aec0?text=Service+Visual"
-        imageAlt="Industry Specific Cloud Workflows"
-        imageAlignment="right"
+      <AppServiceHeader 
+        title="Industry Cloud Solutions" 
+        subtitle="Sector-specific architecture. Deploy tailored cloud platforms engineered to dominate the exact operational and regulatory demands of your industry."
+        breadcrumbs={[]} 
       />
 
-      <ServiceDarkGrid 
-        title="Benefits Of Industry Cloud"
-        eyebrow="Sector Optimization"
-        icon="ph-buildings"
-        cards={[
-          { title: "Industry-Specific Functionality", description: "Get pre-configured tools and applications designed to address your sector's unique processes and challenges." },
-          { title: "Faster Time-To-Market", description: "Accelerate digital transformation with solutions that reduce the need for extensive customization." },
-          { title: "Enhanced Compliance", description: "Stay ahead of industry regulations with built-in governance, security controls, and audit capabilities." },
-          { title: "Scalability And Flexibility", description: "Scale resources dynamically to support business growth while adapting to evolving market demands." },
-          { title: "Integrated Ecosystem", description: "Leverage a network of technology partners, data providers, and cloud services tailored for your industry." }
+      <ServiceOverviewCards 
+        eyebrow="Specialized Frameworks"
+        title="Bespoke Cloud Platforms Designed For Total Industry Dominance"
+        description={`Generic infrastructure limits your competitive velocity. Industry Cloud solutions deliver specialized cloud architectures surgically built to meet the distinct operational workflows, extreme compliance standards, and rigorous data challenges of your specific market sector. 
+
+By fusing hyperscale cloud capabilities with entrenched domain expertise, Ssquad engineers specialized platforms for healthcare, finance, manufacturing, and retail. These architectures arrive pre-loaded with industry-native applications, automated compliance guardrails, and tailored AI analytics—drastically accelerating your time-to-market.`}
+        points={[
+          { title: "Native Sector Functionality", icon: "ph-bank" },
+          { title: "Pre-Configured Compliance", icon: "ph-shield-check" },
+          { title: "Accelerated Time-to-Market", icon: "ph-rocket" },
+          { title: "Integrated Partner Ecosystems", icon: "ph-plugs-connected" }
+        ]}
+      />
+
+      <ServiceSolutionsGrid 
+        title="The Industry Cloud Advantage"
+        eyebrow="Targeted Optimization"
+        subtitle="Shatter generic limitations with hyper-focused cloud architectures designed for zero friction."
+        solutions={[
+          { 
+            title: "Pre-Built Native Functionality", 
+            description: "Deploy environments actively pre-configured with the exact specialized tools, protocols, and workflows required to dominate your sector's operational processes.",
+            icon: "ph-puzzle-piece",
+            features: [
+              "Sector-Specific APIs",
+              "Pre-loaded Workflows",
+              "Domain Analytics"
+            ]
+          },
+          { 
+            title: "Automated Governance & Compliance", 
+            description: "Eradicate audit anxiety. Our industry clouds possess built-in, unyielding compliance frameworks (HIPAA, PCI-DSS, GDPR) that autonomously enforce security controls.",
+            icon: "ph-certificate",
+            features: [
+              "Automated Auditing",
+              "Data Sovereignty Control",
+              "Zero-Trust Architecture"
+            ]
+          },
+          { 
+            title: "Accelerated Time-to-Market", 
+            description: "Eliminate years of costly customization. We deploy comprehensive, ready-to-use digital blueprints that radically accelerate enterprise digital transformation.",
+            icon: "ph-trend-up",
+            features: [
+              "Rapid Blueprint Deployment",
+              "Reduced CapEx",
+              "Instant Operational Readiness"
+            ]
+          },
+          { 
+            title: "Integrated Vertical Ecosystems", 
+            description: "Plug directly into an expansive network of curated technology partners, specialized SaaS vendors, and native data providers fully tailored to your industry.",
+            icon: "ph-share-network",
+            features: [
+              "B2B App Marketplaces",
+              "Third-Party Interoperability",
+              "Seamless Vendor Bridging"
+            ]
+          }
         ]}
       />
 

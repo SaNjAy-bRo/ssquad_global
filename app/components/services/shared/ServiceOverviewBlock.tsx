@@ -25,8 +25,16 @@ export default function ServiceOverviewBlock({
         <div className="grid lg:grid-cols-2 gap-12 lg:gap-16 items-center">
           
           <div className={`reveal ${isLeft ? 'order-1 lg:order-2' : 'order-2 lg:order-1'}`}>
-            <h2 className="section-title text-slate-900 leading-tight">{title}</h2>
-            <p className="mt-6 text-slate-600 leading-relaxed text-lg whitespace-pre-line">
+            <h2 
+              className="section-title text-slate-900 leading-tight text-balance"
+              style={{ textWrap: 'balance' }}
+            >
+              {title}
+            </h2>
+            <p 
+              className="mt-6 text-slate-600 leading-relaxed text-lg whitespace-pre-line text-balance"
+              style={{ textWrap: 'balance' }}
+            >
               {description}
             </p>
 

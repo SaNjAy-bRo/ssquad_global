@@ -31,7 +31,10 @@ export default function ServiceCTA({ variant = 'dark' }: ServiceCTAProps) {
       <div className="absolute bottom-0 left-10 w-64 h-64 bg-indigo-500/10 rounded-full blur-[80px] pointer-events-none mix-blend-screen"></div>
 
       <div className="max-w-4xl mx-auto px-6 relative z-10 reveal">
-        <h2 className="text-white text-3xl md:text-5xl lg:text-6xl font-heading font-bold mb-4 drop-shadow-xl">
+        <h2 
+          className="text-white text-3xl md:text-5xl lg:text-6xl font-heading font-bold mb-4 drop-shadow-xl text-balance mx-auto"
+          style={{ textWrap: 'balance' }}
+        >
           Secure Your Environment Today
         </h2>
         
@@ -40,7 +43,10 @@ export default function ServiceCTA({ variant = 'dark' }: ServiceCTAProps) {
           <span className="text-2xl md:text-4xl lg:text-5xl"><HackingText words={['FINANCE', 'HEALTHCARE', 'GOVERNMENT', 'TECHNOLOGY', 'RETAIL', 'MANUFACTURING']} duration={2000} /></span>
         </div>
 
-        <p className="text-slate-200 mb-10 text-lg md:text-xl font-medium max-w-2xl mx-auto drop-shadow-md">
+        <p 
+          className="text-slate-200 mb-10 text-lg md:text-xl font-medium max-w-2xl mx-auto drop-shadow-md text-balance"
+          style={{ textWrap: 'balance' }}
+        >
           Get a comprehensive security posture assessment and align your enterprise defense with industry best practices.
         </p>
         

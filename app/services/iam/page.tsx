@@ -2,9 +2,9 @@
 
 import { useEffect } from 'react';
 import AppServiceHeader from '@/app/components/inner/AppServiceHeader';
-import ServiceOverviewBlock from '@/app/components/services/shared/ServiceOverviewBlock';
+import ServiceOverviewCards from '@/app/components/services/shared/ServiceOverviewCards';
 import ServiceFeatureGrid from '@/app/components/services/shared/ServiceFeatureGrid';
-import ServiceDarkGrid from '@/app/components/services/shared/ServiceDarkGrid';
+import ServiceSolutionsGrid from '@/app/components/services/shared/ServiceSolutionsGrid';
 import ServiceCTA from '@/app/components/services/shared/ServiceCTA';
 import ServiceFAQ from '@/app/components/services/shared/ServiceFAQ';
 import GlobalIndustriesSection from '@/app/components/services/shared/GlobalIndustriesSection';
@@ -28,33 +28,71 @@ export default function IamSolutionsPage() {
 
   return (
     <main className="bg-white">
-      <AppServiceHeader title="Identity And Access Management (IAM) Solutions" breadcrumbs={[]} />
+      <AppServiceHeader 
+        title="Identity And Access Management (IAM) Solutions" 
+        subtitle="Enforce Zero-Trust architecture. Deploy granular access controls, identity governance, and biometric authentication for the modern borderless enterprise."
+        breadcrumbs={[]} 
+      />
 
-      <ServiceOverviewBlock 
+      <ServiceOverviewCards 
+        eyebrow="Identity Governance"
         title="What Are Identity And Access Management"
         description={`Leading identity and access management solutions combine real-time efficiency from the IAM solutions capability through behavioral analytics and identity analytics.
 
         Identity and Access Management (IAM) solutions are security frameworks that ensure the right individuals secure the right resources at the right time. They manage user identities, authenticate users, control access based on roles, and monitor user activity. IAM helps organizations safeguard sensitive data, streamline user provisioning, and meet compliance requirements by preventing unauthorized access and enforcing security policies across cloud, on-premise, and hybrid environments.`}
         points={[
-          "Centrally manage, monitor identities and hybrid directory",
-          "Offers single admin view of SaaS and PaaS environments",
-          "Performs real-time checks, analytics on logs, network",
-          "Quickly detects anomalous and unusual behavior"
+          { title: "Centralized Identity Management", icon: "ph-users" },
+          { title: "Unified SaaS/PaaS Application Access", icon: "ph-cloud-check" },
+          { title: "Real-time Access Analytics", icon: "ph-chart-line-up" },
+          { title: "Automated Anomaly Detection", icon: "ph-shield-warning" }
         ]}
-        imageUrl="/images/cyber security/Identity and Access Management.jpg"
-        imageAlt="Biometric Fingerprint Digital Access"
-        imageAlignment="right"
       />
 
-      <ServiceDarkGrid 
+      <ServiceSolutionsGrid 
         title="Why IAM Is Critical For Modern Cybersecurity"
         eyebrow="The Identity Imperative"
-        icon="ph-fingerprint"
-        cards={[
-          { title: "Expanding Attack Surfaces", description: "With 81% of breaches involving compromised credentials, identity and access management aims to reduce attacks by deploying password controls, MFA, and modern identity workflows." },
-          { title: "Cloud Security Imperative", description: "Identity governance and administration solutions ensure consistent security policies across public cloud environments and SaaS applications." },
-          { title: "Compliance Requirements", description: "Regulations like GDPR, HIPAA, and SOX mandate robust access control management for sensitive data protection and regulatory audits." },
-          { title: "Digital Transformation Challenges", description: "Modern workforces require secure access from any location with a multitude of tools bridging the gap of traditional security perimeters." }
+        subtitle="Protect against credential-based attacks with dynamic identity intelligence."
+        solutions={[
+          { 
+            title: "Expanding Attack Surfaces", 
+            description: "With 81% of breaches involving compromised credentials, modern IAM relies on robust passwordless controls and MFA to neutralize risks.",
+            icon: "ph-scan",
+            features: [
+              "Multi-Factor Authentication (MFA)",
+              "Passwordless Secure Access",
+              "Credential Compromise Mitigation"
+            ]
+          },
+          { 
+            title: "Cloud Security Imperative", 
+            description: "Ensure consistent and hardened security policies across decentralized public cloud environments and SaaS applications.",
+            icon: "ph-cloud-warning",
+            features: [
+              "Federated Identity Models",
+              "Cloud App Protection",
+              "SaaS Identity Governance"
+            ]
+          },
+          { 
+            title: "Compliance Requirements", 
+            description: "Automate adherence to regulations like GDPR, HIPAA, and SOX with robust access control reporting and continuous audits.",
+            icon: "ph-certificate",
+            features: [
+              "Regulatory Audit Reporting",
+              "Access Certification Workflows",
+              "Data Privacy Enforcement"
+            ]
+          },
+          { 
+            title: "Digital Transformation Challenges", 
+            description: "Enable secure access for modern workforces operating from any location, bridging the gap of traditional boundary-based security perimeters.",
+            icon: "ph-devices",
+            features: [
+              "Zero-Trust Network Access",
+              "Remote Workforce Security",
+              "Hybrid Environment Support"
+            ]
+          }
         ]}
       />
 

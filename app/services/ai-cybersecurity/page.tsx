@@ -2,9 +2,9 @@
 
 import { useEffect } from 'react';
 import AppServiceHeader from '@/app/components/inner/AppServiceHeader';
-import ServiceOverviewBlock from '@/app/components/services/shared/ServiceOverviewBlock';
+import ServiceOverviewCards from '@/app/components/services/shared/ServiceOverviewCards';
+import ServiceSolutionsGrid from '@/app/components/services/shared/ServiceSolutionsGrid';
 import ServiceFeatureGrid from '@/app/components/services/shared/ServiceFeatureGrid';
-import ServiceDarkGrid from '@/app/components/services/shared/ServiceDarkGrid';
 import ServiceCTA from '@/app/components/services/shared/ServiceCTA';
 import ServiceFAQ from '@/app/components/services/shared/ServiceFAQ';
 import GlobalIndustriesSection from '@/app/components/services/shared/GlobalIndustriesSection';
@@ -28,36 +28,71 @@ export default function AiCybersecurityPage() {
 
   return (
     <main className="bg-white">
-      <AppServiceHeader title="AI Powered Cybersecurity Solutions" breadcrumbs={[]} />
-
-      <ServiceOverviewBlock 
-        title="AI Powered Cybersecurity Solutions For Real-Time Defense"
-        description={`AI-Powered Cybersecurity Solutions are essential in today's rapidly evolving threat landscape. Traditional approaches can't keep up as attacks grow more sophisticated and frequent. Organizations now require AI-driven defense strategies that offer real-time threat detection, automated responses, and predictive analytics for proactive protection.
-        
-        At Ssquad, we harness the power of Artificial Intelligence and Machine Learning to revolutionize how security is managed — transforming reactive operations into proactive, intelligent, and scalable defenses.`}
-        points={[
-          "AI-Augmented SOC",
-          "Threat Intelligence Automation",
-          "User & Entity Behavior Analytics (UEBA)",
-          "AI-Powered Endpoint Protection",
-          "Advanced Phishing Detection",
-          "Security Orchestration, Automation & Response (SOAR)"
-        ]}
-        imageUrl="/images/cyber security/AI Powered Cybersecurity Solutions for Real-Time Defense.jpg"
-        imageAlt="AI Cybersecurity Node Network"
-        imageAlignment="right"
+      <AppServiceHeader 
+        title="AI-Powered Cybersecurity" 
+        subtitle="Deploy autonomous defense matrices. Leverage artificial intelligence to predict, hunt, and neutralize zero-day threats in milliseconds."
+        breadcrumbs={[]} 
       />
 
-      <ServiceDarkGrid 
-        title="Why AI In Cybersecurity"
-        subtitle="Defend faster and smarter — that's the AI promise. Elevate your cybersecurity posture beyond human limits with autonomous detection and rapid response capabilities."
-        eyebrow="The AI Advantage"
-        icon="ph-brain"
-        cards={[
-          { title: "Real-Time Threat Detection", description: "Analyze vast volumes of data across endpoints, networks, and cloud environments to identify anomalies and threats instantly." },
-          { title: "Automated Incident Response", description: "Enable faster containments and remediate threats with AI-driven playbooks that take action autonomously minimizing down-time and impact." },
-          { title: "Behavioral Analytics", description: "Go beyond signature-based detection by identifying unusual user and entity behavior — catching insider threats, zero-days, and advanced persistent threats." },
-          { title: "Threat Prediction & Prevention", description: "Use predictive models to anticipate potential breaches before they happen, allowing teams to take proactive steps to prevent compromises." }
+      <ServiceOverviewCards 
+        eyebrow="Autonomous Defense"
+        title="AI-Powered Threat Detection For Real-Time Defense"
+        description={`The modern threat landscape has violently outpaced human operational capacity. Legacy, signature-based approaches are useless against polymorphic malware and fileless attacks. Enterprises require AI-driven defense strategies that offer real-time telemetry correlation, automated kill-chain disruptions, and predictive threat analytics.
+
+At Ssquad, we deploy weaponized Artificial Intelligence and Machine Learning models to revolutionize your security posture—transforming reactive, alert-heavy operations into proactive, intelligent, and infinitely scalable defense matrices.`}
+        points={[
+          { title: "AI-Augmented SOC", icon: "ph-brain" },
+          { title: "Predictive Analytics", icon: "ph-trend-up" },
+          { title: "Autonomous SOAR", icon: "ph-lightning" },
+          { title: "Behavioral Intel (UEBA)", icon: "ph-users" }
+        ]}
+      />
+
+      <ServiceSolutionsGrid 
+        title="The AI Security Advantage"
+        eyebrow="Machine Intelligence"
+        subtitle="Defend faster and smarter. Elevate your cybersecurity posture beyond human limitations with autonomous detection systems."
+        solutions={[
+          { 
+            title: "Real-Time Threat Telemetry", 
+            description: "Instantaneously analyze petabytes of data across endpoints, networks, and cloud perimeters to identify sub-perceptual anomalies and active threats.",
+            icon: "ph-radar",
+            features: [
+              "Sub-Second Detection",
+              "Cross-Vector Correlation",
+              "Anomaly Identification"
+            ]
+          },
+          { 
+            title: "Autonomous Incident Response", 
+            description: "Enable superhuman containment speeds. AI-driven playbooks autonomously isolate compromised nodes and neutralize threats before damage occurs.",
+            icon: "ph-robot",
+            features: [
+              "Automated Remediation",
+              "Zero-Trust Isolation",
+              "Downtime Eradication"
+            ]
+          },
+          { 
+            title: "Behavioral Analytics (UEBA)", 
+            description: "Obliterate insider threats and hidden APTs by dynamically baselining entity behavior and flagging deviations from established neural models.",
+            icon: "ph-user-focus",
+            features: [
+              "Insider Threat Hunting",
+              "Identity Baselines",
+              "Contextual Alerting"
+            ]
+          },
+          { 
+            title: "Predictive Attacker Profiling", 
+            description: "Shift from reactive defense to proactive offense. Utilize deep-learning models to anticipate and intercept breaches before execution.",
+            icon: "ph-crystal-ball",
+            features: [
+              "Zero-Day Prevention",
+              "Threat Vector Forecasting",
+              "Proactive Hardening"
+            ]
+          }
         ]}
       />
 

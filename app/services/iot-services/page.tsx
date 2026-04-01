@@ -1,9 +1,9 @@
 "use client";
 
 import { useEffect } from 'react';
-import InnerHeader from '@/app/components/inner/InnerHeader';
-import ServiceOverviewBlock from '@/app/components/services/shared/ServiceOverviewBlock';
-import ServiceDarkGrid from '@/app/components/services/shared/ServiceDarkGrid';
+import AppServiceHeader from '@/app/components/inner/AppServiceHeader';
+import ServiceOverviewCards from '@/app/components/services/shared/ServiceOverviewCards';
+import ServiceSolutionsGrid from '@/app/components/services/shared/ServiceSolutionsGrid';
 import ServiceCTA from '@/app/components/services/shared/ServiceCTA';
 import GlobalIndustriesSection from '@/app/components/services/shared/GlobalIndustriesSection';
 
@@ -26,30 +26,61 @@ export default function IotServicesPage() {
 
   return (
     <main className="bg-white">
-      <InnerHeader title="IoT Services" breadcrumbs={[]} />
-
-      <ServiceOverviewBlock 
-        title="What Is IOT Services"
-        description={`IoT services (Internet of Things services) refer to the set of technologies, platforms, and support that enable the connection, management, and use of smart devices—things like sensors, appliances, vehicles, wearables, and machines—over the internet.
-
-These services play a critical role in collecting and analyzing real-time data from connected devices, allowing businesses to gain actionable insights, improve operational efficiency, and enable automation. For example, in manufacturing, IoT devices can monitor equipment health to predict failures before they occur, while in smart cities, IoT solutions can manage traffic flow, energy usage, and public safety systems.`}
-        points={[
-          "Power Management",
-          "Smart City",
-          "Smart Waste Management"
-        ]}
-        imageUrl="https://placehold.co/1200x800/e2e8f0/a0aec0?text=Service+Visual"
-        imageAlt="Red Hexagon IoT Nodes"
-        imageAlignment="right"
+      <AppServiceHeader 
+        title="IoT Services & Edge Computing" 
+        subtitle="Digitize the physical domain. Deploy intelligent sensor networks to extract real-time telemetry and automate global operations."
+        breadcrumbs={[]} 
       />
 
-      <ServiceDarkGrid 
-        title="We Provide Below List Of IOT Services"
-        eyebrow="Connected Ecosystem"
-        icon="ph-wifi-high"
-        cards={[
-          { title: "IoT Services for Power Management", description: "Focus on optimizing the generation, distribution, and consumption of electrical power through smart, connected devices. These services enable real-time monitoring and control of power systems—including energy meters, transformers, and industrial machinery—allowing organizations to track usage patterns, detect inefficiencies, and automate energy-saving measures. By leveraging IoT-powered analytics, businesses can reduce energy waste, predict maintenance needs, and lower operational costs. In smart buildings, IoT power management systems can automatically adjust lighting and HVAC based on occupancy or load demand." },
-          { title: "Smart Waste Management", description: "Uses IoT technologies and data analytics to optimize the collection, transportation, and disposal of waste. Through connected sensors installed in bins and dumpsters, real-time data is gathered on fill levels, enabling waste collection routes to be dynamically adjusted based on actual demand rather than fixed schedules. This reduces fuel consumption, lowers operational costs, and minimizes environmental impact. Additionally, smart waste systems can track recycling compliance and provide insights into waste generation patterns, helping municipalities and businesses improve efficiency and promote sustainable practices." }
+      <ServiceOverviewCards 
+        eyebrow="Connected Ecosystems"
+        title="Transform Physical Assets Into Intelligent Data Streams"
+        description={`The Internet of Things (IoT) has irreversibly blurred the line between the physical and digital domains. Modern enterprises require more than just connectivity—they require intelligent, autonomous ecosystems capable of processing massive telemetry streams at the extreme edge of the network.
+
+Ssquad engineers deploy military-grade IoT architectures that seamlessly network disparate sensors, industrial machinery, and smart-city infrastructure. By aggregating real-time data directly from the physical world, we empower organizations to instantly predict catastrophic equipment failures, automate massive industrial workflows, and extract unprecedented operational intelligence.`}
+        points={[
+          { title: "Industrial IoT (IIoT)", icon: "ph-factory" },
+          { title: "Smart City Infrastructure", icon: "ph-buildings" },
+          { title: "Edge Analytics Processing", icon: "ph-cpu" },
+          { title: "Automated Telemetry", icon: "ph-broadcast" }
+        ]}
+      />
+
+      <ServiceSolutionsGrid 
+        title="Our IoT Integration Capabilities"
+        eyebrow="Connected Intelligence"
+        subtitle="Unleashing unprecedented operational oversight through massive, interconnected sensor grids."
+        solutions={[
+          { 
+            title: "Industrial Power Management", 
+            description: "Optimize the generation, distribution, and consumption of electrical power via smart telemetry grids. We deploy connected sensors to actively monitor industrial machinery, predict load demands, and autonomously orchestrate energy-saving protocols.",
+            icon: "ph-lightning",
+            features: [
+              "Predictive Load Balancing",
+              "Sub-meter Telemetry",
+              "Automated HVAC Control"
+            ]
+          },
+          { 
+            title: "Smart Waste Management", 
+            description: "Revolutionize municipal logistics via data-driven waste intelligence. We embed connected spatial sensors directly into infrastructure to track fill levels in real-time—dynamically recalculating collection routes to drastically slash fuel CapEx.",
+            icon: "ph-recycle",
+            features: [
+              "Real-Time Fill Sensors",
+              "Dynamic Route AI",
+              "Sustainability Compliance"
+            ]
+          },
+          { 
+            title: "Predictive Asset Tracking", 
+            description: "Command total visibility over your physical supply chain. Utilizing advanced RFID, GPS, and low-power long-range (LoRa) networks to secure high-value assets and predict exactly when machinery will fail.",
+            icon: "ph-map-pin-line",
+            features: [
+              "LoRaWAN Asset Tracking",
+              "Predictive Maintenance",
+              "Global Fleet Telemetry"
+            ]
+          }
         ]}
       />
 

@@ -1,9 +1,9 @@
 "use client";
 
 import { useEffect } from 'react';
-import InnerHeader from '@/app/components/inner/InnerHeader';
-import ServiceOverviewBlock from '@/app/components/services/shared/ServiceOverviewBlock';
-import ServiceDarkGrid from '@/app/components/services/shared/ServiceDarkGrid';
+import AppServiceHeader from '@/app/components/inner/AppServiceHeader';
+import ServiceOverviewCards from '@/app/components/services/shared/ServiceOverviewCards';
+import ServiceSolutionsGrid from '@/app/components/services/shared/ServiceSolutionsGrid';
 import ServiceCTA from '@/app/components/services/shared/ServiceCTA';
 import GlobalIndustriesSection from '@/app/components/services/shared/GlobalIndustriesSection';
 
@@ -26,35 +26,71 @@ export default function CloudNativePage() {
 
   return (
     <main className="bg-white">
-      <InnerHeader title="Cloud Native Solutions" breadcrumbs={[]} />
-
-      <ServiceOverviewBlock 
-        title="Unlock Agility, Scalability, And Innovation With Cloud Native Technologies"
-        description={`In today's fast-paced digital world, cloud native architecture is transforming how businesses build, deploy, and manage applications. Designed specifically for cloud environments, cloud native solutions enable organizations to develop scalable, resilient, and flexible applications that respond quickly to changing market demands. 
-
-Cloud native refers to building and running applications that fully leverage cloud computing models—utilizing microservices, containers, serverless computing, and continuous integration/continuous delivery (CI/CD) pipelines. This approach promotes faster development cycles, easier maintenance, and superior resource efficiency. Our Cloud Native Services:`}
-        points={[
-          "Microservices Architecture",
-          "Containerization & Orchestration",
-          "Serverless Computing",
-          "CI/CD Pipelines",
-          "Cloud Native Security"
-        ]}
-        imageUrl="https://placehold.co/1200x800/e2e8f0/a0aec0?text=Service+Visual"
-        imageAlt="Abstract Cloud Native Neon Nodes"
-        imageAlignment="right"
+      <AppServiceHeader 
+        title="Cloud Native Solutions" 
+        subtitle="Engineer for infinite scale. Harness container orchestration, serverless microservices, and automated CI/CD pipelines to build elastic, resilient platforms."
+        breadcrumbs={[]} 
       />
 
-      <ServiceDarkGrid 
-        title="Our Cloud Native Services"
+      <ServiceOverviewCards 
         eyebrow="Modern Architecture"
-        icon="ph-brackets-curly"
-        cards={[
-          { title: "Microservices Architecture", description: "Design and implement modular applications that allow independent development, testing, and deployment of components." },
-          { title: "Containerization & Orchestration", description: "Utilize Docker and Kubernetes to package applications and automate their deployment, scaling, and management." },
-          { title: "Serverless Computing", description: "Build event-driven applications that automatically scale and reduce infrastructure management overhead." },
-          { title: "CI/CD Pipelines", description: "Implement automated pipelines for continuous integration, testing, and delivery to boost release frequency and reliability." },
-          { title: "Cloud Native Security", description: "Integrate security best practices from development through production, ensuring compliance and risk mitigation." }
+        title="Unlock Unprecedented Agility With Cloud Native Engineering"
+        description={`In today's hyper-accelerated digital marketplace, legacy monolithic architectures are obsolete. Cloud native engineering is transforming how software is conceptualized, deployed, and scaled. We architect applications from the ground up to be intrinsically elastic, highly resilient, and capable of instantaneous scaling to meet volatile market demands.
+
+By fully leveraging microservices, continuous integration pipelines, and serverless compute, our cloud-native approach strips away monolithic bottlenecks—drastically accelerating release velocity while minimizing operational overhead.`}
+        points={[
+          { title: "Microservices Architecture", icon: "ph-tree-structure" },
+          { title: "Container Orchestration", icon: "ph-hard-drives" },
+          { title: "Serverless Computing", icon: "ph-lightning" },
+          { title: "Automated CI/CD Pipelines", icon: "ph-git-branch" }
+        ]}
+      />
+
+      <ServiceSolutionsGrid 
+        title="Our Cloud Native Solutions"
+        eyebrow="Modern Engineering"
+        subtitle="Harness the raw power of the cloud through advanced architectural patterns."
+        solutions={[
+          { 
+            title: "Microservices Architecture", 
+            description: "Deconstruct brittle monoliths into agile, API-first microservices that enable independent scaling and asynchronous deployment.",
+            icon: "ph-tree-structure",
+            features: [
+              "API Gateway Integration",
+              "Domain-Driven Design",
+              "Service Mesh Implementation"
+            ]
+          },
+          { 
+            title: "Container Orchestration", 
+            description: "Standardize application environments and eliminate 'works on my machine' issues with enterprise-grade Kubernetes clustering.",
+            icon: "ph-hard-drives",
+            features: [
+              "Docker Containerization",
+              "Kubernetes Cluster Setup",
+              "Auto-Scaling Workloads"
+            ]
+          },
+          { 
+            title: "Serverless Computing", 
+            description: "Eliminate infrastructure management overhead and optimize OpEx with highly elastic, event-driven serverless architectures.",
+            icon: "ph-lightning",
+            features: [
+              "AWS Lambda / Azure Functions",
+              "Event-Driven Architectures",
+              "Consumption-based Scaling"
+            ]
+          },
+          { 
+            title: "Automated CI/CD Pipelines", 
+            description: "Achieve continuous delivery with rigorous automated testing pipelines that push code to production with zero friction.",
+            icon: "ph-git-merge",
+            features: [
+              "Zero-Downtime Deployments",
+              "Automated Regression Testing",
+              "Infrastructure as Code (IaC)"
+            ]
+          }
         ]}
       />
 

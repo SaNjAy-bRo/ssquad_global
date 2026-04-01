@@ -1,9 +1,9 @@
 "use client";
 
 import { useEffect } from 'react';
-import InnerHeader from '@/app/components/inner/InnerHeader';
-import ServiceOverviewBlock from '@/app/components/services/shared/ServiceOverviewBlock';
-import ServiceDarkGrid from '@/app/components/services/shared/ServiceDarkGrid';
+import AppServiceHeader from '@/app/components/inner/AppServiceHeader';
+import ServiceOverviewCards from '@/app/components/services/shared/ServiceOverviewCards';
+import ServiceSolutionsGrid from '@/app/components/services/shared/ServiceSolutionsGrid';
 import ServiceCTA from '@/app/components/services/shared/ServiceCTA';
 import GlobalIndustriesSection from '@/app/components/services/shared/GlobalIndustriesSection';
 
@@ -26,35 +26,71 @@ export default function CloudDataMigrationPage() {
 
   return (
     <main className="bg-white">
-      <InnerHeader title="Cloud Data Migration & Modernization" breadcrumbs={[]} />
+      <AppServiceHeader 
+        title="Cloud Data Migration" 
+        subtitle="Accelerate your digital transition. Seamlessly transfer massive enterprise datasets with zero-downtime and uncompromised integrity."
+        breadcrumbs={[]} 
+      />
 
-      <ServiceOverviewBlock 
-        title="Seamlessly Move To The Cloud. Unlock The Power Of Modern Data"
+      <ServiceOverviewCards 
+        eyebrow="Data Modernization"
+        title="Seamlessly Transition To Modern Cloud Data Ecosystems"
         description={`Legacy systems limit agility, scalability, and innovation. At Ssquad, we help businesses move beyond outdated infrastructures with secure, efficient, and strategic cloud data migration and modernization services that lay the foundation for data-driven transformation. 
 
 Whether you're migrating on-premises databases to the cloud, modernizing data warehouses, or transforming your analytics architecture, our experts guide you through every step of the journey—ensuring minimal disruption, reduced risk, and maximum business value.`}
         points={[
-          "Cloud Data Migration",
-          "Data Platform Modernization",
-          "End-to-End Strategy & Execution",
-          "Data Governance & Security",
-          "Performance Optimization"
+          { title: "Cloud Database Migration", icon: "ph-database" },
+          { title: "Data Platform Modernization", icon: "ph-cloud-arrow-up" },
+          { title: "Data Governance & Security", icon: "ph-shield-check" },
+          { title: "Performance Tuning", icon: "ph-gauge" }
         ]}
-        imageUrl="https://placehold.co/1200x800/e2e8f0/a0aec0?text=Service+Visual"
-        imageAlt="Cloud Data Migration Servers"
-        imageAlignment="right"
       />
 
-      <ServiceDarkGrid 
-        title="Our Services Include"
+      <ServiceSolutionsGrid 
+        title="Our Migration & Modernization Solutions"
         eyebrow="Data Transformation"
-        icon="ph-cloud-arrow-up"
-        cards={[
-          { title: "Cloud Data Migration", description: "Migrate your data seamlessly from legacy systems to leading cloud platforms (AWS, Azure, GCP) with minimal downtime and full data integrity." },
-          { title: "Data Platform Modernization", description: "Re-architect outdated data environments into cloud-native, scalable solutions optimized for real-time analytics, AI/ML, and business intelligence." },
-          { title: "End-To-End Strategy & Execution", description: "We assess your current environment, design a tailored roadmap, and manage the complete transition—from planning and pilot phases to validation and go-live." },
-          { title: "Data Governance & Security", description: "Ensure full compliance with industry regulations while protecting sensitive data through enterprise-grade security and governance frameworks." },
-          { title: "Performance Optimization", description: "Post-migration, we continuously tune your data workloads and infrastructure for better performance, cost-efficiency, and scalability." }
+        subtitle="End-to-end execution methodologies designed to minimize operational friction and maximize ROI."
+        solutions={[
+          { 
+            title: "Cloud Data Migration", 
+            description: "Seamlessly transition your structured and unstructured data from legacy systems to leading cloud providers (AWS, Azure, GCP).",
+            icon: "ph-cloud-arrow-up",
+            features: [
+              "Zero-Downtime Replication",
+              "Schema Conversion",
+              "Heterogeneous Database Migration"
+            ]
+          },
+          { 
+            title: "Data Platform Modernization", 
+            description: "Re-architect monolithic data environments into elastic, cloud-native lakes optimized for real-time analytics and scalable AI/ML.",
+            icon: "ph-cpu",
+            features: [
+              "Cloud-Native Data Lakes",
+              "Real-time Data Streaming",
+              "Serverless Architecture"
+            ]
+          },
+          { 
+            title: "End-To-End Strategy Execution", 
+            description: "Assess your current topology, design a tailored roadmap, and manage the complete pilot-to-production lifecycle.",
+            icon: "ph-strategy",
+            features: [
+              "Workload Dependency Mapping",
+              "Risk Mitigation Planning",
+              "Automated Validation"
+            ]
+          },
+          { 
+            title: "Data Governance & Tuning", 
+            description: "Enforce strict compliance protocols during transition and tune workloads post-migration for peak cost-efficiency.",
+            icon: "ph-shield-check",
+            features: [
+              "Continuous Data Integrity",
+              "Encryption at Rest & Transit",
+              "FinOps Cost Optimization"
+            ]
+          }
         ]}
       />
 

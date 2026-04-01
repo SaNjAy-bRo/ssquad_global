@@ -1,69 +1,49 @@
-export default function SolutionsGrid() {
-  const solutions = [
-    {
-      title: "Continuous Security Testing",
-      description: "Identify vulnerabilities across the full code lifecycle.",
-      icon: "ph-shield-check",
-      features: [
-        "Proactive SAST & DAST",
-        "Real-time IAST Analysis",
-        "Open-Source Risk (SCA)"
-      ]
-    },
-    {
-      title: "Active Runtime Defense",
-      description: "Neutralize active threats in real-time environments.",
-      icon: "ph-activity",
-      features: [
-        "Next-Gen Web Firewall",
-        "Self-Protecting Assets",
-        "API Surface Reduction"
-      ]
-    },
-    {
-      title: "Cloud-Native Protection",
-      description: "Secure decentralized and container architectures.",
-      icon: "ph-cloud-check",
-      features: [
-        "Continuous Posture Mgmt.",
-        "Microservices Shielding",
-        "CI/CD Pipeline Hardening"
-      ]
-    },
-    {
-      title: "Governance & Intelligence",
-      description: "Transform raw data into actionable developer workflows.",
-      icon: "ph-chart-line-up",
-      features: [
-        "Context-Aware Prioritization",
-        "Automated Remediation",
-        "Secure Code Training"
-      ]
-    }
-  ];
+import React from 'react';
 
+export interface SolutionCard {
+  title: string;
+  description: string;
+  icon: string;
+  features: string[];
+}
+
+interface ServiceSolutionsGridProps {
+  eyebrow?: string;
+  title: string;
+  subtitle?: string;
+  solutions: SolutionCard[];
+}
+
+export default function ServiceSolutionsGrid({ 
+  eyebrow = "Enterprise Defenses",
+  title, 
+  subtitle,
+  solutions 
+}: ServiceSolutionsGridProps) {
   return (
     <section className="bg-slate-50 py-20 md:py-24 relative overflow-hidden">
       <div className="absolute top-0 inset-x-0 h-px bg-gradient-to-r from-transparent via-slate-200 to-transparent"></div>
       
       <div className="max-w-container mx-auto px-6 lg:px-8 relative z-10">
         <div className="text-center max-w-3xl mx-auto reveal mb-12 md:mb-16">
-          <p className="text-ssg-red font-bold tracking-widest uppercase text-sm mb-4 font-heading">Enterprise Defenses</p>
+          {eyebrow && <p className="text-ssg-red font-bold tracking-widest uppercase text-sm mb-4 font-heading">{eyebrow}</p>}
           <h2 
             className="text-3xl md:text-5xl font-heading font-bold text-slate-900 mb-6 text-balance mx-auto"
             style={{ textWrap: 'balance' }}
           >
-            Comprehensive Application Security Solutions
+            {title}
           </h2>
-          <p 
-            className="text-slate-600 text-[1.1rem] leading-relaxed text-balance max-w-2xl mx-auto"
-            style={{ textWrap: 'balance' }}
-          >
-            Deploy a full spectrum of security layers covering your applications from source code repository to production deployment.
-          </p>
+          {subtitle && (
+            <p 
+              className="text-slate-600 text-[1.1rem] leading-relaxed text-balance max-w-2xl mx-auto"
+              style={{ textWrap: 'balance' }}
+            >
+              {subtitle}
+            </p>
+          )}
         </div>
 
-        <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-6">
+        <div className={`grid sm:grid-cols-2 gap-6 ${solutions.length === 3 ? 'lg:grid-cols-3 justify-center max-w-6xl mx-auto' : 'lg:grid-cols-4'}`}>
           {solutions.map((sol, idx) => (
             <div 
               key={idx} 

@@ -2,9 +2,9 @@
 
 import { useEffect } from 'react';
 import AppServiceHeader from '@/app/components/inner/AppServiceHeader';
-import ServiceOverviewBlock from '@/app/components/services/shared/ServiceOverviewBlock';
+import ServiceOverviewCards from '@/app/components/services/shared/ServiceOverviewCards';
 import ServiceFeatureGrid from '@/app/components/services/shared/ServiceFeatureGrid';
-import ServiceDarkGrid from '@/app/components/services/shared/ServiceDarkGrid';
+import ServiceSolutionsGrid from '@/app/components/services/shared/ServiceSolutionsGrid';
 import ServiceCTA from '@/app/components/services/shared/ServiceCTA';
 import ServiceFAQ from '@/app/components/services/shared/ServiceFAQ';
 import GlobalIndustriesSection from '@/app/components/services/shared/GlobalIndustriesSection';
@@ -28,23 +28,23 @@ export default function OtSecurityPage() {
 
   return (
     <main className="bg-white">
-      <AppServiceHeader title="Discover Our OT Security Services" breadcrumbs={[]} />
+      <AppServiceHeader 
+        title="Discover Our OT Security Services" 
+        subtitle="Shield your operational technology. Hardened cybersecurity for industrial control systems, manufacturing pipelines, and critical infrastructure."
+        breadcrumbs={[]} 
+      />
 
-      <ServiceOverviewBlock 
+      <ServiceOverviewCards 
+        eyebrow="Industrial Defense"
         title="OT Security Services"
         description={`OT Security Services are specialized cybersecurity solutions designed to protect Operational Technology (OT) environments. OT systems are used to control physical operations such as manufacturing, energy distribution, water treatment, and transportation. These environments often include legacy systems and proprietary protocols that were not meant for security, making them vulnerable to cyber threats.
 
-        These services typically include risk assessments, network segmentation, continuous threat detection, incident response, and continuous monitoring tailored specifically for OT environments. Unlike IT environments, OT security measures prioritize operational continuity and safety above data protection. By implementing OT security services, organizations can strengthen their cyber defenses, ensure regulatory compliance, and maintain reliable, secure environment and uninterrupted flow of IT.
-        
-        Our OT Security Services:`}
+        These services typically include risk assessments, network segmentation, continuous threat detection, incident response, and continuous monitoring tailored specifically for OT environments. Unlike IT environments, OT security measures prioritize operational continuity and safety above data protection.`}
         points={[
-          "OT security assessments",
-          "OT compliance assessments",
-          "OT security consulting"
+          { title: "OT Security Assessments", icon: "ph-shield-check" },
+          { title: "OT Compliance Assessments", icon: "ph-certificate" },
+          { title: "OT Security Consulting", icon: "ph-strategy" }
         ]}
-        imageUrl="/images/cyber security/OT Security Services.jpg"
-        imageAlt="Operational Technology Factory Control"
-        imageAlignment="right"
       />
 
       <ServiceFeatureGrid 
@@ -61,17 +61,51 @@ export default function OtSecurityPage() {
         ]}
       />
 
-      <ServiceDarkGrid 
+      <ServiceSolutionsGrid 
         title="OT Compliance Assessments"
-        subtitle="Ensure Regulatory Alignment and Secure Your Operational Technology Environments. In the realm of industrial operations, compliance is not just a regulatory requirement; it's a cornerstone of operational integrity and resilience. Our OT Compliance Assessments are designed to help organizations in manufacturing, energy, utilities, transportation, and other critical infrastructure sectors align their operational technology (OT) environments with applicable industry regulations and cybersecurity standards. What Our OT Compliance Assessments Include:"
+        subtitle="Ensure Regulatory Alignment and Secure Your Operational Technology Environments against industrial threat actors."
         eyebrow="Regulatory Alignment"
-        icon="ph-scroll"
-        cards={[
-          { title: "Standards Mapping", description: "We map your current OT security posture against relevant regulations and industry frameworks to identify and correct gaps." },
-          { title: "Policy & Procedure Review", description: "Evaluate the effectiveness of your existing security policies, incident response plans, and governance models." },
-          { title: "Technical Control Evaluation", description: "Assess critical technical controls such as access management, network segmentation, monitoring systems, and patch management." },
-          { title: "Audit Preparation", description: "Get both ready staff and architectures for compliance audits and certifications with relevant industry specific audit standards." },
-          { title: "Training & Awareness", description: "Empower organizations to increase operational resilience by internalizing security practices." }
+        solutions={[
+          { 
+            title: "Standards Mapping", 
+            description: "We map your current OT security posture against relevant regulations and critical infrastructure frameworks.",
+            icon: "ph-map-trifold",
+            features: [
+              "IEC 62443 Assessment",
+              "NIST Framework Alignment",
+              "Gap Analysis Scoping"
+            ]
+          },
+          { 
+            title: "Policy & Procedure Review", 
+            description: "Evaluate the effectiveness of your existing security policies, incident response plans, and governance models.",
+            icon: "ph-file-text",
+            features: [
+              "Incident Response Evaluation",
+              "Governance Model Audits",
+              "Policy Modernization"
+            ]
+          },
+          { 
+            title: "Technical Control Evaluation", 
+            description: "Assess critical technical controls such as access management, network segmentation, and patch management.",
+            icon: "ph-faders",
+            features: [
+              "Air-gapped Network Audits",
+              "Legacy Patch Management",
+              "Access Protocol Review"
+            ]
+          },
+          { 
+            title: "Audit Preparation", 
+            description: "Ready your staff and complex architectures for rigorous compliance audits and industrial certifications.",
+            icon: "ph-check-circle",
+            features: [
+              "Continuous Readiness Training",
+              "Evidence Gathering Automation",
+              "Mock Certification Audits"
+            ]
+          }
         ]}
       />
       

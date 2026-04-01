@@ -1,9 +1,9 @@
 "use client";
 
 import { useEffect } from 'react';
-import InnerHeader from '@/app/components/inner/InnerHeader';
-import ServiceOverviewBlock from '@/app/components/services/shared/ServiceOverviewBlock';
-import ServiceDarkGrid from '@/app/components/services/shared/ServiceDarkGrid';
+import AppServiceHeader from '@/app/components/inner/AppServiceHeader';
+import ServiceOverviewCards from '@/app/components/services/shared/ServiceOverviewCards';
+import ServiceSolutionsGrid from '@/app/components/services/shared/ServiceSolutionsGrid';
 import ServiceCTA from '@/app/components/services/shared/ServiceCTA';
 import GlobalIndustriesSection from '@/app/components/services/shared/GlobalIndustriesSection';
 
@@ -26,30 +26,71 @@ export default function AuxiliaryServicesPage() {
 
   return (
     <main className="bg-white">
-      <InnerHeader title="Auxiliary Services" breadcrumbs={[]} />
-
-      <ServiceOverviewBlock 
-        title="Auxiliary Services Refer To Supportive Or Secondary Services That Complement An Organization's Core Offerings."
-        description={`As an accomplished IT Solutions and Technology Provider, S-squad Global through its years of understanding of the industry needs has identified a range of IT Enabled Services which are classified under Auxiliary Services. These Auxiliary Services are provided by some of our subsidiaries and affiliates. We provide below list Auxiliary Services at its best.`}
-        points={[
-          "Contact Center Services",
-          "On-Site Support Services",
-          "Break-fix Services",
-          "Remote Technical Support Services",
-          "Software Development"
-        ]}
-        imageUrl="https://placehold.co/1200x800/e2e8f0/a0aec0?text=Service+Visual"
-        imageAlt="Red Hexagon Tech Nodes"
-        imageAlignment="right"
+      <AppServiceHeader 
+        title="Auxiliary Services" 
+        subtitle="Operational continuity. Elite technical support and specialized contact center solutions designed to eliminate enterprise friction."
+        breadcrumbs={[]} 
       />
 
-      <ServiceDarkGrid 
-        title="We Provide Below List Of IT Infrastructure Services"
+      <ServiceOverviewCards 
         eyebrow="Specialized Operations"
-        icon="ph-headset"
-        cards={[
-          { title: "Contact Center Services", description: "S-squad Global Contact Centre Solutions (CCS) understands the importance of delivering cost-effective, world-class technical supports in an easy and efficient way for our customers to maximize their technology investments. We offer a full range of technical support, from tier-1 handling of simple and common issues to multi-tier support applications, employing seasoned technical experts to address the complex issues. From end-of-life support to complex technical support, our customers are realizing increased ROI and customer experience with improved in customer satisfaction (CSAT) scores. Scalable 24x7 technical support that adapts to demand fluctuations without impacting the bottom line. Consistent customer management across different product lines and technologies." },
-          { title: "On-Site Support Services", description: "S-squad Global On-site Support Services (OSS) provides on-site installation & maintenance of all technology & Electronic Products in Consumer as well as Business Environment (B2B) with end to end call management with on demand service Delivery with various response levels to choose from for clients. If you ever face any hardware failure or network issue, contact us for our Engineer for onsite Support who would be available at your location eliminating long waiting hours and help you close your trouble faster. The Onsite Team of engineers has been carefully selected to provide best support services." }
+        title="Complementary Support Designed To Accelerate Core Objectives"
+        description={`As a premier global IT Solutions provider, S-squad Global has identified a critical spectrum of IT-Enabled Services (ITES) necessary to guarantee absolute operational continuity for enterprise clients. Operating under our Auxiliary Services division, these specialized capabilities act as a seamless extension of your internal teams.
+
+We provide highly scalable, meticulously trained technical support and rapid on-site intervention frameworks, empowering your engineering cores to remain focused entirely on strategic business innovation while we systematically dismantle daily operational friction.`}
+        points={[
+          { title: "Tier 1-3 Contact Centers", icon: "ph-headset" },
+          { title: "On-Site Hardware Intervention", icon: "ph-wrench" },
+          { title: "Remote Technical Audits", icon: "ph-monitor" },
+          { title: "Rapid Break-Fix Dispatch", icon: "ph-lightning" }
+        ]}
+      />
+
+      <ServiceSolutionsGrid 
+        title="Our Specialized Auxiliary Operations"
+        eyebrow="Operational Support"
+        subtitle="Uncompromising B2B and consumer support architectures designed for infinite scalability."
+        solutions={[
+          { 
+            title: "Contact Center Services (CCS)", 
+            description: "Deploy world-class technical support teams. We handle everything from Tier-1 triage to complex multi-tier architectural support, radically elevating your Customer Satisfaction (CSAT) scores.",
+            icon: "ph-phone-call",
+            features: [
+              "24/7 Global Coverage",
+              "Tier 1-3 Escalation Ops",
+              "Multi-Channel Support"
+            ]
+          },
+          { 
+            title: "On-Site Support Operations (OSS)", 
+            description: "Instantaneous physical intervention. Our elite field engineers deploy directly to your geographical nodes to install, maintain, and secure complex hardware systems in both consumer and B2B environments.",
+            icon: "ph-truck",
+            features: [
+              "Rapid Dispatch Frameworks",
+              "Hardware Installation",
+              "Guaranteed SLAs"
+            ]
+          },
+          { 
+            title: "Remote Technical Triage", 
+            description: "Eliminate costly downtime with our remote engineering command centers. We securely access your infrastructure to diagnose, patch, and repair software anomalies instantaneously.",
+            icon: "ph-broadcast",
+            features: [
+              "Zero-Trust Remote Access",
+              "Instant Diagnostics",
+              "Automated Patching"
+            ]
+          },
+          { 
+            title: "Emergency Break-Fix Services", 
+            description: "When catastrophic hardware failure occurs, our break-fix response teams deploy immediately with required components to ensure zero lasting operational blackout.",
+            icon: "ph-warning-circle",
+            features: [
+              "Catastrophic Failure Response",
+              "Component Supply Chain",
+              "Emergency Uptime Restoration"
+            ]
+          }
         ]}
       />
 

@@ -1,9 +1,9 @@
 "use client";
 
 import { useEffect } from 'react';
-import InnerHeader from '@/app/components/inner/InnerHeader';
-import ServiceOverviewBlock from '@/app/components/services/shared/ServiceOverviewBlock';
-import ServiceDarkGrid from '@/app/components/services/shared/ServiceDarkGrid';
+import AppServiceHeader from '@/app/components/inner/AppServiceHeader';
+import ServiceOverviewCards from '@/app/components/services/shared/ServiceOverviewCards';
+import ServiceSolutionsGrid from '@/app/components/services/shared/ServiceSolutionsGrid';
 import ServiceCTA from '@/app/components/services/shared/ServiceCTA';
 import GlobalIndustriesSection from '@/app/components/services/shared/GlobalIndustriesSection';
 
@@ -26,37 +26,71 @@ export default function CloudSecurityPage() {
 
   return (
     <main className="bg-white">
-      <InnerHeader title="Cloud Security" breadcrumbs={[]} />
-
-      <ServiceOverviewBlock 
-        title="Protecting Your Cloud Environment With Comprehensive, Proactive Defense"
-        description={`As organizations increasingly migrate to cloud platforms, securing cloud environments becomes paramount to protect sensitive data, ensure compliance, and maintain business continuity. Ssquad's Cloud Security solutions deliver robust, end-to-end protection tailored to your unique cloud infrastructure—whether public, private, or hybrid.
-
-The shift to cloud computing introduces new security challenges, including data breaches, misconfigurations, unauthorized access, and evolving cyber threats. Without effective security measures, organizations risk significant financial losses, reputational damage, and regulatory penalties. Our Cloud Security Services:`}
-        points={[
-          "Identity & Access Management (IAM)",
-          "Data Protection & Encryption",
-          "Compliance & Governance",
-          "Cloud Security Posture Management",
-          "Threat Detection & Response",
-          "Secure DevOps"
-        ]}
-        imageUrl="https://placehold.co/1200x800/e2e8f0/a0aec0?text=Service+Visual"
-        imageAlt="Secure Cloud Environment"
-        imageAlignment="right"
+      <AppServiceHeader 
+        title="Cloud Security" 
+        subtitle="Safeguard your elastic infrastructure. Deploy continuous posture management and real-time threat detection across multi-cloud environments."
+        breadcrumbs={[]} 
       />
 
-      <ServiceDarkGrid 
-        title="Our Cloud Security Services"
+      <ServiceOverviewCards 
+        eyebrow="Proactive Defense"
+        title="Protecting Your Cloud Environment With Comprehensive Security"
+        description={`As organizations increasingly migrate to distributed cloud platforms, securing multi-tenant environments becomes paramount to protect sensitive data, ensure compliance, and maintain mission-critical continuity. Ssquad's Cloud Security solutions deliver robust, end-to-end protection tailored to your unique cloud architecture—whether public, private, or hybrid workloads.
+
+The shift to elastic computing introduces new threat vectors, including misconfigurations, IAM hijacking, and evolving ransomware variants. Without embedded security measures, organizations risk severe financial and reputational damage. We integrate defense-in-depth protocols seamlessly into your cloud ops.`}
+        points={[
+          { title: "Identity & Access Management (IAM)", icon: "ph-fingerprint" },
+          { title: "Data Protection & Encryption", icon: "ph-lock-key" },
+          { title: "Cloud Security Posture Management", icon: "ph-shield-check" },
+          { title: "Secure DevOps (DevSecOps)", icon: "ph-brackets-curly" }
+        ]}
+      />
+
+      <ServiceSolutionsGrid 
+        title="Our Cloud Security Architecture"
         eyebrow="Robust Defense"
-        icon="ph-shield-warning"
-        cards={[
-          { title: "Identity & Access Management (IAM)", description: "Control who can access your cloud resources with granular permissions and multi-factor authentication to prevent unauthorized entry." },
-          { title: "Cloud Security Posture Management (CSPM)", description: "Continuously assess and remediate cloud misconfigurations and compliance gaps across your cloud environments." },
-          { title: "Data Protection & Encryption", description: "Secure data at rest and in transit using advanced encryption methods, tokenization, and secure key management." },
-          { title: "Threat Detection & Response", description: "Leverage AI-powered monitoring and analytics to detect suspicious activity and respond swiftly to potential threats." },
-          { title: "Compliance & Governance", description: "Ensure adherence to industry standards and regulations such as GDPR, HIPAA, PCI DSS, and more with automated reporting and audit trails." },
-          { title: "Secure DevOps", description: "Integrate security into your DevOps pipeline with automated vulnerability scanning and code analysis to reduce risk in software development." }
+        subtitle="End-to-end protection designed for the complexity of modern multi-cloud workloads."
+        solutions={[
+          { 
+            title: "Identity & Access Management", 
+            description: "Control who can access your cloud resources with granular permissions and multi-factor authentication to prevent unauthorized entry.",
+            icon: "ph-users",
+            features: [
+              "Zero-Trust Access Controls",
+              "Privileged Access Management",
+              "Federated Single Sign-On"
+            ]
+          },
+          { 
+            title: "Cloud Posture Management", 
+            description: "Continuously assess and remediate dangerous cloud misconfigurations and compliance gaps across your infrastructure.",
+            icon: "ph-chart-line-up",
+            features: [
+              "Automated Configuration Audits",
+              "Drift Detection",
+              "Compliance Benchmarking"
+            ]
+          },
+          { 
+            title: "Threat Detection & Response", 
+            description: "Leverage AI-powered telemetry and analytics to detect suspicious lateral movement and respond instantly.",
+            icon: "ph-radar",
+            features: [
+              "Cloud-Native SIEM Integration",
+              "Behavioral Threat Analytics",
+              "Automated Incident Response"
+            ]
+          },
+          { 
+            title: "Secure DevOps Pipeline", 
+            description: "Integrate security directly into your CI/CD pipelines with automated vulnerability scanning and code analysis.",
+            icon: "ph-code",
+            features: [
+              "Infrastructure as Code Scanning",
+              "Container Vulnerability Checks",
+              "Shift-Left Security Protocols"
+            ]
+          }
         ]}
       />
 

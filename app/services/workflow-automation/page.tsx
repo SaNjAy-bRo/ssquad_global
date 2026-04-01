@@ -2,8 +2,8 @@
 
 import { useEffect } from 'react';
 import AppServiceHeader from '@/app/components/inner/AppServiceHeader';
-import ServiceOverviewBlock from '@/app/components/services/shared/ServiceOverviewBlock';
-import ServiceDarkGrid from '@/app/components/services/shared/ServiceDarkGrid';
+import ServiceOverviewCards from '@/app/components/services/shared/ServiceOverviewCards';
+import ServiceSolutionsGrid from '@/app/components/services/shared/ServiceSolutionsGrid';
 import ServiceCTA from '@/app/components/services/shared/ServiceCTA';
 import GlobalIndustriesSection from '@/app/components/services/shared/GlobalIndustriesSection';
 
@@ -26,37 +26,71 @@ export default function WorkflowAutomationPage() {
 
   return (
     <main className="bg-white">
-      <AppServiceHeader title="Workflow Automation & Optimization" breadcrumbs={[]} />
-
-      <ServiceOverviewBlock 
-        title="Simplify Processes. Maximize Efficiency. Accelerate Growth"
-        description={`In today's fast-paced business environment, manual, repetitive tasks slow down productivity and increase the risk of human error. Workflow Automation & Optimization eliminates inefficiencies by digitizing and automating critical business operations—freeing up your team to focus on strategic, high-value work.
-
-At Ssquad, we help organizations streamline their workflows using intelligent automation tools, data-driven insights, and process optimization strategies. Whether you're looking to improve internal collaboration, customer service, or operational execution, our solutions are designed to scale with your business and deliver lasting impact. What We Offer:`}
-        points={[
-          "Business Process Automation",
-          "Workflow Design & Optimization",
-          "Integration With Business Applications",
-          "Custom Automation Solutions",
-          "Robotic Process Automation (RPA)",
-          "KPI Monitoring & Continuous Improvement"
-        ]}
-        imageUrl="https://placehold.co/1200x800/e2e8f0/a0aec0?text=Service+Visual"
-        imageAlt="Workflow Optimization Chart"
-        imageAlignment="right"
+      <AppServiceHeader 
+        title="Workflow Automation" 
+        subtitle="Demolish operational bottlenecks. Deploy hyper-intelligent robotic automation to optimize, accelerate, and scale enterprise processes instantly."
+        breadcrumbs={[]} 
       />
 
-      <ServiceDarkGrid 
-        title="What We Offer"
-        eyebrow="Automated Workflows"
-        icon="ph-arrows-clockwise"
-        cards={[
-          { title: "Business Process Automation", description: "Automate routine tasks and approvals across departments—from HR onboarding and finance operations to IT ticketing and customer support." },
-          { title: "Workflow Design & Optimization", description: "Analyze, map, and optimize end-to-end business workflows to remove bottlenecks, reduce delays, and boost efficiency." },
-          { title: "Integration With Business Applications", description: "Seamlessly connect your automation workflows with CRMs, ERPs, communication tools, and other third-party applications for unified operations." },
-          { title: "Custom Automation Solutions", description: "Build tailored automation systems using platforms like Power Automate, Zapier, UiPath, or custom scripts to address your unique processes." },
-          { title: "Robotic Process Automation (RPA)", description: "Deploy software bots to handle high-volume, rule-based tasks that mimic human interaction across your digital systems." },
-          { title: "KPI Monitoring & Continuous Improvement", description: "Track performance metrics and refine workflows regularly to ensure maximum output and ongoing business value." }
+      <ServiceOverviewCards 
+        eyebrow="Operational Velocity"
+        title="Digitize Operations. Eradicate Inefficiency. Accelerate Output."
+        description={`In a data-driven enterprise, manual, repetitive processes are a severe friction point that chokes productivity and introduces catastrophic human error. Workflow Automation radically redefines operational limits by digitizing and autonomously executing critical business logic at machine speed.
+
+At Ssquad, we deploy highly evolved Robotic Process Automation (RPA) and custom automation matrices to systematically annihilate operational bottlenecks. Whether refining HR onboarding, accelerating financial orchestration, or interconnecting software silos, our architectures scale flawlessly to drive permanent efficiency.`}
+        points={[
+          { title: "Robotic Process Automation", icon: "ph-robot" },
+          { title: "Custom Logic Design", icon: "ph-code" },
+          { title: "Cross-Platform Interoperability", icon: "ph-plugs-connected" },
+          { title: "Real-Time KPI Auditing", icon: "ph-chart-line-up" }
+        ]}
+      />
+
+      <ServiceSolutionsGrid 
+        title="Our Automation Capabilities"
+        eyebrow="Intelligent Processes"
+        subtitle="Unleashing software bots and intelligent logic streams to automate extreme-volume workloads."
+        solutions={[
+          { 
+            title: "Robotic Process Automation (RPA)", 
+            description: "Deploy highly capable software bots to assume control over high-volume, rule-based tasks. We mimic precise human interactions across legacy systems to execute massive workflows error-free and instantaneously.",
+            icon: "ph-robot",
+            features: [
+              "UiPath / Automation Anywhere",
+              "Data Scraping & Entry",
+              "24/7 Digital Workforces"
+            ]
+          },
+          { 
+            title: "Advanced Workflow Orchestration", 
+            description: "Meticulously analyze, deconstruct, and radically re-engineer vast enterprise workflows to decisively remove logistical bottlenecks, slash latencies, and drastically boost throughput.",
+            icon: "ph-tree-structure",
+            features: [
+              "End-to-End Workflow Mapping",
+              "Bottleneck Elimination",
+              "Logic Stream Deployment"
+            ]
+          },
+          { 
+            title: "Deeper Systems Integration", 
+            description: "Seamlessly bind isolated CRMs, ERPs, and specialized third-party software layers into unified operations utilizing APIs, Power Automate, and custom scripting architectures.",
+            icon: "ph-arrows-merge",
+            features: [
+              "Microsoft Power Automate",
+              "API Flow Connections",
+              "Data Synchronization"
+            ]
+          },
+          { 
+            title: "Dynamic KPI Telemetry", 
+            description: "Implement extremely precise telemetry dashboards to track automated performance output. We execute continuous optimization cycles to guarantee maximum ROI for all logic matrices.",
+            icon: "ph-gauge",
+            features: [
+              "Real-Time Output Dashboards",
+              "Predictive Bottlenecking",
+              "Continual Process Tuning"
+            ]
+          }
         ]}
       />
 

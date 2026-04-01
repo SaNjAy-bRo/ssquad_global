@@ -2,8 +2,8 @@
 
 import { useEffect } from 'react';
 import AppServiceHeader from '@/app/components/inner/AppServiceHeader';
-import ServiceOverviewBlock from '@/app/components/services/shared/ServiceOverviewBlock';
-import ServiceDarkGrid from '@/app/components/services/shared/ServiceDarkGrid';
+import ServiceOverviewCards from '@/app/components/services/shared/ServiceOverviewCards';
+import ServiceSolutionsGrid from '@/app/components/services/shared/ServiceSolutionsGrid';
 import ServiceCTA from '@/app/components/services/shared/ServiceCTA';
 import GlobalIndustriesSection from '@/app/components/services/shared/GlobalIndustriesSection';
 
@@ -26,37 +26,71 @@ export default function LegacyAppModernizationPage() {
 
   return (
     <main className="bg-white">
-      <AppServiceHeader title="Legacy Application Modernization" breadcrumbs={[]} />
-
-      <ServiceOverviewBlock 
-        title="Revitalize Outdated Systems. Drive Agility. Future-Proof Your Business"
-        description={`Legacy systems often become roadblocks to innovation, scalability, and security. As technologies evolve and business needs shift, organizations must modernize these aging applications to remain competitive and efficient. 
-
-Ssquad offers comprehensive Legacy Application Modernization services designed to transform outdated software into modern, agile, and high-performing solutions. Our approach helps businesses unlock the value trapped in legacy systems while aligning IT infrastructure with current and future business goals. What We Do:`}
-        points={[
-          "Application Rehosting ('Lift and Shift')",
-          "Replatforming",
-          "Refactoring & Re-architecting",
-          "Code Modernization",
-          "UI/UX Redesign",
-          "Database Modernization"
-        ]}
-        imageUrl="https://placehold.co/1200x800/e2e8f0/a0aec0?text=Service+Visual"
-        imageAlt="Modern Microservices Architecture"
-        imageAlignment="right"
+      <AppServiceHeader 
+        title="Legacy Application Modernization" 
+        subtitle="Reverse technical debt. Refactor and replatform outdated monolithic systems into agile, cloud-native architectures."
+        breadcrumbs={[]} 
       />
 
-      <ServiceDarkGrid 
-        title="What We Do"
+      <ServiceOverviewCards 
+        eyebrow="System Modernization"
+        title="Revitalize Outdated Systems. Defeat Technical Debt."
+        description={`Legacy systems inevitably become severe bottlenecks to enterprise innovation, scalability, and security. As market demands violently accelerate, organizations clinging to aging monolithic applications suffer from compounding operational friction and critical vulnerability exposure.
+
+Ssquad delivers surgical Legacy Application Modernization frameworks designed to definitively eliminate technical debt. We don't just upgrade software; we fundamentally re-architect it—transforming rigid, siloed operations into elastic, high-velocity digital assets that actively drive competitive dominance.`}
+        points={[
+          { title: "Application Re-Architecting", icon: "ph-building" },
+          { title: "Cloud Re-Platforming", icon: "ph-cloud-arrow-up" },
+          { title: "Codebase Refactoring", icon: "ph-code" },
+          { title: "UI/UX System Refresh", icon: "ph-paint-brush-broad" }
+        ]}
+      />
+
+      <ServiceSolutionsGrid 
+        title="Our Modernization Execution Paths"
         eyebrow="System Overhaul"
-        icon="ph-cpu"
-        cards={[
-          { title: "Application Rehosting ('Lift And Shift')", description: "Move existing applications to cloud or modern infrastructure with minimal changes to reduce costs and improve scalability." },
-          { title: "Replatforming", description: "Transition legacy applications to new platforms or operating systems with optimized configurations for improved performance." },
-          { title: "Refactoring & Re-Architecting", description: "Redesign applications using modern architectures (e.g., microservices, containerization) to enhance agility, maintainability, and speed." },
-          { title: "Code Modernization", description: "Update programming languages, frameworks, and outdated libraries for better security, performance, and compatibility." },
-          { title: "UI/UX Redesign", description: "Refresh legacy interfaces with modern, user-friendly designs that enhance engagement and usability." },
-          { title: "Database Modernization", description: "Migrate from outdated databases to scalable, high-performance data platforms with better integration and analytics capabilities." }
+        subtitle="Strategic methodologies deployed to seamlessly advance your legacy infrastructure into the modern era."
+        solutions={[
+          { 
+            title: "Rehosting & Replatforming", 
+            description: "Seamlessly lift-and-shift or replatform outdated applications directly into high-performance cloud ecosystems with near-zero downtime.",
+            icon: "ph-cloud-check",
+            features: [
+              "Lift-and-Shift Migration",
+              "OS & Framework Patches",
+              "Cost-optimized Hosting"
+            ]
+          },
+          { 
+            title: "Refactoring & Re-Architecting", 
+            description: "Deconstruct fragile monoliths into resilient, decoupled microservices built for absolute scalability and hyper-agility.",
+            icon: "ph-tree-structure",
+            features: [
+              "Microservices Extraction",
+              "API-First Design",
+              "Containerization"
+            ]
+          },
+          { 
+            title: "Deep Code Modernization", 
+            description: "Surgically update deprecated libraries, obsolete languages, and inefficient algorithms to obliterate technical debt and secure the codebase.",
+            icon: "ph-brackets-curly",
+            features: [
+              "Language Version Upgrades",
+              "Security Debt Remediation",
+              "Unit Test Automation"
+            ]
+          },
+          { 
+            title: "UI/UX System Transformation", 
+            description: "Overhaul antiquated, hostile user interfaces with hyper-modern, accessible, and radically intuitive front-end architectures.",
+            icon: "ph-magic-wand",
+            features: [
+              "React/Next.js Migration",
+              "Design System Implementation",
+              "Workflow Optimization"
+            ]
+          }
         ]}
       />
 

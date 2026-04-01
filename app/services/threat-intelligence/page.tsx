@@ -2,9 +2,9 @@
 
 import { useEffect } from 'react';
 import AppServiceHeader from '@/app/components/inner/AppServiceHeader';
-import ServiceOverviewBlock from '@/app/components/services/shared/ServiceOverviewBlock';
+import ServiceOverviewCards from '@/app/components/services/shared/ServiceOverviewCards';
 import ServiceFeatureGrid from '@/app/components/services/shared/ServiceFeatureGrid';
-import ServiceDarkGrid from '@/app/components/services/shared/ServiceDarkGrid';
+import ServiceSolutionsGrid from '@/app/components/services/shared/ServiceSolutionsGrid';
 import ServiceCTA from '@/app/components/services/shared/ServiceCTA';
 import ServiceFAQ from '@/app/components/services/shared/ServiceFAQ';
 import GlobalIndustriesSection from '@/app/components/services/shared/GlobalIndustriesSection';
@@ -28,22 +28,24 @@ export default function ThreatIntelligencePage() {
 
   return (
     <main className="bg-white">
-      <AppServiceHeader title="Threat Intelligence And Analytics" breadcrumbs={[]} />
+      <AppServiceHeader 
+        title="Threat Intelligence And Analytics" 
+        subtitle="Transform raw data into tactical foresight. Proactively disrupt advanced adversaries before they breach your perimeter."
+        breadcrumbs={[]} 
+      />
 
-      <ServiceOverviewBlock 
-        title="Elevating Cyber Defense Through Predictive Intelligence And Deep Analytics"
+      <ServiceOverviewCards 
+        eyebrow="Predictive Intelligence"
+        title="Elevating Cyber Defense Through Deep Analytics"
         description={`Threat Intelligence involves collecting, analyzing, and correlating data about necessary threats, attacker tactics, and vulnerabilities. Threat intelligence is the process of gathering, analyzing, and interpreting information on existing cyber threats. It helps organizations understand threat actors, their tactics, and potential attack vectors.
         
         By using this intelligence, businesses can proactively defend against cyberattacks, improve their security posture, and respond faster to incidents. It's like having a radar that detects danger before it hits, enabling smarter, more informed cybersecurity decisions.`}
         points={[
-          "Identification of advanced attacker end points",
-          "Plays role against attacker attacks",
-          "Contextual indicators to employ software",
-          "Strategic for physical threat actor vectors"
+          { title: "Identification of advanced attacker end points", icon: "ph-crosshair" },
+          { title: "Plays role against attacker attacks", icon: "ph-shield-warning" },
+          { title: "Contextual indicators to employ software", icon: "ph-code" },
+          { title: "Strategic for physical threat actor vectors", icon: "ph-globe-hemisphere-east" }
         ]}
-        imageUrl="/images/cyber security/Elevating Cyber Defense Through Predictive Intelligence and Deep Analytics 1.jpg"
-        imageAlt="Predictive Intelligence Radar Visualization"
-        imageAlignment="right"
       />
 
       <ServiceFeatureGrid 
@@ -59,15 +61,51 @@ export default function ThreatIntelligencePage() {
         ]}
       />
 
-      <ServiceDarkGrid 
+      <ServiceSolutionsGrid 
         title="Key Components Of Threat Intelligence"
         eyebrow="Intelligence Framework"
-        icon="ph-crosshair"
-        cards={[
-          { title: "Strategic Intelligence", points: ["Geopolitical risk analysis", "Industry-specific API trends", "Long-term threat forecasts"] },
-          { title: "Tactical Intelligence", points: ["Attacker TTPs (Tactics, Techniques, Procedures)", "Malware analysis", "Vulnerability insights"] },
-          { title: "Operational Intelligence", points: ["Threat actor communications", "Attack campaign details", "Compromise indicators (IOCs)"] },
-          { title: "Technical Intelligence", points: ["Malware signatures", "IP/Domain blacklists", "Behavioral patterns"] }
+        subtitle="Harness deep-web telemetry and advanced analytics to anticipate coordinated cyber attacks."
+        solutions={[
+          {
+            title: "Strategic Intelligence",
+            description: "Gain high-level visibility into emerging global cyber risks and adversary motivations.",
+            icon: "ph-globe",
+            features: [
+              "Geopolitical Risk Analysis",
+              "Industry-Specific Threat Trends",
+              "Long-Term Adversary Forecasts"
+            ]
+          },
+          {
+            title: "Tactical Intelligence",
+            description: "Understand specific attacker methodologies to actively fortify mission-critical defenses.",
+            icon: "ph-crosshair",
+            features: [
+              "Adversary TTPs Profiling",
+              "Advanced Malware Analysis",
+              "Zero-Day Vulnerability Insights"
+            ]
+          },
+          {
+            title: "Operational Intelligence",
+            description: "Track active threat campaigns and intercept hostile adversary communications.",
+            icon: "ph-radar",
+            features: [
+              "Dark Web Reconnaissance",
+              "Active Campaign Tracking",
+              "Indicators of Compromise (IOCs)"
+            ]
+          },
+          {
+            title: "Technical Intelligence",
+            description: "Automate machine-level threat blocking with high-fidelity, real-time indicator feeds.",
+            icon: "ph-cpu",
+            features: [
+              "Real-time Malware Signatures",
+              "Dynamic IP/Domain Blacklists",
+              "Predictive Behavioral Models"
+            ]
+          }
         ]}
       />
 

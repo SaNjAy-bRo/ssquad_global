@@ -1,9 +1,9 @@
 "use client";
 
 import { useEffect } from 'react';
-import InnerHeader from '@/app/components/inner/InnerHeader';
-import ServiceOverviewBlock from '@/app/components/services/shared/ServiceOverviewBlock';
-import ServiceDarkGrid from '@/app/components/services/shared/ServiceDarkGrid';
+import AppServiceHeader from '@/app/components/inner/AppServiceHeader';
+import ServiceOverviewCards from '@/app/components/services/shared/ServiceOverviewCards';
+import ServiceSolutionsGrid from '@/app/components/services/shared/ServiceSolutionsGrid';
 import ServiceCTA from '@/app/components/services/shared/ServiceCTA';
 import GlobalIndustriesSection from '@/app/components/services/shared/GlobalIndustriesSection';
 
@@ -26,30 +26,71 @@ export default function InfraManagementPage() {
 
   return (
     <main className="bg-white px-0 m-0">
-      <InnerHeader title="End-To-End IT Infrastructure Management" breadcrumbs={[]} />
-
-      <ServiceOverviewBlock 
-        title="We Assist Enterprises To Upgrade Their Businesses With Latest IT Infrastructure And Managed Services"
-        description={`S-squad Global has been a trusted partner to over 100 enterprises across the APAC region for more than 12 years, delivering end-to-end IT infrastructure and cybersecurity solutions. With 10 regional offices and a presence in over 50+ locations, we bring unmatched reach and responsiveness to every corner of the region.
-
-As cyber threats grow in complexity, we empower businesses to stay secure, resilient, and compliant. Our robust suite of cybersecurity services—combined with deep expertise in Enterprise Networking, Data Center Security, Cloud Security, and IT Life Cycle Management—ensures comprehensive protection for mission-critical systems.
-
-Operating 24/7, 365 days a year, we safeguard operations for telecom providers, multi-branch banks, and government organizations. At S-squad Global, we deliver tailored cybersecurity and IT solutions that scale with your business—no matter the size or industry.`}
-        imageUrl="https://placehold.co/1200x800/e2e8f0/a0aec0?text=Service+Visual"
-        imageAlt="Red IT Infrastructure Nodes"
-        imageAlignment="right"
+      <AppServiceHeader 
+        title="End-To-End IT Infrastructure Management" 
+        subtitle="Unify and fortify your operational backbone. Deploy world-class managed infrastructure backed by relentless 24/7 monitoring and engineering."
+        breadcrumbs={[]} 
       />
 
-      <ServiceDarkGrid 
-        title="We Empower Enterprises To Boost Operations With Modern IT Infrastructure And Reliable Managed Services."
-        subtitle="By leveraging the services of a managed cloud service provider, companies can benefit from cloud management skills without the cost of having high-skilled staff. Our company mission is to deliver world-class IT products and solutions furthered by enduring support to ensure lower cost of ownership and a wide range of high-tech IT infrastructure solutions backed by consulting, deployment and implementation support. S-squad Global System Integration Services supports customers in their network and business evolution with a focus on these key transformation services: We have long standing strategic relationship with leading OEM's and Technology Leaders help us with best in class products and solutions which meets stringent quality standards."
-        eyebrow="Transformation Services"
-        icon="ph-hard-drives"
-        cards={[
-          { title: "System Integration", description: "Design, deploy and manage complex hardware and software systems ensuring interoperability." },
-          { title: "Infrastructure Management", description: "Proactive monitoring, maintenance, and optimization of physical and virtual environments." },
-          { title: "Cloud Services", description: "Secure migration and management of multi-cloud architectures to accelerate operational agility." },
-          { title: "Managed Services", description: "Outsourced IT operations providing reliable 24/7 support and technical expertise." }
+      <ServiceOverviewCards 
+        eyebrow="Managed Infrastructure"
+        title="Upgrade Your Operations With Next-Generation Cloud & Hardware Solutions"
+        description={`Ssquad Global has operated as the elite technology partner to over 100 enterprise clients across the APAC region for more than 12 years. We specialize in designing, deploying, and aggressively defending end-to-end IT infrastructure matrices. Operating via 10 regional command centers across 50+ locations, our boots-on-the-ground engineering presence guarantees uncompromising reach and instantaneous responsiveness.
+
+As cyber-kinetic threats evolve and technical debt compounds, we empower organizations to remain resilient, compliant, and infinitely scalable. Operating 24/7/365, we relentlessly safeguard the core operations for telecom giants, multi-branch banking institutions, and classified government entities.`}
+        points={[
+          { title: "Enterprise Networking", icon: "ph-graph" },
+          { title: "Data Center Security", icon: "ph-hard-drives" },
+          { title: "Cloud Integration", icon: "ph-cloud-network" },
+          { title: "IT Lifecycle Management", icon: "ph-arrows-clockwise" }
+        ]}
+      />
+
+      <ServiceSolutionsGrid 
+        title="Our Infrastructure Transformation Capabilities"
+        eyebrow="Technology Ecosystems"
+        subtitle="By leveraging Ssquad's managed engineering teams, enterprises unlock absolute technological superiority without the paralyzing CapEx of internal staffing."
+        solutions={[
+          { 
+            title: "Complex System Integration", 
+            description: "Architect, deploy, and meticulously manage complex hardware and software topologies to ensure zero-friction enterprise interoperability.",
+            icon: "ph-intersect",
+            features: [
+              "Hardware/Software Fusion",
+              "OEM Vendor Management",
+              "Network Topology Design"
+            ]
+          },
+          { 
+            title: "Proactive Infrastructure Management", 
+            description: "Relentless 24/7 monitoring, preventative maintenance, and aggressive optimization of physical, virtual, and edge environments.",
+            icon: "ph-pulse",
+            features: [
+              "24/7 NOC Monitoring",
+              "Predictive Maintenance",
+              "Asset Lifecycle Tracking"
+            ]
+          },
+          { 
+            title: "Hybrid Cloud Operations", 
+            description: "Securely migrate colossal workloads and aggressively manage multi-cloud architectures to exponentially accelerate operational fluidity.",
+            icon: "ph-cloud-check",
+            features: [
+              "Zero-Downtime Migration",
+              "Multi-Cloud Orchestration",
+              "Workload Right-Sizing"
+            ]
+          },
+          { 
+            title: "Outsourced Managed Services", 
+            description: "Completely offload your IT operational burden to our elite technical squads, providing ironclad 24/7 incident response and strategic consulting.",
+            icon: "ph-headset",
+            features: [
+              "L1/L2/L3 Engineering Helpdesk",
+              "Remote Hands Services",
+              "Disaster Recovery Ops"
+            ]
+          }
         ]}
       />
 

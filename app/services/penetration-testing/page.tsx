@@ -2,9 +2,9 @@
 
 import { useEffect } from 'react';
 import AppServiceHeader from '@/app/components/inner/AppServiceHeader';
-import ServiceOverviewBlock from '@/app/components/services/shared/ServiceOverviewBlock';
+import ServiceOverviewCards from '@/app/components/services/shared/ServiceOverviewCards';
 import ServiceFeatureGrid from '@/app/components/services/shared/ServiceFeatureGrid';
-import ServiceDarkGrid from '@/app/components/services/shared/ServiceDarkGrid';
+import ServiceSolutionsGrid from '@/app/components/services/shared/ServiceSolutionsGrid';
 import ServiceCTA from '@/app/components/services/shared/ServiceCTA';
 import ServiceFAQ from '@/app/components/services/shared/ServiceFAQ';
 import GlobalIndustriesSection from '@/app/components/services/shared/GlobalIndustriesSection';
@@ -28,34 +28,71 @@ export default function PenetrationTestingPage() {
 
   return (
     <main className="bg-white">
-      <AppServiceHeader title="Penetration Testing Services" breadcrumbs={[]} />
+      <AppServiceHeader 
+        title="Penetration Testing Services" 
+        subtitle="Pressure-test your architecture. Deploy authorized simulated attacks to uncover critical vulnerabilities before adversaries do."
+        breadcrumbs={[]} 
+      />
 
-      <ServiceOverviewBlock 
+      <ServiceOverviewCards 
+        eyebrow="Offensive Security"
         title="Secure Your Security Reputation"
         description={`Penetration testing services involve authorized simulated cyberattacks conducted by security experts to identify vulnerabilities in systems, networks, or applications before malicious actors can exploit them. 
         
-        These services assess security posture through controlled exploits, including network, web application, cloud, and social engineering tests. Delivered by certified professionals, penetration testing provides actionable insights to strengthen defenses and meet compliance requirements like PCI DSS and ISO 27001, ensuring proactive risk management and enhanced protection against evolving threats. Pen test services mimic actual cyber attacks to test your system's strength. These services offer:`}
+        These services assess security posture through controlled exploits, including network, web application, cloud, and social engineering tests. Delivered by certified professionals, penetration testing provides actionable insights to strengthen defenses and meet compliance requirements like PCI DSS and ISO 27001, ensuring proactive risk management and enhanced protection against evolving threats. Pen test services mimic actual cyber attacks to test your system's strength.`}
         points={[
-          "Vulnerability detection on networks, applications, and infrastructure",
-          "Industry compliance with standards (PCI DSS, HIPAA, ISO 27001)",
-          "Validation of current security controls",
-          "Practical remediation recommendations"
+          { title: "Vulnerability detection on networks and apps", icon: "ph-scan" },
+          { title: "Industry compliance with standards", icon: "ph-certificate" },
+          { title: "Validation of current security controls", icon: "ph-shield-check" },
+          { title: "Practical remediation recommendations", icon: "ph-wrench" }
         ]}
-        imageUrl="/images/cyber security/Secure Your Security Reputation.jpg"
-        imageAlt="Penetration Testing Dashboard"
-        imageAlignment="right"
       />
 
-      <ServiceDarkGrid 
-        title="Red Teaming: Simulate Real-World Attacks To Test True Resilience"
-        subtitle="Red teaming services go beyond traditional penetration testing by simulating full-scale, multi-vector attacks to evaluate how your organization detects, responds to, and recovers from real cyber threats. A red team assessment tests not just technology, but also people and processes—making it an essential component of modern red team cybersecurity strategies."
+      <ServiceSolutionsGrid 
+        title="Red Teaming Simulation Arrays"
+        subtitle="Go beyond traditional testing by deploying full-scale, multi-vector attacks to evaluate how your organization detects, responds to, and recovers from relentless cyber threats."
         eyebrow="Advanced Simulation"
-        icon="ph-sword"
-        cards={[
-          { title: "Adversary Emulation", description: "Mimics tactics, techniques, and procedures (TTPs) of real-world threat actors." },
-          { title: "Social Engineering Attacks", description: "Tests employee awareness using phishing, baiting, and impersonation techniques." },
-          { title: "Physical Security Testing", description: "Evaluates the effectiveness of on-site defenses and facility access controls." },
-          { title: "Blue Team Response Evaluation", description: "Measures how well internal teams detect and respond to sophisticated threats." }
+        solutions={[
+          { 
+            title: "Adversary Emulation", 
+            description: "Mirror the exact tactics, techniques, and procedures (TTPs) of sophisticated real-world threat actors.",
+            icon: "ph-detective",
+            features: [
+              "APT Group Simulation",
+              "Custom Exploit Development",
+              "Evasion Technique Testing"
+            ]
+          },
+          { 
+            title: "Social Engineering Operations", 
+            description: "Expose human vulnerabilities using precision phishing, baiting, and targeted impersonation.",
+            icon: "ph-users",
+            features: [
+              "Spear-Phishing Campaigns",
+              "Vishing & Pretexting",
+              "Credential Harvesting"
+            ]
+          },
+          { 
+            title: "Physical Intrusions", 
+            description: "Evaluate the integrity of on-site barriers, facility access controls, and hardware security.",
+            icon: "ph-building",
+            features: [
+              "Facility Breach Testing",
+              "Tailgating & Badge Cloning",
+              "Rogue Device Deployment"
+            ]
+          },
+          { 
+            title: "Blue Team Calibration", 
+            description: "Pressure-test your internal security operations center under active, full-scale attack scenarios.",
+            icon: "ph-shield-plus",
+            features: [
+              "Detection Delta Measurement",
+              "Incident Response Validation",
+              "SIEM Alert Tuning"
+            ]
+          }
         ]}
       />
 

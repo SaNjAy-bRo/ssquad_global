@@ -7,9 +7,10 @@ interface AppServiceHeaderProps {
   title: string;
   subtitle?: string;
   breadcrumbs: { label: string; href: string }[];
+  theme?: 'cyber' | 'clean';
 }
 
-const DecryptingTitle = ({ text }: { text: string }) => {
+const DecryptingTitle = ({ text, theme = 'cyber' }: { text: string, theme?: 'cyber' | 'clean' }) => {
   const words = text.split(" ");
   const lastWord = words.pop() || "";
   const staticText = words.join(" ");
@@ -37,12 +38,12 @@ const DecryptingTitle = ({ text }: { text: string }) => {
   return (
     <>
       <span className="font-heading">{staticText} </span>
-      <span className="inline-block min-w-[3em] text-cyan-50 font-mono tracking-widest">{displayLast || lastWord.replace(/[a-zA-Z]/g, '0')}</span>
+      <span className={`inline-block font-mono tracking-widest ${theme === 'cyber' ? 'text-cyan-50' : 'text-ssg-red'}`}>{displayLast || lastWord.replace(/[a-zA-Z]/g, '0')}</span>
     </>
   );
 };
 
-export default function AppServiceHeader({ title, subtitle, breadcrumbs }: AppServiceHeaderProps) {
+export default function AppServiceHeader({ title, subtitle, breadcrumbs, theme = 'cyber' }: AppServiceHeaderProps) {
   const canvasRef = useRef<HTMLCanvasElement>(null);
 
   useEffect(() => {
@@ -246,41 +247,54 @@ export default function AppServiceHeader({ title, subtitle, breadcrumbs }: AppSe
 
         {/* Decrypting Headline */}
         <div className="flex flex-col gap-3 min-h-[160px] md:min-h-0 items-center justify-center relative w-full overflow-hidden">
-          <span className="text-ssg-red/90 text-[0.65rem] sm:text-[0.85rem] md:text-xl block tracking-[0.2em] md:tracking-[0.3em] uppercase mb-1 font-heading">
-            [ SECURE // PROTOCOL // ACTIVE ]
-          </span>
+          {theme === 'cyber' && (
+            <span className="text-ssg-red/90 text-[0.65rem] sm:text-[0.85rem] md:text-xl block tracking-[0.2em] md:tracking-[0.3em] uppercase mb-1 font-heading">
+              [ SECURE // PROTOCOL // ACTIVE ]
+            </span>
+          )}
           <h1 
             className="font-mono text-white font-bold tracking-tight reveal drop-shadow-lg whitespace-nowrap overflow-visible leading-tight tabular-nums"
             style={{ fontSize: `clamp(0.9rem, min(8vw, ${140 / (title.length || 10)}vw), 4.5rem)` }}
           >
-            <DecryptingTitle text={title} />
+            <DecryptingTitle text={title} theme={theme} />
           </h1>
         </div>
         
         {/* Terminal Subtitle Box */}
         {subtitle && (
           <div className="mt-8 flex justify-center reveal delay-300 pointer-events-auto">
-            <div className="bg-[#0B0F19]/60 backdrop-blur-xl border border-ssg-cyber/30 rounded-xl py-3 flex items-start gap-4 max-w-3xl shadow-[0_0_30px_rgba(91,46,255,0.15)] relative overflow-hidden group hover:border-ssg-cyber/60 transition-colors duration-500 pl-5 pr-7">
-              
-              {/* Terminal glass reflection */}
-              <div className="absolute inset-0 bg-gradient-to-br from-white/5 to-transparent pointer-events-none"></div>
-              
-              <div className="bg-ssg-cyber/20 p-2 rounded-lg shrink-0 border border-ssg-cyber/30 relative shadow-[0_0_15px_rgba(91,46,255,0.4)]">
-                 <i className="ph-fill ph-terminal-window text-cyan-300 text-xl md:text-xl animate-pulse"></i>
+            {theme === 'cyber' ? (
+              <div className="bg-[#0B0F19]/60 backdrop-blur-xl border border-ssg-cyber/30 rounded-xl py-3 flex items-start gap-4 max-w-3xl shadow-[0_0_30px_rgba(91,46,255,0.15)] relative overflow-hidden group hover:border-ssg-cyber/60 transition-colors duration-500 pl-5 pr-7">
+                
+                {/* Terminal glass reflection */}
+                <div className="absolute inset-0 bg-gradient-to-br from-white/5 to-transparent pointer-events-none"></div>
+                
+                <div className="bg-ssg-cyber/20 p-2 rounded-lg shrink-0 border border-ssg-cyber/30 relative shadow-[0_0_15px_rgba(91,46,255,0.4)]">
+                   <i className="ph-fill ph-terminal-window text-cyan-300 text-xl md:text-xl animate-pulse"></i>
+                </div>
+                
+                <div className="text-left font-mono mt-0.5 text-sm md:text-[0.95rem]">
+                  <p 
+                    className="text-slate-300 leading-relaxed drop-shadow-sm font-medium text-balance"
+                    style={{ textWrap: 'balance' }}
+                  >
+                    <span className="text-cyan-400 font-bold mr-2">&gt;_</span>
+                    {subtitle}
+                    <span className="inline-block w-2.5 h-[14px] ml-2 bg-ssg-red animate-pulse align-middle opacity-80"></span>
+                  </p>
+                </div>
+
+                {/* Decorative terminal edge styling */}
+                <div className="absolute bottom-0 right-0 w-6 h-[2px] bg-ssg-cyber/50"></div>
+                <div className="absolute bottom-0 right-0 w-[2px] h-6 bg-ssg-cyber/50"></div>
               </div>
-              
-              <div className="text-left font-mono mt-0.5 text-sm md:text-[0.95rem]">
-                <p className="text-slate-300 leading-relaxed drop-shadow-sm font-medium">
-                  <span className="text-cyan-400 font-bold mr-2">&gt;_</span>
+            ) : (
+              <div className="bg-[#0B0F19]/60 backdrop-blur-xl border border-slate-700/50 rounded-2xl py-4 flex items-center justify-center max-w-3xl shadow-xl px-8">
+                <p className="text-slate-300 leading-relaxed font-medium text-balance md:text-lg">
                   {subtitle}
-                  <span className="inline-block w-2.5 h-[14px] ml-2 bg-ssg-red animate-pulse align-middle opacity-80"></span>
                 </p>
               </div>
-
-              {/* Decorative terminal edge styling */}
-              <div className="absolute bottom-0 right-0 w-6 h-[2px] bg-ssg-cyber/50"></div>
-              <div className="absolute bottom-0 right-0 w-[2px] h-6 bg-ssg-cyber/50"></div>
-            </div>
+            )}
           </div>
         )}
       </div>

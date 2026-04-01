@@ -2,8 +2,8 @@
 
 import { useEffect } from 'react';
 import AppServiceHeader from '@/app/components/inner/AppServiceHeader';
-import ServiceOverviewBlock from '@/app/components/services/shared/ServiceOverviewBlock';
-import ServiceDarkGrid from '@/app/components/services/shared/ServiceDarkGrid';
+import ServiceOverviewCards from '@/app/components/services/shared/ServiceOverviewCards';
+import ServiceSolutionsGrid from '@/app/components/services/shared/ServiceSolutionsGrid';
 import ServiceCTA from '@/app/components/services/shared/ServiceCTA';
 import GlobalIndustriesSection from '@/app/components/services/shared/GlobalIndustriesSection';
 
@@ -26,56 +26,58 @@ export default function ApiDevelopmentPage() {
 
   return (
     <main className="bg-white">
-      <AppServiceHeader title="API Development & Integration" breadcrumbs={[]} />
-
-      <ServiceOverviewBlock 
-        title="Build Seamless Connectivity. Unlock New Possibilities."
-        description={`In today’s digital ecosystem, APIs (Application Programming Interfaces) are the backbone of modern, connected systems. They enable applications, platforms, and devices to communicate efficiently, share data securely, and scale effortlessly. At Ssquad, we specialize in custom API development and integration services that empower your business to operate faster, smarter, and more connected than ever before. 
-
-Whether you're building a new product, connecting legacy systems, or integrating third-party services, our team ensures smooth, secure, and scalable API solutions tailored to your business needs. Our API Services Include:`}
-        points={[
-          "Custom API Development",
-          "API Integration Services",
-          "API Consulting & Strategy"
-        ]}
-        imageUrl="https://placehold.co/1200x800/e2e8f0/a0aec0?text=Service+Visual"
-        imageAlt="API Connectivity Diagram"
-        imageAlignment="right"
+      <AppServiceHeader 
+        title="API Development & Integration" 
+        subtitle="Forge hyper-connected ecosystems. Architect secure, high-velocity APIs to unify platforms, automate workflows, and accelerate scalable innovation."
+        breadcrumbs={[]} 
       />
 
-      <ServiceDarkGrid 
-        title="Our API Services Include"
+      <ServiceOverviewCards 
+        eyebrow="Ecosystem Connectivity"
+        title="Build Seamless Connectivity. Unlock New Possibilities."
+        description={`In today’s accelerated digital ecosystem, APIs are the foundational backbone of modern, interconnected systems. They empower disparate applications, global platforms, and IoT edge devices to communicate instantaneously, share telemetry securely, and scale effortlessly. At Ssquad, we engineer custom API ecosystems that transform isolated silos into unified, high-velocity operational engines.
+
+Whether you're developing a flagship digital product, bridging legacy core systems to the cloud, or integrating complex third-party vendor platforms, our architecture guarantees frictionless, high-throughput, and rigorously secure data exchanges.`}
+        points={[
+          { title: "Custom API Engineering", icon: "ph-brackets-curly" },
+          { title: "Enterprise Integrations", icon: "ph-plugs-connected" },
+          { title: "API Strategy & Governance", icon: "ph-strategy" }
+        ]}
+      />
+
+      <ServiceSolutionsGrid 
+        title="Our API Engineering Services"
         eyebrow="API Architecture"
-        icon="ph-plugs-connected"
-        cards={[
+        subtitle="Uncompromising connectivity solutions designed to securely scale your enterprise architecture."
+        solutions={[
           { 
             title: "Custom API Development", 
-            description: "",
-            points: [
-              "Development of RESTful and SOAP APIs",
-              "Secure data exchange and access control mechanisms",
-              "API versioning and lifecycle management",
-              "High-performance endpoints"
+            description: "Engineer resilient RESTful, GraphQL, and SOAP interfaces designed to handle extreme scale and high transaction velocities.",
+            icon: "ph-code",
+            features: [
+              "REST & GraphQL APIs",
+              "Zero-Trust Access Control",
+              "Lifecycle & Version Management"
             ]
           },
           { 
-            title: "API Integration Services", 
-            description: "",
-            points: [
-              "Integration with third-party platforms (e.g., Salesforce, SAP, Stripe, Twilio, AWS, etc.)",
-              "Legacy system integration to modern platforms",
-              "Cloud-based API management and orchestration",
-              "Middleware and microservices integration"
+            title: "Enterprise Integration Services", 
+            description: "Eradicate data silos by seamlessly stitching together best-in-class SaaS platforms, cloud infrastructure, and legacy core systems.",
+            icon: "ph-arrows-merge",
+            features: [
+              "Salesforce, SAP, AWS Integrations",
+              "Microservices Orchestration",
+              "Legacy System Bridging"
             ]
           },
           { 
             title: "API Consulting & Strategy", 
-            description: "",
-            points: [
-              "API-first architecture planning",
-              "Platform and technology selection",
-              "Performance tuning and optimization",
-              "Documentation, testing, and monitoring best practices"
+            description: "Develop a hardened API-first architecture strategy focused on security posture, developer experience (DX), and monetization.",
+            icon: "ph-map-trifold",
+            features: [
+              "API-First Master Planning",
+              "Performance Tuning",
+              "OpenAPI Documentation"
             ]
           }
         ]}

@@ -1,8 +1,9 @@
 "use client";
 
 import { useEffect } from 'react';
-import InnerHeader from '@/app/components/inner/InnerHeader';
-import ServiceOverviewBlock from '@/app/components/services/shared/ServiceOverviewBlock';
+import AppServiceHeader from '@/app/components/inner/AppServiceHeader';
+import ServiceOverviewCards from '@/app/components/services/shared/ServiceOverviewCards';
+import ServiceSolutionsGrid from '@/app/components/services/shared/ServiceSolutionsGrid';
 import ServiceCTA from '@/app/components/services/shared/ServiceCTA';
 import GlobalIndustriesSection from '@/app/components/services/shared/GlobalIndustriesSection';
 
@@ -25,39 +26,73 @@ export default function NaaPPage() {
 
   return (
     <main className="bg-white">
-      <InnerHeader title="Network As A Platform" breadcrumbs={[]} />
-
-      <ServiceOverviewBlock 
-        title="What Is Network As A Platform (NaaP)"
-        description={`Network as a Platform (NaaP) is an emerging model in enterprise and service provider environments where the network is no longer seen as just a passive transport layer but as an intelligent, programmable, and service-aware foundation. This paradigm shift transforms traditional network infrastructure into a strategic enabler that delivers not just connectivity, but also business agility, automation, and innovation.
-
-At its core, NaaP leverages technologies such as Software-Defined Networking (SDN), Network Function Virtualization (NFV), APIs, and AI/ML to expose the network as a programmable platform. Instead of manually managing devices and configurations, users and applications can interface with the network via APIs to dynamically request services, optimize performance, or enforce security policies. This results in faster service deployment, improved user experience, and reduced operational overhead.`}
-        imageUrl="https://placehold.co/1200x800/e2e8f0/a0aec0?text=Service+Visual"
-        imageAlt="Secure Red Network Nodes"
-        imageAlignment="right"
+      <AppServiceHeader 
+        title="Network As A Platform (NaaP)" 
+        subtitle="Programmable, intelligent transport. Evolve your network from a passive conduit into an automated, service-aware driver of enterprise agility."
+        breadcrumbs={[]} 
       />
 
-      <section className="dark-phase arc-section py-20 lg:py-24">
-        <div className="max-w-4xl mx-auto px-6 lg:px-8 text-center">
-          <div className="arc-heading reveal">
-            <span className="arc-icon"><i className="ph ph-graph"></i></span>
-            <p className="section-eyebrow">The Future Of Networking</p>
-            <h2 className="section-title text-white">NaaP: The Future Of Agile, Smart, And Monetizable Networks</h2>
-            
-            <div className="mt-8 space-y-6 text-slate-300 text-lg leading-relaxed text-left">
-              <p>
-                Another key feature of NaaP is automation and intelligence. Using telemetry data, AI, and policy-driven orchestration, the network can adapt automatically to changing conditions—re-routing traffic during outages, mitigating threats, or allocating bandwidth based on usage patterns. This reduces the need for manual intervention and enhances operational efficiency, reliability, and security.
-              </p>
-              <p>
-                For service providers and telecom operators, NaaP unlocks new revenue streams and service models. By exposing network capabilities to third-party developers and enterprises through open APIs, providers can offer network-based services such as location intelligence, quality-of-service guarantees, or edge computing as monetizable products. This moves them beyond commoditized connectivity and into value-added service ecosystems.
-              </p>
-              <p className="font-semibold text-white pt-4 border-t border-white/10">
-                In conclusion, Network as a Platform reimagines the role of the network in digital transformation.
-              </p>
-            </div>
-          </div>
-        </div>
-      </section>
+      <ServiceOverviewCards 
+        eyebrow="Network Evolution"
+        title="The Intelligent, Programmable Network Foundation"
+        description={`Network as a Platform (NaaP) is the definitive paradigm shift in enterprise telecommunications. The network is no longer a passive transport layer—it is an intelligent, highly programmable, and dynamically service-aware foundation. This evolution transforms traditional rigid infrastructure into a strategic enabler that natively delivers absolute business agility and boundless innovation.
+
+At its core, NaaP leverages advanced Software-Defined Networking (SDN), Network Function Virtualization (NFV), deep telemetry APIs, and AI/ML orchestration to expose the network as a fully programmable platform, capable of real-time service deployment and security enforcement.`}
+        points={[
+          { title: "Software-Defined Routing", icon: "ph-graph" },
+          { title: "API-Driven Architecture", icon: "ph-plugs-connected" },
+          { title: "Zero-Touch Automation", icon: "ph-lightning" },
+          { title: "AI-Augmented Telemetry", icon: "ph-brain" }
+        ]}
+      />
+
+      <ServiceSolutionsGrid 
+        title="The NaaP Strategic Advantage"
+        eyebrow="Agile Infrastructure"
+        subtitle="Unleashing the future of agile, smart, and highly monetizable network architectures."
+        solutions={[
+          { 
+            title: "Dynamic Automation & Intelligence", 
+            description: "Harness AI telemetry and policy-driven orchestration to automatically adapt to network conditions—rerouting traffic and mitigating outages instantly without human intervention.",
+            icon: "ph-cpu",
+            features: [
+              "Self-Healing Tents",
+              "Automated Rerouting",
+              "AI Traffic Prediction"
+            ]
+          },
+          { 
+            title: "API-driven Service Deployment", 
+            description: "Ditch manual CLI configurations. Empower applications to interface directly with the network via unified APIs to request dynamic bandwidth and enforce security on the fly.",
+            icon: "ph-code",
+            features: [
+              "Programmable Interfaces",
+              "Instant Provisioning",
+              "Dynamic QoS Scaling"
+            ]
+          },
+          { 
+            title: "Value-Added Monetization", 
+            description: "Service providers can radically expand revenue boundaries by exposing core network capabilities (like location intelligence or edge computing) to 3rd party enterprise developers.",
+            icon: "ph-currency-dollar",
+            features: [
+              "API Monetization",
+              "Edge Compute Access",
+              "B2B Ecosystems"
+            ]
+          },
+          { 
+            title: "Strategic Digital Transformation", 
+            description: "Reimagine the network as a dynamic product. NaaP is the ultimate accelerant for edge computing, 5G deployments, and next-generation IoT matrices.",
+            icon: "ph-rocket",
+            features: [
+              "5G Integration",
+              "IoT Backhaul Ready",
+              "Cloud-Native Core"
+            ]
+          }
+        ]}
+      />
 
       <GlobalIndustriesSection />
 
