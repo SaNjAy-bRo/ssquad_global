@@ -35,8 +35,9 @@ export default function ServiceCTA({ variant = 'dark' }: ServiceCTAProps) {
           Secure Your Environment Today
         </h2>
         
-        <div className="text-white text-2xl md:text-4xl lg:text-5xl font-bold mt-6 mb-10 drop-shadow-lg tracking-wide">
-          we secure your <HackingText words={['FINANCE', 'HEALTHCARE', 'GOVERNMENT', 'TECHNOLOGY', 'RETAIL', 'MANUFACTURING']} duration={2000} />
+        <div className="font-bold mt-6 mb-10 drop-shadow-lg tracking-wide flex flex-col md:flex-row items-center justify-center gap-1 md:gap-3">
+          <span className="text-white text-lg md:text-xl lg:text-2xl">we secure your</span>
+          <span className="text-2xl md:text-4xl lg:text-5xl"><HackingText words={['FINANCE', 'HEALTHCARE', 'GOVERNMENT', 'TECHNOLOGY', 'RETAIL', 'MANUFACTURING']} duration={2000} /></span>
         </div>
 
         <p className="text-slate-200 mb-10 text-lg md:text-xl font-medium max-w-2xl mx-auto drop-shadow-md">

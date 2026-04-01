@@ -1,72 +1,72 @@
 "use client";
 
-import { useState, useEffect } from "react";
+import { useState, useEffect, useRef, useMemo, useCallback } from "react";
 
 const CHARS = "ABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789!@#$%^&*()_+-=[]{}|;:,.<>?/\\";
 
 export default function HackingText({ words, duration = 3000 }: { words: string[], duration?: number }) {
-  const [currentWordIndex, setCurrentWordIndex] = useState(0);
-  const [displayText, setDisplayText] = useState(words[0]);
+  const maxLen = useMemo(() => Math.max(...words.map(w => w.length)), [words]);
+  const [displayText, setDisplayText] = useState(() => words[0].padEnd(maxLen, "\u00A0"));
+  const indexRef = useRef(0);
+  const timeoutRef = useRef<NodeJS.Timeout | null>(null);
+  const intervalRef = useRef<NodeJS.Timeout | null>(null);
+
+  const clearTimers = useCallback(() => {
+    if (timeoutRef.current) { clearTimeout(timeoutRef.current); timeoutRef.current = null; }
+    if (intervalRef.current) { clearInterval(intervalRef.current); intervalRef.current = null; }
+  }, []);
+
+  const scrambleTo = useCallback((nextWord: string) => {
+    let iter = 0;
+    const totalFrames = 30;
+    const padded = nextWord.padEnd(maxLen, "\u00A0");
+
+    if (intervalRef.current) clearInterval(intervalRef.current);
+
+    intervalRef.current = setInterval(() => {
+      if (iter >= totalFrames) {
+        if (intervalRef.current) clearInterval(intervalRef.current);
+        intervalRef.current = null;
+        setDisplayText(padded);
+
+        // Schedule next word
+        timeoutRef.current = setTimeout(() => {
+          indexRef.current = (indexRef.current + 1) % words.length;
+          scrambleTo(words[indexRef.current]);
+        }, duration);
+
+        return;
+      }
+
+      const scrambled = Array(maxLen)
+        .fill(0)
+        .map((_, i) => {
+          if (i < (iter / totalFrames) * maxLen && i < nextWord.length) {
+            return nextWord[i];
+          }
+          if (i < nextWord.length) {
+            return CHARS[Math.floor(Math.random() * CHARS.length)];
+          }
+          return "\u00A0";
+        })
+        .join("");
+
+      setDisplayText(scrambled);
+      iter++;
+    }, 40);
+  }, [maxLen, words, duration]);
 
   useEffect(() => {
-    let timeout: NodeJS.Timeout;
-
-    const startScramble = (nextWord: string) => {
-      let iter = 0;
-      const totalFrames = 30; // how many frames of scrambling
-      const len = Math.max(displayText.length, nextWord.length);
-
-      const scrambleInterval = setInterval(() => {
-        if (iter >= totalFrames) {
-          clearInterval(scrambleInterval);
-          setDisplayText(nextWord);
-          
-          // Schedule the next word scramble
-          timeout = setTimeout(() => {
-            const nextIndex = (currentWordIndex + 1) % words.length;
-            setCurrentWordIndex(nextIndex);
-            // Will trigger next useEffect due to currentWordIndex change, 
-            // but actually let's just use a simple interval or recursive timeout
-          }, duration);
-          
-          return;
-        }
-
-        const scrambled = Array(len)
-          .fill(0)
-          .map((_, i) => {
-            // Gradually resolve letters from the beginning
-            if (i < (iter / totalFrames) * len && i < nextWord.length) {
-              return nextWord[i];
-            }
-            if (i < nextWord.length || iter < totalFrames / 2) {
-               return CHARS[Math.floor(Math.random() * CHARS.length)];
-            }
-            return ""; // shrink length if necessary
-          })
-          .join("");
-
-        setDisplayText(scrambled);
-        iter++;
-      }, 40);
-    };
-
-    // When the component mounts or word changes, we'll start the scramble
-    // Wait for the duration first before scrambling to next word
-    timeout = setTimeout(() => {
-      const nextIndex = (currentWordIndex + 1) % words.length;
-      setCurrentWordIndex(nextIndex);
-      startScramble(words[nextIndex]);
+    // Start the first cycle after the initial duration
+    timeoutRef.current = setTimeout(() => {
+      indexRef.current = (indexRef.current + 1) % words.length;
+      scrambleTo(words[indexRef.current]);
     }, duration);
 
-    return () => clearInterval(timeout);
-  // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, [currentWordIndex, words, duration]); // Intentionally leaving out displayText
+    return clearTimers;
+  }, [words, duration, scrambleTo, clearTimers]);
 
-  useEffect(() => {
-    // Initial display text setup
-    setDisplayText(words[0]);
-  }, [words]);
-
-  return <span className="font-mono text-ssg-red uppercase font-bold tracking-widest">{displayText}</span>;
+  return <span className="font-mono text-ssg-red uppercase font-bold tracking-widest inline-block whitespace-nowrap">{displayText}</span>;
 }
+
+
