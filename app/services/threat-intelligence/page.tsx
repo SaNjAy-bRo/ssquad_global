@@ -1,7 +1,7 @@
 "use client";
 
 import { useEffect } from 'react';
-import InnerHeader from '@/app/components/inner/InnerHeader';
+import AppServiceHeader from '@/app/components/inner/AppServiceHeader';
 import ServiceOverviewBlock from '@/app/components/services/shared/ServiceOverviewBlock';
 import ServiceFeatureGrid from '@/app/components/services/shared/ServiceFeatureGrid';
 import ServiceDarkGrid from '@/app/components/services/shared/ServiceDarkGrid';
@@ -28,7 +28,7 @@ export default function ThreatIntelligencePage() {
 
   return (
     <main className="bg-white">
-      <InnerHeader title="Threat Intelligence And Analytics" breadcrumbs={[]} />
+      <AppServiceHeader title="Threat Intelligence And Analytics" breadcrumbs={[]} />
 
       <ServiceOverviewBlock 
         title="Elevating Cyber Defense Through Predictive Intelligence And Deep Analytics"
@@ -41,7 +41,7 @@ export default function ThreatIntelligencePage() {
           "Contextual indicators to employ software",
           "Strategic for physical threat actor vectors"
         ]}
-        imageUrl="https://placehold.co/1200x800/e2e8f0/a0aec0?text=Service+Visual"
+        imageUrl="/images/cyber security/Elevating Cyber Defense Through Predictive Intelligence and Deep Analytics 1.jpg"
         imageAlt="Predictive Intelligence Radar Visualization"
         imageAlignment="right"
       />

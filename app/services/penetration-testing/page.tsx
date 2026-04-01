@@ -1,7 +1,7 @@
 "use client";
 
 import { useEffect } from 'react';
-import InnerHeader from '@/app/components/inner/InnerHeader';
+import AppServiceHeader from '@/app/components/inner/AppServiceHeader';
 import ServiceOverviewBlock from '@/app/components/services/shared/ServiceOverviewBlock';
 import ServiceFeatureGrid from '@/app/components/services/shared/ServiceFeatureGrid';
 import ServiceDarkGrid from '@/app/components/services/shared/ServiceDarkGrid';
@@ -28,7 +28,7 @@ export default function PenetrationTestingPage() {
 
   return (
     <main className="bg-white">
-      <InnerHeader title="Penetration Testing Services" breadcrumbs={[]} />
+      <AppServiceHeader title="Penetration Testing Services" breadcrumbs={[]} />
 
       <ServiceOverviewBlock 
         title="Secure Your Security Reputation"
@@ -41,7 +41,7 @@ export default function PenetrationTestingPage() {
           "Validation of current security controls",
           "Practical remediation recommendations"
         ]}
-        imageUrl="https://placehold.co/1200x800/e2e8f0/a0aec0?text=Service+Visual"
+        imageUrl="/images/cyber security/Secure Your Security Reputation.jpg"
         imageAlt="Penetration Testing Dashboard"
         imageAlignment="right"
       />

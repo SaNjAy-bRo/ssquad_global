@@ -1,7 +1,7 @@
 "use client";
 
 import { useEffect } from 'react';
-import InnerHeader from '@/app/components/inner/InnerHeader';
+import AppServiceHeader from '@/app/components/inner/AppServiceHeader';
 import ServiceOverviewBlock from '@/app/components/services/shared/ServiceOverviewBlock';
 import ServiceDarkGrid from '@/app/components/services/shared/ServiceDarkGrid';
 import ServiceCTA from '@/app/components/services/shared/ServiceCTA';
@@ -26,7 +26,7 @@ export default function SecurityCompliancePage() {
 
   return (
     <main className="bg-white">
-      <InnerHeader title="Security & Compliance Customization" breadcrumbs={[]} />
+      <AppServiceHeader title="Security & Compliance Customization" breadcrumbs={[]} />
 
       <ServiceOverviewBlock 
         title="Secure By Design. Compliant By Default"

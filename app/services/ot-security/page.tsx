@@ -1,7 +1,7 @@
 "use client";
 
 import { useEffect } from 'react';
-import InnerHeader from '@/app/components/inner/InnerHeader';
+import AppServiceHeader from '@/app/components/inner/AppServiceHeader';
 import ServiceOverviewBlock from '@/app/components/services/shared/ServiceOverviewBlock';
 import ServiceFeatureGrid from '@/app/components/services/shared/ServiceFeatureGrid';
 import ServiceDarkGrid from '@/app/components/services/shared/ServiceDarkGrid';
@@ -28,7 +28,7 @@ export default function OtSecurityPage() {
 
   return (
     <main className="bg-white">
-      <InnerHeader title="Discover Our OT Security Services" breadcrumbs={[]} />
+      <AppServiceHeader title="Discover Our OT Security Services" breadcrumbs={[]} />
 
       <ServiceOverviewBlock 
         title="OT Security Services"
@@ -42,7 +42,7 @@ export default function OtSecurityPage() {
           "OT compliance assessments",
           "OT security consulting"
         ]}
-        imageUrl="https://placehold.co/1200x800/e2e8f0/a0aec0?text=Service+Visual"
+        imageUrl="/images/cyber security/OT Security Services.jpg"
         imageAlt="Operational Technology Factory Control"
         imageAlignment="right"
       />

@@ -1,7 +1,7 @@
 "use client";
 
 import { useEffect } from 'react';
-import InnerHeader from '@/app/components/inner/InnerHeader';
+import AppServiceHeader from '@/app/components/inner/AppServiceHeader';
 import ServiceOverviewBlock from '@/app/components/services/shared/ServiceOverviewBlock';
 import ServiceFeatureGrid from '@/app/components/services/shared/ServiceFeatureGrid';
 import ServiceDarkGrid from '@/app/components/services/shared/ServiceDarkGrid';
@@ -28,7 +28,7 @@ export default function AiCybersecurityPage() {
 
   return (
     <main className="bg-white">
-      <InnerHeader title="AI Powered Cybersecurity Solutions" breadcrumbs={[]} />
+      <AppServiceHeader title="AI Powered Cybersecurity Solutions" breadcrumbs={[]} />
 
       <ServiceOverviewBlock 
         title="AI Powered Cybersecurity Solutions For Real-Time Defense"
@@ -43,7 +43,7 @@ export default function AiCybersecurityPage() {
           "Advanced Phishing Detection",
           "Security Orchestration, Automation & Response (SOAR)"
         ]}
-        imageUrl="https://placehold.co/1200x800/e2e8f0/a0aec0?text=Service+Visual"
+        imageUrl="/images/cyber security/AI Powered Cybersecurity Solutions for Real-Time Defense.jpg"
         imageAlt="AI Cybersecurity Node Network"
         imageAlignment="right"
       />

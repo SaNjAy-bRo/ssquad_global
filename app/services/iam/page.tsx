@@ -1,7 +1,7 @@
 "use client";
 
 import { useEffect } from 'react';
-import InnerHeader from '@/app/components/inner/InnerHeader';
+import AppServiceHeader from '@/app/components/inner/AppServiceHeader';
 import ServiceOverviewBlock from '@/app/components/services/shared/ServiceOverviewBlock';
 import ServiceFeatureGrid from '@/app/components/services/shared/ServiceFeatureGrid';
 import ServiceDarkGrid from '@/app/components/services/shared/ServiceDarkGrid';
@@ -28,7 +28,7 @@ export default function IamSolutionsPage() {
 
   return (
     <main className="bg-white">
-      <InnerHeader title="Identity And Access Management (IAM) Solutions" breadcrumbs={[]} />
+      <AppServiceHeader title="Identity And Access Management (IAM) Solutions" breadcrumbs={[]} />
 
       <ServiceOverviewBlock 
         title="What Are Identity And Access Management"
@@ -41,7 +41,7 @@ export default function IamSolutionsPage() {
           "Performs real-time checks, analytics on logs, network",
           "Quickly detects anomalous and unusual behavior"
         ]}
-        imageUrl="https://placehold.co/1200x800/e2e8f0/a0aec0?text=Service+Visual"
+        imageUrl="/images/cyber security/Identity and Access Management.jpg"
         imageAlt="Biometric Fingerprint Digital Access"
         imageAlignment="right"
       />

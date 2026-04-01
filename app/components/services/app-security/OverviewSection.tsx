@@ -37,13 +37,13 @@ export default function OverviewSection() {
           <div className="reveal order-1 lg:order-2">
             <div className="relative rounded-3xl overflow-hidden shadow-darkGlow border-4 border-white aspect-[4/3] w-full group">
               <Image 
-                src="https://images.unsplash.com/photo-1526374965328-7f61d4dc18c5?auto=format&fit=crop&w=1000"
+                src="/images/cyber security/Comprehensive Protection for Modern Software.jpg"
                 alt="Cybersecurity red digital lock visualization"
                 fill
-                className="object-cover transition-transform duration-700 ease-out group-hover:scale-105 grayscale opacity-70"
+                className="object-cover transition-transform duration-700 ease-out group-hover:scale-105"
                 unoptimized
               />
-              <div className="absolute inset-x-0 bottom-0 h-1/2 bg-gradient-to-t from-slate-900 to-transparent pointer-events-none" />
+
             </div>
           </div>
         </div>
