@@ -10,28 +10,36 @@ interface AppServiceHeaderProps {
 }
 
 const DecryptingTitle = ({ text }: { text: string }) => {
-  const [display, setDisplay] = useState("");
+  const words = text.split(" ");
+  const lastWord = words.pop() || "";
+  const staticText = words.join(" ");
+
+  const [displayLast, setDisplayLast] = useState("");
   
   useEffect(() => {
     let iter = 0;
     const interval = setInterval(() => {
       let newStr = "";
-      for (let i = 0; i < text.length; i++) {
-        if (text[i] === " ") { newStr += " "; continue; }
+      for (let i = 0; i < lastWord.length; i++) {
         if (i < iter / 3) {
-          newStr += text[i];
+          newStr += lastWord[i];
         } else {
           newStr += Math.random() > 0.5 ? "0" : "1";
         }
       }
-      setDisplay(newStr);
+      setDisplayLast(newStr);
       iter += 1;
-      if (iter >= text.length * 3 + 10) clearInterval(interval);
-    }, 30);
+      if (iter >= lastWord.length * 3 + 10) clearInterval(interval);
+    }, 40);
     return () => clearInterval(interval);
-  }, [text]);
+  }, [lastWord]);
 
-  return <>{display || text.replace(/[a-zA-Z]/g, '0')}</>;
+  return (
+    <>
+      <span className="font-heading">{staticText} </span>
+      <span className="inline-block min-w-[3em] text-cyan-50 font-mono tracking-widest">{displayLast || lastWord.replace(/[a-zA-Z]/g, '0')}</span>
+    </>
+  );
 };
 
 export default function AppServiceHeader({ title, subtitle, breadcrumbs }: AppServiceHeaderProps) {
@@ -125,15 +133,12 @@ export default function AppServiceHeader({ title, subtitle, breadcrumbs }: AppSe
         const distToScan = Math.abs(p.x - scanLineX);
         const distToMouse = Math.hypot(p.x - mouse.x, p.y - mouse.y);
         
-        // Base alpha and radius
         let intensity = p.alpha;
         
-        // Scan line collision
         if (distToScan < 120 && (scanLineX - p.x > 0)) { 
             intensity = Math.max(intensity, 1 - distToScan / 120);
         }
 
-        // Mouse collision
         if (distToMouse < 200) {
             intensity = Math.max(intensity, 1.2 - distToMouse / 200);
             
@@ -146,7 +151,6 @@ export default function AppServiceHeader({ title, subtitle, breadcrumbs }: AppSe
         
         p.radius = p.baseRadius * (1 + intensity * 1.5);
 
-        // Connections
         for (let j = i + 1; j < particles.length; j++) {
           const p2 = particles[j];
           const dist = Math.hypot(p.x - p2.x, p.y - p2.y);
@@ -172,16 +176,16 @@ export default function AppServiceHeader({ title, subtitle, breadcrumbs }: AppSe
         ctx.arc(p.x, p.y, p.radius, 0, Math.PI * 2);
         
         if (intensity > 0.8) {
-            ctx.fillStyle = `rgba(236, 32, 36, ${intensity})`; // ssg-red
+            ctx.fillStyle = `rgba(236, 32, 36, ${intensity})`;
             
             ctx.beginPath();
             ctx.arc(p.x, p.y, p.radius * 3.5, 0, Math.PI * 2);
             ctx.fillStyle = `rgba(236, 32, 36, ${intensity * 0.25})`;
             ctx.fill();
         } else if (distToMouse < 200 && intensity > 0.5) {
-            ctx.fillStyle = `rgba(91, 46, 255, ${intensity})`; // ssg-cyber
+            ctx.fillStyle = `rgba(91, 46, 255, ${intensity})`;
         } else {
-            ctx.fillStyle = `rgba(148, 163, 184, ${intensity})`; // slate
+            ctx.fillStyle = `rgba(148, 163, 184, ${intensity})`;
         }
         ctx.fill();
       });
@@ -241,14 +245,17 @@ export default function AppServiceHeader({ title, subtitle, breadcrumbs }: AppSe
         )}
 
         {/* Decrypting Headline */}
-        <h1 className="font-mono text-4xl md:text-5xl lg:text-7xl text-white font-bold tracking-tight reveal drop-shadow-lg flex flex-col gap-3">
-          <span className="text-ssg-red/90 text-[0.95rem] md:text-xl block tracking-[0.3em] uppercase mb-1 font-heading">
+        <div className="flex flex-col gap-3 min-h-[160px] md:min-h-0 items-center justify-center relative w-full overflow-hidden">
+          <span className="text-ssg-red/90 text-[0.65rem] sm:text-[0.85rem] md:text-xl block tracking-[0.2em] md:tracking-[0.3em] uppercase mb-1 font-heading">
             [ SECURE // PROTOCOL // ACTIVE ]
           </span>
-          <span className="tracking-tight text-white drop-shadow-[0_0_15px_rgba(255,255,255,0.2)]">
+          <h1 
+            className="font-mono text-white font-bold tracking-tight reveal drop-shadow-lg whitespace-nowrap overflow-visible leading-tight tabular-nums"
+            style={{ fontSize: `clamp(0.9rem, min(8vw, ${140 / (title.length || 10)}vw), 4.5rem)` }}
+          >
             <DecryptingTitle text={title} />
-          </span>
-        </h1>
+          </h1>
+        </div>
         
         {/* Terminal Subtitle Box */}
         {subtitle && (
