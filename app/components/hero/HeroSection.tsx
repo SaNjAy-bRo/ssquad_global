@@ -96,10 +96,22 @@ export default function HeroSection() {
         @keyframes eqBar3 { 0%,100%{transform:scaleY(.3)} 60%{transform:scaleY(1)} }
         @keyframes eqBar4 { 0%,100%{transform:scaleY(.5)} 30%{transform:scaleY(.8)} 80%{transform:scaleY(1)} }
         @keyframes eqBar5 { 0%,100%{transform:scaleY(.2)} 45%{transform:scaleY(.7)} 75%{transform:scaleY(1)} }
-        @keyframes redWavePulse {
-          0% { opacity: 0.08; transform: translate(-50%,-50%) scale(0.9); }
-          50% { opacity: 0.18; transform: translate(-50%,-50%) scale(1.05); }
-          100% { opacity: 0.08; transform: translate(-50%,-50%) scale(0.9); }
+        @keyframes wavePulseRipple {
+          0% { opacity: 0; transform: scale(0.55); }
+          22% { opacity: 0.36; }
+          100% { opacity: 0; transform: scale(1.2); }
+        }
+        @keyframes waveGridShift {
+          0% { background-position: 0 0, 0 0; }
+          100% { background-position: 52px 0, 0 34px; }
+        }
+        @keyframes waveGlow {
+          0%,100% { opacity: 0.38; }
+          50% { opacity: 0.78; }
+        }
+        @keyframes cardScanSweep {
+          0% { transform: translateX(-120%); }
+          100% { transform: translateX(120%); }
         }
       `}} />
     </section>
@@ -145,10 +157,24 @@ const TelemetryDashboard = memo(function TelemetryDashboard() {
   return (
     <div className="relative w-full rounded-2xl sm:rounded-3xl overflow-hidden border border-white/[0.08] shadow-[0_8px_80px_rgba(236,32,36,0.08),0_4px_40px_rgba(0,0,0,0.5)]">
       
-      {/* ── RED WAVE GLOW EFFECTS ── */}
-      <div className="absolute top-1/2 left-1/2 w-[600px] h-[400px] rounded-full bg-[var(--ssg-red)] blur-[120px] pointer-events-none z-0" style={{ animation: 'redWavePulse 6s ease-in-out infinite' }}></div>
-      <div className="absolute -bottom-20 -right-20 w-[300px] h-[300px] rounded-full bg-[var(--ssg-cyber)]/30 blur-[100px] pointer-events-none z-0"></div>
-      <div className="absolute -top-10 -left-10 w-[200px] h-[200px] rounded-full bg-[var(--ssg-red)]/20 blur-[80px] pointer-events-none z-0"></div>
+      {/* ── RED WAVE ANIMATION EFFECTS (from original hero) ── */}
+      
+      {/* Signal Wave Ripple Circles — expanding red rings */}
+      <div className="absolute pointer-events-none z-[1]" style={{ width: '320px', height: '320px', right: '12%', top: '15%', borderRadius: '999px', border: '1.5px solid rgba(208,46,50,0.35)', boxShadow: 'inset 0 0 46px rgba(63,18,108,0.2)', opacity: 0, transform: 'scale(0.55)', animation: 'wavePulseRipple 4.2s ease-out infinite' }}></div>
+      <div className="absolute pointer-events-none z-[1]" style={{ width: '420px', height: '420px', left: '5%', bottom: '5%', borderRadius: '999px', border: '1.5px solid rgba(63,18,108,0.4)', boxShadow: 'inset 0 0 46px rgba(208,46,50,0.15)', opacity: 0, transform: 'scale(0.55)', animation: 'wavePulseRipple 5s ease-out infinite 0.9s' }}></div>
+      <div className="absolute pointer-events-none z-[1]" style={{ width: '260px', height: '260px', left: '40%', top: '30%', borderRadius: '999px', border: '1px solid rgba(236,32,36,0.25)', opacity: 0, transform: 'scale(0.55)', animation: 'wavePulseRipple 3.8s ease-out infinite 1.5s' }}></div>
+
+      {/* 3D Perspective Wave Grid at bottom of card */}
+      <div className="absolute pointer-events-none z-[1]" style={{ left: '-15%', right: '-15%', bottom: '-40px', height: '160px', opacity: 0.5, transform: 'perspective(800px) rotateX(66deg)', transformOrigin: 'center bottom', backgroundImage: 'repeating-linear-gradient(90deg, rgba(208,46,50,0.3) 0, rgba(208,46,50,0.3) 2px, transparent 1px, transparent 40px), repeating-linear-gradient(180deg, rgba(63,18,108,0.25) 0, rgba(63,18,108,0.25) 2px, transparent 1px, transparent 28px)', animation: 'waveGridShift 9s linear infinite', maskImage: 'linear-gradient(180deg, transparent 0, black 22%, black 76%, transparent 100%)', WebkitMaskImage: 'linear-gradient(180deg, transparent 0, black 22%, black 76%, transparent 100%)' }}>
+        <div className="absolute inset-0" style={{ background: 'radial-gradient(circle at 50% 20%, rgba(208,46,50,0.35), transparent 60%)', animation: 'waveGlow 3.8s ease-in-out infinite' }}></div>
+      </div>
+
+      {/* Diagonal Scan Sweep — light sweeps across the card */}
+      <div className="absolute inset-0 pointer-events-none z-[2]" style={{ background: 'linear-gradient(100deg, transparent 16%, rgba(255,255,255,0.06) 34%, rgba(208,46,50,0.12) 47%, rgba(63,18,108,0.08) 55%, transparent 72%)', transform: 'translateX(-120%)', animation: 'cardScanSweep 5s ease-in-out infinite', opacity: 0.7 }}></div>
+
+      {/* Ambient corner glows */}
+      <div className="absolute -bottom-16 -right-16 w-[280px] h-[280px] rounded-full bg-[var(--ssg-cyber)]/20 blur-[90px] pointer-events-none z-0"></div>
+      <div className="absolute -top-10 -left-10 w-[200px] h-[200px] rounded-full bg-[var(--ssg-red)]/15 blur-[70px] pointer-events-none z-0"></div>
 
       {/* ── HEADER BAR ── */}
       <div className="relative z-10 bg-[#0c1019]/90 backdrop-blur-xl border-b border-white/[0.08] px-6 sm:px-8 py-4 sm:py-5 flex items-center justify-between">
