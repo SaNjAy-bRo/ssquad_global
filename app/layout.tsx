@@ -3,7 +3,6 @@ import { Inter, Plus_Jakarta_Sans } from 'next/font/google';
 import './globals.css';
 import Header from './components/layout/Header';
 import Footer from './components/layout/Footer';
-import FloatingChat from './components/layout/FloatingChat';
 import Script from 'next/script';
 
 const inter = Inter({
@@ -34,7 +33,6 @@ export default function RootLayout({
         <Header />
         {children}
         <Footer />
-        <FloatingChat />
         <Script src="https://unpkg.com/@phosphor-icons/web" strategy="beforeInteractive" />
       </body>
     </html>
