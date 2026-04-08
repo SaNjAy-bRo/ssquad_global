@@ -56,8 +56,8 @@ export default function HeroSection() {
           </span>
         </h1>
         
-        <p className="hero-fade-up opacity-0 translate-y-10 transition-all duration-1000 delay-200 ease-out mt-6 md:mt-8 text-[#8e98ac] text-lg sm:text-xl md:text-2xl leading-relaxed max-w-3xl font-normal tracking-wide px-4 drop-shadow-[0_5px_10px_rgba(0,0,0,1)]">
-          Secure your endpoint identities. Unmatched reliability, zero trust access, and autonomous biometric operations driving the future of SOC.
+        <p className="hero-fade-up opacity-0 translate-y-10 transition-all duration-1000 delay-200 ease-out mt-6 md:mt-8 text-white text-lg sm:text-xl md:text-2xl leading-relaxed max-w-3xl font-normal tracking-wide px-4 drop-shadow-[0_5px_10px_rgba(0,0,0,1)]">
+          Secure your endpoint identities. Unmatched reliability, zero trust access, and autonomous biometric operations driving the future of&nbsp;SOC.
         </p>
         
         <div className="hero-fade-up opacity-0 translate-y-10 transition-all duration-1000 delay-300 ease-out mt-6 md:mt-8 flex flex-wrap gap-4 md:gap-5 justify-center items-center w-full px-4">
