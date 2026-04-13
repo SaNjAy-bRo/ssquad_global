@@ -16,7 +16,7 @@ const mockEvents = [
 
 export default function HeroSection() {
   return (
-    <section className="relative w-full min-h-[80vh] sm:min-h-[85vh] flex flex-col items-center justify-center bg-[#020408] overflow-hidden pt-24 pb-8">
+    <section className="relative w-full min-h-[80vh] sm:min-h-[85vh] flex flex-col items-center justify-center bg-[#020408] overflow-hidden pt-36 sm:pt-28 pb-8">
       
       {/* BIOMETRIC FINGERPRINT SCANNER BACKGROUND */}
       <div className="absolute inset-0 z-0 pointer-events-none flex items-center justify-center w-full h-full overflow-hidden">
@@ -48,7 +48,7 @@ export default function HeroSection() {
           <span className="text-[0.65rem] md:text-[0.7rem] font-bold tracking-[0.3em] uppercase text-white drop-shadow-md">Verified Identity Perimeter</span>
         </div>
         
-        <h1 className="hero-fade-up opacity-0 translate-y-10 transition-all duration-1000 delay-100 ease-out font-heading text-5xl sm:text-6xl md:text-[5.5rem] lg:text-[7.5rem] leading-[0.95] font-extrabold tracking-[-0.03em] text-white drop-shadow-[0_20px_50px_rgba(0,0,0,1)] px-2">
+        <h1 className="hero-fade-up opacity-0 translate-y-10 transition-all duration-1000 delay-100 ease-out font-heading text-4xl sm:text-5xl md:text-6xl lg:text-[6.5rem] leading-[0.95] font-extrabold tracking-[-0.03em] text-white drop-shadow-[0_20px_50px_rgba(0,0,0,1)] px-2">
           Intelligence Led
           <br />
           <span className="text-transparent bg-clip-text bg-gradient-to-b from-white via-white to-[var(--ssg-red)] pb-2 md:pb-4 inline-block drop-shadow-[0_0_40px_rgba(236,32,36,0.2)]">
@@ -56,18 +56,18 @@ export default function HeroSection() {
           </span>
         </h1>
         
-        <p className="hero-fade-up opacity-0 translate-y-10 transition-all duration-1000 delay-200 ease-out mt-6 md:mt-8 text-white text-lg sm:text-xl md:text-2xl leading-relaxed max-w-3xl font-normal tracking-wide px-4 drop-shadow-[0_5px_10px_rgba(0,0,0,1)]">
+        <p className="hero-fade-up opacity-0 translate-y-10 transition-all duration-1000 delay-200 ease-out mt-6 md:mt-8 text-white text-lg sm:text-xl md:text-2xl leading-relaxed max-w-3xl font-normal tracking-wide px-4 drop-shadow-[0_5px_10px_rgba(0,0,0,1)] text-balance mx-auto">
           Secure your endpoint identities. Unmatched reliability, zero trust access, and autonomous biometric operations driving the future of&nbsp;SOC.
         </p>
         
-        <div className="hero-fade-up opacity-0 translate-y-10 transition-all duration-1000 delay-300 ease-out mt-6 md:mt-8 flex flex-wrap gap-4 md:gap-5 justify-center items-center w-full px-4">
-          <a href="#contact" className="epic-pill-btn group px-10 md:px-12 py-4 md:py-5 text-base md:text-[1.1rem] font-bold bg-[var(--ssg-red)] text-white rounded-full transition-all hover:scale-105 shadow-[0_0_30px_rgba(236,32,36,0.5)] flex items-center gap-3 relative overflow-hidden">
-            <span className="relative z-10 flex items-center gap-2">
+        <div className="hero-fade-up opacity-0 translate-y-10 transition-all duration-1000 delay-300 ease-out mt-6 md:mt-8 flex flex-col sm:flex-row gap-4 md:gap-5 justify-center items-center w-full max-w-lg sm:max-w-none mx-auto px-4">
+          <a href="#contact" className="epic-pill-btn group w-full sm:w-auto justify-center px-8 md:px-12 py-4 md:py-5 text-base md:text-[1.1rem] font-bold bg-[var(--ssg-red)] text-white rounded-full transition-all hover:scale-105 shadow-[0_0_30px_rgba(236,32,36,0.5)] flex items-center gap-3 relative overflow-hidden">
+            <span className="relative z-10 flex items-center justify-center gap-2">
               Initiate Protocol
               <i className="ph-bold ph-arrow-right text-xl group-hover:translate-x-2 transition-transform"></i>
             </span>
           </a>
-          <a href="/services/application-security" className="px-10 md:px-12 py-4 md:py-5 text-base md:text-[1.1rem] font-bold bg-white/5 hover:bg-white/10 border border-white/20 text-white rounded-full transition-all hover:scale-105 backdrop-blur-md">
+          <a href="/services/application-security" className="w-full sm:w-auto text-center px-8 md:px-12 py-4 md:py-5 text-base md:text-[1.1rem] font-bold bg-white/5 hover:bg-white/10 border border-white/20 text-white rounded-full transition-all hover:scale-105 backdrop-blur-md">
             Security Matrix
           </a>
         </div>
