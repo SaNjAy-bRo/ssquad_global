@@ -270,7 +270,7 @@ export default function AppServiceHeader({ title, subtitle, breadcrumbs, theme =
                 <div className="absolute inset-0 bg-gradient-to-br from-white/5 to-transparent pointer-events-none"></div>
                 
                 <div className="bg-ssg-cyber/20 p-2 rounded-lg shrink-0 border border-ssg-cyber/30 relative shadow-[0_0_15px_rgba(91,46,255,0.4)]">
-                   <i className="ph-fill ph-terminal-window text-cyan-300 text-xl md:text-xl animate-pulse"></i>
+                   <i className="ph ph-fill ph-terminal-window text-cyan-300 text-xl md:text-xl animate-pulse"></i>
                 </div>
                 
                 <div className="text-left font-mono mt-0.5 text-sm md:text-[0.95rem]">
@@ -278,7 +278,7 @@ export default function AppServiceHeader({ title, subtitle, breadcrumbs, theme =
                     className="text-slate-300 leading-relaxed drop-shadow-sm font-medium text-balance"
                     style={{ textWrap: 'balance' }}
                   >
-                    <span className="text-cyan-400 font-bold mr-2">&gt;_</span>
+                    <span className="text-cyan-400 font-bold mr-2"></span>
                     {subtitle}
                     <span className="inline-block w-2.5 h-[14px] ml-2 bg-ssg-red animate-pulse align-middle opacity-80"></span>
                   </p>

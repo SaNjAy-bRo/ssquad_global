@@ -2,9 +2,19 @@ import HackingText from '@/app/components/ui/HackingText';
 
 interface ServiceCTAProps {
   variant?: 'dark' | 'white';
+  title?: string;
+  description?: string;
+  prefixText?: string;
+  hackingWords?: string[];
 }
 
-export default function ServiceCTA({ variant = 'dark' }: ServiceCTAProps) {
+export default function ServiceCTA({ 
+  variant = 'dark',
+  title = "Secure Your Environment Today",
+  description = "Get a comprehensive security posture assessment and align your enterprise defense with industry best practices.",
+  prefixText = "we secure your",
+  hackingWords = ['FINANCE', 'HEALTHCARE', 'GOVERNMENT', 'TECHNOLOGY', 'RETAIL', 'MANUFACTURING']
+}: ServiceCTAProps) {
   return (
     <section className="py-12 lg:py-16 text-center relative overflow-hidden border-y border-white/5">
       <style>{`
@@ -35,12 +45,12 @@ export default function ServiceCTA({ variant = 'dark' }: ServiceCTAProps) {
           className="text-white text-3xl md:text-5xl lg:text-6xl font-heading font-bold mb-4 drop-shadow-xl text-balance mx-auto"
           style={{ textWrap: 'balance' }}
         >
-          Secure Your Environment Today
+          {title}
         </h2>
         
         <div className="font-bold mt-6 mb-10 drop-shadow-lg tracking-wide flex flex-col md:flex-row items-center justify-center gap-1 md:gap-3">
-          <span className="text-white text-lg md:text-xl lg:text-2xl">we secure your</span>
-          <span className="text-2xl md:text-4xl lg:text-5xl"><HackingText words={['FINANCE', 'HEALTHCARE', 'GOVERNMENT', 'TECHNOLOGY', 'RETAIL', 'MANUFACTURING']} duration={2000} /></span>
+          <span className="text-white text-lg md:text-xl lg:text-2xl">{prefixText}</span>
+          <span className="text-2xl md:text-4xl lg:text-5xl"><HackingText words={hackingWords} duration={2000} /></span>
         </div>
 
         <p 

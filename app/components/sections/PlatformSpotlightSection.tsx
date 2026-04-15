@@ -194,7 +194,7 @@ const PlatformSpotlightSection = memo(function PlatformSpotlightSection() {
                 <a href="https://www.harpydefence.com/secopsplatform.html" target="_blank" rel="noopener noreferrer" className="inline-flex items-center gap-3 px-8 py-4 text-[0.95rem] font-bold bg-[var(--ssg-red)] text-white rounded-full transition-all hover:scale-105 shadow-[0_0_30px_rgba(236,32,36,0.5)] group overflow-hidden relative border border-[var(--ssg-red)]/50">
                   <span className="relative z-10 flex items-center gap-2">
                     Explore Harpy Platform
-                    <i className="ph-bold ph-arrow-right text-lg group-hover:translate-x-1.5 transition-transform"></i>
+                    <i className="ph ph-bold ph-arrow-right text-lg group-hover:translate-x-1.5 transition-transform"></i>
                   </span>
                   <div className="absolute inset-0 bg-white/20 translate-y-full group-hover:translate-y-0 transition-transform duration-300 pointer-events-none"></div>
                 </a>

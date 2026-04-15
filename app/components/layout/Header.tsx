@@ -8,6 +8,8 @@ const serviceData: Record<string, { title: string; desc: string; href: string }[
   cyber: [
     { title: 'Application Security', desc: 'Comprehensive protection for modern software and digital applications.', href: '/services/application-security' },
     { title: 'AI-Powered Cybersecurity Solutions', desc: 'AI-assisted detection and response against fast-moving cyber threats.', href: '/services/ai-cybersecurity' },
+    { title: 'Cybersecurity for AI Systems', desc: 'Engineer AI-specific security frameworks to safeguard machine learning models against adversarial attacks.', href: '/services/security-for-ai' },
+    { title: 'Human-Centric Security', desc: 'Security designed around people, not just systems, ensuring frictionless enterprise protection.', href: '/services/human-centric-cybersecurity' },
     { title: 'Threat Intelligence and Analytics', desc: 'Intelligence-led monitoring with risk-prioritized defensive actions.', href: '/services/threat-intelligence' },
     { title: 'Penetration Testing Services', desc: 'Adversarial validation to uncover exploitable weaknesses early.', href: '/services/penetration-testing' },
     { title: 'Identity and Access Management (IAM)', desc: 'Identity-first access controls and governance for enterprise systems.', href: '/services/iam' },

@@ -112,7 +112,6 @@ At Ssquad, we deploy weaponized Artificial Intelligence and Machine Learning mod
 
       <ServiceCTA />
       
-
       <ServiceFAQ />
 
       <GlobalIndustriesSection />

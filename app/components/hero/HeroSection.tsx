@@ -96,11 +96,11 @@ export default function HeroSection() {
 
         {/* RESTORED FINGERPRINT BACKGROUND */}
         <div className="absolute flex items-center justify-center w-full h-full opacity-80 pointer-events-none z-10 overflow-hidden">
-          <i className="ph-light ph-fingerprint text-[#1c2438] text-[150vw] sm:text-[120vw] md:text-[120vh] lg:text-[140vh] leading-none"></i>
+          <i className="ph ph-light ph-fingerprint text-[#1c2438] text-[150vw] sm:text-[120vw] md:text-[120vh] lg:text-[140vh] leading-none"></i>
         </div>
 
         <div className="absolute inset-0 flex items-center justify-center w-full h-full hero-biometric-reveal pointer-events-none z-20 overflow-hidden">
-          <i className="ph-light ph-fingerprint text-[var(--ssg-red)] opacity-90 drop-shadow-[0_0_60px_rgba(236,32,36,1)] text-[150vw] sm:text-[120vw] md:text-[120vh] lg:text-[140vh] leading-none"></i>
+          <i className="ph ph-light ph-fingerprint text-[var(--ssg-red)] opacity-90 drop-shadow-[0_0_60px_rgba(236,32,36,1)] text-[150vw] sm:text-[120vw] md:text-[120vh] lg:text-[140vh] leading-none"></i>
         </div>
 
         {/* Laser Sweep Layer */}
@@ -122,7 +122,7 @@ export default function HeroSection() {
         
         <div className="max-w-5xl mx-auto flex flex-col items-center mt-12 md:mt-8">
           <div className="hero-fade-up opacity-0 translate-y-10 transition-all duration-1000 ease-out inline-flex items-center gap-3 px-6 py-2 rounded-full border border-white/10 bg-black/60 backdrop-blur-xl mb-6 shadow-[0_0_30px_rgba(236,32,36,0.15)] ring-1 ring-[var(--ssg-red)]/30">
-            <i className="ph-fill ph-fingerprint text-[var(--ssg-red)] text-lg animate-pulse shadow-[0_0_15px_var(--ssg-red)]"></i>
+            <i className="ph ph-fill ph-fingerprint text-[var(--ssg-red)] text-lg animate-pulse shadow-[0_0_15px_var(--ssg-red)]"></i>
             <span className="text-[0.65rem] md:text-[0.7rem] font-bold tracking-[0.3em] uppercase text-white drop-shadow-md">Verified Identity Perimeter</span>
           </div>
           
@@ -142,7 +142,7 @@ export default function HeroSection() {
             <a href="#contact" className="epic-pill-btn group w-full sm:w-auto justify-center px-8 md:px-12 py-4 md:py-5 text-base md:text-[1.1rem] font-bold bg-[var(--ssg-red)] text-white rounded-full transition-all hover:scale-105 shadow-[0_0_30px_rgba(236,32,36,0.5)] flex items-center gap-3 relative overflow-hidden">
               <span className="relative z-10 flex items-center justify-center gap-2">
                 Initiate Protocol
-                <i className="ph-bold ph-arrow-right text-xl group-hover:translate-x-2 transition-transform"></i>
+                <i className="ph ph-bold ph-arrow-right text-xl group-hover:translate-x-2 transition-transform"></i>
               </span>
             </a>
             <a href="/services/application-security" className="w-full sm:w-auto text-center px-8 md:px-12 py-4 md:py-5 text-base md:text-[1.1rem] font-bold bg-white/5 hover:bg-white/10 border border-white/20 text-white rounded-full transition-all hover:scale-105 backdrop-blur-md">
@@ -281,7 +281,7 @@ const TelemetryDashboard = memo(function TelemetryDashboard() {
       <div className="relative z-10 bg-[#0c1019]/90 backdrop-blur-xl border-b border-white/[0.08] px-6 sm:px-8 py-4 sm:py-5 flex items-center justify-between">
         <div className="flex items-center gap-3.5">
           <div className="w-10 h-10 rounded-xl bg-[var(--ssg-red)]/15 border border-[var(--ssg-red)]/25 flex items-center justify-center shadow-[0_0_20px_rgba(236,32,36,0.15)]">
-            <i className="ph-fill ph-shield-checkered text-[var(--ssg-red)] text-xl"></i>
+            <i className="ph ph-fill ph-shield-checkered text-[var(--ssg-red)] text-xl"></i>
           </div>
           <div>
             <h3 className="text-white text-base sm:text-lg font-bold tracking-wide">Threat Intelligence Console</h3>
@@ -316,13 +316,13 @@ const TelemetryDashboard = memo(function TelemetryDashboard() {
               <div className="absolute -top-6 -right-6 w-28 h-28 bg-[var(--ssg-red)]/10 rounded-full blur-3xl group-hover:bg-[var(--ssg-red)]/20 transition-colors duration-500"></div>
               <div className="flex items-center justify-between mb-3 relative z-10">
                 <span className="text-[#8b95a9] text-xs sm:text-sm font-semibold uppercase tracking-[0.15em]">Intrusions Blocked</span>
-                <i className="ph-fill ph-shield-slash text-[var(--ssg-red)] text-xl opacity-60"></i>
+                <i className="ph ph-fill ph-shield-slash text-[var(--ssg-red)] text-xl opacity-60"></i>
               </div>
               <div className="text-4xl sm:text-5xl font-extrabold text-white font-heading tracking-tight relative z-10">
                 {threatCount.toLocaleString()}<span className="text-[var(--ssg-red)] ml-0.5 animate-[pulse_2s_ease-in-out_infinite]">_</span>
               </div>
               <div className="flex items-center gap-2 mt-3 relative z-10">
-                <i className="ph-fill ph-trend-up text-[var(--ssg-red)] text-sm"></i>
+                <i className="ph ph-fill ph-trend-up text-[var(--ssg-red)] text-sm"></i>
                 <span className="text-[var(--ssg-red)] text-xs sm:text-sm font-bold">+12.4%</span>
                 <span className="text-[#5c6578] text-xs font-medium ml-0.5">vs last hour</span>
               </div>
@@ -333,13 +333,13 @@ const TelemetryDashboard = memo(function TelemetryDashboard() {
               <div className="absolute -top-6 -right-6 w-28 h-28 bg-[var(--ssg-cyber)]/10 rounded-full blur-3xl group-hover:bg-[var(--ssg-cyber)]/20 transition-colors duration-500"></div>
               <div className="flex items-center justify-between mb-3 relative z-10">
                 <span className="text-[#8b95a9] text-xs sm:text-sm font-semibold uppercase tracking-[0.15em]">Endpoints Monitored</span>
-                <i className="ph-fill ph-monitor text-[var(--ssg-cyber)] text-xl opacity-60"></i>
+                <i className="ph ph-fill ph-monitor text-[var(--ssg-cyber)] text-xl opacity-60"></i>
               </div>
               <div className="text-4xl sm:text-5xl font-extrabold text-white font-heading tracking-tight relative z-10">
                 {endpointCount.toLocaleString()}<span className="text-[var(--ssg-cyber)] ml-0.5 animate-[pulse_2s_ease-in-out_infinite]">_</span>
               </div>
               <div className="flex items-center gap-2 mt-3 relative z-10">
-                <i className="ph-fill ph-check-circle text-emerald-400 text-sm"></i>
+                <i className="ph ph-fill ph-check-circle text-emerald-400 text-sm"></i>
                 <span className="text-emerald-400 text-xs sm:text-sm font-bold">99.97%</span>
                 <span className="text-[#5c6578] text-xs font-medium ml-0.5">uptime SLA</span>
               </div>
@@ -350,7 +350,7 @@ const TelemetryDashboard = memo(function TelemetryDashboard() {
           <div className="xl:col-span-8 p-6 sm:p-8 flex flex-col">
             <div className="flex items-center justify-between mb-5">
               <div className="flex items-center gap-2.5">
-                <i className="ph-fill ph-warning-diamond text-amber-400 text-base sm:text-lg"></i>
+                <i className="ph ph-fill ph-warning-diamond text-amber-400 text-base sm:text-lg"></i>
                 <span className="text-xs sm:text-sm uppercase tracking-[0.15em] font-bold text-white/50">Active Incident Feed</span>
               </div>
               <span className="text-[0.6rem] sm:text-xs uppercase tracking-widest font-semibold text-[#5c6578]">Auto-refresh 3.5s</span>

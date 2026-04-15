@@ -51,7 +51,7 @@ export default function ServiceSolutionsGrid({
               style={{ transitionDelay: `${idx * 100}ms` }}
             >
               <div className="w-12 h-12 bg-slate-50 border border-slate-100 rounded-xl flex items-center justify-center text-ssg-red text-2xl mb-6 group-hover:bg-red-50 group-hover:scale-110 transition-all duration-300 shadow-sm relative z-10">
-                <i className={`ph-fill ${sol.icon}`}></i>
+                <i className={`ph ph-fill ${sol.icon}`}></i>
               </div>
               
               <h3 className="text-[1.15rem] font-heading font-semibold text-slate-800 mb-2.5 leading-snug">{sol.title}</h3>
@@ -60,7 +60,7 @@ export default function ServiceSolutionsGrid({
               <ul className="space-y-3 pt-4 border-t border-slate-100">
                 {sol.features.map((feature, fidx) => (
                   <li key={fidx} className="flex gap-2.5 text-slate-600 items-start text-[0.9rem]">
-                    <i className="ph-bold ph-check text-ssg-red mt-1 shrink-0 transition-transform group-hover:scale-125"></i>
+                    <i className="ph ph-bold ph-check text-ssg-red mt-1 shrink-0 transition-transform group-hover:scale-125"></i>
                     <span className="leading-snug font-medium text-slate-700">{feature}</span>
                   </li>
                 ))}
