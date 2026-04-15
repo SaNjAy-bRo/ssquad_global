@@ -16,65 +16,144 @@ const mockEvents = [
 
 export default function HeroSection() {
   return (
-    <section className="relative w-full min-h-[80vh] sm:min-h-[85vh] flex flex-col items-center justify-center bg-[#020408] overflow-hidden pt-36 sm:pt-28 pb-8">
+    <section className="relative w-full bg-[#020408] overflow-hidden pb-16 md:pb-24">
       
-      {/* BIOMETRIC FINGERPRINT SCANNER BACKGROUND */}
-      <div className="absolute inset-0 z-0 pointer-events-none flex items-center justify-center w-full h-full overflow-hidden">
-        <div className="absolute inset-0 bg-[url('https://transparenttextures.com/patterns/cubes.png')] opacity-[0.03]"></div>
+      {/* CYBER NETWORK LOGIC BACKGROUND */}
+      <div className="absolute inset-0 z-0 pointer-events-none flex items-center justify-center w-full h-[100vh] overflow-hidden bg-[#000205]">
+        <div className="absolute inset-0 bg-[url('https://transparenttextures.com/patterns/cubes.png')] opacity-[0.05] mix-blend-overlay"></div>
         
-        <div className="absolute flex items-center justify-center w-full h-full opacity-60">
-          <i className="ph-light ph-fingerprint text-[#151b2b]" style={{ fontSize: '140vh', lineHeight: 1 }}></i>
+        {/* Animated Cyber / Circuit Network */}
+        <svg className="absolute inset-0 w-full h-full z-0 opacity-80" viewBox="0 0 1000 1000" preserveAspectRatio="xMidYMid slice">
+          <defs>
+            <filter id="glow-red">
+              <feGaussianBlur stdDeviation="6" result="blur"/>
+              <feMerge>
+                <feMergeNode in="blur"/>
+                <feMergeNode in="SourceGraphic"/>
+              </feMerge>
+            </filter>
+            <filter id="glow-cyber">
+              <feGaussianBlur stdDeviation="6" result="blur"/>
+              <feMerge>
+                <feMergeNode in="blur"/>
+                <feMergeNode in="SourceGraphic"/>
+              </feMerge>
+            </filter>
+          </defs>
+
+          {/* Grid structural dots */}
+          <pattern id="dot-grid" x="0" y="0" width="40" height="40" patternUnits="userSpaceOnUse">
+            <circle cx="2" cy="2" r="1.5" fill="rgba(255,255,255,0.06)" />
+          </pattern>
+          <rect x="0" y="0" width="1000" height="1000" fill="url(#dot-grid)" />
+
+          {/* Core connection pathways */}
+          <g stroke="rgba(236,32,36,0.12)" strokeWidth="1" fill="none">
+            <path d="M-100,200 L200,400 L400,250 L600,500 L800,300 L1100,600" />
+            <path d="M-100,800 L300,600 L500,750 L700,500 L1100,200" />
+            <path d="M200,-100 L400,300 L250,600 L500,900 L400,1100" />
+            <path d="M800,-100 L600,400 L750,700 L500,1100" stroke="rgba(63,18,108,0.25)" />
+            
+            <path d="M0,450 L350,450 L350,650 L1000,650" />
+            <path d="M0,150 L550,150 L550,850 L1000,850" />
+          </g>
+
+          {/* Glowing Animated Data Streams */}
+          <g strokeWidth="2.5" fill="none">
+            <path d="M-100,200 L200,400 L400,250 L600,500 L800,300 L1100,600" stroke="var(--ssg-red)" filter="url(#glow-red)" className="circuit-stream-1" />
+            <path d="M-100,800 L300,600 L500,750 L700,500 L1100,200" stroke="var(--ssg-red)" filter="url(#glow-red)" className="circuit-stream-2" />
+            <path d="M200,-100 L400,300 L250,600 L500,900 L400,1100" stroke="var(--ssg-red)" filter="url(#glow-red)" className="circuit-stream-3" />
+            <path d="M800,-100 L600,400 L750,700 L500,1100" stroke="var(--ssg-cyber)" filter="url(#glow-cyber)" className="circuit-stream-4" />
+            
+            <path d="M0,450 L350,450 L350,650 L1000,650" stroke="var(--ssg-cyber)" filter="url(#glow-cyber)" className="circuit-stream-5" />
+            <path d="M0,150 L550,150 L550,850 L1000,850" stroke="var(--ssg-red)" filter="url(#glow-red)" className="circuit-stream-6" />
+          </g>
+
+          {/* Data Nodes */}
+          <g fill="var(--ssg-red)">
+            <circle cx="200" cy="400" r="4" className="node-pulse-1" />
+            <circle cx="400" cy="250" r="3" className="node-pulse-2" />
+            <circle cx="600" cy="500" r="5" className="node-pulse-3" />
+            <circle cx="800" cy="300" r="3" />
+            
+            <circle cx="300" cy="600" r="4" className="node-pulse-2" />
+            <circle cx="500" cy="750" r="3" className="node-pulse-1" />
+            <circle cx="700" cy="500" r="5" className="node-pulse-3" />
+            
+            <circle cx="400" cy="300" r="4" />
+            <circle cx="250" cy="600" r="5" className="node-pulse-3" />
+            <circle cx="500" cy="900" r="3" className="node-pulse-2" />
+            
+            <circle cx="350" cy="450" r="4" fill="white" className="node-pulse-1" />
+            <circle cx="350" cy="650" r="4" fill="white" className="node-pulse-2" />
+            <circle cx="550" cy="150" r="3" fill="var(--ssg-cyber)" className="node-pulse-3" />
+            <circle cx="550" cy="850" r="3" fill="var(--ssg-cyber)" className="node-pulse-1" />
+
+            <circle cx="600" cy="400" r="4" fill="var(--ssg-cyber)" className="node-pulse-2" />
+            <circle cx="750" cy="700" r="3" fill="var(--ssg-cyber)" className="node-pulse-1" />
+          </g>
+        </svg>
+
+        {/* RESTORED FINGERPRINT BACKGROUND */}
+        <div className="absolute flex items-center justify-center w-full h-full opacity-80 pointer-events-none z-10 overflow-hidden">
+          <i className="ph-light ph-fingerprint text-[#1c2438] text-[150vw] sm:text-[120vw] md:text-[120vh] lg:text-[140vh] leading-none"></i>
         </div>
 
-        <div className="absolute inset-0 flex items-center justify-center w-full h-full hero-biometric-reveal">
-          <i className="ph-light ph-fingerprint text-[var(--ssg-red)] opacity-90 drop-shadow-[0_0_40px_rgba(236,32,36,1)]" style={{ fontSize: '140vh', lineHeight: 1 }}></i>
+        <div className="absolute inset-0 flex items-center justify-center w-full h-full hero-biometric-reveal pointer-events-none z-20 overflow-hidden">
+          <i className="ph-light ph-fingerprint text-[var(--ssg-red)] opacity-90 drop-shadow-[0_0_60px_rgba(236,32,36,1)] text-[150vw] sm:text-[120vw] md:text-[120vh] lg:text-[140vh] leading-none"></i>
         </div>
 
-        <div className="absolute left-0 w-full h-[3px] bg-white z-10 shadow-[0_0_20px_#fff,0_0_60px_#ec2024,0_0_100px_#ec2024] hero-laser-sweep">
-          <div className="absolute top-[3px] left-0 w-full h-[200px] bg-gradient-to-b from-[var(--ssg-red)]/30 to-transparent"></div>
-          <div className="absolute -top-[200px] left-0 w-full h-[200px] bg-gradient-to-t from-[var(--ssg-red)]/30 to-transparent"></div>
+        {/* Laser Sweep Layer */}
+        <div className="absolute left-0 w-full h-[2px] bg-white z-30 shadow-[0_0_20px_#fff,0_0_50px_#ec2024,0_0_80px_#ec2024] hero-laser-sweep opacity-90">
+          <div className="absolute top-[2px] left-0 w-full h-[150px] bg-gradient-to-b from-[var(--ssg-red)]/20 to-transparent"></div>
+          <div className="absolute -top-[150px] left-0 w-full h-[150px] bg-gradient-to-t from-[var(--ssg-red)]/20 to-transparent"></div>
         </div>
 
-        <div className="absolute top-0 right-0 w-[500px] h-[500px] bg-[var(--ssg-red)]/10 blur-[150px] rounded-full mix-blend-screen"></div>
-        <div className="absolute bottom-0 left-0 w-[600px] h-[600px] bg-[var(--ssg-cyber)]/15 blur-[200px] rounded-full mix-blend-screen"></div>
-        <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[120%] h-[65%] bg-[radial-gradient(ellipse_at_center,rgba(2,4,8,0.9)_0%,rgba(2,4,8,0)_70%)] z-10"></div>
+        {/* Ambient colored glowing orbs */}
+        <div className="absolute top-0 right-0 w-[500px] h-[500px] bg-[var(--ssg-red)]/15 blur-[150px] rounded-full mix-blend-screen -translate-y-1/2 translate-x-1/4"></div>
+        <div className="absolute bottom-0 left-0 w-[600px] h-[600px] bg-[var(--ssg-cyber)]/20 blur-[200px] rounded-full mix-blend-screen translate-y-1/2 -translate-x-1/4"></div>
+        
+        {/* Center spotlight to ensure text readability */}
+        <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[150%] h-[100%] max-h-[800px] bg-[radial-gradient(ellipse_at_center,rgba(2,4,8,0.95)_0%,rgba(2,4,8,0.7)_40%,rgba(2,4,8,0)_70%)] z-10"></div>
       </div>
 
-      {/* COMMANDING TYPOGRAPHY */}
-      <div className="relative z-20 flex flex-col items-center justify-center text-center px-4 w-full max-w-5xl mx-auto mt-4 md:mt-8">
+      {/* FULL-SCREEN COMMANDING TYPOGRAPHY (INITIAL VIEW) */}
+      <div className="relative min-h-[100svh] flex flex-col items-center justify-center text-center px-4 w-full mx-auto z-20 pt-32 pb-16">
         
-        <div className="hero-fade-up opacity-0 translate-y-10 transition-all duration-1000 ease-out inline-flex items-center gap-3 px-6 py-2 rounded-full border border-white/10 bg-black/60 backdrop-blur-xl mb-6 shadow-[0_0_30px_rgba(236,32,36,0.15)] ring-1 ring-[var(--ssg-red)]/30">
-          <i className="ph-fill ph-fingerprint text-[var(--ssg-red)] text-lg animate-pulse shadow-[0_0_15px_var(--ssg-red)]"></i>
-          <span className="text-[0.65rem] md:text-[0.7rem] font-bold tracking-[0.3em] uppercase text-white drop-shadow-md">Verified Identity Perimeter</span>
-        </div>
-        
-        <h1 className="hero-fade-up opacity-0 translate-y-10 transition-all duration-1000 delay-100 ease-out font-heading text-5xl sm:text-6xl md:text-[5rem] lg:text-[7rem] leading-[0.95] font-extrabold tracking-[-0.03em] text-white drop-shadow-[0_20px_50px_rgba(0,0,0,1)] px-2">
-          Intelligence Led
-          <br />
-          <span className="text-transparent bg-clip-text bg-gradient-to-b from-white via-white to-[var(--ssg-red)] pb-2 md:pb-4 inline-block drop-shadow-[0_0_40px_rgba(236,32,36,0.2)]">
-            Proactive Defence
-          </span>
-        </h1>
-        
-        <p className="hero-fade-up opacity-0 translate-y-10 transition-all duration-1000 delay-200 ease-out mt-6 md:mt-8 text-white text-lg sm:text-xl md:text-2xl leading-relaxed max-w-3xl font-normal tracking-wide px-4 drop-shadow-[0_5px_10px_rgba(0,0,0,1)] text-balance mx-auto">
-          Secure your endpoint identities. Unmatched reliability, zero trust access, and autonomous biometric operations driving the future of&nbsp;SOC.
-        </p>
-        
-        <div className="hero-fade-up opacity-0 translate-y-10 transition-all duration-1000 delay-300 ease-out mt-6 md:mt-8 flex flex-col sm:flex-row gap-4 md:gap-5 justify-center items-center w-full max-w-lg sm:max-w-none mx-auto px-4">
-          <a href="#contact" className="epic-pill-btn group w-full sm:w-auto justify-center px-8 md:px-12 py-4 md:py-5 text-base md:text-[1.1rem] font-bold bg-[var(--ssg-red)] text-white rounded-full transition-all hover:scale-105 shadow-[0_0_30px_rgba(236,32,36,0.5)] flex items-center gap-3 relative overflow-hidden">
-            <span className="relative z-10 flex items-center justify-center gap-2">
-              Initiate Protocol
-              <i className="ph-bold ph-arrow-right text-xl group-hover:translate-x-2 transition-transform"></i>
+        <div className="max-w-5xl mx-auto flex flex-col items-center mt-12 md:mt-8">
+          <div className="hero-fade-up opacity-0 translate-y-10 transition-all duration-1000 ease-out inline-flex items-center gap-3 px-6 py-2 rounded-full border border-white/10 bg-black/60 backdrop-blur-xl mb-6 shadow-[0_0_30px_rgba(236,32,36,0.15)] ring-1 ring-[var(--ssg-red)]/30">
+            <i className="ph-fill ph-fingerprint text-[var(--ssg-red)] text-lg animate-pulse shadow-[0_0_15px_var(--ssg-red)]"></i>
+            <span className="text-[0.65rem] md:text-[0.7rem] font-bold tracking-[0.3em] uppercase text-white drop-shadow-md">Verified Identity Perimeter</span>
+          </div>
+          
+          <h1 className="hero-fade-up opacity-0 translate-y-10 transition-all duration-1000 delay-100 ease-out font-heading text-5xl sm:text-6xl md:text-[5rem] lg:text-[6.5rem] leading-[0.95] font-extrabold tracking-[-0.03em] text-white drop-shadow-[0_20px_50px_rgba(0,0,0,1)] px-2">
+            Autonomous
+            <br />
+            <span className="text-transparent bg-clip-text bg-gradient-to-b from-white via-white to-[var(--ssg-red)] pb-2 md:pb-4 inline-block drop-shadow-[0_0_40px_rgba(236,32,36,0.2)]">
+              Threat Defence
             </span>
-          </a>
-          <a href="/services/application-security" className="w-full sm:w-auto text-center px-8 md:px-12 py-4 md:py-5 text-base md:text-[1.1rem] font-bold bg-white/5 hover:bg-white/10 border border-white/20 text-white rounded-full transition-all hover:scale-105 backdrop-blur-md">
-            Security Matrix
-          </a>
+          </h1>
+          
+          <p className="hero-fade-up opacity-0 translate-y-10 transition-all duration-1000 delay-200 ease-out mt-6 md:mt-8 text-white text-lg sm:text-xl md:text-2xl leading-relaxed max-w-3xl font-normal tracking-wide px-4 drop-shadow-[0_5px_10px_rgba(0,0,0,1)] text-balance mx-auto">
+            Zero-trust architecture powered by autonomous biometrics. Secure your endpoint identities with the true reliability of a modern SOC.
+          </p>
+          
+          <div className="hero-fade-up opacity-0 translate-y-10 transition-all duration-1000 delay-300 ease-out mt-6 md:mt-8 flex flex-col sm:flex-row gap-4 md:gap-5 justify-center items-center w-full max-w-lg sm:max-w-none mx-auto px-4">
+            <a href="#contact" className="epic-pill-btn group w-full sm:w-auto justify-center px-8 md:px-12 py-4 md:py-5 text-base md:text-[1.1rem] font-bold bg-[var(--ssg-red)] text-white rounded-full transition-all hover:scale-105 shadow-[0_0_30px_rgba(236,32,36,0.5)] flex items-center gap-3 relative overflow-hidden">
+              <span className="relative z-10 flex items-center justify-center gap-2">
+                Initiate Protocol
+                <i className="ph-bold ph-arrow-right text-xl group-hover:translate-x-2 transition-transform"></i>
+              </span>
+            </a>
+            <a href="/services/application-security" className="w-full sm:w-auto text-center px-8 md:px-12 py-4 md:py-5 text-base md:text-[1.1rem] font-bold bg-white/5 hover:bg-white/10 border border-white/20 text-white rounded-full transition-all hover:scale-105 backdrop-blur-md">
+              Security Matrix
+            </a>
+          </div>
         </div>
       </div>
 
-      {/* TELEMETRY DASHBOARD */}
-      <div className="hero-fade-up opacity-0 translate-y-10 transition-all duration-1000 delay-500 ease-out w-full max-w-7xl mx-auto px-4 sm:px-6 z-30 mt-16 md:mt-20 relative">
+      {/* TELEMETRY DASHBOARD - ON SCROLL (BELOW FOLD) */}
+      <div className="hero-fade-up opacity-0 translate-y-10 transition-all duration-1000 ease-out w-full max-w-7xl mx-auto px-4 sm:px-6 z-30 relative mt-8 md:mt-12">
         <TelemetryDashboard />
       </div>
 
@@ -82,15 +161,37 @@ export default function HeroSection() {
         .hero-laser-sweep { animation: laserSweep 4s ease-in-out infinite alternate; }
         .hero-biometric-reveal { animation: biometricReveal 4s ease-in-out infinite alternate; }
         @keyframes laserSweep {
-          0% { top: 10%; opacity: 0; }
+          0% { top: 0%; opacity: 0; }
           10% { opacity: 1; }
           90% { opacity: 1; }
-          100% { top: 90%; opacity: 0; }
+          100% { top: 100%; opacity: 0; }
         }
         @keyframes biometricReveal {
-          0% { clip-path: inset(0 0 90% 0); }
-          100% { clip-path: inset(10% 0 0 0); }
+          0% { clip-path: inset(0 0 100% 0); }
+          100% { clip-path: inset(0 0 0% 0); }
         }
+        
+        .circuit-stream-1 { stroke-dasharray: 80 800; animation: streamDraw 8s linear infinite; }
+        .circuit-stream-2 { stroke-dasharray: 60 700; animation: streamDraw 12s linear infinite reverse; }
+        .circuit-stream-3 { stroke-dasharray: 100 600; animation: streamDraw 10s linear infinite; }
+        .circuit-stream-4 { stroke-dasharray: 50 650; animation: streamDraw 9s linear infinite reverse; }
+        .circuit-stream-5 { stroke-dasharray: 70 800; animation: streamDraw 11s linear infinite; }
+        .circuit-stream-6 { stroke-dasharray: 90 900; animation: streamDraw 14s linear infinite reverse; }
+        
+        @keyframes streamDraw {
+          0% { stroke-dashoffset: 2000; }
+          100% { stroke-dashoffset: 0; }
+        }
+
+        .node-pulse-1 { animation: nodePulse 3s ease-in-out infinite; }
+        .node-pulse-2 { animation: nodePulse 2s ease-in-out infinite 0.5s; }
+        .node-pulse-3 { animation: nodePulse 4s ease-in-out infinite 1s; }
+
+        @keyframes nodePulse {
+          0%, 100% { opacity: 0.3; }
+          50% { opacity: 1; fill: #fff; }
+        }
+
         @keyframes eqBar1 { 0%,100%{transform:scaleY(.25)} 50%{transform:scaleY(1)} }
         @keyframes eqBar2 { 0%,100%{transform:scaleY(.4)} 40%{transform:scaleY(.9)} 70%{transform:scaleY(.6)} }
         @keyframes eqBar3 { 0%,100%{transform:scaleY(.3)} 60%{transform:scaleY(1)} }

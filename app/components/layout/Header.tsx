@@ -136,9 +136,6 @@ export default function Header() {
   };
 
   const currentItems = serviceData[activeService] || [];
-  const middle = Math.ceil(currentItems.length / 2);
-  const leftCol = currentItems.slice(0, middle);
-  const rightCol = currentItems.slice(middle);
 
   return (
     <header 
@@ -213,29 +210,16 @@ export default function Header() {
             <div className="mega-menu-inner">
               <div className="mega-content-wrap">
                 <div id="mega-title" className="mega-title">{serviceLabels[activeService]}</div>
-                <div className={`mega-content-grid ${isSwitching ? 'is-switching' : ''}`} id="mega-content">
-                  <div className="mega-col">
-                    {leftCol.map((item, idx) => (
-                      <article className="mega-item" key={idx}>
-                        <Link className="mega-link" href={item.href}>
-                          <h3>{item.title}</h3>
-                          <p>{item.desc}</p>
-                          <span className="mega-link-cta">View service <i className="ph ph-arrow-up-right"></i></span>
-                        </Link>
-                      </article>
-                    ))}
-                  </div>
-                  <div className="mega-col">
-                    {rightCol.map((item, idx) => (
-                      <article className="mega-item" key={idx}>
-                        <Link className="mega-link" href={item.href}>
-                          <h3>{item.title}</h3>
-                          <p>{item.desc}</p>
-                          <span className="mega-link-cta">View service <i className="ph ph-arrow-up-right"></i></span>
-                        </Link>
-                      </article>
-                    ))}
-                  </div>
+                <div className={`grid grid-cols-1 lg:grid-cols-3 gap-3 transition-all duration-150 ${isSwitching ? 'opacity-0 translate-y-2' : 'opacity-100 translate-y-0'}`} id="mega-content">
+                  {currentItems.map((item, idx) => (
+                    <article className="mega-item !rounded-[0.75rem]" key={idx}>
+                      <Link onClick={closeMega} className="mega-link !flex !flex-col !h-full !p-3 sm:!p-4" href={item.href}>
+                        <h3 className="!text-[0.92rem] !leading-[1.3]">{item.title}</h3>
+                        <p className="!mt-1 !text-[0.82rem] !leading-[1.35]">{item.desc}</p>
+                        <span className="mega-link-cta !mt-auto !pt-2">View service <i className="ph ph-arrow-up-right"></i></span>
+                      </Link>
+                    </article>
+                  ))}
                 </div>
               </div>
             </div>

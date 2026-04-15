@@ -138,8 +138,7 @@ h6 {
   border-radius: 1rem;
   border: 1px solid #e3e8ef;
   box-shadow: 0 28px 55px rgba(15, 23, 42, 0.18);
-  padding: 1.05rem;
-  min-height: 350px;
+  padding: 0.85rem;
 }
 
 .mega-content-wrap {
@@ -157,8 +156,8 @@ h6 {
 
 .mega-content-grid {
   display: grid;
-  grid-template-columns: repeat(2, minmax(0, 1fr));
-  gap: 1.2rem 2.3rem;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 0.8rem 1.2rem;
   transition: opacity 140ms ease, transform 180ms ease;
 }
 
@@ -167,22 +166,20 @@ h6 {
   transform: translateY(8px);
 }
 
-.mega-col {
-  display: grid;
-  align-content: start;
-  gap: 0.78rem;
-}
+
 
 .mega-item {
   border-radius: 0.9rem;
 }
 
 .mega-link {
-  display: block;
+  display: flex;
+  flex-direction: column;
+  height: 100%;
   border: 1px solid #e6eaf1;
-  border-radius: 0.9rem;
+  border-radius: 0.75rem;
   background: #fbfcfe;
-  padding: 0.88rem 0.9rem;
+  padding: 0.75rem 0.85rem;
   text-decoration: none;
   transition: border-color 180ms ease, box-shadow 180ms ease, transform 180ms ease, background 180ms ease;
 }
@@ -195,25 +192,26 @@ h6 {
 }
 
 .mega-item h3 {
-  font-size: 0.98rem;
-  line-height: 1.35;
+  font-size: 0.92rem;
+  line-height: 1.3;
   color: #111827;
 }
 
 .mega-item p {
-  margin-top: 0.3rem;
+  margin-top: 0.2rem;
   color: #4b5563;
-  line-height: 1.4;
-  font-size: 0.89rem;
+  line-height: 1.35;
+  font-size: 0.82rem;
 }
 
 .mega-link-cta {
-  margin-top: 0.6rem;
+  margin-top: auto;
+  padding-top: 0.5rem;
   display: inline-flex;
   align-items: center;
   gap: 0.28rem;
   color: #ec2024;
-  font-size: 0.8rem;
+  font-size: 0.75rem;
   font-weight: 600;
 }
 
