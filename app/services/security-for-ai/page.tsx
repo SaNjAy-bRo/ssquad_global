@@ -38,9 +38,9 @@ export default function SecurityForAiPage() {
       <ServiceOverviewCards 
         eyebrow="AI Security"
         title="Cybersecurity Solutions Built for the Age of Artificial Intelligence"
-        description={`In today's AI-driven landscape where 85% of organizations deploy machine learning in production, traditional security falls short against AI-specific threats. Our Cybersecurity for AI Solutions deliver comprehensive protection designed around model vulnerabilities, adversarial attacks, and data poisoning—addressing the accelerating threat detection needs while maintaining AI performance and accuracy.
+        description={`In today's AI-driven landscape where most organizations deploy machine learning, traditional security falls short. Our AI Solutions deliver comprehensive protection designed around model vulnerabilities and adversarial attacks—addressing urgent detection needs while maintaining model accuracy.
 
-SSquad's AI security specialists build defense systems that protect intelligent systems while enhancing productivity. We rapidly assess, design, and deploy AI-native security frameworks that serve as adaptive shields for machine learning operations—seamlessly integrated into MLOps pipelines without compromising model effectiveness or innovation velocity.`}
+SSquad's security specialists build defense systems that protect intelligent systems while enhancing productivity. We rapidly deploy AI-native frameworks that serve as adaptive shields for machine learning operations—seamlessly integrated into pipelines without compromising innovation.`}
         points={[
           { title: "AI Model Protection & Governance", icon: "ph-shield-check" },
           { title: "Adversarial Attack Defense", icon: "ph-shield-warning" },
@@ -58,7 +58,7 @@ SSquad's AI security specialists build defense systems that protect intelligent 
           {
             title: "AI Threat Detection & Monitoring",
             description: "Accelerate detection and response with AI-driven security intelligence.",
-            icon: "ph-radar",
+            icon: "ph-shield-checkered",
             features: [
               "Real-Time Threat Detection & Correlation",
               "AI-Powered Anomaly & Behavior Analysis",
@@ -97,17 +97,6 @@ SSquad's AI security specialists build defense systems that protect intelligent 
               "Edge AI Security",
               "Federated Learning Security",
               "Behavioral User Verification"
-            ]
-          },
-          {
-            title: "Embedded Intelligence & Governance",
-            description: "AI-powered security systems that protect AI systems, guaranteeing compliant AI operations and continuous adaptation to emerging AI threats and regulatory requirements.",
-            icon: "ph-brain",
-            features: [
-              "AI Governance Frameworks",
-              "Regulatory Compliance Automation",
-              "Predictive Threat Intelligence",
-              "Self-Defending AI Models"
             ]
           }
         ]}

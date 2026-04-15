@@ -37,7 +37,7 @@ export default function IotServicesPage() {
         title="Transform Physical Assets Into Intelligent Data Streams"
         description={`The Internet of Things (IoT) has irreversibly blurred the line between the physical and digital domains. Modern enterprises require more than just connectivity—they require intelligent, autonomous ecosystems capable of processing massive telemetry streams at the extreme edge of the network.
 
-Ssquad engineers deploy military-grade IoT architectures that seamlessly network disparate sensors, industrial machinery, and smart-city infrastructure. By aggregating real-time data directly from the physical world, we empower organizations to instantly predict catastrophic equipment failures, automate massive industrial workflows, and extract unprecedented operational intelligence.`}
+Ssquad engineers deploy high-performance IoT architectures that network disparate sensors and industrial machinery. By aggregating real-time data from the physical world, we empower organizations to predict equipment failures, automate massive workflows, and extract unprecedented operational intelligence.`}
         points={[
           { title: "Industrial IoT (IIoT)", icon: "ph-factory" },
           { title: "Smart City Infrastructure", icon: "ph-buildings" },

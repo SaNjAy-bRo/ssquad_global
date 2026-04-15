@@ -37,9 +37,9 @@ export default function PenetrationTestingPage() {
       <ServiceOverviewCards 
         eyebrow="Offensive Security"
         title="Secure Your Security Reputation"
-        description={`Penetration testing services involve authorized simulated cyberattacks conducted by security experts to identify vulnerabilities in systems, networks, or applications before malicious actors can exploit them. 
-        
-        These services assess security posture through controlled exploits, including network, web application, cloud, and social engineering tests. Delivered by certified professionals, penetration testing provides actionable insights to strengthen defenses and meet compliance requirements like PCI DSS and ISO 27001, ensuring proactive risk management and enhanced protection against evolving threats. Pen test services mimic actual cyber attacks to test your system's strength.`}
+        description={`Penetration testing involves authorized simulated cyberattacks conducted by security experts to identify vulnerabilities in your systems, networks, and applications before malicious actors can exploit them.
+
+Our services assess your security posture through controlled exploits and social engineering tests. Delivered by certified professionals, we provide actionable insights to strengthen defenses and meet global compliance standards, ensuring proactive risk management and protection against evolving threats.`}
         points={[
           { title: "Vulnerability detection on networks and apps", icon: "ph-scan" },
           { title: "Industry compliance with standards", icon: "ph-certificate" },

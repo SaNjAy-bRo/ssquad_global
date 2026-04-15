@@ -35,9 +35,9 @@ export default function LegacyAppModernizationPage() {
       <ServiceOverviewCards 
         eyebrow="System Modernization"
         title="Revitalize Outdated Systems. Defeat Technical Debt."
-        description={`Legacy systems inevitably become severe bottlenecks to enterprise innovation, scalability, and security. As market demands violently accelerate, organizations clinging to aging monolithic applications suffer from compounding operational friction and critical vulnerability exposure.
+        description={`Legacy systems inevitably become severe bottlenecks to enterprise innovation, scalability, and security. As market demands accelerate, organizations clinging to aging monolithic applications suffer from compounding operational friction and critical vulnerability exposure.
 
-Ssquad delivers surgical Legacy Application Modernization frameworks designed to definitively eliminate technical debt. We don't just upgrade software; we fundamentally re-architect it—transforming rigid, siloed operations into elastic, high-velocity digital assets that actively drive competitive dominance.`}
+Ssquad delivers surgical modernization frameworks designed to definitively eliminate technical debt. We don't just upgrade software; we fundamentally re-architect it—transforming rigid, siloed operations into elastic, high-velocity digital assets that drive competitive dominance.`}
         points={[
           { title: "Application Re-Architecting", icon: "ph-building" },
           { title: "Cloud Re-Platforming", icon: "ph-cloud-arrow-up" },

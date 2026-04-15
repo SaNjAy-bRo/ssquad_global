@@ -35,9 +35,9 @@ export default function InfraManagementPage() {
       <ServiceOverviewCards 
         eyebrow="Managed Infrastructure"
         title="Upgrade Your Operations With Next-Generation Cloud & Hardware Solutions"
-        description={`Ssquad Global has operated as the elite technology partner to over 100 enterprise clients across the APAC region for more than 12 years. We specialize in designing, deploying, and aggressively defending end-to-end IT infrastructure matrices. Operating via 10 regional command centers across 50+ locations, our boots-on-the-ground engineering presence guarantees uncompromising reach and instantaneous responsiveness.
+        description={`Ssquad Global has operated as the technology partner to over 100 enterprise clients across the APAC region for more than 12 years. We specialize in designing, deploying, and defending end-to-end IT infrastructure matrices. With 10 regional centers across 50+ locations, our engineering presence guarantees uncompromising reach and instantaneous responsiveness.
 
-As cyber-kinetic threats evolve and technical debt compounds, we empower organizations to remain resilient, compliant, and infinitely scalable. Operating 24/7/365, we relentlessly safeguard the core operations for telecom giants, multi-branch banking institutions, and classified government entities.`}
+As cyber-kinetic threats evolve, we empower organizations to remain resilient, compliant, and infinitely scalable for their mission-critical operations. Operating 24/7/365, we relentlessly safeguard the core systems for telecom giants, multi-branch banking institutions, and classified government entities across the globe.`}
         points={[
           { title: "Enterprise Networking", icon: "ph-graph" },
           { title: "Data Center Security", icon: "ph-hard-drives" },

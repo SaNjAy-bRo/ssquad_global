@@ -35,9 +35,9 @@ export default function HybridCloudPage() {
       <ServiceOverviewCards 
         eyebrow="Hybrid Architecture"
         title="Absolute Flexibility, Performance, And Control"
-        description={`In today's complex IT landscape, a rigid, one-size-fits-all cloud architecture is a severe liability. Enterprises demand the dynamic agility of public cloud environments alongside the ironclad control of private on-premise infrastructure. Distributed and Hybrid Cloud solutions deliver this precise equilibrium.
+        description={`In today's complex IT landscape, a rigid, one-size-fits-all cloud architecture is a severe operational liability. Enterprises demand the dynamic agility of public cloud environments alongside the ironclad control of private infrastructure. Distributed and Hybrid Cloud solutions deliver this precise equilibrium.
 
-At Ssquad, we engineer sophisticated, multi-environment cloud fabrics that allow workloads to securely traverse the optimal infrastructure—optimizing for speed, data sovereignty, security, and absolute cost efficiency without vendor lock-in.`}
+At Ssquad, we engineer sophisticated cloud fabrics that allow workloads to securely traverse the optimal infrastructure—optimizing for speed, sovereignty, and absolute cost efficiency without vendor lock-in, ensuring your enterprise remains resilient and agile in any environment.`}
         points={[
           { title: "Hybrid Cloud Fabrics", icon: "ph-cloud-network" },
           { title: "Distributed Edge Enablement", icon: "ph-broadcast" },

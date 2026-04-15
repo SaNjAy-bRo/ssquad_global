@@ -37,9 +37,9 @@ export default function AiCybersecurityPage() {
       <ServiceOverviewCards 
         eyebrow="Autonomous Defense"
         title="AI-Powered Threat Detection For Real-Time Defense"
-        description={`The modern threat landscape has violently outpaced human operational capacity. Legacy, signature-based approaches are useless against polymorphic malware and fileless attacks. Enterprises require AI-driven defense strategies that offer real-time telemetry correlation, automated kill-chain disruptions, and predictive threat analytics.
+        description={`The modern threat landscape has outpaced human operational capacity. Legacy, signature-based approaches are useless against today's polymorphic and fileless attacks. Enterprises require AI-driven strategies that offer real-time correlation, automated disruptions, and predictive threat analytics.
 
-At Ssquad, we deploy weaponized Artificial Intelligence and Machine Learning models to revolutionize your security posture—transforming reactive, alert-heavy operations into proactive, intelligent, and infinitely scalable defense matrices.`}
+At Ssquad, we deploy Artificial Intelligence and Machine Learning models to revolutionize your security posture—transforming reactive, alert-heavy operations into proactive, intelligent, and infinitely scalable defense systems.`}
         points={[
           { title: "AI-Augmented SOC", icon: "ph-brain" },
           { title: "Predictive Analytics", icon: "ph-trend-up" },

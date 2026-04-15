@@ -35,9 +35,9 @@ export default function WorkflowAutomationPage() {
       <ServiceOverviewCards 
         eyebrow="Operational Velocity"
         title="Digitize Operations. Eradicate Inefficiency. Accelerate Output."
-        description={`In a data-driven enterprise, manual, repetitive processes are a severe friction point that chokes productivity and introduces catastrophic human error. Workflow Automation radically redefines operational limits by digitizing and autonomously executing critical business logic at machine speed.
+        description={`In a data-driven enterprise, manual and repetitive processes create friction that chokes productivity and introduces human error. Workflow Automation redefines operational limits by digitizing and autonomously executing critical business logic at machine speed for your organization.
 
-At Ssquad, we deploy highly evolved Robotic Process Automation (RPA) and custom automation matrices to systematically annihilate operational bottlenecks. Whether refining HR onboarding, accelerating financial orchestration, or interconnecting software silos, our architectures scale flawlessly to drive permanent efficiency.`}
+At Ssquad, we deploy highly evolved Robotic Process Automation (RPA) to systematically remove operational bottlenecks. Whether refining HR onboarding or accelerating financial orchestration, our architectures scale flawlessly to drive permanent efficiency and measurable ROI.`}
         points={[
           { title: "Robotic Process Automation", icon: "ph-robot" },
           { title: "Custom Logic Design", icon: "ph-code" },

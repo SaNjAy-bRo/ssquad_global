@@ -35,9 +35,9 @@ export default function AppIntegrationPage() {
       <ServiceOverviewCards 
         eyebrow="Ecosystem Synchronization"
         title="Unify Systems. Streamline Workflows. Maximize Business Velocity."
-        description={`In today's complex IT environments, scale is often bottlenecked by fragmented software. Businesses relying on disconnected, siloed applications suffer from severe data latency, operational friction, and costly inefficiencies. Application Integration Services from Ssquad engineer absolute connectivity—fusing your disparate technology layers into a single, high-velocity operational engine.
+        description={`In today's complex IT environments, enterprise scale is often restricted by fragmented software. Businesses relying on disconnected, siloed applications suffer from data latency, operational friction, and costly inefficiencies. Our Application Integration services fuse your disparate technology layers into a single, high-velocity operational engine.
 
-We deploy robust middleware and API architectures to orchestrate seamless data exchange between your internal core systems, specialized third-party SaaS vendors, and expansive cloud platforms—ensuring total agility and smarter, real-time decision-making.`}
+We deploy robust middleware and API architectures to orchestrate seamless data exchange between your internal systems, third-party SaaS vendors, and expansive cloud platforms—ensuring total agility and smarter, real-time decision-making for your enterprise.`}
         points={[
           { title: "Enterprise System Integration", icon: "ph-building" },
           { title: "Cloud & Hybrid Connectivity", icon: "ph-cloud-network" },

@@ -34,7 +34,9 @@ export default function ServiceFeatureGrid({
           {eyebrow && <p className="section-eyebrow">{eyebrow}</p>}
           <h2 className="section-title text-slate-900 mx-auto max-w-4xl">{title}</h2>
           {subtitle && (
-            <p className="mt-4 text-slate-600 max-w-3xl mx-auto text-lg leading-relaxed">
+            <p 
+              className="mt-4 text-slate-600 max-w-3xl mx-auto text-[1.1rem] leading-relaxed text-justify"
+            >
               {subtitle}
             </p>
           )}

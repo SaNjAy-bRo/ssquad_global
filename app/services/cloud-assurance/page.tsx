@@ -35,9 +35,9 @@ export default function CloudAssurancePage() {
       <ServiceOverviewCards 
         eyebrow="Continuous Verification"
         title="Secure, Compliant, And Highly Resilient Cloud Ecosystems"
-        description={`In today's digital era, cloud technology is the cornerstone of innovation. From enabling complex AI models to supporting advanced data analytics, the cloud offers powerful velocity that helps organizations scale faster. Yet, dynamic cloud architectures introduce severe challenges around security, compliance, and operational reliability.
+        description={`In today's digital era, cloud technology is the cornerstone of innovation. From enabling complex AI models to supporting advanced data analytics, the cloud offers powerful velocity that helps organizations scale faster. Yet, dynamic architectures introduce challenges around security, compliance, and operational reliability.
 
-As enterprises scale their cloud adoption, a robust assurance strategy becomes a non-negotiable imperative. Guaranteeing the integrity, availability, and hardened security of cloud environments is vital to protect sensitive data, outmaneuver threats, and uphold absolute customer trust.`}
+As enterprises scale their cloud adoption, a robust assurance strategy becomes a non-negotiable imperative. Guaranteeing the integrity and hardened security of your cloud environments is vital to protect sensitive data, outmaneuver modern threats, and uphold absolute trust with your customers.`}
         points={[
           { title: "Security Posture Evaluation", icon: "ph-shield-check" },
           { title: "Quality Engineering & Testing", icon: "ph-test-tube" },

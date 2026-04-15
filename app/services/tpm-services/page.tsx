@@ -35,9 +35,9 @@ export default function TPMPage() {
       <ServiceOverviewCards 
         eyebrow="Asset Lifespan Optimization"
         title="Maximize Operational Velocity, Slash OEM Budgets"
-        description={`OEM maintenance contracts are notoriously exorbitant, ruthlessly restrictive, and engineered to force premature infrastructure upgrades. Ssquad’s Third-Party Maintenance (TPM) services shatter these commercial constraints, offering a hyper-flexible, extremely cost-effective alternative to monopolistic OEM support.
+        description={`OEM maintenance contracts are notoriously exorbitant, restrictive, and engineered to force premature infrastructure upgrades. Ssquad’s Third-Party Maintenance (TPM) services shatter these commercial constraints, offering a hyper-flexible, cost-effective alternative to monopolistic OEM support for your enterprise.
 
-We empower enterprises to forcibly maintain critical server, storage, and networking ecosystems far beyond End-of-Life (EOL) dictates—extending aggressive operational continuity while aggressively optimizing your IT fiscal parameters.`}
+We empower organizations to maintain critical server, storage, and networking ecosystems far beyond End-of-Life dictates—extending operational continuity while optimizing your IT fiscal parameters and ensuring your hardware continues to perform at peak efficiency.`}
         points={[
           { title: "Multi-Vendor Agnostic Support", icon: "ph-infinity" },
           { title: "Post-EOL Hardware Lifeline", icon: "ph-heartbeat" },

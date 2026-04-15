@@ -35,9 +35,9 @@ export default function CloudOperationsPage() {
       <ServiceOverviewCards 
         eyebrow="Intelligent Infrastructure"
         title="Unleashing Agility And Resilience Across Your Cloud Ecosystem"
-        description={`In today's digital era, cloud infrastructure is the engine that powers innovation, scalability, and agility. From AI and machine learning to advanced analytics and DevOps, modern businesses rely on mature, cloud-native operations to stay competitive and future-ready. 
+        description={`In today's digital era, cloud infrastructure is the engine that powers innovation, scalability, and agility. From AI and machine learning to advanced analytics and DevOps, modern businesses rely on mature, cloud-native operations to stay competitive and remain future-ready for their customers.
 
-Ssquad's Cloud Operations services offer a comprehensive, end-to-end approach to managing and optimizing public, private, and hybrid cloud environments. We deliver fully automated, full-stack cloud ops that ensure your infrastructure is always performing at its best—secure, cost-efficient, and dynamically aligned with volatile business loads.`}
+Ssquad's Cloud Operations services offer a comprehensive approach to managing public, private, and hybrid cloud environments. We deliver fully automated, full-stack cloud ops that ensure your infrastructure is always performing at its best—secure, cost-efficient, and dynamically aligned with business loads.`}
         points={[
           { title: "Predictive Analytics & AIOps", icon: "ph-robot" },
           { title: "Intelligent Workload Placement", icon: "ph-chart-polar" },

@@ -35,9 +35,9 @@ export default function NaaPPage() {
       <ServiceOverviewCards 
         eyebrow="Network Evolution"
         title="The Intelligent, Programmable Network Foundation"
-        description={`Network as a Platform (NaaP) is the definitive paradigm shift in enterprise telecommunications. The network is no longer a passive transport layer—it is an intelligent, highly programmable, and dynamically service-aware foundation. This evolution transforms traditional rigid infrastructure into a strategic enabler that natively delivers absolute business agility and boundless innovation.
+        description={`Network as a Platform (NaaP) is the definitive paradigm shift in enterprise telecommunications. The network is no longer a passive transport layer—it is an intelligent, highly programmable, and dynamically service-aware foundation. This evolution transforms rigid infrastructure into a strategic enabler that natively delivers absolute business agility and boundless innovation.
 
-At its core, NaaP leverages advanced Software-Defined Networking (SDN), Network Function Virtualization (NFV), deep telemetry APIs, and AI/ML orchestration to expose the network as a fully programmable platform, capable of real-time service deployment and security enforcement.`}
+At its core, NaaP leverages advanced Software-Defined Networking (SDN) and deep telemetry APIs to expose the network as a fully programmable platform. It is capable of real-time service deployment and security enforcement, ensuring your enterprise remains connected and secure in an increasingly complex digital world.`}
         points={[
           { title: "Software-Defined Routing", icon: "ph-graph" },
           { title: "API-Driven Architecture", icon: "ph-plugs-connected" },

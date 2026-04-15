@@ -37,7 +37,7 @@ export default function EndUserComputingPage() {
         title="Frictionless Access, Uncompromising Security"
         description={`End User Computing (EUC) is the foundational layer of modern operational velocity. As enterprises shift toward distributed, agile workflows, employees demand instantaneous, secure access to enterprise data and applications—directly from any device, anywhere in the world.
 
-Ssquad's elite EUC frameworks empower your teams to execute at the highest level. By rapidly provisioning secure digital workspaces, centralizing device management, and locking down identity access, we eliminate operational friction and IT bottlenecks, allowing true business innovation to scale unimpeded.`}
+Our EUC frameworks empower your teams to execute at the highest level. By provisioning secure digital workspaces and centralizing device management, we eliminate operational friction and IT bottlenecks, allowing true business innovation to scale unimpeded for your organization.`}
         points={[
           { title: "Rapid Desktop Provisioning", icon: "ph-desktop" },
           { title: "Zero-Trust Identity Control", icon: "ph-fingerprint" },

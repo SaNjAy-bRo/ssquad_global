@@ -35,9 +35,9 @@ export default function CloudConsultingPage() {
       <ServiceOverviewCards 
         eyebrow="Strategic Advisory"
         title="Strategic Guidance For Smarter, Scalable Cloud Solutions"
-        description={`Partner with seasoned cloud experts at Ssquad to develop and execute a cloud strategy tailored to your business vision and IT landscape. Whether you're taking your first steps toward the cloud, managing a multi-cloud ecosystem, or enhancing cloud performance and security, our consulting services ensure your environment is optimized, resilient, and future-ready. 
+        description={`Partner with seasoned cloud experts at Ssquad to develop and execute a cloud strategy tailored to your business vision and IT landscape. Whether you are managing a multi-cloud ecosystem or enhancing your performance, our consulting services ensure your environment is optimized, resilient, and future-ready.
 
-Adopting a cloud-first approach is no longer optional—it’s a strategic imperative. For IT to meet evolving business demands and for businesses to deliver exceptional customer experiences, the cloud must become a foundational enabler of innovation, agility, and scalability.`}
+Adopting a cloud-first approach is no longer optional—it is a strategic imperative. For IT to meet evolving business demands and for businesses to deliver exceptional customer experiences, the cloud must become a foundational enabler of innovation, agility, and scalability for your enterprise.`}
         points={[
           { title: "Strategic Cloud Planning", icon: "ph-strategy" },
           { title: "Migration Assessment", icon: "ph-magnifying-glass" },

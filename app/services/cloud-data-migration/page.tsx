@@ -35,9 +35,9 @@ export default function CloudDataMigrationPage() {
       <ServiceOverviewCards 
         eyebrow="Data Modernization"
         title="Seamlessly Transition To Modern Cloud Data Ecosystems"
-        description={`Legacy systems limit agility, scalability, and innovation. At Ssquad, we help businesses move beyond outdated infrastructures with secure, efficient, and strategic cloud data migration and modernization services that lay the foundation for data-driven transformation. 
+        description={`Legacy systems inevitably limit agility, scalability, and modernization. At Ssquad, we help businesses move beyond outdated infrastructures with secure, efficient, and strategic cloud data migration and modernization services that lay the foundation for your data-driven transformation.
 
-Whether you're migrating on-premises databases to the cloud, modernizing data warehouses, or transforming your analytics architecture, our experts guide you through every step of the journey—ensuring minimal disruption, reduced risk, and maximum business value.`}
+Whether you are migrating on-premises databases to the cloud or transforming your analytics architecture, our experts guide you through every step—ensuring minimal disruption and maximum business value for your modern digital enterprise.`}
         points={[
           { title: "Cloud Database Migration", icon: "ph-database" },
           { title: "Data Platform Modernization", icon: "ph-cloud-arrow-up" },

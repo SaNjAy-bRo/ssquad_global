@@ -36,10 +36,10 @@ export default function OtSecurityPage() {
 
       <ServiceOverviewCards 
         eyebrow="Industrial Defense"
-        title="OT Security Services"
-        description={`OT Security Services are specialized cybersecurity solutions designed to protect Operational Technology (OT) environments. OT systems are used to control physical operations such as manufacturing, energy distribution, water treatment, and transportation. These environments often include legacy systems and proprietary protocols that were not meant for security, making them vulnerable to cyber threats.
+        title="Industrial OT Security Services"
+        description={`OT Security Services are specialized cybersecurity solutions designed to protect Operational Technology within critical industrial environments. These systems control physical operations like manufacturing and energy distribution, yet often rely on legacy protocols that are vulnerable to modern cyber threats.
 
-        These services typically include risk assessments, network segmentation, continuous threat detection, incident response, and continuous monitoring tailored specifically for OT environments. Unlike IT environments, OT security measures prioritize operational continuity and safety above data protection.`}
+Our services include risk assessments, network segmentation, and threat detection tailored specifically for industrial contexts. Unlike traditional IT, our OT security measures prioritize operational continuity and safety above all else, ensuring your critical infrastructure remains resilient.`}
         points={[
           { title: "OT Security Assessments", icon: "ph-shield-check" },
           { title: "OT Compliance Assessments", icon: "ph-certificate" },
@@ -49,7 +49,7 @@ export default function OtSecurityPage() {
 
       <ServiceFeatureGrid 
         title="OT Security Assessments"
-        subtitle="In today's highly connected IT environments, Operational Technology (OT) environments are more connected and exposed than ever before. This increased connectivity brings tremendous operational benefits, but also introduces significant cybersecurity risks. Our OT Security Assessments are designed to help you identify vulnerabilities, mitigate risks, and protect your critical infrastructure operations from cyber threat. What We Offer:"
+        subtitle="In today's connected landscape, Operational Technology is more exposed than ever. Our assessments help you identify critical vulnerabilities, mitigate risks, and protect your industrial infrastructure from sophisticated cyber threats."
         bgColor="slate"
         columns={3}
         cards={[
@@ -111,7 +111,7 @@ export default function OtSecurityPage() {
       
       <ServiceFeatureGrid 
         title="OT Security Consulting"
-        subtitle="Expert Guidance to Secure Your Operational Infrastructure Consulting Services. Our OT (Operational Technology) Consulting Services provide the expert insights, strategic planning, and technical support you need to protect your operations and advance resilience in a rapidly evolving threat landscape. What Our OT Compliance Assessment Covers:"
+        subtitle="Our OT Consulting Services provide the expert insights, strategic planning, and technical support you need to protect your operations and advance resilience in a rapidly evolving threat landscape."
         bgColor="slate"
         columns={2}
         cards={[

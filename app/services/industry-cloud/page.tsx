@@ -35,9 +35,9 @@ export default function IndustryCloudPage() {
       <ServiceOverviewCards 
         eyebrow="Specialized Frameworks"
         title="Bespoke Cloud Platforms Designed For Total Industry Dominance"
-        description={`Generic infrastructure limits your competitive velocity. Industry Cloud solutions deliver specialized cloud architectures surgically built to meet the distinct operational workflows, extreme compliance standards, and rigorous data challenges of your specific market sector. 
+        description={`Generic infrastructure often limits your competitive velocity. Industry Cloud solutions deliver specialized architectures built to meet the distinct operational workflows, extreme compliance standards, and rigorous data challenges of your specific market sector for long-term growth.
 
-By fusing hyperscale cloud capabilities with entrenched domain expertise, Ssquad engineers specialized platforms for healthcare, finance, manufacturing, and retail. These architectures arrive pre-loaded with industry-native applications, automated compliance guardrails, and tailored AI analytics—drastically accelerating your time-to-market.`}
+By fusing hyperscale cloud capabilities with domain expertise, Ssquad engineers platforms for healthcare, finance, manufacturing, and retail. These architectures arrive pre-loaded with native applications and tailored AI analytics—drastically accelerating your time-to-market and operational efficiency.`}
         points={[
           { title: "Native Sector Functionality", icon: "ph-bank" },
           { title: "Pre-Configured Compliance", icon: "ph-shield-check" },

@@ -37,9 +37,9 @@ export default function ThreatIntelligencePage() {
       <ServiceOverviewCards 
         eyebrow="Predictive Intelligence"
         title="Elevating Cyber Defense Through Deep Analytics"
-        description={`Threat Intelligence involves collecting, analyzing, and correlating data about necessary threats, attacker tactics, and vulnerabilities. Threat intelligence is the process of gathering, analyzing, and interpreting information on existing cyber threats. It helps organizations understand threat actors, their tactics, and potential attack vectors.
-        
-        By using this intelligence, businesses can proactively defend against cyberattacks, improve their security posture, and respond faster to incidents. It's like having a radar that detects danger before it hits, enabling smarter, more informed cybersecurity decisions.`}
+        description={`Threat Intelligence involves collecting and correlating global data about emerging risks, attacker methodologies, and system vulnerabilities. It helps organizations understand adversary behavior and anticipate incoming attack vectors.
+
+By utilizing high-fidelity intelligence, businesses can proactively defend against sophisticated cyberattacks, improve security posture, and respond to incidents with surgical precision—detecting danger before it impacts mission-critical systems.`}
         points={[
           { title: "Identification of advanced attacker end points", icon: "ph-crosshair" },
           { title: "Plays role against attacker attacks", icon: "ph-shield-warning" },

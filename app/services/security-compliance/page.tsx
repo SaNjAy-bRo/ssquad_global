@@ -35,9 +35,9 @@ export default function SecurityCompliancePage() {
       <ServiceOverviewCards 
         eyebrow="Holistic Compliance Strategy"
         title="Secure By Design. Compliant By Default"
-        description={`In an era where data breaches and regulatory pressures are escalating, application security and compliance are no longer optional—they're essential. At Ssquad, we specialize in custom security and compliance solutions tailored to your business applications, ensuring you meet industry regulations and protect your digital assets at every level.
+        description={`In an era where data breaches and regulatory pressures are escalating, application security and compliance are essential. At Ssquad, we specialize in custom security and compliance solutions tailored to your business, ensuring you meet industry regulations and protect your digital assets at every level.
 
-Whether you're building from scratch or enhancing existing systems, our team helps you integrate robust security frameworks and align with relevant standards such as GDPR, HIPAA, SOC 2, ISO 27001, PCI-DSS, and more.`}
+Whether you are building from scratch or enhancing existing systems, our team helps you integrate robust security frameworks and align with global standards such as GDPR, HIPAA, SOC 2, ISO 27001, and PCI-DSS.`}
         points={[
           { title: "Custom Security Implementation", icon: "ph-shield-check" },
           { title: "Compliance Enablement Frameworks", icon: "ph-certificate" },

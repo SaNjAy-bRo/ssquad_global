@@ -35,9 +35,9 @@ export default function HumanCentricSecurityPage() {
       <ServiceOverviewCards 
         eyebrow="Human-Centric Security"
         title="Security Designed Around People, Not Just Systems"
-        description={`In today's threat landscape where 90% of employees knowingly take risky actions, traditional security creates friction and resistance. Our Human-Centric Cybersecurity Solutions deliver zero-friction protection designed around actual user behavior, cognitive patterns, and workflow realities—addressing the $4.90 million average cost of insider-initiated breaches.
+        description={`In today's threat landscape where employees often take high-risk actions, traditional security creates friction. Our Human-Centric Solutions deliver zero-friction protection designed around user behavior and workflow realities—directly addressing the massive costs of employee-initiated breaches.
 
-SSquad's behavioral security experts build defense systems that enhance productivity while strengthening protection. We rapidly assess, design, and deploy adaptive security frameworks that serve as invisible shields for enterprise operations—seamlessly integrated into daily workflows without compromising the human element that drives business success.`}
+SSquad's behavioral security experts build defense systems that enhance productivity while strengthening protection. We rapidly deploy adaptive frameworks that serve as invisible shields for your enterprise operations—seamlessly integrated without compromising the human element that drives success.`}
         points={[
           { title: "Human Risk Management (HRM)", icon: "ph-users" },
           { title: "Security Awareness & Training", icon: "ph-graduation-cap" },

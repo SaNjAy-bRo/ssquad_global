@@ -37,7 +37,7 @@ export default function AuxiliaryServicesPage() {
         title="Complementary Support Designed To Accelerate Core Objectives"
         description={`As a premier global IT Solutions provider, S-squad Global has identified a critical spectrum of IT-Enabled Services (ITES) necessary to guarantee absolute operational continuity for enterprise clients. Operating under our Auxiliary Services division, these specialized capabilities act as a seamless extension of your internal teams.
 
-We provide highly scalable, meticulously trained technical support and rapid on-site intervention frameworks, empowering your engineering cores to remain focused entirely on strategic business innovation while we systematically dismantle daily operational friction.`}
+We provide highly scalable technical support and rapid on-site intervention frameworks, empowering your engineering cores to remain focused on strategic business innovation while we systematically manage and dismantle daily operational friction for your modern business ecosystem.`}
         points={[
           { title: "Tier 1-3 Contact Centers", icon: "ph-headset" },
           { title: "On-Site Hardware Intervention", icon: "ph-wrench" },

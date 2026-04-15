@@ -35,9 +35,9 @@ export default function CloudSecurityPage() {
       <ServiceOverviewCards 
         eyebrow="Proactive Defense"
         title="Protecting Your Cloud Environment With Comprehensive Security"
-        description={`As organizations increasingly migrate to distributed cloud platforms, securing multi-tenant environments becomes paramount to protect sensitive data, ensure compliance, and maintain mission-critical continuity. Ssquad's Cloud Security solutions deliver robust, end-to-end protection tailored to your unique cloud architecture—whether public, private, or hybrid workloads.
+        description={`As organizations migrate to distributed cloud platforms, securing multi-tenant environments becomes paramount to protect sensitive data and maintain mission-critical continuity. Our Cloud Security solutions deliver robust, end-to-end protection tailored specifically to your unique architecture—whether public, private, or hybrid workloads.
 
-The shift to elastic computing introduces new threat vectors, including misconfigurations, IAM hijacking, and evolving ransomware variants. Without embedded security measures, organizations risk severe financial and reputational damage. We integrate defense-in-depth protocols seamlessly into your cloud ops.`}
+The shift to elastic computing introduces new threat vectors, including misconfigurations and evolving ransomware. Without embedded security measures, organizations risk severe financial and reputational damage. We integrate high-fidelity defense protocols seamlessly into your cloud operations.`}
         points={[
           { title: "Identity & Access Management (IAM)", icon: "ph-fingerprint" },
           { title: "Data Protection & Encryption", icon: "ph-lock-key" },

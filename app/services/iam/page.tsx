@@ -36,10 +36,10 @@ export default function IamSolutionsPage() {
 
       <ServiceOverviewCards 
         eyebrow="Identity Governance"
-        title="What Are Identity And Access Management"
-        description={`Leading identity and access management solutions combine real-time efficiency from the IAM solutions capability through behavioral analytics and identity analytics.
+        title="Secure Identity and Access Management Solutions"
+        description={`Identity and Access Management (IAM) is a critical security framework that ensures the right individuals have the right access to the right resources at the right time. By managing identities and enforcing granular controls, IAM protects your enterprise against unauthorized access and credential-based threats.
 
-        Identity and Access Management (IAM) solutions are security frameworks that ensure the right individuals secure the right resources at the right time. They manage user identities, authenticate users, control access based on roles, and monitor user activity. IAM helps organizations safeguard sensitive data, streamline user provisioning, and meet compliance requirements by preventing unauthorized access and enforcing security policies across cloud, on-premise, and hybrid environments.`}
+Our premium IAM solutions integrate behavioral analytics and automated identity governance to safeguard data across cloud and hybrid environments—streamlining user provisioning while maintaining absolute compliance and security posture.`}
         points={[
           { title: "Centralized Identity Management", icon: "ph-users" },
           { title: "Unified SaaS/PaaS Application Access", icon: "ph-cloud-check" },

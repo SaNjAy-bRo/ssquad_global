@@ -35,9 +35,9 @@ export default function CloudNativePage() {
       <ServiceOverviewCards 
         eyebrow="Modern Architecture"
         title="Unlock Unprecedented Agility With Cloud Native Engineering"
-        description={`In today's hyper-accelerated digital marketplace, legacy monolithic architectures are obsolete. Cloud native engineering is transforming how software is conceptualized, deployed, and scaled. We architect applications from the ground up to be intrinsically elastic, highly resilient, and capable of instantaneous scaling to meet volatile market demands.
+        description={`In today's hyper-accelerated digital marketplace, legacy monolithic architectures are obsolete. Cloud native engineering transforms how software is conceptualized, deployed, and scaled. We architect applications from the ground up to be intrinsically elastic, highly resilient, and capable of instantaneous scaling to meet volatile market demands.
 
-By fully leveraging microservices, continuous integration pipelines, and serverless compute, our cloud-native approach strips away monolithic bottlenecks—drastically accelerating release velocity while minimizing operational overhead.`}
+By leveraging microservices, continuous integration pipelines, and serverless compute, our approach strips away monolithic bottlenecks—drastically accelerating release velocity while minimizing operational overhead for your enterprise digital platforms.`}
         points={[
           { title: "Microservices Architecture", icon: "ph-tree-structure" },
           { title: "Container Orchestration", icon: "ph-hard-drives" },

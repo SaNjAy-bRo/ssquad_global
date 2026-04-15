@@ -33,8 +33,7 @@ export default function ServiceOverviewCards({
             {title}
           </h2>
           <p 
-            className="text-slate-600 leading-relaxed text-[1.1rem] text-balance whitespace-pre-line"
-            style={{ textWrap: 'balance' }}
+            className="text-slate-600 leading-relaxed text-[1.1rem] max-w-3xl mx-auto whitespace-pre-line text-justify"
           >
             {description}
           </p>

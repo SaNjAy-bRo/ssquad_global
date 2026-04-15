@@ -35,9 +35,9 @@ export default function CustomAppDevelopmentPage() {
       <ServiceOverviewCards 
         eyebrow="Bespoke Software"
         title="Tailored Software Solutions For Unique Business Needs"
-        description={`In today's hyper-competitive digital landscape, off-the-shelf SaaS compromises agility. Our Custom Application Development capabilities deliver zero-compromise ecosystems designed strictly around your proprietary business logic, operational challenges, and growth trajectory.
+        description={`In today's hyper-competitive digital landscape, off-the-shelf software often compromises agility. Our Custom Application Development capabilities deliver zero-compromise ecosystems designed strictly around your proprietary business logic, operational challenges, and unique growth trajectory.
 
-Ssquad's elite engineering squads build software that transcends generic functionality. We rapidly prototype, develop, and deploy cloud-native applications that serve as foundational engines for enterprise digital transformation—securely embedded into your existing tech stack.`}
+Ssquad's elite engineering squads build software that transcends generic functionality. We rapidly prototype, develop, and deploy cloud-native applications that serve as foundational engines for your enterprise digital transformation—securely embedded into your existing technology stack.`}
         points={[
           { title: "End-to-End Build & Deployment", icon: "ph-code" },
           { title: "UX/UI Strategy & Design", icon: "ph-pen-nib" },
