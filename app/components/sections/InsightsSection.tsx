@@ -1,4 +1,5 @@
 import Image from 'next/image';
+import { mockBlogs } from '../../data/blogs';
 
 export default function InsightsSection() {
   return (
@@ -13,30 +14,25 @@ export default function InsightsSection() {
         </div>
 
         <div className="mt-10 grid md:grid-cols-2 lg:grid-cols-3 gap-6">
-          <article className="insight-card reveal">
-            <Image src="https://ssquad.com/wp-content/uploads/2025/05/securtity-advisory-570x600.jpg" unoptimized alt="Security advisory visual from SSquad Global" width={570} height={600} className="w-full h-auto" />
-            <div className="content">
-              <h3>Security Advisory: Strengthen Your Cyber Defenses With Expert Guidance</h3>
-              <p>In today&apos;s volatile cyber landscape, expert guidance helps organizations reduce risk and improve resilience.</p>
-              <a href="https://ssquad.com/security-advisory-strengthen-your-cyber-defenses-with-expert-guidance/" target="_blank" rel="noopener noreferrer">Read more <span>&rarr;</span></a>
-            </div>
-          </article>
-          <article className="insight-card reveal">
-            <Image src="https://ssquad.com/wp-content/uploads/2020/11/nist-570x600.jpg" unoptimized alt="NIST cybersecurity framework visual from SSquad Global" width={570} height={600} className="w-full h-auto" />
-            <div className="content">
-              <h3>How Can Organizations Use The NIST Cybersecurity Framework To Strengthen Their Security?</h3>
-              <p>Understand how the NIST framework provides a structured path to identify, protect, detect, respond, and recover.</p>
-              <a href="https://ssquad.com/how-can-organizations-use-the-nist-cybersecurity-framework-to-strengthen-their-security/" target="_blank" rel="noopener noreferrer">Read more <span>&rarr;</span></a>
-            </div>
-          </article>
-          <article className="insight-card reveal">
-            <Image src="https://ssquad.com/wp-content/uploads/2020/11/ransom_banner-570x600.jpg" unoptimized alt="Ransomware awareness visual from SSquad Global" width={570} height={600} className="w-full h-auto" />
-            <div className="content">
-              <h3>Ransomware For Small Business: Everything You Need To Know About</h3>
-              <p>Learn key ransomware risks and practical controls small and mid-sized businesses should implement first.</p>
-              <a href="https://ssquad.com/ransomware-for-small-business-everything-you-need-to-know-about/" target="_blank" rel="noopener noreferrer">Read more <span>&rarr;</span></a>
-            </div>
-          </article>
+          {mockBlogs.map((blog) => (
+            <article key={blog.id} className="insight-card reveal">
+              <Image 
+                src={blog.image} 
+                unoptimized 
+                alt={`${blog.title} visual from SSquad Global`} 
+                width={570} 
+                height={600} 
+                className="w-full h-auto aspect-[570/600] object-cover" 
+              />
+              <div className="content p-6">
+                <h3 className="font-bold text-lg mb-3">{blog.title}</h3>
+                <p className="text-gray-600 mb-4">{blog.summary}</p>
+                <a href={blog.link} target="_blank" rel="noopener noreferrer" className="text-ssg-red font-semibold flex items-center gap-1 hover:gap-2 transition-all">
+                  Read more <span>&rarr;</span>
+                </a>
+              </div>
+            </article>
+          ))}
         </div>
       </div>
     </section>

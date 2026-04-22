@@ -252,10 +252,7 @@ export default function AppServiceHeader({ title, subtitle, breadcrumbs, theme =
               [ SECURE // PROTOCOL // ACTIVE ]
             </span>
           )}
-          <h1 
-            className="font-mono text-white font-bold tracking-tight reveal drop-shadow-lg whitespace-nowrap overflow-visible leading-tight tabular-nums"
-            style={{ fontSize: `clamp(0.9rem, min(8vw, ${140 / (title.length || 10)}vw), 4.5rem)` }}
-          >
+          <h1 className="text-white font-bold tracking-tight reveal drop-shadow-lg overflow-visible leading-[1.1] tabular-nums text-4xl sm:text-5xl md:text-6xl lg:text-[4.5rem] text-balance">
             <DecryptingTitle text={title} theme={theme} />
           </h1>
         </div>

@@ -3,6 +3,7 @@
 import { useState, useEffect, useRef } from 'react';
 import Link from 'next/link';
 import Image from 'next/image';
+import { usePathname } from 'next/navigation';
 
 const serviceData: Record<string, { title: string; desc: string; href: string }[]> = {
   cyber: [
@@ -51,6 +52,7 @@ const serviceLabels: Record<string, string> = {
 };
 
 export default function Header() {
+  const pathname = usePathname();
   const [isScrolled, setIsScrolled] = useState(false);
   const [scrollProgress, setScrollProgress] = useState(0);
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
@@ -138,6 +140,8 @@ export default function Header() {
   };
 
   const currentItems = serviceData[activeService] || [];
+
+  if (pathname?.startsWith('/admin')) return null;
 
   return (
     <header 
