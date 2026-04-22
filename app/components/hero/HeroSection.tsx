@@ -119,12 +119,12 @@ export default function HeroSection() {
           <h1 className="hero-fade-up opacity-0 translate-y-10 transition-all duration-1000 delay-100 ease-out font-heading text-[2.2rem] leading-[1.2] min-[400px]:text-4xl sm:text-5xl md:text-[3.5rem] lg:text-[4vw] xl:text-[4rem] md:leading-[1] font-extrabold tracking-[-0.03em] text-white drop-shadow-[0_20px_50px_rgba(0,0,0,1)] px-2 w-full xl:whitespace-nowrap">
             AI-Powered{' '}
             <span className="text-transparent bg-clip-text bg-gradient-to-b from-white via-white to-[var(--ssg-red)] pb-2 md:pb-4 drop-shadow-[0_0_40px_rgba(236,32,36,0.2)]">
-              Security Operations Center
+              Security Operations
             </span>
           </h1>
           
-          <p className="hero-fade-up opacity-0 translate-y-10 transition-all duration-1000 delay-200 ease-out mt-6 md:mt-8 text-white text-lg sm:text-xl md:text-2xl leading-relaxed max-w-4xl font-normal tracking-wide px-4 drop-shadow-[0_5px_10px_rgba(0,0,0,1)] text-balance mx-auto">
-            Centralize your security ecosystem, amplify with cutting-edge threat intelligence, and activate automated defense mechanisms that stay ahead of evolving cyber threats.
+          <p className="hero-fade-up opacity-0 translate-y-10 transition-all duration-1000 delay-200 ease-out mt-6 md:mt-8 text-white/90 text-[0.95rem] min-[400px]:text-base sm:text-lg md:text-xl lg:text-[1.35rem] leading-[1.6] sm:leading-[1.7] max-w-5xl font-normal tracking-wide px-4 drop-shadow-[0_5px_10px_rgba(0,0,0,1)] mx-auto text-center">
+            Centralize your security ecosystem, amplify with cutting-edge threat intelligence,<br className="hidden sm:block" /> and activate automated defense against evolving cyber threats.
           </p>
           
           <div className="hero-fade-up opacity-0 translate-y-10 transition-all duration-1000 delay-300 ease-out mt-6 md:mt-8 flex flex-col sm:flex-row gap-4 md:gap-5 justify-center items-center w-full max-w-lg sm:max-w-none mx-auto px-4">
