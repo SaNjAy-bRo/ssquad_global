@@ -194,13 +194,13 @@ export default function HeroSectionV2({
              {/* Action Buttons */}
              <div className="flex flex-col sm:flex-row gap-5 items-center justify-center w-full sm:w-auto relative z-10">
                <Link href="/contact" className="group relative w-full sm:w-auto justify-center px-8 py-4 text-sm font-bold bg-transparent text-[var(--ssg-red)] overflow-hidden rounded border border-[var(--ssg-red)] hover:bg-[var(--ssg-red)] hover:text-white transition-all duration-300 flex items-center gap-3 uppercase tracking-wider shadow-[0_0_20px_rgba(236,32,36,0.15)] hover:shadow-[0_0_40px_rgba(236,32,36,0.4)]">
-                 <i className="ph-bold ph-crosshair text-lg group-hover:rotate-90 transition-transform duration-500"></i>
-                 Deploy Shield
+                 Talk to an Expert
+                 <i className="ph-bold ph-arrow-right text-lg group-hover:translate-x-1 transition-transform duration-300"></i>
                  <div className="absolute inset-0 bg-gradient-to-r from-transparent via-white/20 to-transparent -translate-x-full group-hover:animate-[v2Sweep_1s_ease-in-out]"></div>
                </Link>
                <Link href="/#solutions" className="group w-full sm:w-auto text-center px-8 py-4 text-sm font-bold text-white hover:text-[#60a5fa] transition-colors duration-300 flex items-center justify-center gap-2 uppercase tracking-wider">
-                 Analyze Vectors
-                 <i className="ph-bold ph-caret-right transform group-hover:translate-x-1 transition-transform"></i>
+                 <i className="ph-bold ph-squares-four text-lg"></i>
+                 Explore Services
                </Link>
              </div>
           </div>
