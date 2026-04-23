@@ -1,108 +1,262 @@
 "use client";
 
-import { useEffect } from 'react';
+import { useEffect, useRef } from 'react';
 import Link from 'next/link';
+import Image from 'next/image';
 
-export default function HeroSectionV2() {
+export default function HeroSectionV2({
+  badge = "Zero-Trust Perimeter",
+  heading = "Where Technology",
+  headingAccent = "Meets Resilience",
+  subheading = "Unify your security data with real-time threat intelligence and leverage AI-driven automation to detect, investigate, and respond to threats instantly."
+}: {
+  badge?: string;
+  heading?: string;
+  headingAccent?: string;
+  subheading?: string;
+}) {
+  const canvasRef = useRef<HTMLCanvasElement>(null);
+
+    // ── Canvas Digital Matrix Rain ──
   useEffect(() => {
-    const reveals = document.querySelectorAll('.hero-zoom-in');
+    const canvas = canvasRef.current;
+    if (!canvas) return;
+    const ctx = canvas.getContext('2d');
+    if (!ctx) return;
+
+    let animationFrameId: number;
+    let width = canvas.width = window.innerWidth;
+    let height = canvas.height = window.innerHeight;
+
+    const characters = 'ABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789@#$%^&*()';
+    const fontSize = 14;
+    let columns = Math.floor(width / fontSize);
+    let drops: number[] = [];
+
+    const initGrid = () => {
+      width = canvas.width = window.innerWidth;
+      height = canvas.height = window.innerHeight;
+      columns = Math.floor(width / fontSize);
+      drops = [];
+      for (let x = 0; x < columns; x++) {
+        drops[x] = Math.random() * height; // Start at random Y positions
+      }
+    };
+
+    initGrid();
+    window.addEventListener('resize', initGrid);
+
+    const startTime = Date.now();
+
+    const render = () => {
+      // Black background with slight opacity to create motion trail
+      // Because we use mix-blend-screen, this black will become transparent and the trails will show over the image
+      ctx.fillStyle = 'rgba(2, 4, 10, 0.15)';
+      ctx.fillRect(0, 0, width, height);
+
+      const elapsed = Date.now() - startTime;
+      const centerX = width / 2;
+      const centerY = height / 2;
+      const pulseSpeed = 0.15;
+      const pulseRadius = (elapsed * pulseSpeed) % (Math.max(width, height) * 1.2);
+
+      ctx.font = `${fontSize}px monospace`;
+
+      for (let i = 0; i < drops.length; i++) {
+        const text = characters.charAt(Math.floor(Math.random() * characters.length));
+        
+        // Use mostly blue, occasionally red for danger aesthetic
+        const isRed = Math.random() > 0.95;
+        if (isRed) {
+          ctx.fillStyle = 'rgba(236, 32, 36, 0.8)'; // ssg-red
+          ctx.shadowColor = '#ec2024';
+        } else {
+          ctx.fillStyle = 'rgba(59, 130, 246, 0.35)'; // blue
+          ctx.shadowColor = '#3b82f6';
+        }
+        
+        ctx.shadowBlur = 5;
+        ctx.fillText(text, i * fontSize, drops[i] * fontSize);
+        ctx.shadowBlur = 0; // Reset for performance
+
+        // Reset drop to top if it goes off screen (with randomness to stagger them)
+        if (drops[i] * fontSize > height && Math.random() > 0.975) {
+          drops[i] = 0;
+        }
+
+        drops[i]++;
+      }
+
+      // ── Radar Sweep & Crosshairs ──
+      ctx.lineWidth = 1.5;
+      
+      // Crosshair lines
+      ctx.strokeStyle = 'rgba(59, 130, 246, 0.2)';
+      ctx.beginPath();
+      ctx.moveTo(centerX, 0);
+      ctx.lineTo(centerX, height);
+      ctx.moveTo(0, centerY);
+      ctx.lineTo(width, centerY);
+      ctx.stroke();
+
+      // Primary Radar Ring
+      ctx.beginPath();
+      ctx.arc(centerX, centerY, pulseRadius, 0, Math.PI * 2);
+      ctx.strokeStyle = 'rgba(59, 130, 246, 0.5)';
+      ctx.stroke();
+
+      // Secondary Inner Red Ring
+      if (pulseRadius > 150) {
+        ctx.beginPath();
+        ctx.arc(centerX, centerY, pulseRadius - 150, 0, Math.PI * 2);
+        ctx.strokeStyle = 'rgba(236, 32, 36, 0.3)'; // ssg-red
+        ctx.stroke();
+      }
+
+      animationFrameId = requestAnimationFrame(render);
+    };
+
+    render();
+
+    return () => {
+      window.removeEventListener('resize', initGrid);
+      cancelAnimationFrame(animationFrameId);
+    };
+  }, []);
+
+  // ── Entrance Animations ──
+  useEffect(() => {
+    const reveals = document.querySelectorAll('.hero-v2-reveal');
     reveals.forEach((el, i) => {
       setTimeout(() => {
-        el.classList.add('opacity-100', 'scale-100', 'translate-y-0');
-        el.classList.remove('opacity-0', 'scale-95', 'translate-y-8');
+        el.classList.add('opacity-100', 'translate-y-0', 'scale-100');
+        el.classList.remove('opacity-0', 'translate-y-12', 'scale-95');
       }, 100 + i * 150);
     });
   }, []);
 
   return (
-    <section className="relative w-full bg-[#020408] overflow-hidden min-h-[100svh] flex items-center justify-center pb-16">
+    <section className="relative w-full bg-[#02040a] overflow-hidden min-h-[100svh] flex items-center justify-center pt-24 pb-16">
       
-      {/* HEXAGON CORE DATA BACKGROUND */}
-      <div className="absolute inset-0 z-0 pointer-events-none flex items-center justify-center w-full h-full overflow-hidden bg-gradient-to-b from-[#020408] via-[#080b14] to-[#020408]">
-        
-        {/* Hexagon Grid Pattern */}
-        <div className="absolute inset-0 opacity-20" style={{ 
-          backgroundImage: `url("data:image/svg+xml,%3Csvg width='60' height='103.92304845413263' viewBox='0 0 60 103.92304845413263' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M30 103.92304845413263L0 86.60254037844386L0 51.96152422706631L30 34.64101615137754L60 51.96152422706631L60 86.60254037844386ZM30 51.96152422706631L0 34.64101615137754L0 0L30 -17.32050807568877L60 0L60 34.64101615137754Z' fill='none' stroke='rgba(255,255,255,0.2)' stroke-width='1'/%3E%3C/svg%3E")`,
-          backgroundSize: '60px 103.92px'
-        }}></div>
-
-        {/* Central Core Glow */}
-        <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[800px] h-[800px] bg-[radial-gradient(circle,rgba(236,32,36,0.15)_0%,rgba(91,46,255,0.1)_40%,transparent_70%)] rounded-full blur-[60px] animate-pulse" style={{ animationDuration: '4s' }}></div>
-
-        {/* Data Particles emitting from center */}
-        <div className="absolute inset-0 z-0 flex items-center justify-center overflow-hidden v2-particles-container">
-          {[...Array(20)].map((_, i) => (
-            <div 
-              key={i}
-              className="absolute w-1 h-1 bg-white rounded-full v2-particle"
-              style={{
-                top: '50%',
-                left: '50%',
-                '--angle': `${i * 18}deg`,
-                '--distance': `${200 + Math.random() * 400}px`,
-                '--duration': `${2 + Math.random() * 3}s`,
-                '--delay': `${Math.random() * 2}s`,
-                boxShadow: i % 2 === 0 ? '0 0 10px 2px var(--ssg-red)' : '0 0 10px 2px var(--ssg-cyber)'
-              } as React.CSSProperties}
-            ></div>
-          ))}
-        </div>
+      {/* ═══ AI TACTICAL BACKGROUND IMAGE ═══ */}
+      <div className="absolute inset-0 z-0 pointer-events-none">
+        <Image 
+          src="/images/tactical-cyber-bg.png" 
+          alt="Tactical Cyber Command" 
+          fill 
+          priority 
+          quality={100}
+          className="object-cover object-center opacity-70" 
+        />
+        <div className="absolute inset-0 bg-gradient-to-b from-[#02040a]/40 via-transparent to-[#02040a]/80"></div>
       </div>
 
-      {/* CENTERED GLASSMORPHISM TYPOGRAPHY */}
-      <div className="relative z-20 w-full max-w-5xl mx-auto px-4 sm:px-6 flex flex-col items-center mt-24">
-        
-        <div className="hero-zoom-in opacity-0 scale-95 translate-y-8 transition-all duration-1000 ease-[cubic-bezier(0.23,1,0.32,1)] p-8 md:p-12 lg:p-16 rounded-[2.5rem] bg-white/[0.02] border border-white/[0.05] backdrop-blur-2xl shadow-[0_30px_100px_-20px_rgba(0,0,0,1),inset_0_0_0_1px_rgba(255,255,255,0.05)] text-center relative overflow-hidden group">
-          
-          {/* Subtle hover gradient inside card */}
-          <div className="absolute inset-0 bg-gradient-to-br from-[var(--ssg-red)]/5 to-[var(--ssg-cyber)]/5 opacity-0 group-hover:opacity-100 transition-opacity duration-700"></div>
+      {/* ═══ CANVAS BACKGROUND ═══ */}
+      <canvas ref={canvasRef} className="absolute inset-0 z-[1] opacity-90 mix-blend-screen" />
 
-          <div className="relative z-10 flex flex-col items-center">
-            <div className="inline-flex items-center gap-2.5 px-4 py-1.5 rounded-full bg-[var(--ssg-cyber)]/10 border border-[var(--ssg-cyber)]/20 mb-8">
-              <i className="ph ph-shield-check text-[var(--ssg-cyber)] text-sm"></i>
-              <span className="text-[0.65rem] md:text-[0.7rem] font-bold tracking-[0.25em] uppercase text-[var(--ssg-cyber)]">Verified Identity Perimeter</span>
-            </div>
-            
-            <h1 className="font-heading text-[2.5rem] leading-[1.1] sm:text-5xl md:text-6xl lg:text-7xl font-extrabold tracking-tight text-white mb-6">
-              Intelligence-Led <br/>
-              <span className="text-transparent bg-clip-text bg-gradient-to-r from-[var(--ssg-red)] to-[#ff7b7d]">
-                Proactive Defence
-              </span>
-            </h1>
-            
-            <p className="text-[#a1a1aa] text-sm sm:text-base md:text-lg leading-[1.8] max-w-3xl font-medium mx-auto mb-10">
-              Unify your security data with real-time threat intelligence and leverage AI-driven automation to detect, investigate, and respond to threats before they impact your business.
-            </p>
-            
-            <div className="flex flex-col sm:flex-row gap-4 items-center justify-center w-full sm:w-auto">
-              <Link href="/contact" className="w-full sm:w-auto justify-center px-10 py-4 text-base font-bold bg-white text-black hover:bg-gray-200 rounded-full transition-all hover:scale-105 shadow-[0_0_20px_rgba(255,255,255,0.2)] flex items-center gap-2">
-                Talk to an expert
-                <i className="ph ph-arrow-right text-lg"></i>
-              </Link>
-              <Link href="/#solutions" className="w-full sm:w-auto text-center px-10 py-4 text-base font-bold bg-transparent hover:bg-white/5 border border-white/20 text-white rounded-full transition-all">
-                Explore our services
-              </Link>
-            </div>
+      {/* ═══ AMBIENT GLOW ═══ */}
+      <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[800px] h-[800px] bg-[#3b82f6]/10 blur-[150px] rounded-full pointer-events-none z-0"></div>
+
+      {/* ═══ FOREGROUND HUD ═══ */}
+      <div className="relative z-20 w-full max-w-6xl mx-auto px-4 sm:px-6 flex flex-col items-center">
+        
+        {/* The Tactical Card Wrapper */}
+        <div className="relative w-full max-w-4xl hero-v2-reveal opacity-0 scale-95 translate-y-12 transition-all duration-1000 ease-[cubic-bezier(0.25,1,0.3,1)]">
+          
+          {/* HUD Corner Brackets */}
+          <div className="absolute -top-6 -left-6 w-16 h-16 border-t-[3px] border-l-[3px] border-[#3b82f6] rounded-tl-lg opacity-70"></div>
+          <div className="absolute -top-6 -right-6 w-16 h-16 border-t-[3px] border-r-[3px] border-[#3b82f6] rounded-tr-lg opacity-70"></div>
+          <div className="absolute -bottom-6 -left-6 w-16 h-16 border-b-[3px] border-l-[3px] border-[#3b82f6] rounded-bl-lg opacity-70"></div>
+          <div className="absolute -bottom-6 -right-6 w-16 h-16 border-b-[3px] border-r-[3px] border-[#3b82f6] rounded-br-lg opacity-70"></div>
+
+          {/* MAIN CARD CONTENT */}
+          <div className="relative bg-[#020612]/70 backdrop-blur-xl border border-[#3b82f6]/20 rounded-xl p-8 md:p-14 lg:p-20 text-center shadow-[0_0_80px_rgba(0,0,0,0.8),inset_0_0_30px_rgba(59,130,246,0.05)] overflow-hidden">
+             
+             {/* CRT Scanline Overlay */}
+             <div className="absolute inset-0 v2-crt-lines opacity-30 pointer-events-none z-0"></div>
+             
+             {/* Large Fingerprint Watermark */}
+             <i className="ph-fill ph-fingerprint absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 text-[25rem] sm:text-[35rem] text-[#3b82f6]/20 drop-shadow-[0_0_20px_rgba(59,130,246,0.3)] pointer-events-none z-0"></i>
+
+             {/* Moving Light Bar */}
+             <div className="absolute top-0 left-0 w-full h-[150px] bg-gradient-to-b from-transparent via-[#3b82f6]/10 to-transparent animate-[v2ScanDown_6s_linear_infinite] pointer-events-none z-0"></div>
+
+             {/* Live Status Badge */}
+             <div className="inline-flex items-center gap-3 px-5 py-2 rounded bg-black/50 border border-[#3b82f6]/40 mb-10 relative group z-10">
+                <span className="w-2.5 h-2.5 rounded-full bg-[var(--ssg-red)] animate-ping absolute left-5"></span>
+                <span className="w-2.5 h-2.5 rounded-full bg-[var(--ssg-red)] relative z-10 shadow-[0_0_10px_var(--ssg-red)]"></span>
+                <span className="text-[0.65rem] md:text-[0.75rem] font-mono font-bold tracking-[0.25em] uppercase text-[#60a5fa]">{badge}</span>
+             </div>
+             
+             {/* Headline */}
+             <h1 className="font-heading text-[2.5rem] leading-[1.1] sm:text-5xl md:text-[4rem] font-extrabold tracking-tight text-white mb-8 uppercase">
+               {heading} <br/>
+               <span className="text-transparent bg-clip-text bg-gradient-to-r from-[#3b82f6] via-[#60a5fa] to-white relative inline-block mt-2">
+                 {headingAccent}
+               </span>
+             </h1>
+             
+             {/* Subheading */}
+             <p className="text-[#94a3b8] text-sm md:text-[1.05rem] leading-relaxed max-w-2xl mx-auto mb-12 font-mono tracking-tight opacity-90">
+               &gt; {subheading}
+             </p>
+             
+             {/* Action Buttons */}
+             <div className="flex flex-col sm:flex-row gap-5 items-center justify-center w-full sm:w-auto relative z-10">
+               <Link href="/contact" className="group relative w-full sm:w-auto justify-center px-8 py-4 text-sm font-bold bg-transparent text-[var(--ssg-red)] overflow-hidden rounded border border-[var(--ssg-red)] hover:bg-[var(--ssg-red)] hover:text-white transition-all duration-300 flex items-center gap-3 uppercase tracking-wider shadow-[0_0_20px_rgba(236,32,36,0.15)] hover:shadow-[0_0_40px_rgba(236,32,36,0.4)]">
+                 <i className="ph-bold ph-crosshair text-lg group-hover:rotate-90 transition-transform duration-500"></i>
+                 Deploy Shield
+                 <div className="absolute inset-0 bg-gradient-to-r from-transparent via-white/20 to-transparent -translate-x-full group-hover:animate-[v2Sweep_1s_ease-in-out]"></div>
+               </Link>
+               <Link href="/#solutions" className="group w-full sm:w-auto text-center px-8 py-4 text-sm font-bold text-white hover:text-[#60a5fa] transition-colors duration-300 flex items-center justify-center gap-2 uppercase tracking-wider">
+                 Analyze Vectors
+                 <i className="ph-bold ph-caret-right transform group-hover:translate-x-1 transition-transform"></i>
+               </Link>
+             </div>
           </div>
+          
+          {/* Side Data Feed Decorators */}
+          <div className="absolute top-1/2 -right-24 -translate-y-1/2 flex flex-col gap-3 opacity-60 hidden xl:flex pointer-events-none">
+             {[...Array(6)].map((_, i) => (
+                <div key={i} className="flex gap-3 items-center">
+                   <div className={`h-[2px] bg-[#3b82f6] ${i%3===0 ? 'w-10' : 'w-5'}`}></div>
+                   <div className="text-[0.45rem] font-mono text-[#60a5fa] tracking-widest">SEC_P{i+1}</div>
+                </div>
+             ))}
+          </div>
+          <div className="absolute top-1/2 -left-24 -translate-y-1/2 flex flex-col gap-3 opacity-60 hidden xl:flex items-end pointer-events-none">
+             {[...Array(6)].map((_, i) => (
+                <div key={`l-${i}`} className="flex gap-3 items-center flex-row-reverse">
+                   <div className={`h-[2px] bg-[var(--ssg-red)] ${i%2===0 ? 'w-8' : 'w-4'}`}></div>
+                   <div className="text-[0.45rem] font-mono text-[var(--ssg-red)] tracking-widest">TRT_{i+1}</div>
+                </div>
+             ))}
+          </div>
+
         </div>
       </div>
 
       <style dangerouslySetInnerHTML={{__html: `
-        .v2-particle {
-          animation: v2ParticleShoot var(--duration) ease-out infinite;
-          animation-delay: var(--delay);
-          opacity: 0;
+        .v2-crt-lines {
+          background: repeating-linear-gradient(
+            0deg,
+            rgba(59, 130, 246, 0.05) 0px,
+            rgba(59, 130, 246, 0.05) 1px,
+            transparent 1px,
+            transparent 4px
+          );
         }
 
-        @keyframes v2ParticleShoot {
-          0% {
-            transform: rotate(var(--angle)) translateX(0) scale(1);
-            opacity: 1;
-          }
-          100% {
-            transform: rotate(var(--angle)) translateX(var(--distance)) scale(0);
-            opacity: 0;
-          }
+        @keyframes v2ScanDown {
+          0% { transform: translateY(-100%); opacity: 0; }
+          10% { opacity: 1; }
+          90% { opacity: 1; }
+          100% { transform: translateY(100vh); opacity: 0; }
+        }
+
+        @keyframes v2Sweep {
+          0% { transform: translateX(-100%); }
+          100% { transform: translateX(200%); }
         }
       `}} />
     </section>
