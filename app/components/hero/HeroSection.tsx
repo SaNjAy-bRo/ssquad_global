@@ -5,11 +5,21 @@ import Link from 'next/link';
 
 
 export default function HeroSection() {
+  useEffect(() => {
+    const reveals = document.querySelectorAll('.hero-fade-up');
+    reveals.forEach((el, i) => {
+      setTimeout(() => {
+        el.classList.add('opacity-100', 'translate-y-0');
+        el.classList.remove('opacity-0', 'translate-y-10');
+      }, 100 + i * 150);
+    });
+  }, []);
+
   return (
-    <section className="relative w-full bg-[#020408] overflow-hidden pb-16 md:pb-24">
+    <section className="relative w-full bg-[#020408] overflow-hidden">
       
       {/* CYBER NETWORK LOGIC BACKGROUND */}
-      <div className="absolute inset-0 z-0 pointer-events-none flex items-center justify-center w-full h-[100vh] overflow-hidden bg-[#000205]">
+      <div className="absolute inset-0 z-0 pointer-events-none flex items-center justify-center w-full h-full overflow-hidden bg-[#000205]">
         <div className="absolute inset-0 bg-[url('https://transparenttextures.com/patterns/cubes.png')] opacity-[0.05] mix-blend-overlay"></div>
         
         {/* Animated Cyber / Circuit Network */}
@@ -117,33 +127,28 @@ export default function HeroSection() {
           </div>
           
           <h1 className="hero-fade-up opacity-0 translate-y-10 transition-all duration-1000 delay-100 ease-out font-heading text-[2.2rem] leading-[1.2] min-[400px]:text-4xl sm:text-5xl md:text-[3.5rem] lg:text-[4vw] xl:text-[4rem] md:leading-[1] font-extrabold tracking-[-0.03em] text-white drop-shadow-[0_20px_50px_rgba(0,0,0,1)] px-2 w-full xl:whitespace-nowrap">
-            AI-Powered{' '}
+            Intelligence-Led{' '}
             <span className="text-transparent bg-clip-text bg-gradient-to-b from-white via-white to-[var(--ssg-red)] pb-2 md:pb-4 drop-shadow-[0_0_40px_rgba(236,32,36,0.2)]">
-              Security Operations
+              Proactive Defence
             </span>
           </h1>
           
-          <p className="hero-fade-up opacity-0 translate-y-10 transition-all duration-1000 delay-200 ease-out mt-6 md:mt-8 text-white/90 text-[0.95rem] min-[400px]:text-base sm:text-lg md:text-xl lg:text-[1.35rem] leading-[1.6] sm:leading-[1.7] max-w-5xl font-normal tracking-wide px-4 drop-shadow-[0_5px_10px_rgba(0,0,0,1)] mx-auto text-center">
-            Centralize your security ecosystem, amplify with cutting-edge threat intelligence,<br className="hidden sm:block" /> and activate automated defense against evolving cyber threats.
+          <p className="hero-fade-up opacity-0 translate-y-10 transition-all duration-1000 delay-200 ease-out mt-6 md:mt-8 text-white/90 text-[0.9rem] min-[400px]:text-[0.95rem] sm:text-base md:text-lg lg:text-xl leading-[1.6] sm:leading-[1.7] max-w-6xl font-normal tracking-wide px-4 drop-shadow-[0_5px_10px_rgba(0,0,0,1)] mx-auto text-center">
+            Unify your security data with real-time threat intelligence and leverage AI-driven automation<br className="hidden lg:block" /> to detect, investigate, and respond to threats before they impact your business.
           </p>
           
           <div className="hero-fade-up opacity-0 translate-y-10 transition-all duration-1000 delay-300 ease-out mt-6 md:mt-8 flex flex-col sm:flex-row gap-4 md:gap-5 justify-center items-center w-full max-w-lg sm:max-w-none mx-auto px-4">
             <Link href="/contact" className="epic-pill-btn group w-full sm:w-auto justify-center px-8 md:px-12 py-4 md:py-5 text-base md:text-[1.1rem] font-bold bg-[var(--ssg-red)] text-white rounded-full transition-all hover:scale-105 shadow-[0_0_30px_rgba(236,32,36,0.5)] flex items-center gap-3 relative overflow-hidden">
               <span className="relative z-10 flex items-center justify-center gap-2">
-                Activate Defense
+                Talk to an expert
                 <i className="ph ph-bold ph-arrow-right text-xl group-hover:translate-x-2 transition-transform"></i>
               </span>
             </Link>
-            <Link href="/contact" className="w-full sm:w-auto text-center px-8 md:px-12 py-4 md:py-5 text-base md:text-[1.1rem] font-bold bg-white/5 hover:bg-white/10 border border-white/20 text-white rounded-full transition-all hover:scale-105 backdrop-blur-md">
-              Deploy Intelligence
+            <Link href="/#solutions" className="w-full sm:w-auto text-center px-8 md:px-12 py-4 md:py-5 text-base md:text-[1.1rem] font-bold bg-white/5 hover:bg-white/10 border border-white/20 text-white rounded-full transition-all hover:scale-105 backdrop-blur-md">
+              Explore our services
             </Link>
           </div>
         </div>
-      </div>
-
-      {/* TELEMETRY DASHBOARD - ON SCROLL (BELOW FOLD) */}
-      <div className="hero-fade-up opacity-0 translate-y-10 transition-all duration-1000 ease-out w-full max-w-7xl mx-auto px-4 sm:px-6 z-30 relative mt-8 md:mt-12">
-        <TelemetryDashboard />
       </div>
 
       <style dangerouslySetInnerHTML={{__html: `
