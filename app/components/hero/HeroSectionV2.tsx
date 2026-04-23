@@ -6,9 +6,9 @@ import Image from 'next/image';
 
 export default function HeroSectionV2({
   badge = "Zero-Trust Perimeter",
-  heading = "Where Technology",
-  headingAccent = "Meets Resilience",
-  subheading = "Unify your security data with real-time threat intelligence and leverage AI-driven automation to detect, investigate, and respond to threats instantly."
+  heading = "Powering the Modern",
+  headingAccent = "Enterprise",
+  subheading = "Drive your business forward with intelligent infrastructure and seamless integration. Experience the next generation of digital transformation."
 }: {
   badge?: string;
   heading?: string;
@@ -175,18 +175,8 @@ export default function HeroSectionV2({
              {/* CRT Scanline Overlay */}
              <div className="absolute inset-0 v2-crt-lines opacity-30 pointer-events-none z-0"></div>
              
-             {/* Large Fingerprint Watermark */}
-             <i className="ph-fill ph-fingerprint absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 text-[25rem] sm:text-[35rem] text-[#3b82f6]/20 drop-shadow-[0_0_20px_rgba(59,130,246,0.3)] pointer-events-none z-0"></i>
-
              {/* Moving Light Bar */}
              <div className="absolute top-0 left-0 w-full h-[150px] bg-gradient-to-b from-transparent via-[#3b82f6]/10 to-transparent animate-[v2ScanDown_6s_linear_infinite] pointer-events-none z-0"></div>
-
-             {/* Live Status Badge */}
-             <div className="inline-flex items-center gap-3 px-5 py-2 rounded bg-black/50 border border-[#3b82f6]/40 mb-10 relative group z-10">
-                <span className="w-2.5 h-2.5 rounded-full bg-[var(--ssg-red)] animate-ping absolute left-5"></span>
-                <span className="w-2.5 h-2.5 rounded-full bg-[var(--ssg-red)] relative z-10 shadow-[0_0_10px_var(--ssg-red)]"></span>
-                <span className="text-[0.65rem] md:text-[0.75rem] font-mono font-bold tracking-[0.25em] uppercase text-[#60a5fa]">{badge}</span>
-             </div>
              
              {/* Headline */}
              <h1 className="font-heading text-[2.5rem] leading-[1.1] sm:text-5xl md:text-[4rem] font-extrabold tracking-tight text-white mb-8 uppercase">
@@ -197,7 +187,7 @@ export default function HeroSectionV2({
              </h1>
              
              {/* Subheading */}
-             <p className="text-[#94a3b8] text-sm md:text-[1.05rem] leading-relaxed max-w-2xl mx-auto mb-12 font-mono tracking-tight opacity-90">
+             <p className="text-white text-sm md:text-[1.05rem] leading-relaxed max-w-2xl mx-auto mb-12 font-mono tracking-tight opacity-90">
                &gt; {subheading}
              </p>
              
