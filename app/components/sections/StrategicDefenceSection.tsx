@@ -1,252 +1,71 @@
-"use client";
-
-import { useEffect, useState, memo } from "react";
-
-const StrategicDefenceSection = memo(function StrategicDefenceSection() {
-  const [isMounted, setIsMounted] = useState(false);
-
-  useEffect(() => {
-    setIsMounted(true);
-    const observer = new IntersectionObserver(
-      (entries) => {
-        entries.forEach((entry) => {
-          if (entry.isIntersecting) {
-            entry.target.classList.add("translate-y-0", "opacity-100");
-            entry.target.classList.remove("translate-y-10", "opacity-0");
-          }
-        });
-      },
-      { threshold: 0.1 }
-    );
-
-    const elements = document.querySelectorAll(".sd-reveal");
-    elements.forEach((el) => observer.observe(el));
-
-    return () => observer.disconnect();
-  }, []);
-
+export default function StrategicDefenceSection() {
   return (
-    <section className="relative w-full bg-[#020408] py-12 lg:py-16 overflow-hidden border-t border-white/[0.05] will-change-transform transform-gpu">
-      {/* Background Elements */}
-      <div className="absolute inset-0 pointer-events-none overflow-hidden transform-gpu">
-        <div className="absolute top-0 right-0 w-[800px] h-[800px] bg-[var(--ssg-red)]/15 blur-[150px] rounded-full mix-blend-screen opacity-50 translate-x-1/3 -translate-y-1/3"></div>
-        <div className="absolute bottom-0 left-0 w-[600px] h-[600px] bg-[var(--ssg-cyber)]/15 blur-[150px] rounded-full mix-blend-screen opacity-40 -translate-x-1/4 translate-y-1/4"></div>
-        
-        {/* Animated Cyber / Circuit Network */}
-        <svg className="absolute inset-0 w-full h-full z-0 opacity-40" viewBox="0 0 1000 1000" preserveAspectRatio="xMidYMid slice">
-          <defs>
-            <filter id="glow-red-sd">
-              <feGaussianBlur stdDeviation="6" result="blur"/>
-              <feMerge>
-                <feMergeNode in="blur"/>
-                <feMergeNode in="SourceGraphic"/>
-              </feMerge>
-            </filter>
-            <filter id="glow-cyber-sd">
-              <feGaussianBlur stdDeviation="6" result="blur"/>
-              <feMerge>
-                <feMergeNode in="blur"/>
-                <feMergeNode in="SourceGraphic"/>
-              </feMerge>
-            </filter>
-          </defs>
-
-          {/* Core connection pathways (Static background lines) */}
-          <g stroke="rgba(255,255,255,0.03)" strokeWidth="1" fill="none">
-            <path d="M-100,200 L200,400 L400,250 L600,500 L800,300 L1100,600" />
-            <path d="M-100,800 L300,600 L500,750 L700,500 L1100,200" />
-            <path d="M200,-100 L400,300 L250,600 L500,900 L400,1100" />
-            <path d="M800,-100 L600,400 L750,700 L500,1100" />
-          </g>
-
-          {/* Glowing Animated Data Streams */}
-          <g strokeWidth="2.5" fill="none">
-            <path d="M-100,200 L200,400 L400,250 L600,500 L800,300 L1100,600" stroke="var(--ssg-red)" filter="url(#glow-red-sd)" className="circuit-stream-1" />
-            <path d="M-100,800 L300,600 L500,750 L700,500 L1100,200" stroke="var(--ssg-red)" filter="url(#glow-red-sd)" className="circuit-stream-2" />
-            <path d="M200,-100 L400,300 L250,600 L500,900 L400,1100" stroke="var(--ssg-cyber)" filter="url(#glow-cyber-sd)" className="circuit-stream-3" />
-            <path d="M800,-100 L600,400 L750,700 L500,1100" stroke="var(--ssg-cyber)" filter="url(#glow-cyber-sd)" className="circuit-stream-4" />
-          </g>
-
-          {/* Data Nodes */}
-          <g fill="var(--ssg-red)">
-            <circle cx="200" cy="400" r="4" className="node-pulse-1" />
-            <circle cx="400" cy="250" r="3" className="node-pulse-2" />
-            <circle cx="600" cy="500" r="5" className="node-pulse-3" />
-            <circle cx="800" cy="300" r="3" />
-            <circle cx="300" cy="600" r="4" className="node-pulse-2" />
-            <circle cx="500" cy="750" r="3" fill="var(--ssg-cyber)" className="node-pulse-1" />
-            <circle cx="700" cy="500" r="5" fill="var(--ssg-cyber)" className="node-pulse-3" />
-            <circle cx="400" cy="300" r="4" fill="var(--ssg-cyber)" />
-            <circle cx="250" cy="600" r="5" fill="var(--ssg-cyber)" className="node-pulse-3" />
-            <circle cx="500" cy="900" r="3" className="node-pulse-2" />
-          </g>
-        </svg>
-
-        {/* Laser Sweep Layer */}
-        <div className="absolute left-0 w-full h-[2px] bg-white z-10 shadow-[0_0_15px_#fff,0_0_40px_#ec2024,0_0_80px_#ec2024] sd-laser-sweep opacity-70 pointer-events-none">
-          <div className="absolute top-[2px] left-0 w-full h-[150px] bg-gradient-to-b from-[var(--ssg-red)]/10 to-transparent"></div>
-          <div className="absolute -top-[150px] left-0 w-full h-[150px] bg-gradient-to-t from-[var(--ssg-red)]/10 to-transparent"></div>
-        </div>
-
-        {/* Scrolling Cyber Grid Background */}
-        <div className="absolute inset-0 bg-[url('https://transparenttextures.com/patterns/cubes.png')] opacity-[0.03] animate-[bgScroll_30s_linear_infinite]"></div>
-      </div>
-
-      <div className="max-w-7xl mx-auto px-6 lg:px-8 relative z-20">
-        <div className="grid lg:grid-cols-12 gap-10 lg:gap-14 items-center">
-          
-          {/* ── LEFT CONTENT PANEL (Text & Actions) ── */}
-          <div className="lg:col-span-6 flex flex-col items-start text-left sd-reveal opacity-0 translate-y-10 transition-all duration-1000 ease-out relative">
-            <div className="inline-flex items-center gap-2.5 px-4 py-1.5 rounded-full border border-[var(--ssg-red)]/30 bg-[var(--ssg-red)]/10 mb-5 shadow-[0_0_20px_rgba(236,32,36,0.15)] ring-1 ring-white/5">
-              <i className="ph ph-shield-check text-[var(--ssg-red)] text-sm animate-pulse"></i>
-              <span className="text-[0.65rem] font-bold tracking-[0.2em] uppercase text-white">Strategic Defence</span>
-            </div>
-            
-            <h2 className="font-heading text-4xl sm:text-5xl lg:text-5xl font-extrabold text-white leading-[1.1] tracking-tight relative">
-              <span className="text-transparent bg-clip-text bg-gradient-to-r from-white via-white to-slate-400 block pb-2 drop-shadow-sm">Intelligence-Led</span>
-              <span className="text-transparent bg-clip-text bg-gradient-to-r from-[var(--ssg-red)] to-[#ff7a7d] block pb-2 drop-shadow-[0_0_30px_rgba(236,32,36,0.2)]">Proactive Defence</span>
-            </h2>
-            
-            <p className="mt-3 text-[#a1abbd] text-base lg:text-lg leading-relaxed max-w-2xl font-normal tracking-wide">
+    <section className="bg-slate-50 py-20 lg:py-24 overflow-hidden">
+      <div className="max-w-container mx-auto px-6 lg:px-8">
+        <div className="grid lg:grid-cols-12 gap-12 items-center">
+          <div className="lg:col-span-6 reveal">
+            <p className="section-eyebrow">Strategic Defence</p>
+            <h2 className="section-title">Intelligence-Led Proactive Cyber Defence</h2>
+            <p className="section-copy">
               SSquad Global combines predictive threat intelligence, operational discipline, and rapid execution to strengthen enterprise resilience before attacks escalate.
             </p>
 
-            <ul className="mt-6 space-y-2 w-full">
-              {[
-                { icon: "ph-eye", text: "End-to-end threat visibility across users, endpoints, and workloads" },
-                { icon: "ph-target", text: "Proactive defense strategy tuned to your business risk posture" },
-                { icon: "ph-timer", text: "Faster detection, triage, and incident response across teams" },
-                { icon: "ph-shield-star", text: "Enterprise-wide risk reduction through continuous hardening" }
-              ].map((item, i) => (
-                <li key={i} className="flex items-center gap-4 p-3 rounded-xl bg-gradient-to-r from-white/[0.03] to-transparent border border-white/[0.03] hover:border-white/10 hover:from-white/[0.05] hover:to-white/[0.01] transition-all duration-300 group">
-                  <div className="w-8 h-8 rounded-lg bg-[var(--ssg-red)]/10 border border-[var(--ssg-red)]/20 flex items-center justify-center shrink-0 group-hover:bg-[var(--ssg-red)]/20 group-hover:scale-110 transition-all duration-300 shadow-[0_0_15px_rgba(236,32,36,0.1)]">
-                    <i className={`ph ${item.icon} text-[var(--ssg-red)] text-base`}></i>
-                  </div>
-                  <span className="text-slate-300 text-sm md:text-[0.95rem] font-medium group-hover:text-white transition-colors">{item.text}</span>
-                </li>
-              ))}
+            <ul className="mt-8 space-y-4">
+              <li className="feature-row"><i className="ph ph-eye"></i><span>End-to-end threat visibility across users, endpoints, and workloads</span></li>
+              <li className="feature-row"><i className="ph ph-target"></i><span>Proactive defense strategy tuned to your business risk posture</span></li>
+              <li className="feature-row"><i className="ph ph-timer"></i><span>Faster detection, triage, and incident response across teams</span></li>
+              <li className="feature-row"><i className="ph ph-shield-star"></i><span>Enterprise-wide risk reduction through continuous hardening</span></li>
             </ul>
           </div>
 
-          {/* ── RIGHT VISUAL PANEL: Animated Chart & Stats ── */}
-          <div className="lg:col-span-6 relative sd-reveal opacity-0 translate-y-10 transition-all duration-1000 delay-200 ease-out transform-gpu">
-            <div className="absolute w-[500px] h-[500px] bg-[var(--ssg-cyber)]/10 blur-[120px] rounded-full pointer-events-none z-0 mix-blend-screen translate-x-10 translate-y-10"></div>
-            
-            <div className="relative z-10 rounded-3xl p-5 sm:p-7 bg-[#0c1019]/80 backdrop-blur-2xl border border-white/[0.06] shadow-[0_20px_50px_rgba(0,0,0,0.5),inset_0_0_20px_rgba(255,255,255,0.02)]">
-              {/* Chart Area */}
-              <div className="relative w-full h-[180px] mb-6 border-b border-white/[0.05] pb-3">
-                <svg className="w-full h-full overflow-visible" viewBox="0 0 640 280" aria-hidden="true" preserveAspectRatio="none">
+          <div className="lg:col-span-6 reveal">
+            <div className="intel-visual rounded-3xl p-7 md:p-8 shadow-premium">
+              <div className="intel-chart">
+                <svg className="intel-svg" viewBox="0 0 640 280" aria-hidden="true">
                   <defs>
-                    <linearGradient id="darkIntelArea" x1="0%" y1="0%" x2="0%" y2="100%">
-                      <stop offset="0%" stopColor="rgba(236,32,36,0.2)" />
-                      <stop offset="100%" stopColor="rgba(236,32,36,0)" />
+                    <linearGradient id="intelArea" x1="0%" y1="0%" x2="0%" y2="100%">
+                      <stop offset="0%" stopColor="rgba(208,46,50,0.32)" />
+                      <stop offset="100%" stopColor="rgba(208,46,50,0)" />
                     </linearGradient>
-                    <linearGradient id="darkIntelLine" x1="0%" y1="0%" x2="100%" y2="0%">
-                      <stop offset="0%" stopColor="#5B2EFF" />
+                    <linearGradient id="intelLine" x1="0%" y1="0%" x2="100%" y2="0%">
+                      <stop offset="0%" stopColor="#3F126C" />
                       <stop offset="100%" stopColor="#EC2024" />
                     </linearGradient>
                   </defs>
-                  {/* Grid lines */}
-                  <g className="stroke-white/[0.03]" strokeWidth="1">
-                    <line x1="0" y1="50" x2="640" y2="50" />
-                    <line x1="0" y1="120" x2="640" y2="120" />
-                    <line x1="0" y1="190" x2="640" y2="190" />
-                    <line x1="0" y1="260" x2="640" y2="260" />
-                  </g>
-                  {/* Area fill */}
-                  <path className="animate-[pulse_4s_ease-in-out_infinite_alternate]" fill="url(#darkIntelArea)" d="M40,230 C110,210 155,95 220,132 C285,169 340,95 400,120 C470,150 510,94 590,106 L590,280 L40,280 Z"></path>
-                  {/* Secondary line (Violet) */}
-                  <path fill="none" stroke="#5B2EFF" strokeWidth="2" className="opacity-50" style={{ strokeDasharray: '1000', strokeDashoffset: '0', animation: 'dash 15s linear infinite' }} d="M40,218 C120,204 180,170 235,160 C300,148 365,132 420,145 C490,160 535,154 590,142"></path>
-                  {/* Primary line (Red/Gradient) */}
-                  <path fill="none" stroke="url(#darkIntelLine)" strokeWidth="4" style={{ filter: 'drop-shadow(0 4px 12px rgba(236,32,36,0.5))', strokeDasharray: '1000', strokeDashoffset: '0', animation: 'dash 10s linear infinite' }} d="M40,230 C110,210 155,95 220,132 C285,169 340,95 400,120 C470,150 510,94 590,106"></path>
+                  <path className="intel-area" d="M40,230 C110,210 155,95 220,132 C285,169 340,95 400,120 C470,150 510,94 590,106 L590,250 L40,250 Z"></path>
+                  <path className="intel-line" d="M40,230 C110,210 155,95 220,132 C285,169 340,95 400,120 C470,150 510,94 590,106"></path>
+                  <path className="intel-line-secondary" d="M40,218 C120,204 180,170 235,160 C300,148 365,132 420,145 C490,160 535,154 590,142"></path>
                 </svg>
-                
-                {/* Animated Data Points */}
-                <div className="absolute top-[35%] left-[30%] w-3 h-3 bg-[var(--ssg-red)] rounded-full shadow-[0_0_15px_var(--ssg-red)]">
-                  <div className="absolute inset-0 bg-white rounded-full animate-ping opacity-75"></div>
-                </div>
-                <div className="absolute top-[40%] left-[60%] w-3 h-3 bg-[#5B2EFF] rounded-full shadow-[0_0_15px_#5B2EFF]">
-                  <div className="absolute inset-0 bg-white rounded-full animate-ping opacity-75 animation-delay-500"></div>
-                </div>
-                <div className="absolute top-[30%] left-[88%] w-3 h-3 bg-[var(--ssg-red)] rounded-full shadow-[0_0_15px_var(--ssg-red)]">
-                  <div className="absolute inset-0 bg-white rounded-full animate-ping opacity-75 animation-delay-1000"></div>
-                </div>
-                
-                {/* Legend */}
-                <div className="absolute bottom-2 left-2 flex gap-4 bg-[#020408]/90 backdrop-blur-md border border-white/10 px-4 py-2 rounded-full shadow-lg">
-                  <span className="flex items-center gap-2 text-[0.65rem] text-white font-medium tracking-wide"><div className="w-1.5 h-1.5 rounded-full bg-[var(--ssg-red)] shadow-[0_0_6px_var(--ssg-red)]"></div> Threat Trend</span>
-                  <span className="flex items-center gap-2 text-[0.65rem] text-white font-medium tracking-wide"><div className="w-1.5 h-1.5 rounded-full bg-[#5B2EFF] shadow-[0_0_6px_#5B2EFF]"></div> Signal Correlation</span>
+                <span className="intel-point p1"></span>
+                <span className="intel-point p2"></span>
+                <span className="intel-point p3"></span>
+                <div className="intel-legend">
+                  <span><i className="dot red"></i>Threat Trend</span>
+                  <span><i className="dot violet"></i>Signal Correlation</span>
                 </div>
               </div>
-
-              {/* Stats Grid */}
-              <div className="grid grid-cols-2 gap-3">
-                {[
-                  { value: "99.9%", label: "Threat Event Uptime" },
-                  { value: "24/7", label: "Managed Security" },
-                  { value: "150+", label: "Sources Correlated" },
-                  { value: "Real-time", label: "Executive Visibility" }
-                ].map((stat, i) => (
-                  <div key={i} className="bg-white/[0.02] border border-white/5 rounded-xl p-4 hover:bg-white/[0.04] transition-colors duration-300">
-                    <p className="text-xl sm:text-2xl font-heading font-extrabold text-white mb-1 drop-shadow-sm">{stat.value}</p>
-                    <p className="text-[0.65rem] sm:text-xs text-[#8b95a9] font-medium leading-relaxed">{stat.label}</p>
-                  </div>
-                ))}
+              <div className="mt-6 grid grid-cols-2 gap-4">
+                <div className="intel-stat">
+                  <p className="kpi">99.9%</p>
+                  <p className="desc">Threat Event Uptime Monitoring</p>
+                </div>
+                <div className="intel-stat">
+                  <p className="kpi">24/7</p>
+                  <p className="desc">Managed Security Operations</p>
+                </div>
+                <div className="intel-stat">
+                  <p className="kpi">150+</p>
+                  <p className="desc">Threat Sources Correlated</p>
+                </div>
+                <div className="intel-stat">
+                  <p className="kpi">Real-time</p>
+                  <p className="desc">Executive Security Visibility</p>
+                </div>
               </div>
-            </div>
-            
-            {/* Floating Decorative Elements */}
-            <div className="absolute -top-6 -right-6 bg-[#0c1019] border border-[var(--ssg-red)]/30 rounded-xl p-3 flex items-center gap-3 shadow-[0_15px_40px_rgba(0,0,0,0.5),0_0_30px_rgba(236,32,36,0.2)] animate-[panelFloat_5s_ease-in-out_infinite] z-30">
-              <div className="w-2.5 h-2.5 bg-[var(--ssg-red)] rounded-full animate-pulse shadow-[0_0_10px_var(--ssg-red)]"></div>
-              <span className="text-[0.65rem] font-bold text-white uppercase tracking-wider">Live Intel Feed</span>
             </div>
           </div>
         </div>
       </div>
-
-      <style dangerouslySetInnerHTML={{__html: `
-        @keyframes dash {
-          to { stroke-dashoffset: -2000; }
-        }
-        @keyframes panelFloat {
-          0%, 100% { transform: translateY(0px); }
-          50% { transform: translateY(-12px); }
-        }
-        @keyframes bgScroll {
-          0% { background-position: 0 0; }
-          100% { background-position: 1000px 1000px; }
-        }
-        .sd-laser-sweep { animation: laserSweepSD 4.5s ease-in-out infinite alternate; }
-        @keyframes laserSweepSD {
-          0% { top: -10%; opacity: 0; }
-          15% { opacity: 0.8; }
-          85% { opacity: 0.8; }
-          100% { top: 110%; opacity: 0; }
-        }
-        .animation-delay-500 { animation-delay: 500ms; }
-        .animation-delay-1000 { animation-delay: 1000ms; }
-
-        .circuit-stream-1 { stroke-dasharray: 80 800; animation: streamDraw 8s linear infinite; }
-        .circuit-stream-2 { stroke-dasharray: 60 700; animation: streamDraw 12s linear infinite reverse; }
-        .circuit-stream-3 { stroke-dasharray: 100 600; animation: streamDraw 10s linear infinite; }
-        .circuit-stream-4 { stroke-dasharray: 50 650; animation: streamDraw 9s linear infinite reverse; }
-        
-        @keyframes streamDraw {
-          0% { stroke-dashoffset: 2000; }
-          100% { stroke-dashoffset: 0; }
-        }
-
-        .node-pulse-1 { animation: nodePulse 3s ease-in-out infinite; }
-        .node-pulse-2 { animation: nodePulse 2s ease-in-out infinite 0.5s; }
-        .node-pulse-3 { animation: nodePulse 4s ease-in-out infinite 1s; }
-
-        @keyframes nodePulse {
-          0%, 100% { opacity: 0.3; }
-          50% { opacity: 1; fill: #fff; }
-        }
-      `}} />
     </section>
   );
-});
-
-export default StrategicDefenceSection;
+}
