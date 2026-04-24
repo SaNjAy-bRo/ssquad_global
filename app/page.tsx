@@ -1,7 +1,7 @@
 "use client";
 
 import { useEffect } from 'react';
-import HeroSection from './components/hero/HeroSection';
+import HeroSectionV1 from './components/hero/HeroSectionV1';
 import TrustSection from './components/sections/TrustSection';
 import SolutionsSection from './components/sections/SolutionsSection';
 import StrategicDefenceSection from './components/sections/StrategicDefenceSection';
@@ -33,7 +33,7 @@ export default function Home() {
 
   return (
     <main>
-      <HeroSection />
+      <HeroSectionV1 />
       <TrustSection />
       <SolutionsSection />
       <StrategicDefenceSection />
