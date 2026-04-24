@@ -14,16 +14,17 @@ export default function LeadershipSection() {
           </p>
         </div>
 
-        <div className="grid sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-5 gap-6">
+        <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-10 max-w-5xl mx-auto">
           {managementData.map((leader, idx) => (
             <Link href={`/management/${leader.id}`} key={idx} className="block group">
-              <div className="reveal bg-ssg-dark/5 rounded-2xl p-6 border border-slate-100 transition-all duration-300 hover:shadow-premium hover:-translate-y-2 hover:bg-ssg-dark hover:border-ssg-red/30 h-full flex flex-col">
-                 <div className="relative w-full aspect-square mb-6 rounded-xl overflow-hidden bg-slate-200">
+              <div className="reveal bg-ssg-dark/5 rounded-2xl p-5 border border-slate-100 transition-all duration-300 hover:shadow-premium hover:-translate-y-2 hover:bg-ssg-dark hover:border-ssg-red/30 h-full flex flex-col">
+                 <div className="relative w-full aspect-[4/3] mb-5 rounded-xl overflow-hidden bg-slate-200">
                     <Image 
                        src={leader.image}
                        alt={leader.name}
                        fill
-                       className="object-cover opacity-90 group-hover:opacity-100 transition-all duration-500 group-hover:scale-110 object-top"
+                       className="object-cover opacity-90 group-hover:opacity-100 transition-all duration-500 group-hover:scale-110"
+                       style={{ objectPosition: leader.imagePosition || 'center top' }}
                        unoptimized
                     />
                     <div className="absolute inset-0 bg-gradient-to-t from-ssg-dark/80 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity"></div>

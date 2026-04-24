@@ -49,18 +49,14 @@ export default function AboutSection() {
           <div className="reveal group relative">
             <div className="relative rounded-3xl overflow-hidden shadow-darkGlow border-4 border-slate-50 aspect-[4/3] w-full bg-slate-900">
               <Image 
-                src="https://images.unsplash.com/photo-1580828369019-947b0e14a1db?auto=format&fit=crop&q=80&w=1200"
-                alt="Global Network Map showing Ssquad Global presence"
+                src="/images/about us.png"
+                alt="About Ssquad Global - Cybersecurity and IT Services"
                 fill
-                className="object-cover opacity-80 mix-blend-luminosity group-hover:scale-105 transition-transform duration-700 ease-out"
+                className="object-cover opacity-90 group-hover:scale-105 transition-transform duration-700 ease-out"
                 unoptimized
               />
-              <div className="absolute inset-0 bg-gradient-to-tr from-ssg-red/60 to-transparent mix-blend-multiply pointer-events-none" />
-              <div className="absolute inset-x-0 bottom-0 h-1/2 bg-gradient-to-t from-ssg-dark/90 to-transparent pointer-events-none" />
-              
-              {/* Decorative target rings from mockup */}
-              <div className="absolute top-1/2 left-1/4 w-8 h-8 md:w-16 md:h-16 border-2 border-white/30 rounded-full animate-ping pointer-events-none"></div>
-              <div className="absolute top-1/3 right-1/4 w-4 h-4 md:w-8 md:h-8 bg-ssg-red border-2 border-white rounded-full shadow-[0_0_15px_rgba(239,35,60,0.8)] pointer-events-none"></div>
+              <div className="absolute inset-0 bg-gradient-to-tr from-[#020810]/60 via-[#020810]/20 to-transparent pointer-events-none" />
+              <div className="absolute inset-x-0 bottom-0 h-1/3 bg-gradient-to-t from-[#020810]/80 to-transparent pointer-events-none" />
             </div>
           </div>
         </div>

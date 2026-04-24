@@ -1111,8 +1111,8 @@ h6 {
 .cert-track {
   display: flex;
   width: max-content;
-  gap: 0.9rem;
-  animation: certScroll 24s linear infinite;
+  gap: 2.5rem;
+  animation: certScroll 30s linear infinite;
 }
 
 .cert-carousel:hover .cert-track {
@@ -1120,19 +1120,21 @@ h6 {
 }
 
 .cert-slide {
-  width: 170px;
+  flex-shrink: 0;
   border: 1px solid #e7ebf2;
   border-radius: 0.85rem;
   background: #ffffff;
-  padding: 0.8rem;
+  padding: 1.25rem 1.5rem;
   text-align: center;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
 .cert-slide img {
-  width: 52px;
-  height: 52px;
+  height: 70px;
+  width: auto;
   object-fit: contain;
-  margin: 0 auto;
 }
 
 .cert-slide p {
@@ -1520,7 +1522,7 @@ footer li strong {
     transform: translateX(0);
   }
   100% {
-    transform: translateX(calc(-50% - 0.45rem));
+    transform: translateX(calc(-50% - 1.25rem));
   }
 }
 
@@ -1604,7 +1606,7 @@ footer li strong {
 
 @keyframes certScroll {
   0% { transform: translateX(0); }
-  100% { transform: translateX(calc(-50% - 0.45rem)); }
+  100% { transform: translateX(calc(-50% - 1.25rem)); }
 }
 
 @keyframes drawLine {
@@ -1674,8 +1676,8 @@ footer li strong {
 .cert-track {
   display: flex;
   width: max-content;
-  gap: 0.9rem;
-  animation: certScroll 24s linear infinite;
+  gap: 2.5rem;
+  animation: certScroll 30s linear infinite;
 }
 
 .cert-carousel:hover .cert-track {

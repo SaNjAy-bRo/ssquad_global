@@ -3,6 +3,7 @@ export interface ManagementProfile {
   name: string;
   title: string;
   image: string;
+  imagePosition?: string;
   linkedin: string;
   bio: string[];
 }
@@ -34,6 +35,15 @@ export const managementData: ManagementProfile[] = [
     ]
   },
   {
+    id: "aishah-mohd-suhaimi",
+    name: "Aishah Mohd Suhaimi",
+    title: "Board of Director",
+    image: "/management/Aishah Mohd Suhaimi.jpeg",
+    imagePosition: "center 30%",
+    linkedin: "#",
+    bio: []
+  },
+  {
     id: "ravi-prakasha",
     name: "Ravi Prakasha",
     title: "Director - Technical Services",
@@ -47,17 +57,6 @@ export const managementData: ManagementProfile[] = [
     ]
   },
   {
-    id: "mohamed-ali",
-    name: "Mohamed Ali",
-    title: "Head Of Service Delivery",
-    image: "/management/mali.jpg",
-    linkedin: "#",
-    bio: [
-      "Mohamed Ali is a seasoned Information Technology professional with over 15+ years of experience in managing IT operations, support services, and delivering complex projects across diverse technical domains. Known for his consistent track record of meeting and exceeding client expectations, he combines deep technical knowledge with strong leadership, communication, and presentation skills.",
-      "Throughout his career, Ali has worked across multiple levels of IT support—both independently and within high-performing teams—demonstrating a strong ability to solve complex technical challenges while ensuring seamless service delivery. His hands-on expertise, people-centric management style, and commitment to operational excellence make him a trusted leader in driving efficiency and client satisfaction across global IT environments."
-    ]
-  },
-  {
     id: "khairul-azam-ahmad",
     name: "Khairul Azam Ahmad",
     title: "Cybersecurity Advisor",
@@ -68,6 +67,17 @@ export const managementData: ManagementProfile[] = [
       "Khairul has worked extensively across critical national infrastructures, financial ecosystems, public sector agencies, and high-growth enterprises. His experience includes leading red-team operations for national infrastructure assets, advising central banks and regulatory bodies on advanced threat simulation, bridging hands-on technical expertise with policy-level insights, mentoring and developing next-generation cybersecurity talent, and architecting predictive defence platforms for emerging threat landscapes.",
       "In recent years, he has been at the forefront of cybersecurity innovation—building AI-driven threat modelling systems and leading ASEAN-wide cyber resilience initiatives aimed at strengthening regional preparedness at scale.",
       "As Cybersecurity Advisor at Ssquad Global, Khairul plays a pivotal role in guiding our journey to become one of APAC's top MSSP and Cyber Defence providers. His strategic vision, operational depth, and commitment to digital sovereignty reinforce our mission to deliver intelligence-led, proactive, and future-ready cybersecurity services to enterprises across the region."
+    ]
+  },
+  {
+    id: "mohamed-ali",
+    name: "Mohamed Ali",
+    title: "Head Of Service Delivery",
+    image: "/management/mali.jpg",
+    linkedin: "#",
+    bio: [
+      "Mohamed Ali is a seasoned Information Technology professional with over 15+ years of experience in managing IT operations, support services, and delivering complex projects across diverse technical domains. Known for his consistent track record of meeting and exceeding client expectations, he combines deep technical knowledge with strong leadership, communication, and presentation skills.",
+      "Throughout his career, Ali has worked across multiple levels of IT support—both independently and within high-performing teams—demonstrating a strong ability to solve complex technical challenges while ensuring seamless service delivery. His hands-on expertise, people-centric management style, and commitment to operational excellence make him a trusted leader in driving efficiency and client satisfaction across global IT environments."
     ]
   }
 ];
