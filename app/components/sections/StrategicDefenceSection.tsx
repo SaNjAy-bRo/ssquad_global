@@ -26,7 +26,7 @@ const StrategicDefenceSection = memo(function StrategicDefenceSection() {
   }, []);
 
   return (
-    <section className="relative w-full bg-[#020408] py-16 lg:py-24 overflow-hidden border-t border-white/[0.05] will-change-transform transform-gpu">
+    <section className="relative w-full bg-[#020408] py-12 lg:py-16 overflow-hidden border-t border-white/[0.05] will-change-transform transform-gpu">
       {/* Background Elements */}
       <div className="absolute inset-0 pointer-events-none overflow-hidden transform-gpu">
         <div className="absolute top-0 right-0 w-[800px] h-[800px] bg-[var(--ssg-red)]/15 blur-[150px] rounded-full mix-blend-screen opacity-50 translate-x-1/3 -translate-y-1/3"></div>
@@ -93,36 +93,36 @@ const StrategicDefenceSection = memo(function StrategicDefenceSection() {
       </div>
 
       <div className="max-w-7xl mx-auto px-6 lg:px-8 relative z-20">
-        <div className="grid lg:grid-cols-12 gap-16 lg:gap-20 items-center">
+        <div className="grid lg:grid-cols-12 gap-10 lg:gap-14 items-center">
           
           {/* ── LEFT CONTENT PANEL (Text & Actions) ── */}
           <div className="lg:col-span-6 flex flex-col items-start text-left sd-reveal opacity-0 translate-y-10 transition-all duration-1000 ease-out relative">
-            <div className="inline-flex items-center gap-2.5 px-4 py-1.5 rounded-full border border-[var(--ssg-red)]/30 bg-[var(--ssg-red)]/10 mb-6 shadow-[0_0_20px_rgba(236,32,36,0.15)] ring-1 ring-white/5">
+            <div className="inline-flex items-center gap-2.5 px-4 py-1.5 rounded-full border border-[var(--ssg-red)]/30 bg-[var(--ssg-red)]/10 mb-5 shadow-[0_0_20px_rgba(236,32,36,0.15)] ring-1 ring-white/5">
               <i className="ph ph-shield-check text-[var(--ssg-red)] text-sm animate-pulse"></i>
               <span className="text-[0.65rem] font-bold tracking-[0.2em] uppercase text-white">Strategic Defence</span>
             </div>
             
-            <h2 className="font-heading text-4xl sm:text-5xl lg:text-6xl font-extrabold text-white leading-[1.1] tracking-tight relative">
+            <h2 className="font-heading text-4xl sm:text-5xl lg:text-5xl font-extrabold text-white leading-[1.1] tracking-tight relative">
               <span className="text-transparent bg-clip-text bg-gradient-to-r from-white via-white to-slate-400 block pb-2 drop-shadow-sm">Intelligence-Led</span>
               <span className="text-transparent bg-clip-text bg-gradient-to-r from-[var(--ssg-red)] to-[#ff7a7d] block pb-2 drop-shadow-[0_0_30px_rgba(236,32,36,0.2)]">Proactive Defence</span>
             </h2>
             
-            <p className="mt-4 text-[#a1abbd] text-lg leading-relaxed max-w-2xl font-normal tracking-wide">
+            <p className="mt-3 text-[#a1abbd] text-base lg:text-lg leading-relaxed max-w-2xl font-normal tracking-wide">
               SSquad Global combines predictive threat intelligence, operational discipline, and rapid execution to strengthen enterprise resilience before attacks escalate.
             </p>
 
-            <ul className="mt-10 space-y-3 w-full">
+            <ul className="mt-6 space-y-2 w-full">
               {[
                 { icon: "ph-eye", text: "End-to-end threat visibility across users, endpoints, and workloads" },
                 { icon: "ph-target", text: "Proactive defense strategy tuned to your business risk posture" },
                 { icon: "ph-timer", text: "Faster detection, triage, and incident response across teams" },
                 { icon: "ph-shield-star", text: "Enterprise-wide risk reduction through continuous hardening" }
               ].map((item, i) => (
-                <li key={i} className="flex items-center gap-4 p-4 rounded-xl bg-gradient-to-r from-white/[0.03] to-transparent border border-white/[0.03] hover:border-white/10 hover:from-white/[0.05] hover:to-white/[0.01] transition-all duration-300 group">
-                  <div className="w-10 h-10 rounded-lg bg-[var(--ssg-red)]/10 border border-[var(--ssg-red)]/20 flex items-center justify-center shrink-0 group-hover:bg-[var(--ssg-red)]/20 group-hover:scale-110 transition-all duration-300 shadow-[0_0_15px_rgba(236,32,36,0.1)]">
-                    <i className={`ph ${item.icon} text-[var(--ssg-red)] text-lg`}></i>
+                <li key={i} className="flex items-center gap-4 p-3 rounded-xl bg-gradient-to-r from-white/[0.03] to-transparent border border-white/[0.03] hover:border-white/10 hover:from-white/[0.05] hover:to-white/[0.01] transition-all duration-300 group">
+                  <div className="w-8 h-8 rounded-lg bg-[var(--ssg-red)]/10 border border-[var(--ssg-red)]/20 flex items-center justify-center shrink-0 group-hover:bg-[var(--ssg-red)]/20 group-hover:scale-110 transition-all duration-300 shadow-[0_0_15px_rgba(236,32,36,0.1)]">
+                    <i className={`ph ${item.icon} text-[var(--ssg-red)] text-base`}></i>
                   </div>
-                  <span className="text-slate-300 text-sm md:text-base font-medium group-hover:text-white transition-colors">{item.text}</span>
+                  <span className="text-slate-300 text-sm md:text-[0.95rem] font-medium group-hover:text-white transition-colors">{item.text}</span>
                 </li>
               ))}
             </ul>
@@ -132,9 +132,9 @@ const StrategicDefenceSection = memo(function StrategicDefenceSection() {
           <div className="lg:col-span-6 relative sd-reveal opacity-0 translate-y-10 transition-all duration-1000 delay-200 ease-out transform-gpu">
             <div className="absolute w-[500px] h-[500px] bg-[var(--ssg-cyber)]/10 blur-[120px] rounded-full pointer-events-none z-0 mix-blend-screen translate-x-10 translate-y-10"></div>
             
-            <div className="relative z-10 rounded-3xl p-6 sm:p-8 bg-[#0c1019]/80 backdrop-blur-2xl border border-white/[0.06] shadow-[0_20px_50px_rgba(0,0,0,0.5),inset_0_0_20px_rgba(255,255,255,0.02)]">
+            <div className="relative z-10 rounded-3xl p-5 sm:p-7 bg-[#0c1019]/80 backdrop-blur-2xl border border-white/[0.06] shadow-[0_20px_50px_rgba(0,0,0,0.5),inset_0_0_20px_rgba(255,255,255,0.02)]">
               {/* Chart Area */}
-              <div className="relative w-full h-[220px] mb-8 border-b border-white/[0.05] pb-4">
+              <div className="relative w-full h-[180px] mb-6 border-b border-white/[0.05] pb-3">
                 <svg className="w-full h-full overflow-visible" viewBox="0 0 640 280" aria-hidden="true" preserveAspectRatio="none">
                   <defs>
                     <linearGradient id="darkIntelArea" x1="0%" y1="0%" x2="0%" y2="100%">
@@ -162,34 +162,34 @@ const StrategicDefenceSection = memo(function StrategicDefenceSection() {
                 </svg>
                 
                 {/* Animated Data Points */}
-                <div className="absolute top-[35%] left-[30%] w-3.5 h-3.5 bg-[var(--ssg-red)] rounded-full shadow-[0_0_20px_var(--ssg-red)]">
+                <div className="absolute top-[35%] left-[30%] w-3 h-3 bg-[var(--ssg-red)] rounded-full shadow-[0_0_15px_var(--ssg-red)]">
                   <div className="absolute inset-0 bg-white rounded-full animate-ping opacity-75"></div>
                 </div>
-                <div className="absolute top-[40%] left-[60%] w-3.5 h-3.5 bg-[#5B2EFF] rounded-full shadow-[0_0_20px_#5B2EFF]">
+                <div className="absolute top-[40%] left-[60%] w-3 h-3 bg-[#5B2EFF] rounded-full shadow-[0_0_15px_#5B2EFF]">
                   <div className="absolute inset-0 bg-white rounded-full animate-ping opacity-75 animation-delay-500"></div>
                 </div>
-                <div className="absolute top-[30%] left-[88%] w-3.5 h-3.5 bg-[var(--ssg-red)] rounded-full shadow-[0_0_20px_var(--ssg-red)]">
+                <div className="absolute top-[30%] left-[88%] w-3 h-3 bg-[var(--ssg-red)] rounded-full shadow-[0_0_15px_var(--ssg-red)]">
                   <div className="absolute inset-0 bg-white rounded-full animate-ping opacity-75 animation-delay-1000"></div>
                 </div>
                 
                 {/* Legend */}
-                <div className="absolute bottom-2 left-2 flex gap-5 bg-[#020408]/90 backdrop-blur-md border border-white/10 px-5 py-2.5 rounded-full shadow-lg">
-                  <span className="flex items-center gap-2.5 text-xs text-white font-medium tracking-wide"><div className="w-2 h-2 rounded-full bg-[var(--ssg-red)] shadow-[0_0_8px_var(--ssg-red)]"></div> Threat Trend</span>
-                  <span className="flex items-center gap-2.5 text-xs text-white font-medium tracking-wide"><div className="w-2 h-2 rounded-full bg-[#5B2EFF] shadow-[0_0_8px_#5B2EFF]"></div> Signal Correlation</span>
+                <div className="absolute bottom-2 left-2 flex gap-4 bg-[#020408]/90 backdrop-blur-md border border-white/10 px-4 py-2 rounded-full shadow-lg">
+                  <span className="flex items-center gap-2 text-[0.65rem] text-white font-medium tracking-wide"><div className="w-1.5 h-1.5 rounded-full bg-[var(--ssg-red)] shadow-[0_0_6px_var(--ssg-red)]"></div> Threat Trend</span>
+                  <span className="flex items-center gap-2 text-[0.65rem] text-white font-medium tracking-wide"><div className="w-1.5 h-1.5 rounded-full bg-[#5B2EFF] shadow-[0_0_6px_#5B2EFF]"></div> Signal Correlation</span>
                 </div>
               </div>
 
               {/* Stats Grid */}
-              <div className="grid grid-cols-2 gap-4">
+              <div className="grid grid-cols-2 gap-3">
                 {[
-                  { value: "99.9%", label: "Threat Event Uptime Monitoring" },
-                  { value: "24/7", label: "Managed Security Operations" },
-                  { value: "150+", label: "Threat Sources Correlated" },
-                  { value: "Real-time", label: "Executive Security Visibility" }
+                  { value: "99.9%", label: "Threat Event Uptime" },
+                  { value: "24/7", label: "Managed Security" },
+                  { value: "150+", label: "Sources Correlated" },
+                  { value: "Real-time", label: "Executive Visibility" }
                 ].map((stat, i) => (
-                  <div key={i} className="bg-white/[0.02] border border-white/5 rounded-2xl p-5 hover:bg-white/[0.04] transition-colors duration-300">
-                    <p className="text-2xl sm:text-3xl font-heading font-extrabold text-white mb-1.5 drop-shadow-sm">{stat.value}</p>
-                    <p className="text-xs text-[#8b95a9] font-medium leading-relaxed">{stat.label}</p>
+                  <div key={i} className="bg-white/[0.02] border border-white/5 rounded-xl p-4 hover:bg-white/[0.04] transition-colors duration-300">
+                    <p className="text-xl sm:text-2xl font-heading font-extrabold text-white mb-1 drop-shadow-sm">{stat.value}</p>
+                    <p className="text-[0.65rem] sm:text-xs text-[#8b95a9] font-medium leading-relaxed">{stat.label}</p>
                   </div>
                 ))}
               </div>
