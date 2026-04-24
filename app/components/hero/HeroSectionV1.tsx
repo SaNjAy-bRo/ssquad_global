@@ -73,6 +73,12 @@ export default function HeroSectionV1({
              </div>
            ))}
         </div>
+
+        {/* ── Vertical Laser Sweep Layer ── */}
+        <div className="absolute left-0 w-full h-[2px] bg-white z-10 shadow-[0_0_15px_#fff,0_0_40px_#ec2024,0_0_80px_#ec2024] v1-laser-sweep opacity-70 pointer-events-none mix-blend-screen">
+          <div className="absolute top-[2px] left-0 w-full h-[150px] bg-gradient-to-b from-[var(--ssg-red)]/20 to-transparent"></div>
+          <div className="absolute -top-[150px] left-0 w-full h-[150px] bg-gradient-to-t from-[var(--ssg-red)]/20 to-transparent"></div>
+        </div>
       </div>
 
       <div className="relative z-20 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 w-full">
@@ -131,6 +137,15 @@ export default function HeroSectionV1({
           10% { opacity: 1; }
           80% { opacity: 1; }
           100% { transform: translateY(100vh); opacity: 0; }
+        }
+        
+        /* Laser Sweep */
+        .v1-laser-sweep { animation: laserSweepV1 5s ease-in-out infinite alternate; }
+        @keyframes laserSweepV1 {
+          0% { top: -10%; opacity: 0; }
+          15% { opacity: 0.8; }
+          85% { opacity: 0.8; }
+          100% { top: 110%; opacity: 0; }
         }
       `}} />
     </section>
