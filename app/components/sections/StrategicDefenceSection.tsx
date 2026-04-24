@@ -29,8 +29,8 @@ const StrategicDefenceSection = memo(function StrategicDefenceSection() {
     <section className="relative w-full bg-[#020408] py-16 lg:py-24 overflow-hidden border-t border-white/[0.05] will-change-transform transform-gpu">
       {/* Background Elements */}
       <div className="absolute inset-0 pointer-events-none overflow-hidden transform-gpu">
-        <div className="absolute top-0 right-0 w-[800px] h-[800px] bg-[var(--ssg-red)]/10 blur-[150px] rounded-full mix-blend-screen opacity-50 translate-x-1/3 -translate-y-1/3"></div>
-        <div className="absolute bottom-0 left-0 w-[600px] h-[600px] bg-[var(--ssg-cyber)]/10 blur-[150px] rounded-full mix-blend-screen opacity-40 -translate-x-1/4 translate-y-1/4"></div>
+        <div className="absolute top-0 right-0 w-[800px] h-[800px] bg-[var(--ssg-red)]/15 blur-[150px] rounded-full mix-blend-screen opacity-50 translate-x-1/3 -translate-y-1/3"></div>
+        <div className="absolute bottom-0 left-0 w-[600px] h-[600px] bg-[var(--ssg-cyber)]/15 blur-[150px] rounded-full mix-blend-screen opacity-40 -translate-x-1/4 translate-y-1/4"></div>
         
         {/* Animated Cyber / Circuit Network */}
         <svg className="absolute inset-0 w-full h-full z-0 opacity-40" viewBox="0 0 1000 1000" preserveAspectRatio="xMidYMid slice">
@@ -82,41 +82,47 @@ const StrategicDefenceSection = memo(function StrategicDefenceSection() {
           </g>
         </svg>
 
+        {/* Laser Sweep Layer */}
+        <div className="absolute left-0 w-full h-[2px] bg-white z-10 shadow-[0_0_15px_#fff,0_0_40px_#ec2024,0_0_80px_#ec2024] sd-laser-sweep opacity-70 pointer-events-none">
+          <div className="absolute top-[2px] left-0 w-full h-[150px] bg-gradient-to-b from-[var(--ssg-red)]/10 to-transparent"></div>
+          <div className="absolute -top-[150px] left-0 w-full h-[150px] bg-gradient-to-t from-[var(--ssg-red)]/10 to-transparent"></div>
+        </div>
+
         {/* Scrolling Cyber Grid Background */}
         <div className="absolute inset-0 bg-[url('https://transparenttextures.com/patterns/cubes.png')] opacity-[0.03] animate-[bgScroll_30s_linear_infinite]"></div>
       </div>
 
-      <div className="max-w-7xl mx-auto px-6 lg:px-8 relative z-10">
+      <div className="max-w-7xl mx-auto px-6 lg:px-8 relative z-20">
         <div className="grid lg:grid-cols-12 gap-16 lg:gap-20 items-center">
           
           {/* ── LEFT CONTENT PANEL (Text & Actions) ── */}
           <div className="lg:col-span-6 flex flex-col items-start text-left sd-reveal opacity-0 translate-y-10 transition-all duration-1000 ease-out relative">
-            <div className="inline-flex items-center gap-2.5 px-4 py-1.5 rounded-full border border-[var(--ssg-red)]/30 bg-[var(--ssg-red)]/10 mb-6 shadow-[0_0_20px_rgba(236,32,36,0.15)]">
+            <div className="inline-flex items-center gap-2.5 px-4 py-1.5 rounded-full border border-[var(--ssg-red)]/30 bg-[var(--ssg-red)]/10 mb-6 shadow-[0_0_20px_rgba(236,32,36,0.15)] ring-1 ring-white/5">
               <i className="ph ph-shield-check text-[var(--ssg-red)] text-sm animate-pulse"></i>
-              <span className="text-[0.65rem] font-bold tracking-[0.2em] uppercase text-[#ffcaca]">Strategic Defence</span>
+              <span className="text-[0.65rem] font-bold tracking-[0.2em] uppercase text-white">Strategic Defence</span>
             </div>
             
             <h2 className="font-heading text-4xl sm:text-5xl lg:text-6xl font-extrabold text-white leading-[1.1] tracking-tight relative">
-              <span className="text-transparent bg-clip-text bg-gradient-to-r from-white via-white to-slate-400 block pb-2">Intelligence-Led</span>
-              <span className="text-[var(--ssg-red)] block">Proactive Defence</span>
+              <span className="text-transparent bg-clip-text bg-gradient-to-r from-white via-white to-slate-400 block pb-2 drop-shadow-sm">Intelligence-Led</span>
+              <span className="text-transparent bg-clip-text bg-gradient-to-r from-[var(--ssg-red)] to-[#ff7a7d] block pb-2 drop-shadow-[0_0_30px_rgba(236,32,36,0.2)]">Proactive Defence</span>
             </h2>
             
-            <p className="mt-4 text-[#8b95a9] text-lg leading-relaxed max-w-2xl font-normal tracking-wide bg-gradient-to-r from-transparent via-[#020408]/50 to-transparent p-2 -mx-2 rounded-lg">
+            <p className="mt-4 text-[#a1abbd] text-lg leading-relaxed max-w-2xl font-normal tracking-wide">
               SSquad Global combines predictive threat intelligence, operational discipline, and rapid execution to strengthen enterprise resilience before attacks escalate.
             </p>
 
-            <ul className="mt-8 space-y-4 w-full">
+            <ul className="mt-10 space-y-3 w-full">
               {[
                 { icon: "ph-eye", text: "End-to-end threat visibility across users, endpoints, and workloads" },
                 { icon: "ph-target", text: "Proactive defense strategy tuned to your business risk posture" },
                 { icon: "ph-timer", text: "Faster detection, triage, and incident response across teams" },
                 { icon: "ph-shield-star", text: "Enterprise-wide risk reduction through continuous hardening" }
               ].map((item, i) => (
-                <li key={i} className="flex items-center gap-4 p-4 rounded-xl bg-[#0c1019]/60 border border-white/[0.05] hover:border-[var(--ssg-red)]/30 transition-all duration-300 group shadow-lg">
-                  <div className="w-10 h-10 rounded-lg bg-[var(--ssg-red)]/10 border border-[var(--ssg-red)]/20 flex items-center justify-center shrink-0 group-hover:bg-[var(--ssg-red)]/20 transition-colors">
+                <li key={i} className="flex items-center gap-4 p-4 rounded-xl bg-gradient-to-r from-white/[0.03] to-transparent border border-white/[0.03] hover:border-white/10 hover:from-white/[0.05] hover:to-white/[0.01] transition-all duration-300 group">
+                  <div className="w-10 h-10 rounded-lg bg-[var(--ssg-red)]/10 border border-[var(--ssg-red)]/20 flex items-center justify-center shrink-0 group-hover:bg-[var(--ssg-red)]/20 group-hover:scale-110 transition-all duration-300 shadow-[0_0_15px_rgba(236,32,36,0.1)]">
                     <i className={`ph ${item.icon} text-[var(--ssg-red)] text-lg`}></i>
                   </div>
-                  <span className="text-[#a1abbd] text-sm md:text-base font-medium group-hover:text-white transition-colors">{item.text}</span>
+                  <span className="text-slate-300 text-sm md:text-base font-medium group-hover:text-white transition-colors">{item.text}</span>
                 </li>
               ))}
             </ul>
@@ -124,15 +130,15 @@ const StrategicDefenceSection = memo(function StrategicDefenceSection() {
 
           {/* ── RIGHT VISUAL PANEL: Animated Chart & Stats ── */}
           <div className="lg:col-span-6 relative sd-reveal opacity-0 translate-y-10 transition-all duration-1000 delay-200 ease-out transform-gpu">
-            <div className="absolute w-[400px] h-[400px] bg-[var(--ssg-cyber)]/15 blur-[100px] rounded-full pointer-events-none z-0"></div>
+            <div className="absolute w-[500px] h-[500px] bg-[var(--ssg-cyber)]/10 blur-[120px] rounded-full pointer-events-none z-0 mix-blend-screen translate-x-10 translate-y-10"></div>
             
-            <div className="relative z-10 rounded-3xl p-6 sm:p-8 bg-[#0c1019]/90 backdrop-blur-xl border border-white/[0.08] shadow-[0_0_50px_rgba(0,0,0,0.5),inset_0_0_20px_rgba(255,255,255,0.02)]">
+            <div className="relative z-10 rounded-3xl p-6 sm:p-8 bg-[#0c1019]/80 backdrop-blur-2xl border border-white/[0.06] shadow-[0_20px_50px_rgba(0,0,0,0.5),inset_0_0_20px_rgba(255,255,255,0.02)]">
               {/* Chart Area */}
-              <div className="relative w-full h-[220px] mb-8 border-b border-white/[0.08] pb-4">
+              <div className="relative w-full h-[220px] mb-8 border-b border-white/[0.05] pb-4">
                 <svg className="w-full h-full overflow-visible" viewBox="0 0 640 280" aria-hidden="true" preserveAspectRatio="none">
                   <defs>
                     <linearGradient id="darkIntelArea" x1="0%" y1="0%" x2="0%" y2="100%">
-                      <stop offset="0%" stopColor="rgba(236,32,36,0.3)" />
+                      <stop offset="0%" stopColor="rgba(236,32,36,0.2)" />
                       <stop offset="100%" stopColor="rgba(236,32,36,0)" />
                     </linearGradient>
                     <linearGradient id="darkIntelLine" x1="0%" y1="0%" x2="100%" y2="0%">
@@ -141,7 +147,7 @@ const StrategicDefenceSection = memo(function StrategicDefenceSection() {
                     </linearGradient>
                   </defs>
                   {/* Grid lines */}
-                  <g className="stroke-white/[0.05]" strokeWidth="1">
+                  <g className="stroke-white/[0.03]" strokeWidth="1">
                     <line x1="0" y1="50" x2="640" y2="50" />
                     <line x1="0" y1="120" x2="640" y2="120" />
                     <line x1="0" y1="190" x2="640" y2="190" />
@@ -152,24 +158,24 @@ const StrategicDefenceSection = memo(function StrategicDefenceSection() {
                   {/* Secondary line (Violet) */}
                   <path fill="none" stroke="#5B2EFF" strokeWidth="2" className="opacity-50" style={{ strokeDasharray: '1000', strokeDashoffset: '0', animation: 'dash 15s linear infinite' }} d="M40,218 C120,204 180,170 235,160 C300,148 365,132 420,145 C490,160 535,154 590,142"></path>
                   {/* Primary line (Red/Gradient) */}
-                  <path fill="none" stroke="url(#darkIntelLine)" strokeWidth="4" style={{ filter: 'drop-shadow(0 4px 8px rgba(236,32,36,0.4))', strokeDasharray: '1000', strokeDashoffset: '0', animation: 'dash 10s linear infinite' }} d="M40,230 C110,210 155,95 220,132 C285,169 340,95 400,120 C470,150 510,94 590,106"></path>
+                  <path fill="none" stroke="url(#darkIntelLine)" strokeWidth="4" style={{ filter: 'drop-shadow(0 4px 12px rgba(236,32,36,0.5))', strokeDasharray: '1000', strokeDashoffset: '0', animation: 'dash 10s linear infinite' }} d="M40,230 C110,210 155,95 220,132 C285,169 340,95 400,120 C470,150 510,94 590,106"></path>
                 </svg>
                 
                 {/* Animated Data Points */}
-                <div className="absolute top-[35%] left-[30%] w-3 h-3 bg-[var(--ssg-red)] rounded-full shadow-[0_0_15px_var(--ssg-red)]">
+                <div className="absolute top-[35%] left-[30%] w-3.5 h-3.5 bg-[var(--ssg-red)] rounded-full shadow-[0_0_20px_var(--ssg-red)]">
                   <div className="absolute inset-0 bg-white rounded-full animate-ping opacity-75"></div>
                 </div>
-                <div className="absolute top-[40%] left-[60%] w-3 h-3 bg-[#5B2EFF] rounded-full shadow-[0_0_15px_#5B2EFF]">
+                <div className="absolute top-[40%] left-[60%] w-3.5 h-3.5 bg-[#5B2EFF] rounded-full shadow-[0_0_20px_#5B2EFF]">
                   <div className="absolute inset-0 bg-white rounded-full animate-ping opacity-75 animation-delay-500"></div>
                 </div>
-                <div className="absolute top-[30%] left-[88%] w-3 h-3 bg-[var(--ssg-red)] rounded-full shadow-[0_0_15px_var(--ssg-red)]">
+                <div className="absolute top-[30%] left-[88%] w-3.5 h-3.5 bg-[var(--ssg-red)] rounded-full shadow-[0_0_20px_var(--ssg-red)]">
                   <div className="absolute inset-0 bg-white rounded-full animate-ping opacity-75 animation-delay-1000"></div>
                 </div>
                 
                 {/* Legend */}
-                <div className="absolute bottom-2 left-2 flex gap-4 bg-[#020408]/80 backdrop-blur border border-white/10 px-4 py-2 rounded-full">
-                  <span className="flex items-center gap-2 text-xs text-white font-medium"><div className="w-2 h-2 rounded-full bg-[var(--ssg-red)]"></div> Threat Trend</span>
-                  <span className="flex items-center gap-2 text-xs text-white font-medium"><div className="w-2 h-2 rounded-full bg-[#5B2EFF]"></div> Signal Correlation</span>
+                <div className="absolute bottom-2 left-2 flex gap-5 bg-[#020408]/90 backdrop-blur-md border border-white/10 px-5 py-2.5 rounded-full shadow-lg">
+                  <span className="flex items-center gap-2.5 text-xs text-white font-medium tracking-wide"><div className="w-2 h-2 rounded-full bg-[var(--ssg-red)] shadow-[0_0_8px_var(--ssg-red)]"></div> Threat Trend</span>
+                  <span className="flex items-center gap-2.5 text-xs text-white font-medium tracking-wide"><div className="w-2 h-2 rounded-full bg-[#5B2EFF] shadow-[0_0_8px_#5B2EFF]"></div> Signal Correlation</span>
                 </div>
               </div>
 
@@ -181,17 +187,17 @@ const StrategicDefenceSection = memo(function StrategicDefenceSection() {
                   { value: "150+", label: "Threat Sources Correlated" },
                   { value: "Real-time", label: "Executive Security Visibility" }
                 ].map((stat, i) => (
-                  <div key={i} className="bg-white/5 border border-white/5 rounded-2xl p-4 hover:bg-white/10 transition-colors">
-                    <p className="text-2xl font-heading font-bold text-white mb-1">{stat.value}</p>
-                    <p className="text-xs text-[#8b95a9] font-medium leading-tight">{stat.label}</p>
+                  <div key={i} className="bg-white/[0.02] border border-white/5 rounded-2xl p-5 hover:bg-white/[0.04] transition-colors duration-300">
+                    <p className="text-2xl sm:text-3xl font-heading font-extrabold text-white mb-1.5 drop-shadow-sm">{stat.value}</p>
+                    <p className="text-xs text-[#8b95a9] font-medium leading-relaxed">{stat.label}</p>
                   </div>
                 ))}
               </div>
             </div>
             
             {/* Floating Decorative Elements */}
-            <div className="absolute -top-6 -right-6 bg-[#0c1019] border border-[var(--ssg-red)]/30 rounded-xl p-3 flex items-center gap-3 shadow-[0_0_30px_rgba(236,32,36,0.2)] animate-[panelFloat_5s_ease-in-out_infinite] z-20">
-              <div className="w-2 h-2 bg-[var(--ssg-red)] rounded-full animate-pulse"></div>
+            <div className="absolute -top-6 -right-6 bg-[#0c1019] border border-[var(--ssg-red)]/30 rounded-xl p-3 flex items-center gap-3 shadow-[0_15px_40px_rgba(0,0,0,0.5),0_0_30px_rgba(236,32,36,0.2)] animate-[panelFloat_5s_ease-in-out_infinite] z-30">
+              <div className="w-2.5 h-2.5 bg-[var(--ssg-red)] rounded-full animate-pulse shadow-[0_0_10px_var(--ssg-red)]"></div>
               <span className="text-[0.65rem] font-bold text-white uppercase tracking-wider">Live Intel Feed</span>
             </div>
           </div>
@@ -204,11 +210,18 @@ const StrategicDefenceSection = memo(function StrategicDefenceSection() {
         }
         @keyframes panelFloat {
           0%, 100% { transform: translateY(0px); }
-          50% { transform: translateY(-10px); }
+          50% { transform: translateY(-12px); }
         }
         @keyframes bgScroll {
           0% { background-position: 0 0; }
           100% { background-position: 1000px 1000px; }
+        }
+        .sd-laser-sweep { animation: laserSweepSD 4.5s ease-in-out infinite alternate; }
+        @keyframes laserSweepSD {
+          0% { top: -10%; opacity: 0; }
+          15% { opacity: 0.8; }
+          85% { opacity: 0.8; }
+          100% { top: 110%; opacity: 0; }
         }
         .animation-delay-500 { animation-delay: 500ms; }
         .animation-delay-1000 { animation-delay: 1000ms; }
