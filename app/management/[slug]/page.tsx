@@ -22,7 +22,12 @@ export default async function ManagementProfilePage({ params }: { params: Promis
     <main className="min-h-screen bg-[#f8f9fa]">
       <InnerHeader 
         title={profile.name}
-        description={profile.title}
+        subtitle={profile.title}
+        breadcrumbs={[
+          { label: "Home", href: "/" },
+          { label: "Company", href: "/company" },
+          { label: profile.name, href: `/management/${profile.id}` }
+        ]}
       />
       
       <section className="py-20 lg:py-28">
