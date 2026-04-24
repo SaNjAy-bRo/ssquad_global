@@ -18,7 +18,6 @@ const serviceData: Record<string, { title: string; desc: string; href: string }[
   ],
   infra: [
     { title: 'End-to-End IT Infrastructure Management', desc: 'Modernize and operate resilient enterprise infrastructure at scale.', href: '/services/infrastructure-management' },
-    { title: 'Third-Party Maintenance (TPM) Services', desc: 'Extend asset life and optimize IT cost with expert support.', href: '/services/tpm-services' },
     { title: 'Auxiliary Services', desc: 'Specialized technology services aligned with business priorities.', href: '/services/auxiliary-services' },
     { title: 'End-User Computing', desc: 'Secure and flexible end-user environments for enterprise teams.', href: '/services/end-user-computing' },
     { title: 'IoT Services', desc: 'Connect data and devices to improve operations and reduce risk.', href: '/services/iot-services' },
