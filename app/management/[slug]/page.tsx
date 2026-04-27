@@ -2,7 +2,6 @@ import Image from 'next/image';
 import Link from 'next/link';
 import { notFound } from 'next/navigation';
 import { managementData } from '@/app/data/management';
-import InnerHeader from '@/app/components/inner/InnerHeader';
 
 export function generateStaticParams() {
   return managementData.map((profile) => ({
@@ -20,17 +19,14 @@ export default async function ManagementProfilePage({ params }: { params: Promis
 
   return (
     <main className="min-h-screen bg-[#f8f9fa]">
-      <InnerHeader 
-        title={profile.name}
-        subtitle={profile.title}
-        breadcrumbs={[
-          { label: "Home", href: "/" },
-          { label: "Company", href: "/company" },
-          { label: profile.name, href: `/management/${profile.id}` }
-        ]}
-      />
+      {/* Dark background for the transparent navbar */}
+      <div className="h-28 lg:h-36 bg-ssg-dark relative overflow-hidden">
+        <div className="hero-grid-overlay"></div>
+        <div className="hero-glow"></div>
+        <div className="hero-network-lines"></div>
+      </div>
       
-      <section className="py-20 lg:py-28">
+      <section className="pt-12 lg:pt-16 pb-20 lg:pb-28">
         <div className="max-w-container mx-auto px-6 lg:px-8">
           <div className="flex flex-col lg:flex-row gap-12 lg:gap-20">
             

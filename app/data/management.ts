@@ -41,7 +41,12 @@ export const managementData: ManagementProfile[] = [
     image: "/management/Aishah Mohd Suhaimi.jpeg",
     imagePosition: "center 30%",
     linkedin: "#",
-    bio: []
+    bio: [
+      "Aishah MS is a Malaysian entrepreneur, investor, and corporate strategist with a track record of building businesses, structuring complex deals, and driving growth across Asia-Pacific, the GCC, and broader emerging markets.",
+      "Over the course of her career, Aishah has co-founded and scaled ventures across luxury retail, govtech, healthcare, and digital infrastructure. She has served on boards and in senior advisory capacities across cybersecurity, technology, and professional services, advised major consulting groups on government-linked mandates, and played a central role in the turnaround and repositioning of publicly listed companies — delivering significant market cap growth through strategic clarity and execution.",
+      "Her institutional work spans the intersection of private equity and family offices, where she advises on fund structures, cross-border capital deployment, and strategic mergers across the Malaysia-GCC corridor. She currently co-leads private equity initiatives bridging Asia-Pacific and the MENA region — a reflection of the trust she has earned across some of the world’s most relationship-driven capital markets.",
+      "Aishah joins SSquad’s Board of Directors bringing more than market access — she brings the commercial acumen, institutional relationships, and deal-making capability to position SSquad for its next stage of growth across emerging and global markets. She holds a background in Management from Rutgers University, The State University of New Jersey, USA."
+    ]
   },
   {
     id: "ravi-prakasha",
