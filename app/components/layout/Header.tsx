@@ -15,6 +15,10 @@ const serviceData: Record<string, { title: string; desc: string; href: string }[
     { title: 'Penetration Testing Services', desc: 'Adversarial validation to uncover exploitable weaknesses early.', href: '/services/penetration-testing' },
     { title: 'Identity and Access Management (IAM)', desc: 'Identity-first access controls and governance for enterprise systems.', href: '/services/iam' },
     { title: 'OT Security Services', desc: 'Tailored security controls for industrial and operational technology.', href: '/services/ot-security' },
+    { title: 'Browser Security as a Service', desc: 'Secure the gateway to your digital world and shield against web-based threats.', href: '/services/browser-security' },
+    { title: 'Governance, Risk & Compliance', desc: 'Transform regulatory complexity into competitive advantage with enterprise GRC.', href: '/services/grc-services' },
+    { title: 'Integrated SOC Services', desc: 'Unify threat detection and incident response across IT and OT environments.', href: '/services/integrated-soc' },
+    { title: 'Cybersecurity Consulting', desc: 'Strategic advisory services to strengthen defense postures and optimize investments.', href: '/services/cybersecurity-consulting' },
   ],
   infra: [
     { title: 'End-to-End IT Infrastructure Management', desc: 'Modernize and operate resilient enterprise infrastructure at scale.', href: '/services/infrastructure-management' },

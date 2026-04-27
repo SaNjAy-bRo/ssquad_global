@@ -89,8 +89,7 @@ export const managementData: ManagementProfile[] = [
     id: "ng-swee-leong",
     name: "Ng Swee Leong",
     title: "Sales Operations Director",
-    image: "/management/Ng Swee Leong.jpeg",
-    imagePosition: "center 10%",
+    image: "/management/Ng Swee Leong.jpg",
     linkedin: "#",
     bio: []
   }
