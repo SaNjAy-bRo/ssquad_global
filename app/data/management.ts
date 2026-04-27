@@ -84,5 +84,14 @@ export const managementData: ManagementProfile[] = [
       "Mohamed Ali is a seasoned Information Technology professional with over 15+ years of experience in managing IT operations, support services, and delivering complex projects across diverse technical domains. Known for his consistent track record of meeting and exceeding client expectations, he combines deep technical knowledge with strong leadership, communication, and presentation skills.",
       "Throughout his career, Ali has worked across multiple levels of IT support—both independently and within high-performing teams—demonstrating a strong ability to solve complex technical challenges while ensuring seamless service delivery. His hands-on expertise, people-centric management style, and commitment to operational excellence make him a trusted leader in driving efficiency and client satisfaction across global IT environments."
     ]
+  },
+  {
+    id: "ng-swee-leong",
+    name: "Ng Swee Leong",
+    title: "Sales Operations Director",
+    image: "/management/Ng Swee Leong.jpeg",
+    imagePosition: "center 10%",
+    linkedin: "#",
+    bio: []
   }
 ];

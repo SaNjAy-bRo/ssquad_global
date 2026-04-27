@@ -59,7 +59,7 @@ export default function LeadershipSection() {
               <div key={idx} className="min-w-[280px] sm:min-w-[320px] md:min-w-[350px] snap-start flex-shrink-0">
                 <Link href={`/management/${leader.id}`} className="block group h-full">
                   <div className="reveal bg-ssg-dark/5 rounded-2xl p-5 border border-slate-100 transition-all duration-300 hover:shadow-premium hover:-translate-y-2 hover:bg-ssg-dark hover:border-ssg-red/30 h-full flex flex-col">
-                     <div className="relative w-full aspect-[4/3] mb-5 rounded-xl overflow-hidden bg-slate-200">
+                     <div className="relative w-full aspect-[4/3.5] mb-5 rounded-xl overflow-hidden bg-slate-200">
                         <Image 
                            src={leader.image}
                            alt={leader.name}
