@@ -15,7 +15,7 @@ export default function HeroSectionV1({
   badge = "Trusted Partner in Digital Innovation",
   heading = "Enterprise Technology,",
   headingAccent = "Reimagined",
-  subheading = "Empower your business with scalable cloud computing and unshakeable cyber resilience. We build the intelligent infrastructure that drives modern enterprise forward.",
+  subheading = "Empower your business with quantum-safe security and unshakeable cyber resilience. We build the intelligent infrastructure that protects modern enterprise beyond 2030.",
 }: HeroSectionV1Props) {
   
   const [mounted, setMounted] = useState(false);

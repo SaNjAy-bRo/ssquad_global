@@ -45,10 +45,10 @@ export default function SolutionsSection() {
             <Link href="/services/network-as-a-platform">Learn more <span>&rarr;</span></Link>
           </article>
           <article className="solution-card reveal">
-            <i className="ph ph-bug-beetle"></i>
-            <h3>Penetration Testing Services</h3>
-            <p>Real-world adversarial testing to expose weaknesses before attackers do.</p>
-            <Link href="/services/penetration-testing">Learn more <span>&rarr;</span></Link>
+            <i className="ph ph-atom"></i>
+            <h3>Quantum-Safe Security Services</h3>
+            <p>Post-quantum cryptography migration and quantum-resistant protection for the post-quantum era.</p>
+            <Link href="/services/quantum-safe-cybersecurity">Learn more <span>&rarr;</span></Link>
           </article>
         </div>
       </div>

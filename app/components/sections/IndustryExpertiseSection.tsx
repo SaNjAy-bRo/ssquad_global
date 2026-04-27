@@ -24,8 +24,8 @@ export default function IndustryExpertiseSection() {
             <p>Reduce risk across critical infrastructure, remote assets, and operational networks.</p>
           </article>
           <article className="industry-card reveal">
-            <h3 className="industry-head"><span className="industry-icon violet"><i className="ph ph-shield-check"></i></span>Insurance</h3>
-            <p>Defend policyholder data and core systems under strict compliance expectations.</p>
+            <h3 className="industry-head"><span className="industry-icon violet"><i className="ph ph-shield-check"></i></span>Government & Critical Infrastructure</h3>
+            <p>Quantum-safe security for national security systems and critical infrastructure protection.</p>
           </article>
           <article className="industry-card reveal">
             <h3 className="industry-head"><span className="industry-icon"><i className="ph ph-buildings"></i></span>Public Services</h3>
