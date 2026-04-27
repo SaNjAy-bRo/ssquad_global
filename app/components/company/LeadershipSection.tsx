@@ -52,14 +52,14 @@ export default function LeadershipSection() {
         <div className="relative">
           <div 
             ref={scrollRef}
-            className="flex overflow-x-auto gap-6 pb-8 snap-x snap-mandatory hide-scrollbar"
+            className="flex overflow-x-auto gap-4 sm:gap-6 pb-8 snap-x snap-mandatory hide-scrollbar"
             style={{ scrollbarWidth: 'none', msOverflowStyle: 'none' }}
           >
             {managementData.map((leader, idx) => (
-              <div key={idx} className="min-w-[280px] sm:min-w-[320px] md:min-w-[350px] snap-start flex-shrink-0">
+              <div key={idx} className="w-[calc(50%-0.5rem)] sm:w-auto min-w-[150px] sm:min-w-[320px] md:min-w-[350px] snap-start flex-shrink-0">
                 <Link href={`/management/${leader.id}`} className="block group h-full">
-                  <div className="reveal bg-ssg-dark/5 rounded-2xl p-5 border border-slate-100 transition-all duration-300 hover:shadow-premium hover:-translate-y-2 hover:bg-ssg-dark hover:border-ssg-red/30 h-full flex flex-col">
-                     <div className="relative w-full aspect-[4/3.5] mb-5 rounded-xl overflow-hidden bg-slate-200">
+                  <div className="reveal bg-ssg-dark/5 rounded-2xl p-4 sm:p-5 border border-slate-100 transition-all duration-300 hover:shadow-premium hover:-translate-y-2 hover:bg-ssg-dark hover:border-ssg-red/30 h-full flex flex-col">
+                     <div className="relative w-full aspect-[4/3.5] mb-4 sm:mb-5 rounded-xl overflow-hidden bg-slate-200">
                         <Image 
                            src={leader.image}
                            alt={leader.name}
@@ -71,12 +71,12 @@ export default function LeadershipSection() {
                         <div className="absolute inset-0 bg-gradient-to-t from-ssg-dark/80 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity"></div>
                      </div>
                      
-                     <h3 className="font-heading font-bold text-lg text-slate-900 group-hover:text-white transition-colors">{leader.name}</h3>
-                     <p className="text-ssg-red font-semibold text-xs mt-1 uppercase tracking-wider mb-4">{leader.title}</p>
+                     <h3 className="font-heading font-bold text-base sm:text-lg text-slate-900 group-hover:text-white transition-colors leading-tight">{leader.name}</h3>
+                     <p className="text-ssg-red font-semibold text-[10px] sm:text-xs mt-1 sm:mt-1.5 uppercase tracking-wider mb-3 sm:mb-4 line-clamp-2">{leader.title}</p>
                      
                      <div className="mt-auto flex">
-                        <div className="w-8 h-8 rounded-lg bg-slate-200 flex items-center justify-center text-slate-600 group-hover:bg-ssg-red group-hover:text-white transition-all duration-300">
-                           <i className="ph-bold ph-arrow-up-right text-lg"></i>
+                        <div className="w-7 h-7 sm:w-8 sm:h-8 rounded-lg bg-slate-200 flex items-center justify-center text-slate-600 group-hover:bg-ssg-red group-hover:text-white transition-all duration-300">
+                           <i className="ph-bold ph-arrow-up-right text-base sm:text-lg"></i>
                         </div>
                      </div>
                   </div>
