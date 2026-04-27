@@ -38,7 +38,7 @@ export const managementData: ManagementProfile[] = [
     id: "aishah-mohd-suhaimi",
     name: "Aishah Mohd Suhaimi",
     title: "Board of Director",
-    image: "/management/Aishah Mohd Suhaimi.jpeg",
+    image: "/management/Aishah Mohd Suhaimi.jpg",
     imagePosition: "center 30%",
     linkedin: "#",
     bio: [
@@ -65,7 +65,7 @@ export const managementData: ManagementProfile[] = [
     id: "khairul-azam-ahmad",
     name: "Khairul Azam Ahmad",
     title: "Cybersecurity Advisor",
-    image: "/management/khairul-Copy.png",
+    image: "/management/khairul.jpg",
     linkedin: "#",
     bio: [
       "Khairul Azam is a seasoned cybersecurity and digital resilience leader with over 25 years of deep, multidimensional experience across cybersecurity strategy, threat operations, and national-level security programs. His leadership philosophy is rooted in a powerful belief: today's digital resilience secures tomorrow's freedoms. This forward-thinking approach has shaped his career and continues to guide his contributions to Ssquad Global.",
