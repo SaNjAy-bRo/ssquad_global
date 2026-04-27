@@ -56,7 +56,7 @@ export default function LeadershipSection() {
             style={{ scrollbarWidth: 'none', msOverflowStyle: 'none' }}
           >
             {managementData.map((leader, idx) => (
-              <div key={idx} className="w-[calc(50%-0.5rem)] sm:w-auto min-w-[150px] sm:min-w-[320px] md:min-w-[350px] snap-start flex-shrink-0">
+              <div key={idx} className="w-[calc(50%-0.5rem)] sm:w-auto min-w-[150px] sm:min-w-[280px] md:min-w-[290px] xl:min-w-[350px] snap-start flex-shrink-0">
                 <Link href={`/management/${leader.id}`} className="block group h-full">
                   <div className="reveal bg-ssg-dark/5 rounded-2xl p-4 sm:p-5 border border-slate-100 transition-all duration-300 hover:shadow-premium hover:-translate-y-2 hover:bg-ssg-dark hover:border-ssg-red/30 h-full flex flex-col">
                      <div className="relative w-full aspect-[4/3.5] mb-4 sm:mb-5 rounded-xl overflow-hidden bg-slate-200">
