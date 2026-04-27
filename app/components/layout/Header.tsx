@@ -19,6 +19,7 @@ const serviceData: Record<string, { title: string; desc: string; href: string }[
     { title: 'Governance, Risk & Compliance', desc: 'Transform regulatory complexity into competitive advantage with enterprise GRC.', href: '/services/grc-services' },
     { title: 'Integrated SOC Services', desc: 'Unify threat detection and incident response across IT and OT environments.', href: '/services/integrated-soc' },
     { title: 'Cybersecurity Consulting', desc: 'Strategic advisory services to strengthen defense postures and optimize investments.', href: '/services/cybersecurity-consulting' },
+    { title: 'Quantum-Safe Cybersecurity', desc: 'Engineer post-quantum cryptographic frameworks that protect against Q-Day threats.', href: '/services/quantum-safe-cybersecurity' },
   ],
   infra: [
     { title: 'End-to-End IT Infrastructure Management', desc: 'Modernize and operate resilient enterprise infrastructure at scale.', href: '/services/infrastructure-management' },
@@ -218,8 +219,11 @@ export default function Header() {
           >
             <div className="mega-menu-inner">
               <div className="mega-content-wrap">
-                <div id="mega-title" className="mega-title">{serviceLabels[activeService]}</div>
-                <div className={`grid grid-cols-1 lg:grid-cols-3 gap-3 transition-all duration-150 ${isSwitching ? 'opacity-0 translate-y-2' : 'opacity-100 translate-y-0'}`} id="mega-content">
+                <div id="mega-title" className="mega-title flex justify-between items-end border-b border-white/10 pb-2 mb-4">
+                  <span>{serviceLabels[activeService]}</span>
+                  <span className="text-xs font-medium text-ssg-red/80 tracking-widest uppercase mb-1 flex items-center gap-1.5"><i className="ph-fill ph-list-dashes"></i> {currentItems.length} Services</span>
+                </div>
+                <div className={`grid grid-cols-1 lg:grid-cols-3 gap-3 transition-all duration-150 max-h-[60vh] overflow-y-auto pr-2 overflow-x-hidden ${isSwitching ? 'opacity-0 translate-y-2' : 'opacity-100 translate-y-0'}`} id="mega-content" style={{ scrollbarWidth: 'thin', scrollbarColor: 'rgba(255,255,255,0.2) transparent' }}>
                   {currentItems.map((item, idx) => (
                     <article className="mega-item !rounded-[0.75rem]" key={idx}>
                       <Link onClick={closeMega} className="mega-link !flex !flex-col !h-full !p-3 sm:!p-4" href={item.href}>
@@ -230,6 +234,11 @@ export default function Header() {
                     </article>
                   ))}
                 </div>
+                {currentItems.length > 9 && (
+                  <div className="text-center mt-3 text-[10px] text-slate-400 font-medium tracking-wider uppercase flex items-center justify-center gap-1.5 opacity-70">
+                    <i className="ph ph-mouse-scroll text-sm"></i> Scroll down to explore all {currentItems.length} services
+                  </div>
+                )}
               </div>
             </div>
           </div>
