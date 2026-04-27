@@ -257,7 +257,7 @@ export default function Header() {
                     <i className={`ph ph-caret-down transition-transform duration-300 ${activeMobileCategory === key ? 'rotate-180' : ''}`}></i>
                   </button>
                   
-                  <div className={`overflow-hidden transition-all duration-300 ease-in-out ${activeMobileCategory === key ? 'max-h-[500px] opacity-100 mt-2 pb-2' : 'max-h-0 opacity-0'}`}>
+                  <div className={`overflow-hidden transition-all duration-300 ease-in-out ${activeMobileCategory === key ? 'max-h-[1000px] opacity-100 mt-2 pb-2' : 'max-h-0 opacity-0'}`}>
                     <div className="pl-4 flex flex-col gap-3 border-l border-white/10 ml-1 py-1">
                       {serviceData[key].map((item, idx) => (
                         <Link 
