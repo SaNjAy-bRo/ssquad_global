@@ -19,7 +19,7 @@ export default function InsightsSection() {
               <Image 
                 src={blog.image} 
                 unoptimized 
-                alt={`${blog.title} visual from SSquad Global`} 
+                alt={`${blog.title} visual from Ssquad Global`} 
                 width={570} 
                 height={600} 
                 className="w-full h-auto aspect-[570/600] object-cover" 

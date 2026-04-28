@@ -33,7 +33,7 @@ export default function AdminLogin() {
             <div className="bg-ssg-dark px-4 py-2 rounded-lg mb-6 inline-block">
               <Image 
                 src="/images/logon.png" 
-                alt="SSquad Global" 
+                alt="Ssquad Global" 
                 width={120} 
                 height={30} 
                 className="h-7 w-auto object-contain brightness-0 invert" 

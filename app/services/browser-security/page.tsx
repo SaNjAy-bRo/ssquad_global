@@ -38,7 +38,7 @@ export default function BrowserSecurityPage() {
         title="Comprehensive Browser Security Delivered as a Managed Service"
         description={`In today's remote-first landscape where 90% of cyberattacks originate through web browsers, traditional endpoint security misses the primary attack vector. Our managed browser security solution delivers zero trust browser security platform protection designed around actual browsing behavior, malicious site detection, and real-time threat isolation—addressing the $4.35 million average cost of web-based security incidents.
 
-SSquad's browser security experts deploy cloud-native protection that secures web sessions while maintaining user productivity. We rapidly assess, configure, and manage enterprise browser security service frameworks that serve as invisible shields for web-based operations—seamlessly integrated into daily workflows without compromising browsing experience or business velocity.`}
+Ssquad's browser security experts deploy cloud-native protection that secures web sessions while maintaining user productivity. We rapidly assess, configure, and manage enterprise browser security service frameworks that serve as invisible shields for web-based operations—seamlessly integrated into daily workflows without compromising browsing experience or business velocity.`}
         points={[
           { title: "Enterprise Browser Security Service", icon: "ph-shield-check" },
           { title: "Zero Trust Browser Security Platform", icon: "ph-lock-key" },

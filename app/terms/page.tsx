@@ -28,7 +28,7 @@ export default function TermsPage() {
     <main className="bg-white min-h-screen">
       <InnerHeader 
         title="Terms of Service" 
-        subtitle="The standard terms and conditions for engaging with SSquad Global services."
+        subtitle="The standard terms and conditions for engaging with Ssquad Global services."
         breadcrumbs={[
           { label: 'Home', href: '/' },
           { label: 'Terms of Service', href: '/terms' }
@@ -48,7 +48,7 @@ export default function TermsPage() {
 
           <h2 className="text-2xl font-bold text-slate-900 mt-10 mb-6">2. Use License</h2>
           <p className="text-slate-600 leading-relaxed mb-4">
-            Permission is granted to temporarily download one copy of the materials (information or software) on SSquad Global's website for personal, non-commercial transitory viewing only.
+            Permission is granted to temporarily download one copy of the materials (information or software) on Ssquad Global's website for personal, non-commercial transitory viewing only.
           </p>
           <ul className="list-disc pl-6 space-y-3 text-slate-600 mb-8">
             <li>Modify or copy the materials;</li>
@@ -59,12 +59,12 @@ export default function TermsPage() {
 
           <h2 className="text-2xl font-bold text-slate-900 mt-10 mb-6">3. Disclaimer</h2>
           <p className="text-slate-600 leading-relaxed mb-6">
-            The materials on SSquad Global's website are provided on an 'as is' basis. SSquad Global makes no warranties, expressed or implied, and hereby disclaims and negates all other warranties including, without limitation, implied warranties or conditions of merchantability, fitness for a particular purpose, or non-infringement of intellectual property or other violation of rights.
+            The materials on Ssquad Global's website are provided on an 'as is' basis. Ssquad Global makes no warranties, expressed or implied, and hereby disclaims and negates all other warranties including, without limitation, implied warranties or conditions of merchantability, fitness for a particular purpose, or non-infringement of intellectual property or other violation of rights.
           </p>
 
           <h2 className="text-2xl font-bold text-slate-900 mt-10 mb-6">4. Limitations</h2>
           <p className="text-slate-600 leading-relaxed mb-6">
-            In no event shall SSquad Global or its suppliers be liable for any damages (including, without limitation, damages for loss of data or profit, or due to business interruption) arising out of the use or inability to use the materials on SSquad Global's website.
+            In no event shall Ssquad Global or its suppliers be liable for any damages (including, without limitation, damages for loss of data or profit, or due to business interruption) arising out of the use or inability to use the materials on Ssquad Global's website.
           </p>
 
           <h2 className="text-2xl font-bold text-slate-900 mt-10 mb-6">5. Governing Law</h2>

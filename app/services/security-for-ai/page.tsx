@@ -40,7 +40,7 @@ export default function SecurityForAiPage() {
         title="Cybersecurity Solutions Built for the Age of Artificial Intelligence"
         description={`In today's AI-driven landscape where most organizations deploy machine learning, traditional security falls short. Our AI Solutions deliver comprehensive protection designed around model vulnerabilities and adversarial attacks—addressing urgent detection needs while maintaining model accuracy.
 
-SSquad's security specialists build defense systems that protect intelligent systems while enhancing productivity. We rapidly deploy AI-native frameworks that serve as adaptive shields for machine learning operations—seamlessly integrated into pipelines without compromising innovation.`}
+Ssquad's security specialists build defense systems that protect intelligent systems while enhancing productivity. We rapidly deploy AI-native frameworks that serve as adaptive shields for machine learning operations—seamlessly integrated into pipelines without compromising innovation.`}
         points={[
           { title: "AI Model Protection & Governance", icon: "ph-shield-check" },
           { title: "Adversarial Attack Defense", icon: "ph-shield-warning" },

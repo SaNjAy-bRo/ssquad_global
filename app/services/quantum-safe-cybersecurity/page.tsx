@@ -38,7 +38,7 @@ export default function QuantumSafeCybersecurityPage() {
         title="Protection Designed for the Post-Quantum Era"
         description={`In today's threat landscape where adversaries are harvesting encrypted data for future quantum decryption, traditional cryptography creates a ticking time bomb. Our Quantum-Safe Cybersecurity Services deliver quantum-resistant protection designed around NIST-approved post-quantum algorithms, addressing the inevitable obsolescence of RSA and ECC encryption by 2030.
 
-SSquad's quantum security experts build defense systems that future-proof your digital assets while maintaining operational continuity. We rapidly assess, design, and deploy quantum-resistant frameworks that serve as unbreakable shields for enterprise operations—seamlessly integrated into existing infrastructure without compromising the performance that drives business success.`}
+Ssquad's quantum security experts build defense systems that future-proof your digital assets while maintaining operational continuity. We rapidly assess, design, and deploy quantum-resistant frameworks that serve as unbreakable shields for enterprise operations—seamlessly integrated into existing infrastructure without compromising the performance that drives business success.`}
         points={[
           { title: "Risk Assessment", icon: "ph-shield-check" },
           { title: "Post-Quantum Architecture", icon: "ph-hard-drives" },

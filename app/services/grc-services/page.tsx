@@ -38,7 +38,7 @@ export default function GrcServicesPage() {
         title="Comprehensive Governance, Risk and Compliance Solutions Delivered as Managed Services"
         description={`In today's regulatory landscape where compliance violations average $14.8 million in costs, traditional GRC approaches create operational friction and audit fatigue. Our governance risk and compliance solutions deliver integrated protection designed around regulatory requirements, risk mitigation strategies, and governance frameworks—addressing the complex needs of modern enterprises operating across multiple jurisdictions and industry standards.
 
-SSquad's GRC specialists deploy unified governance frameworks that strengthen compliance posture while enhancing operational efficiency. We rapidly assess, design, and manage managed GRC services that serve as comprehensive shields for regulatory operations—seamlessly integrated into business processes without compromising productivity or strategic initiatives.`}
+Ssquad's GRC specialists deploy unified governance frameworks that strengthen compliance posture while enhancing operational efficiency. We rapidly assess, design, and manage managed GRC services that serve as comprehensive shields for regulatory operations—seamlessly integrated into business processes without compromising productivity or strategic initiatives.`}
         points={[
           { title: "Enterprise GRC Solutions", icon: "ph-shield-check" },
           { title: "Managed GRC Services", icon: "ph-chart-bar" },

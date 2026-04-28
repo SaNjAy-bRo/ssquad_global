@@ -170,8 +170,8 @@ export default function Header() {
             onMouseLeave={handleMouseLeaveShell}
           >
           <div className="flex items-center justify-between px-5 py-4 lg:px-7">
-            <Link href="/" className="flex items-center gap-3 shrink-0" aria-label="SSquad Global Home">
-              <Image src="/images/logon.png" alt="SSquad Global logo" width={144} height={36} className="h-9 w-auto" priority />
+            <Link href="/" className="flex items-center gap-3 shrink-0" aria-label="Ssquad Global Home">
+              <Image src="/images/logon.png" alt="Ssquad Global logo" width={144} height={36} className="h-9 w-auto" priority />
             </Link>
 
             <nav id="desktop-nav" className="hidden lg:flex items-center gap-8 text-sm text-slate-100/90 font-medium">

@@ -30,7 +30,7 @@ export default function StrategicDefenceSection() {
               Intelligence-Led Proactive Cyber Defence
             </h2>
             <p className="mt-5 text-slate-300 text-[1.05rem] leading-relaxed">
-              SSquad Global combines predictive threat intelligence, operational discipline, and rapid execution to strengthen enterprise resilience before attacks escalate.
+              Ssquad Global combines predictive threat intelligence, operational discipline, and rapid execution to strengthen enterprise resilience before attacks escalate.
             </p>
 
             <ul className="mt-8 space-y-3">

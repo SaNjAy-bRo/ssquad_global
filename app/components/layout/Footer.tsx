@@ -15,7 +15,7 @@ export default function Footer() {
       <div className="max-w-container mx-auto px-6 lg:px-8">
         <div className="grid sm:grid-cols-2 lg:grid-cols-12 gap-10 text-slate-300 items-start">
           <div className="lg:col-span-5 footer-col">
-            <Image src="/images/logon.png" alt="SSquad Global logo" width={160} height={40} className="h-10 w-auto" />
+            <Image src="/images/logon.png" alt="Ssquad Global logo" width={160} height={40} className="h-10 w-auto" />
             <p className="mt-5 max-w-md text-sm text-slate-400">
               Ssquad Global delivers enterprise-grade cybersecurity, infrastructure, cloud, and managed security services for organizations operating in high-stakes environments.
             </p>
@@ -55,7 +55,7 @@ export default function Footer() {
         </div>
 
         <div className="mt-12 pt-6 border-t border-white/10 text-sm text-slate-500 flex flex-col md:flex-row justify-between items-center gap-4">
-          <p>© {currentYear} SSquad Global. All rights reserved.</p>
+          <p>© {currentYear} Ssquad Global. All rights reserved.</p>
           <div className="flex gap-6">
             <Link href="/privacy" className="hover:text-ssg-red transition-colors">Privacy Policy</Link>
             <Link href="/terms" className="hover:text-ssg-red transition-colors">Terms of Service</Link>

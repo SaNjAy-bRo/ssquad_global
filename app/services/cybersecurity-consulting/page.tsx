@@ -38,7 +38,7 @@ export default function CybersecurityConsultingPage() {
         title="Comprehensive Cybersecurity Consulting Services for Enterprise Transformation"
         description={`In today's threat landscape where 83% of organizations lack adequate cybersecurity strategies, traditional security approaches create gaps and inefficiencies. Our cybersecurity consulting company delivers managed cybersecurity consulting services designed around strategic risk assessment, security architecture optimization, and comprehensive defense planning—addressing the $4.45 million average cost of inadequate security strategies.
 
-SSquad's cybersecurity advisory services experts deploy strategic security frameworks that strengthen organizational resilience while maximizing security ROI. We rapidly assess, strategize, and implement cybersecurity consulting provider solutions that serve as comprehensive blueprints for security transformation—seamlessly integrated into business objectives without compromising operational efficiency or growth initiatives.`}
+Ssquad's cybersecurity advisory services experts deploy strategic security frameworks that strengthen organizational resilience while maximizing security ROI. We rapidly assess, strategize, and implement cybersecurity consulting provider solutions that serve as comprehensive blueprints for security transformation—seamlessly integrated into business objectives without compromising operational efficiency or growth initiatives.`}
         points={[
           { title: "Strategic Security Planning", icon: "ph-strategy" },
           { title: "Managed Consulting Services", icon: "ph-handshake" },

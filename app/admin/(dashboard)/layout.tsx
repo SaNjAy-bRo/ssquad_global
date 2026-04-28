@@ -1,5 +1,5 @@
 export const metadata = {
-  title: "Admin Dashboard | SSquad Global",
+  title: "Admin Dashboard | Ssquad Global",
 };
 
 export default function AdminLayout({

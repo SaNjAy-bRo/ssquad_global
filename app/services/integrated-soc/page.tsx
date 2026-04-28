@@ -38,7 +38,7 @@ export default function IntegratedSocPage() {
         title="Comprehensive Integrated Security Operations Center Services for Modern Enterprises"
         description={`In today's hybrid infrastructure landscape where 78% of organizations struggle with security tool sprawl, traditional siloed SOCs miss critical threats spanning IT and OT environments. Our integrated security operations center delivers unified security operations platform protection designed around converged threat detection, cross-domain visibility, and seamless incident response—addressing the $4.88 million average cost of fragmented security operations.
 
-SSquad's security integration experts deploy converged security operations center services that eliminate blind spots while enhancing threat detection capabilities. We rapidly assess, design, and manage IT OT security integration services that serve as comprehensive shields for hybrid operations—seamlessly integrated across technology domains without compromising operational continuity or security effectiveness.`}
+Ssquad's security integration experts deploy converged security operations center services that eliminate blind spots while enhancing threat detection capabilities. We rapidly assess, design, and manage IT OT security integration services that serve as comprehensive shields for hybrid operations—seamlessly integrated across technology domains without compromising operational continuity or security effectiveness.`}
         points={[
           { title: "Integrated SOC", icon: "ph-shield-check" },
           { title: "IT/OT/IoT Integration", icon: "ph-plugs-connected" },
