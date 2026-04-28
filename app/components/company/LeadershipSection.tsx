@@ -86,7 +86,7 @@ export default function LeadershipSection() {
                            alt={leader.name}
                            fill
                            className="object-cover group-hover:scale-110 transition-transform duration-700 ease-out"
-                           style={{ objectPosition: leader.imagePosition || 'center' }}
+                           style={{ objectPosition: leader.imagePosition || 'center', ...(leader.imageStyle || {}) }}
                            unoptimized
                         />
                      </div>

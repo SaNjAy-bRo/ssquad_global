@@ -1,9 +1,12 @@
+import React from 'react';
+
 export interface ManagementProfile {
   id: string;
   name: string;
   title: string;
   image: string;
   imagePosition?: string;
+  imageStyle?: React.CSSProperties;
   linkedin: string;
   bio: string[];
 }
@@ -54,7 +57,7 @@ export const managementData: ManagementProfile[] = [
     name: "Ravi Prakasha",
     title: "Director - Technical Services",
     image: "/management/ravi.jpg",
-    imagePosition: "48% center",
+    imagePosition: "36% center",
     linkedin: "#",
     bio: [
       "Ravi Prakasha is an accomplished and experienced Technical Services Director with a passion for leveraging technology to drive business growth. With a solid background in computer knowledge and over 17+ years of professional experience, Ravi has established himself as a respected leader in the field.",
@@ -81,6 +84,8 @@ export const managementData: ManagementProfile[] = [
     name: "Mohamed Ali",
     title: "Head Of Service Delivery",
     image: "/management/mali.jpg",
+    imagePosition: "center",
+    imageStyle: { transform: "scale(1) translateY(0%)", backgroundColor: "#fbdada" },
     linkedin: "#",
     bio: [
       "Mohamed Ali is a seasoned Information Technology professional with over 15+ years of experience in managing IT operations, support services, and delivering complex projects across diverse technical domains. Known for his consistent track record of meeting and exceeding client expectations, he combines deep technical knowledge with strong leadership, communication, and presentation skills.",
