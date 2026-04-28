@@ -17,7 +17,7 @@ export default function Footer() {
           <div className="lg:col-span-5 footer-col">
             <Image src="/images/logon.png" alt="SSquad Global logo" width={160} height={40} className="h-10 w-auto" />
             <p className="mt-5 max-w-md text-sm text-slate-400">
-              SSquad Global delivers enterprise-grade cybersecurity, infrastructure, cloud, and managed security services for organizations operating in high-stakes environments.
+              Ssquad Global delivers enterprise-grade cybersecurity, infrastructure, cloud, and managed security services for organizations operating in high-stakes environments.
             </p>
             <div className="mt-6 flex items-center gap-3 text-xl text-slate-300">
               <a href="https://www.linkedin.com/company/ssquad-global/" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn" className="social"><i className="ph ph-linkedin-logo"></i></a>
