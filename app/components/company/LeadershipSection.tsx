@@ -18,10 +18,10 @@ export default function LeadershipSection() {
         if (scrollLeft + clientWidth >= scrollWidth - 10) {
           scrollRef.current.scrollTo({ left: 0, behavior: 'smooth' });
         } else {
-          scrollRef.current.scrollBy({ left: 250, behavior: 'smooth' });
+          scrollRef.current.scrollBy({ left: 300, behavior: 'smooth' });
         }
       }
-    }, 2000);
+    }, 1500);
 
     return () => clearInterval(interval);
   }, [isHovered]);
@@ -72,11 +72,11 @@ export default function LeadershipSection() {
         <div className="relative" onMouseEnter={() => setIsHovered(true)} onMouseLeave={() => setIsHovered(false)}>
             <div 
             ref={scrollRef}
-            className="flex overflow-x-auto gap-4 sm:gap-8 md:gap-12 pb-8 pt-4 snap-x snap-mandatory hide-scrollbar justify-start"
+            className="flex overflow-x-auto gap-4 sm:gap-8 lg:gap-12 pb-8 pt-4 snap-x snap-mandatory hide-scrollbar justify-start"
             style={{ scrollbarWidth: 'none', msOverflowStyle: 'none' }}
           >
             {managementData.map((leader, idx) => (
-              <div key={idx} className="w-[calc(50%-8px)] sm:w-[180px] md:w-[200px] snap-start flex-shrink-0 text-center">
+              <div key={idx} className="w-[calc(50%-8px)] sm:w-[180px] md:w-[200px] lg:w-[calc(25%-2.25rem)] snap-start flex-shrink-0 text-center">
                 <Link href={`/management/${leader.id}`} className="block group h-full">
                   <div className="reveal flex flex-col items-center">
                      {/* Small Circular Photo matching cyfirma reference but with Ssquad light styling */}

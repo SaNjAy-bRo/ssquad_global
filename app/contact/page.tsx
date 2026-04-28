@@ -7,6 +7,51 @@ export default function ContactPage() {
   const [formData, setFormData] = useState({
     name: '', email: '', number: '', subject: '', message: '', terms: false
   });
+  const [status, setStatus] = useState<'idle' | 'loading' | 'success' | 'error'>('idle');
+  const [errorMessage, setErrorMessage] = useState('');
+
+  const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
+    const { id, value, type } = e.target;
+    setFormData(prev => ({
+      ...prev,
+      [id]: type === 'checkbox' ? (e.target as HTMLInputElement).checked : value
+    }));
+  };
+
+  const handleSubmit = async (e: React.FormEvent) => {
+    e.preventDefault();
+    if (!formData.terms) {
+      setErrorMessage('Please accept the Terms of Service to continue.');
+      setStatus('error');
+      return;
+    }
+    
+    setStatus('loading');
+    setErrorMessage('');
+
+    try {
+      const res = await fetch('/api/contact', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify(formData)
+      });
+
+      const data = await res.json();
+
+      if (!res.ok) {
+        throw new Error(data.error || 'Failed to submit the form');
+      }
+
+      setStatus('success');
+      setFormData({ name: '', email: '', number: '', subject: '', message: '', terms: false });
+      
+      // Reset success message after 5 seconds
+      setTimeout(() => setStatus('idle'), 5000);
+    } catch (err: any) {
+      setStatus('error');
+      setErrorMessage(err.message || 'An unexpected error occurred.');
+    }
+  };
 
   useEffect(() => {
     const reveals = document.querySelectorAll('.reveal');
@@ -100,40 +145,57 @@ export default function ContactPage() {
                 
                 <h3 className="text-2xl font-bold text-slate-900 mb-8 tracking-tight">Direct Transmission</h3>
                 
-                <form className="space-y-6 relative z-10" onSubmit={(e) => e.preventDefault()}>
+                <form className="space-y-6 relative z-10" onSubmit={handleSubmit}>
                   <div className="grid md:grid-cols-2 gap-6">
                     <div className="space-y-2">
-                      <label className="text-xs font-bold text-slate-500 uppercase tracking-wider ml-1">Full Name</label>
-                      <input type="text" placeholder="John Doe" className="w-full bg-slate-50 text-slate-900 border border-slate-200 rounded-xl px-4 py-3.5 focus:bg-white focus:ring-4 focus:ring-red-500/10 focus:border-ssg-red outline-none transition-all placeholder:text-slate-400 font-medium text-[15px]" />
+                      <label htmlFor="name" className="text-xs font-bold text-slate-500 uppercase tracking-wider ml-1">Full Name *</label>
+                      <input id="name" type="text" required value={formData.name} onChange={handleChange} placeholder="John Doe" className="w-full bg-slate-50 text-slate-900 border border-slate-200 rounded-xl px-4 py-3.5 focus:bg-white focus:ring-4 focus:ring-red-500/10 focus:border-ssg-red outline-none transition-all placeholder:text-slate-400 font-medium text-[15px]" />
                     </div>
                     <div className="space-y-2">
-                      <label className="text-xs font-bold text-slate-500 uppercase tracking-wider ml-1">Work Email</label>
-                      <input type="email" placeholder="john@enterprise.com" className="w-full bg-slate-50 text-slate-900 border border-slate-200 rounded-xl px-4 py-3.5 focus:bg-white focus:ring-4 focus:ring-red-500/10 focus:border-ssg-red outline-none transition-all placeholder:text-slate-400 font-medium text-[15px]" />
+                      <label htmlFor="email" className="text-xs font-bold text-slate-500 uppercase tracking-wider ml-1">Work Email *</label>
+                      <input id="email" type="email" required value={formData.email} onChange={handleChange} placeholder="john@enterprise.com" className="w-full bg-slate-50 text-slate-900 border border-slate-200 rounded-xl px-4 py-3.5 focus:bg-white focus:ring-4 focus:ring-red-500/10 focus:border-ssg-red outline-none transition-all placeholder:text-slate-400 font-medium text-[15px]" />
                     </div>
                   </div>
                   <div className="grid md:grid-cols-2 gap-6">
                     <div className="space-y-2">
-                      <label className="text-xs font-bold text-slate-500 uppercase tracking-wider ml-1">Phone Number</label>
-                      <input type="tel" placeholder="+1 (555) 000-0000" className="w-full bg-slate-50 text-slate-900 border border-slate-200 rounded-xl px-4 py-3.5 focus:bg-white focus:ring-4 focus:ring-red-500/10 focus:border-ssg-red outline-none transition-all placeholder:text-slate-400 font-medium text-[15px]" />
+                      <label htmlFor="number" className="text-xs font-bold text-slate-500 uppercase tracking-wider ml-1">Phone Number</label>
+                      <input id="number" type="tel" value={formData.number} onChange={handleChange} placeholder="+1 (555) 000-0000" className="w-full bg-slate-50 text-slate-900 border border-slate-200 rounded-xl px-4 py-3.5 focus:bg-white focus:ring-4 focus:ring-red-500/10 focus:border-ssg-red outline-none transition-all placeholder:text-slate-400 font-medium text-[15px]" />
                     </div>
                     <div className="space-y-2">
-                      <label className="text-xs font-bold text-slate-500 uppercase tracking-wider ml-1">Subject</label>
-                      <input type="text" placeholder="Inquiry Type" className="w-full bg-slate-50 text-slate-900 border border-slate-200 rounded-xl px-4 py-3.5 focus:bg-white focus:ring-4 focus:ring-red-500/10 focus:border-ssg-red outline-none transition-all placeholder:text-slate-400 font-medium text-[15px]" />
+                      <label htmlFor="subject" className="text-xs font-bold text-slate-500 uppercase tracking-wider ml-1">Subject</label>
+                      <input id="subject" type="text" value={formData.subject} onChange={handleChange} placeholder="Inquiry Type" className="w-full bg-slate-50 text-slate-900 border border-slate-200 rounded-xl px-4 py-3.5 focus:bg-white focus:ring-4 focus:ring-red-500/10 focus:border-ssg-red outline-none transition-all placeholder:text-slate-400 font-medium text-[15px]" />
                     </div>
                   </div>
                   <div className="space-y-2">
-                    <label className="text-xs font-bold text-slate-500 uppercase tracking-wider ml-1">Transmission Detail</label>
-                    <textarea rows={5} placeholder="Describe your operational requirements..." className="w-full bg-slate-50 text-slate-900 border border-slate-200 rounded-xl px-4 py-3.5 focus:bg-white focus:ring-4 focus:ring-red-500/10 focus:border-ssg-red outline-none transition-all placeholder:text-slate-400 font-medium text-[15px] resize-none"></textarea>
+                    <label htmlFor="message" className="text-xs font-bold text-slate-500 uppercase tracking-wider ml-1">Transmission Detail *</label>
+                    <textarea id="message" required rows={5} value={formData.message} onChange={handleChange} placeholder="Describe your operational requirements..." className="w-full bg-slate-50 text-slate-900 border border-slate-200 rounded-xl px-4 py-3.5 focus:bg-white focus:ring-4 focus:ring-red-500/10 focus:border-ssg-red outline-none transition-all placeholder:text-slate-400 font-medium text-[15px] resize-none"></textarea>
                   </div>
                   <div className="flex items-start gap-3 px-1 pt-1">
-                    <input type="checkbox" id="terms" className="mt-1 w-4 h-4 rounded border-slate-300 text-ssg-red shadow-sm focus:ring-ssg-red focus:ring-offset-1 transition-all cursor-pointer" />
+                    <input type="checkbox" id="terms" checked={formData.terms} onChange={handleChange} className="mt-1 w-4 h-4 rounded border-slate-300 text-ssg-red shadow-sm focus:ring-ssg-red focus:ring-offset-1 transition-all cursor-pointer" />
                     <label htmlFor="terms" className="text-slate-500 text-sm cursor-pointer leading-relaxed">
                       I accept the <a href="#" className="text-slate-700 hover:text-ssg-red font-semibold transition-colors underline decoration-slate-200 underline-offset-4">Terms of Service</a> and <a href="#" className="text-slate-700 hover:text-ssg-red font-semibold transition-colors underline decoration-slate-200 underline-offset-4">Privacy Framework</a>.
                     </label>
                   </div>
+
+                  {status === 'success' && (
+                    <div className="p-4 rounded-xl bg-green-50 border border-green-200 text-green-700 flex items-center gap-3">
+                      <i className="ph-fill ph-check-circle text-xl"></i>
+                      <p className="font-medium">Transmission successful. We will contact you shortly.</p>
+                    </div>
+                  )}
+
+                  {status === 'error' && (
+                    <div className="p-4 rounded-xl bg-red-50 border border-red-200 text-red-700 flex items-center gap-3">
+                      <i className="ph-fill ph-warning-circle text-xl"></i>
+                      <p className="font-medium">{errorMessage}</p>
+                    </div>
+                  )}
+
                   <div className="pt-4">
-                    <button type="submit" className="w-full bg-slate-900 hover:bg-ssg-red text-white font-bold rounded-xl px-8 py-4 shadow-lg shadow-slate-900/20 hover:shadow-red-500/25 transition-all hover:-translate-y-0.5 text-[15px] tracking-wide flex items-center justify-center gap-3">
-                      Initialize Transmission <i className="ph-bold ph-arrow-right"></i>
+                    <button type="submit" disabled={status === 'loading'} className={`w-full ${status === 'loading' ? 'bg-slate-500 cursor-not-allowed' : 'bg-slate-900 hover:bg-ssg-red shadow-lg shadow-slate-900/20 hover:shadow-red-500/25 hover:-translate-y-0.5'} text-white font-bold rounded-xl px-8 py-4 transition-all text-[15px] tracking-wide flex items-center justify-center gap-3`}>
+                      {status === 'loading' ? 'Initializing...' : 'Initialize Transmission'} 
+                      {status !== 'loading' && <i className="ph-bold ph-arrow-right"></i>}
+                      {status === 'loading' && <i className="ph ph-spinner animate-spin"></i>}
                     </button>
                   </div>
                 </form>

@@ -93,6 +93,9 @@ export const managementData: ManagementProfile[] = [
     title: "Sales Operations Director",
     image: "/management/Ng Swee Leong.jpg",
     linkedin: "#",
-    bio: []
+    bio: [
+      "Ng Swee Leong is a seasoned sales operations leader with over 25 years of experience across APAC and global markets. He has built his career at the intersection of sales, operations, and business transformation, working with leading multinational organizations to enhance commercial performance, sales effectiveness, and operational efficiency. His background spans sales operations, CRM and partner ecosystem enablement, and large-scale program delivery, where he has successfully led cross-functional initiatives and supported complex, multi-country sales environments.",
+      "As Sales Operations Director, Swee Leong works closely with internal teams, customers, and partners to strengthen sales execution and support the end-to-end customer journey. His goal is to enable effective pre-sales engagement and smooth post-sales delivery, helping to build strong customer relationships and long-term value. With a practical and collaborative approach, he contributes to consistent business performance and sustainable growth for the organisation."
+    ]
   }
 ];

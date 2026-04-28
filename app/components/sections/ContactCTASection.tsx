@@ -13,8 +13,7 @@ export default function ContactCTASection() {
                 Get a focused security assessment from our experts and build a stronger, intelligence-led defense posture.
               </p>
               <div className="mt-10 flex flex-wrap gap-4">
-                <Link href="#" className="btn-primary"><i className="ph ph-calendar-check"></i>Book Security Assessment</Link>
-                <Link href="#" className="btn-secondary"><i className="ph ph-headset"></i>Speak with an Expert</Link>
+                <Link href="/contact" className="btn-primary"><i className="ph ph-headset"></i>Speak with an Expert</Link>
               </div>
             </div>
 

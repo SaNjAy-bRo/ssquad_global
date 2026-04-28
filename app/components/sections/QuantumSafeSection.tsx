@@ -60,62 +60,49 @@ const QuantumSafeSection = memo(function QuantumSafeSection() {
             </p>
           </div>
 
-          {/* ── 2. ANIMATION PANEL (Mobile: Middle, Desktop: Right-Spanning) ── */}
+          {/* ── 2. ALTERNATIVE VISUAL PANEL (Mobile: Middle, Desktop: Right-Spanning) ── */}
           <div className="w-full lg:col-start-7 lg:col-span-6 lg:row-start-1 lg:row-span-2 relative quantum-reveal opacity-0 translate-y-10 transition-all duration-1000 delay-200 ease-out flex items-center justify-center min-h-[350px] sm:min-h-[500px]">
             
-            <div className="absolute w-[350px] h-[350px] sm:w-[450px] sm:h-[450px] bg-[#6d28d9]/20 blur-[100px] rounded-full pointer-events-none z-0"></div>
+            <div className="absolute w-[300px] h-[300px] sm:w-[400px] sm:h-[400px] bg-[#3b82f6]/20 blur-[100px] rounded-full pointer-events-none z-0"></div>
 
-            <div className="relative w-full max-w-[400px] aspect-square flex items-center justify-center">
+            <div className="relative w-full max-w-[350px] aspect-square flex items-center justify-center mt-8 lg:mt-0">
               
-              {/* Central Core */}
-              <div className="absolute w-24 h-24 rounded-full bg-gradient-to-br from-[#c4b5fd] to-[#7c3aed] shadow-[0_0_60px_rgba(139,92,246,0.8),inset_0_0_20px_rgba(255,255,255,0.8)] z-20 flex items-center justify-center animate-[pulse_3s_ease-in-out_infinite]">
-                 <div className="w-16 h-16 rounded-full bg-[#4c1d95] blur-[4px]"></div>
-                 <i className="ph-fill ph-lock-key absolute text-white/90 text-4xl drop-shadow-[0_0_10px_rgba(255,255,255,0.5)]"></i>
+              {/* Central Shield Core */}
+              <div className="absolute w-28 h-28 sm:w-32 sm:h-32 rounded-full bg-gradient-to-br from-[#1e3a8a] to-[#4c1d95] shadow-[0_0_60px_rgba(59,130,246,0.5),inset_0_0_30px_rgba(255,255,255,0.3)] z-20 flex items-center justify-center animate-[pulse_3s_ease-in-out_infinite] border border-white/20">
+                 <div className="absolute inset-2 rounded-full border border-white/10 animate-[spin_10s_linear_infinite] border-t-transparent border-b-transparent"></div>
+                 <i className="ph-fill ph-shield-check text-white/95 text-5xl sm:text-6xl drop-shadow-[0_0_15px_rgba(255,255,255,0.8)]"></i>
               </div>
 
-              {/* Quantum Orbits */}
+              {/* Force Field Rings */}
               {[
-                { rotateX: 65, rotateY: 25, duration: 8, color: '#8b5cf6' },
-                { rotateX: 75, rotateY: -35, duration: 12, color: '#3b82f6', reverse: true },
-                { rotateZ: 55, rotateX: 60, duration: 10, color: '#a855f7' }
-              ].map((orbit, idx) => (
+                { size: '100%', duration: 25, style: 'border-dashed border-2 opacity-30', color: 'border-[#60a5fa]' },
+                { size: '135%', duration: 35, style: 'border-solid border opacity-20', reverse: true, color: 'border-[#a78bfa]' },
+                { size: '170%', duration: 45, style: 'border-dotted border-[3px] opacity-25', color: 'border-[#3b82f6]' }
+              ].map((ring, idx) => (
                 <div 
                   key={idx}
-                  className="absolute w-[110%] h-[110%] rounded-full border border-white/20 [transform-style:preserve-3d]"
+                  className={`absolute rounded-full ${ring.color} ${ring.style}`}
                   style={{
-                    transform: `rotateX(${orbit.rotateX}deg) rotateY(${orbit.rotateY || 0}deg) rotateZ(${orbit.rotateZ || 0}deg)`,
-                    animation: `quantumSpin${idx} ${orbit.duration}s linear infinite ${orbit.reverse ? 'reverse' : 'normal'}`,
-                    boxShadow: `inset 0 0 20px ${orbit.color}20`
+                    width: ring.size,
+                    height: ring.size,
+                    animation: `spin ${ring.duration}s linear infinite ${ring.reverse ? 'reverse' : 'normal'}`,
                   }}
                 >
-                  <div 
-                    className="absolute w-5 h-5 rounded-full flex items-center justify-center"
-                    style={{
-                      top: '0',
-                      left: '50%',
-                      transform: 'translate(-50%, -50%)',
-                      background: orbit.color,
-                      boxShadow: `0 0 20px ${orbit.color}, 0 0 40px ${orbit.color}`
-                    }}
-                  >
-                    <div className="w-2.5 h-2.5 bg-white rounded-full animate-ping"></div>
-                  </div>
+                  {/* Floating Data Nodes on Rings */}
+                  <div className="absolute top-0 left-1/2 -translate-x-1/2 -translate-y-1/2 w-3 h-3 rounded-full bg-white shadow-[0_0_15px_white]"></div>
+                  {idx !== 1 && <div className="absolute bottom-1/4 left-0 -translate-x-1/2 translate-y-1/2 w-2 h-2 rounded-full bg-[#60a5fa] shadow-[0_0_10px_#60a5fa]"></div>}
+                  {idx !== 0 && <div className="absolute bottom-0 left-1/2 -translate-x-1/2 translate-y-1/2 w-2.5 h-2.5 rounded-full bg-[#a78bfa] shadow-[0_0_12px_#a78bfa]"></div>}
                 </div>
               ))}
               
             </div>
             
-            {/* Overlay UI Panels */}
-            <div className="absolute top-10 right-[-1rem] sm:right-4 bg-[#030712]/90 backdrop-blur-xl border border-[#8b5cf6]/30 rounded-2xl p-3 sm:p-4 flex items-center gap-3 sm:gap-4 shadow-[0_15px_40px_rgba(0,0,0,0.6),0_0_20px_rgba(139,92,246,0.15)] animate-[panelFloat_4s_ease-in-out_infinite] z-30">
-               <div className="w-8 h-8 sm:w-10 sm:h-10 rounded-xl bg-[#8b5cf6]/20 flex items-center justify-center border border-[#8b5cf6]/30 overflow-hidden relative">
-                 <i className="ph ph-shield-check text-[#a78bfa] text-lg sm:text-xl"></i>
-               </div>
-               <div>
-                 <div className="text-[#c4b5fd] text-[0.65rem] font-bold uppercase tracking-[0.2em] mb-0.5">Algorithm Status</div>
-                 <div className="text-[#a78bfa] text-xs sm:text-sm font-bold flex items-center gap-1.5">
-                   <div className="w-1.5 h-1.5 rounded-full bg-[#10b981] animate-pulse"></div>
-                   NIST-Approved
-                 </div>
+            {/* Tech Tag Alternative */}
+            <div className="absolute bottom-4 left-0 sm:bottom-10 sm:left-4 bg-gradient-to-r from-[#1e3a8a]/40 to-transparent border-l-2 border-[#60a5fa] p-3 sm:p-4 backdrop-blur-md z-30 shadow-lg animate-[panelFloat_5s_ease-in-out_infinite]">
+               <div className="text-[#93c5fd] text-[0.65rem] font-mono uppercase tracking-[0.2em] mb-1">Protection Layer</div>
+               <div className="text-white text-sm sm:text-base font-bold flex items-center gap-2">
+                 <i className="ph-fill ph-check-circle text-[#10b981] animate-pulse"></i>
+                 Quantum-Resistant
                </div>
             </div>
 
@@ -154,21 +141,6 @@ const QuantumSafeSection = memo(function QuantumSafeSection() {
 
         </div>
       </div>
-
-      <style dangerouslySetInnerHTML={{__html: `
-        @keyframes quantumSpin0 {
-          0% { transform: rotateX(65deg) rotateY(25deg) rotateZ(0deg); }
-          100% { transform: rotateX(65deg) rotateY(25deg) rotateZ(360deg); }
-        }
-        @keyframes quantumSpin1 {
-          0% { transform: rotateX(75deg) rotateY(-35deg) rotateZ(0deg); }
-          100% { transform: rotateX(75deg) rotateY(-35deg) rotateZ(360deg); }
-        }
-        @keyframes quantumSpin2 {
-          0% { transform: rotateZ(55deg) rotateX(60deg) rotateY(0deg); }
-          100% { transform: rotateZ(55deg) rotateX(60deg) rotateY(360deg); }
-        }
-      `}} />
     </section>
   );
 });
