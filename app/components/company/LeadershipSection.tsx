@@ -48,7 +48,7 @@ export default function LeadershipSection() {
             <p className="section-eyebrow">The Experts</p>
             <h2 className="section-title text-slate-900">Our Leadership Team</h2>
             <p className="text-slate-500 mt-3 text-[17px] md:whitespace-nowrap">
-               Driven by experience, led by visionaries. Meet the team driving our <span className="font-bold text-[#0077b5]">global cybersecurity efforts</span>.
+               Meet the team driving our global <span className="font-bold text-[#0077b5]">cybersecurity efforts</span>.
             </p>
           </div>
           <div className="flex items-center gap-3">

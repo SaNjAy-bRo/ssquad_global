@@ -85,7 +85,7 @@ export const managementData: ManagementProfile[] = [
     title: "Head Of Service Delivery",
     image: "/management/mali.jpg",
     imagePosition: "center",
-    imageStyle: { transform: "scale(1) translateY(0%)", backgroundColor: "#fbdada" },
+    imageStyle: { transform: "scale(1) translateY(2%)", backgroundColor: "#fbdada" },
     linkedin: "#",
     bio: [
       "Mohamed Ali is a seasoned Information Technology professional with over 15+ years of experience in managing IT operations, support services, and delivering complex projects across diverse technical domains. Known for his consistent track record of meeting and exceeding client expectations, he combines deep technical knowledge with strong leadership, communication, and presentation skills.",
