@@ -25,16 +25,11 @@ export default function ServiceOverviewCards({
       
       <div className="max-w-container mx-auto px-6 lg:px-8">
         <div className="max-w-4xl mx-auto text-center reveal">
-          {eyebrow && <p className="text-ssg-red font-bold tracking-widest uppercase text-sm mb-4 font-heading">{eyebrow}</p>}
-          <h2 
-            className="section-title text-slate-900 font-bold mb-6 text-balance"
-            style={{ textWrap: 'balance' }}
-          >
+          {eyebrow && <p className="text-ssg-red font-bold tracking-widest uppercase text-sm mb-4 font-heading text-center mx-auto">{eyebrow}</p>}
+          <h2 className="section-title text-slate-900 font-bold mb-6 text-balance text-center mx-auto">
             {title}
           </h2>
-          <p 
-            className="text-slate-600 leading-relaxed text-[1.1rem] max-w-3xl mx-auto whitespace-pre-line text-justify"
-          >
+          <p className="text-slate-600 leading-relaxed text-[1.1rem] max-w-3xl mx-auto whitespace-pre-line">
             {description}
           </p>
         </div>

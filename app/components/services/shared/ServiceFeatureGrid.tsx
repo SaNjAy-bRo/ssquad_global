@@ -31,12 +31,10 @@ export default function ServiceFeatureGrid({
       <div className="max-w-container mx-auto px-6 lg:px-8">
         
         <div className="text-center reveal mb-16">
-          {eyebrow && <p className="section-eyebrow">{eyebrow}</p>}
-          <h2 className="section-title text-slate-900 mx-auto max-w-4xl">{title}</h2>
+          {eyebrow && <p className="section-eyebrow text-center mx-auto">{eyebrow}</p>}
+          <h2 className="section-title text-slate-900 text-center mx-auto max-w-4xl">{title}</h2>
           {subtitle && (
-            <p 
-              className="mt-4 text-slate-600 max-w-3xl mx-auto text-[1.1rem] leading-relaxed text-justify"
-            >
+            <p className="mt-4 text-slate-600 max-w-3xl mx-auto text-[1.1rem] leading-relaxed">
               {subtitle}
             </p>
           )}
@@ -48,7 +46,7 @@ export default function ServiceFeatureGrid({
               <h3 className={`text-xl font-heading font-bold mb-4 ${card.highlight ? 'text-white' : 'text-slate-800'}`}>{card.title}</h3>
               
               {card.description && (
-                <p className={`leading-relaxed text-[15px] ${card.highlight ? 'text-white/90' : 'text-slate-600'}`}>
+                <p className={`leading-relaxed text-[15px] text-left ${card.highlight ? 'text-white/90' : 'text-slate-600'}`}>
                   {card.description}
                 </p>
               )}

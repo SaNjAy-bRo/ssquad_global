@@ -22,10 +22,10 @@ export default function ServiceDarkGrid({
         
         <div className="arc-heading text-center max-w-3xl mx-auto reveal mb-16">
           <span className="arc-icon"><i className={`ph ${icon}`}></i></span>
-          {eyebrow && <p className="section-eyebrow">{eyebrow}</p>}
-          <h2 className="section-title text-white">{title}</h2>
+          {eyebrow && <p className="section-eyebrow text-center mx-auto">{eyebrow}</p>}
+          <h2 className="section-title text-white text-center mx-auto">{title}</h2>
           {subtitle && (
-            <p className="mt-4 text-slate-300">
+            <p className="mt-4 text-slate-300 max-w-3xl mx-auto">
               {subtitle}
             </p>
           )}
@@ -36,7 +36,7 @@ export default function ServiceDarkGrid({
             <article key={idx} className="solution-card reveal">
               <i className="ph ph-shield-check text-ssg-red text-3xl mb-4"></i>
               <h3 className="font-heading font-semibold text-lg mb-2 text-white">{card.title}</h3>
-              {card.description && <p className="text-slate-400 text-sm leading-relaxed">{card.description}</p>}
+              {card.description && <p className="text-slate-400 text-sm leading-relaxed text-left">{card.description}</p>}
               {card.points && card.points.length > 0 && (
                 <ul className="mt-4 space-y-2">
                   {card.points.map((p, i) => (

@@ -16,7 +16,7 @@ export default function Footer() {
         <div className="grid sm:grid-cols-2 lg:grid-cols-12 gap-10 text-slate-300 items-start">
           <div className="lg:col-span-5 footer-col">
             <Image src="/images/logon.png" alt="Ssquad Global logo" width={160} height={40} className="h-10 w-auto" />
-            <p className="mt-5 max-w-md text-sm text-slate-400">
+            <p className="mt-5 max-w-md text-sm text-slate-400 text-left">
               Ssquad Global delivers enterprise-grade cybersecurity, infrastructure, cloud, and managed security services for organizations operating in high-stakes environments.
             </p>
             <div className="mt-6 flex items-center gap-3 text-xl text-slate-300">

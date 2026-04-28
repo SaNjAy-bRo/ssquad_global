@@ -26,17 +26,12 @@ export default function ServiceSolutionsGrid({
       
       <div className="max-w-container mx-auto px-6 lg:px-8 relative z-10">
         <div className="text-center max-w-3xl mx-auto reveal mb-12 md:mb-16">
-          {eyebrow && <p className="text-ssg-red font-bold tracking-widest uppercase text-sm mb-4 font-heading">{eyebrow}</p>}
-          <h2 
-            className="text-3xl md:text-5xl font-heading font-bold text-slate-900 mb-6 text-balance mx-auto"
-            style={{ textWrap: 'balance' }}
-          >
+          {eyebrow && <p className="text-ssg-red font-bold tracking-widest uppercase text-sm mb-4 font-heading text-center mx-auto">{eyebrow}</p>}
+          <h2 className="text-3xl md:text-5xl font-heading font-bold text-slate-900 mb-6 text-balance text-center mx-auto">
             {title}
           </h2>
           {subtitle && (
-            <p 
-              className="text-slate-600 text-[1.1rem] leading-relaxed max-w-3xl mx-auto text-justify"
-            >
+            <p className="text-slate-600 text-[1.1rem] leading-relaxed max-w-3xl mx-auto">
               {subtitle}
             </p>
           )}
@@ -54,7 +49,7 @@ export default function ServiceSolutionsGrid({
               </div>
               
               <h3 className="text-[1.15rem] font-heading font-semibold text-slate-800 mb-2.5 leading-snug">{sol.title}</h3>
-              <p className="text-slate-500 text-[0.95rem] mb-6 min-h-[44px] leading-relaxed">{sol.description}</p>
+              <p className="text-slate-500 text-[0.95rem] mb-6 min-h-[44px] leading-relaxed text-left">{sol.description}</p>
               
               <ul className="space-y-3 pt-4 border-t border-slate-100">
                 {sol.features.map((feature, fidx) => (
