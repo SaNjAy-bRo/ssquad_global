@@ -1,3 +1,5 @@
+"use client";
+
 export default function StrategicDefenceSection() {
   return (
     <section className="relative bg-[#020810] py-16 lg:py-20 overflow-hidden border-y border-white/5">

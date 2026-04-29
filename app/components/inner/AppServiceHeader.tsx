@@ -270,10 +270,10 @@ export default function AppServiceHeader({ title, subtitle, breadcrumbs, theme =
                    <i className="ph ph-fill ph-terminal-window text-cyan-300 text-xl md:text-xl animate-pulse"></i>
                 </div>
                 
-                <div className="text-left font-mono mt-0.5 text-sm md:text-[0.95rem]">
+                <div className="flex-1 text-justify font-mono mt-0.5 text-sm md:text-[0.95rem]">
                   <p 
-                    className="text-slate-300 leading-relaxed drop-shadow-sm font-medium text-balance"
-                    style={{ textWrap: 'balance' }}
+                    className="text-slate-300 leading-relaxed drop-shadow-sm font-medium"
+                    style={{ textAlign: 'justify', hyphens: 'auto', WebkitHyphens: 'auto', wordSpacing: '-0.5px' } as React.CSSProperties}
                   >
                     <span className="text-cyan-400 font-bold mr-2"></span>
                     {subtitle}
@@ -287,7 +287,7 @@ export default function AppServiceHeader({ title, subtitle, breadcrumbs, theme =
               </div>
             ) : (
               <div className="bg-[#0B0F19]/60 backdrop-blur-xl border border-slate-700/50 rounded-2xl py-4 flex items-center justify-center max-w-3xl shadow-xl px-8">
-                <p className="text-slate-300 leading-relaxed font-medium text-balance md:text-lg">
+                <p className="text-slate-300 leading-relaxed font-medium md:text-lg" style={{ textAlign: 'justify', hyphens: 'auto', WebkitHyphens: 'auto', wordSpacing: '-0.5px' } as React.CSSProperties}>
                   {subtitle}
                 </p>
               </div>

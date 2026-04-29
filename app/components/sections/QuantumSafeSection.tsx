@@ -55,8 +55,8 @@ const QuantumSafeSection = memo(function QuantumSafeSection() {
               </span>
             </h2>
             
-            <p className="mt-4 text-[#9ca3af] text-lg leading-relaxed max-w-2xl font-normal tracking-wide">
-              Security designed around NIST-approved post-quantum algorithms. We engineer cryptographic frameworks that protect against Q-Day threats and "Harvest-Now-Decrypt-Later" attacks, ensuring your enterprise operations remain unbreakable beyond 2030.
+            <p className="mt-4 text-[#9ca3af] text-lg leading-relaxed max-w-2xl font-normal tracking-wide" style={{ textAlign: 'justify', hyphens: 'auto', WebkitHyphens: 'auto', wordSpacing: '-0.5px' } as React.CSSProperties}>
+              Security designed around NIST-approved post-quantum algorithms. We engineer cryptographic frameworks that protect against Q-Day threats and "Harvest-Now-Decrypt-Later" attacks, ensuring your enterprise operations remain unbreakable.
             </p>
           </div>
 

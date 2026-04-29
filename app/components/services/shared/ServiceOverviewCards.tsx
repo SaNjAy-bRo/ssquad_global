@@ -29,7 +29,7 @@ export default function ServiceOverviewCards({
           <h2 className="section-title text-slate-900 font-bold mb-6 text-balance text-center mx-auto">
             {title}
           </h2>
-          <p className="text-slate-600 leading-relaxed text-[1.1rem] max-w-3xl mx-auto whitespace-pre-line" style={{ textAlign: 'justify', textJustify: 'inter-word' }}>
+          <p className="text-slate-600 leading-relaxed text-[1.1rem] max-w-3xl mx-auto whitespace-pre-line" style={{ textAlign: 'justify', hyphens: 'auto', WebkitHyphens: 'auto', wordSpacing: '-0.5px' } as React.CSSProperties}>
             {description}
           </p>
         </div>

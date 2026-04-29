@@ -167,7 +167,7 @@ const PlatformSpotlightSection = memo(function PlatformSpotlightSection() {
                 </span>
               </h2>
               
-              <p className="mt-4 text-[#8b95a9] text-lg leading-relaxed max-w-2xl font-normal tracking-wide bg-gradient-to-r from-transparent via-[#020408]/50 to-transparent p-2 -mx-2 rounded-lg">
+              <p className="mt-4 text-[#8b95a9] text-lg leading-relaxed max-w-2xl font-normal tracking-wide bg-gradient-to-r from-transparent via-[#020408]/50 to-transparent p-2 -mx-2 rounded-lg" style={{ textAlign: 'justify', hyphens: 'auto', WebkitHyphens: 'auto', wordSpacing: '-0.5px' } as React.CSSProperties}>
                 A fully managed, intelligence-driven platform that captures, normalizes, and correlates security telemetry across endpoints, cloud, SaaS, and network layers to accelerate your team's detection and response capabilities.
               </p>
 
