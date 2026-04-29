@@ -6,7 +6,7 @@ import ServiceOverviewCards from '@/app/components/services/shared/ServiceOvervi
 import ServiceFeatureGrid from '@/app/components/services/shared/ServiceFeatureGrid';
 import ServiceSolutionsGrid from '@/app/components/services/shared/ServiceSolutionsGrid';
 import ServiceCTA from '@/app/components/services/shared/ServiceCTA';
-import ServiceFAQ from '@/app/components/services/shared/ServiceFAQ';
+
 import GlobalIndustriesSection from '@/app/components/services/shared/GlobalIndustriesSection';
 
 export default function PenetrationTestingPage() {
@@ -97,7 +97,7 @@ Our services assess your security posture through controlled exploits and social
       />
 
 
-      <ServiceFAQ />
+
 
       <GlobalIndustriesSection />
 

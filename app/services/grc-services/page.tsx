@@ -5,7 +5,7 @@ import AppServiceHeader from '@/app/components/inner/AppServiceHeader';
 import ServiceOverviewCards from '@/app/components/services/shared/ServiceOverviewCards';
 import ServiceSolutionsGrid from '@/app/components/services/shared/ServiceSolutionsGrid';
 import ServiceCTA from '@/app/components/services/shared/ServiceCTA';
-import ServiceFAQ from '@/app/components/services/shared/ServiceFAQ';
+
 import GlobalIndustriesSection from '@/app/components/services/shared/GlobalIndustriesSection';
 
 export default function GrcServicesPage() {
@@ -112,7 +112,7 @@ Ssquad's GRC specialists deploy unified governance frameworks that strengthen co
 
       <ServiceCTA />
 
-      <ServiceFAQ />
+
     </main>
   );
 }

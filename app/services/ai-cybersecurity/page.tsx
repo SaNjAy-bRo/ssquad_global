@@ -6,7 +6,7 @@ import ServiceOverviewCards from '@/app/components/services/shared/ServiceOvervi
 import ServiceSolutionsGrid from '@/app/components/services/shared/ServiceSolutionsGrid';
 import ServiceFeatureGrid from '@/app/components/services/shared/ServiceFeatureGrid';
 import ServiceCTA from '@/app/components/services/shared/ServiceCTA';
-import ServiceFAQ from '@/app/components/services/shared/ServiceFAQ';
+
 import GlobalIndustriesSection from '@/app/components/services/shared/GlobalIndustriesSection';
 
 export default function AiCybersecurityPage() {
@@ -112,7 +112,7 @@ At Ssquad, we deploy Artificial Intelligence and Machine Learning models to revo
 
       <ServiceCTA />
       
-      <ServiceFAQ />
+
 
       <GlobalIndustriesSection />
     </main>

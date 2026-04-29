@@ -7,7 +7,7 @@ import OverviewSection from '@/app/components/services/app-security/OverviewSect
 import ImperativeSection from '@/app/components/services/app-security/ImperativeSection';
 import SolutionsGrid from '@/app/components/services/app-security/SolutionsGrid';
 import ProviderSelection from '@/app/components/services/app-security/ProviderSelection';
-import ServiceFAQ from '@/app/components/services/shared/ServiceFAQ';
+
 import GlobalIndustriesSection from '@/app/components/services/shared/GlobalIndustriesSection';
 
 export default function ApplicationSecurityPage() {
@@ -49,7 +49,7 @@ export default function ApplicationSecurityPage() {
         <ProviderSelection />
       </section>
 
-      <ServiceFAQ />
+
 
       <GlobalIndustriesSection />
     </main>

@@ -5,7 +5,7 @@ import AppServiceHeader from '@/app/components/inner/AppServiceHeader';
 import ServiceOverviewCards from '@/app/components/services/shared/ServiceOverviewCards';
 import ServiceSolutionsGrid from '@/app/components/services/shared/ServiceSolutionsGrid';
 import ServiceCTA from '@/app/components/services/shared/ServiceCTA';
-import ServiceFAQ from '@/app/components/services/shared/ServiceFAQ';
+
 import GlobalIndustriesSection from '@/app/components/services/shared/GlobalIndustriesSection';
 
 export default function SecurityForAiPage() {
@@ -123,7 +123,7 @@ Ssquad's security specialists build defense systems that protect intelligent sys
         hackingWords={['ARTIFICIAL INTELLIGENCE', 'INTELLIGENT SYSTEMS', 'MACHINE LEARNING', 'NEURAL NETWORKS', 'AUTONOMOUS AGENTS']}
       />
       
-      <ServiceFAQ />
+
     </main>
   );
 }

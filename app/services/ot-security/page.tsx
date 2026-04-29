@@ -6,7 +6,7 @@ import ServiceOverviewCards from '@/app/components/services/shared/ServiceOvervi
 import ServiceFeatureGrid from '@/app/components/services/shared/ServiceFeatureGrid';
 import ServiceSolutionsGrid from '@/app/components/services/shared/ServiceSolutionsGrid';
 import ServiceCTA from '@/app/components/services/shared/ServiceCTA';
-import ServiceFAQ from '@/app/components/services/shared/ServiceFAQ';
+
 import GlobalIndustriesSection from '@/app/components/services/shared/GlobalIndustriesSection';
 
 export default function OtSecurityPage() {
@@ -127,7 +127,7 @@ Our services include risk assessments, network segmentation, and threat detectio
       <ServiceCTA />
       
 
-      <ServiceFAQ />
+
 
       <GlobalIndustriesSection />
     </main>
