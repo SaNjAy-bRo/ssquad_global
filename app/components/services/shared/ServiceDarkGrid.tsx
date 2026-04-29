@@ -25,7 +25,7 @@ export default function ServiceDarkGrid({
           {eyebrow && <p className="section-eyebrow text-center mx-auto">{eyebrow}</p>}
           <h2 className="section-title text-white text-center mx-auto">{title}</h2>
           {subtitle && (
-            <p className="mt-4 text-slate-300 max-w-3xl mx-auto">
+            <p className="mt-4 text-slate-300 max-w-3xl mx-auto" style={{ textAlign: 'justify', textJustify: 'inter-word' }}>
               {subtitle}
             </p>
           )}

@@ -25,8 +25,8 @@ export default function OverviewSection() {
             Comprehensive Protection For Modern Software
           </h2>
           <p 
-            className="text-slate-600 leading-relaxed text-[1.1rem] text-balance"
-            style={{ textWrap: 'balance' }}
+            className="text-slate-600 leading-relaxed text-[1.1rem]"
+            style={{ textAlign: 'justify', textJustify: 'inter-word' }}
           >
             In today's digital-first business environment, application security is a non-negotiable business 
             critical requirement. We help organizations protect software from evolving threats. As 

@@ -3,15 +3,15 @@ import Image from 'next/image';
 export default function AboutSection() {
   return (
     <section className="bg-white py-20 lg:py-24 overflow-hidden">
-      <div className="max-w-container mx-auto px-6 lg:px-8">
+      <div className="max-w-7xl mx-auto px-6 lg:px-8">
         <div className="grid lg:grid-cols-2 gap-12 lg:gap-16 items-center">
           <div className="reveal">
             <h2 className="section-title text-slate-900">About Ssquad Global</h2>
             
-            <div className="mt-6 space-y-6 text-slate-600 leading-relaxed text-lg">
+            <div className="mt-6 space-y-6 text-slate-600 leading-relaxed text-lg" style={{ textAlign: 'justify', textJustify: 'inter-word' as const }}>
               <p>
                 Ssquad Global is an absolute Cybersecurity & IT services company dedicated to protecting and 
-                improving organizations in today's digital environment. We specialize in delivering 
+                improving organizations in today&apos;s digital environment. We specialize in delivering 
                 comprehensive, modern, robust Cybersecurity, Managed IT Services, Infrastructure 
                 Management, and Cloud solutions, ensuring our clients receive paramount service stability and 
                 comprehensive security from threats.

@@ -33,7 +33,7 @@ export default function ServiceOverviewBlock({
             </h2>
             <p 
               className="mt-6 text-slate-600 leading-relaxed text-lg whitespace-pre-line text-balance"
-              style={{ textWrap: 'balance' }}
+              style={{ textAlign: 'justify', textJustify: 'inter-word', textWrap: 'unset' }}
             >
               {description}
             </p>

@@ -39,7 +39,7 @@ export default function ImperativeSection() {
           <span className="arc-icon"><i className="ph ph-warning-circle"></i></span>
           <p className="section-eyebrow">Risk Landscape</p>
           <h2 className="section-title text-white">The Imperative Of Application Security</h2>
-          <p className="mt-4 text-slate-300">
+          <p className="mt-4 text-slate-300" style={{ textAlign: 'justify', textJustify: 'inter-word' }}>
             Modern applications are the primary vector for enterprise compromise. Proactive defense is no longer optional.
           </p>
         </div>

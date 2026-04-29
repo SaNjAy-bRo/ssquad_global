@@ -38,7 +38,7 @@ export default function ProviderSelection() {
         <div className="max-w-3xl text-center mx-auto reveal mb-16">
           <p className="section-eyebrow">Evaluation Criteria</p>
           <h2 className="section-title text-slate-900">Selecting An Application Security Provider</h2>
-          <p className="mt-4 text-slate-600">
+          <p className="mt-4 text-slate-600" style={{ textAlign: 'justify', textJustify: 'inter-word' }}>
             When evaluating application security providers, consider these essential capabilities to secure modern workflows.
           </p>
         </div>

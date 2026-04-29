@@ -6,7 +6,7 @@ export default function DiversitySection() {
          <p className="section-eyebrow">Our Culture</p>
          <h2 className="section-title text-white">Diversity And Inclusion At Ssquad</h2>
          
-         <div className="mt-8 space-y-6 text-slate-300 text-lg leading-relaxed max-w-3xl mx-auto">
+         <div className="mt-8 space-y-6 text-slate-300 text-lg leading-relaxed max-w-3xl mx-auto" style={{ textAlign: 'justify', textJustify: 'inter-word' }}>
             <p>
                At Ssquad, diversity and inclusion are not just ideals—we live them every day. They are embedded 
                in our values and reflected in every project, in how we build teams, develop leaders, and cultivate a 

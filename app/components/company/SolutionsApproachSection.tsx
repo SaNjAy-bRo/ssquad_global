@@ -3,7 +3,7 @@ import Image from 'next/image';
 export default function SolutionsApproachSection() {
   return (
     <section className="bg-slate-50 py-20 lg:py-24 overflow-hidden border-t border-slate-100">
-      <div className="max-w-container mx-auto px-6 lg:px-8">
+      <div className="max-w-7xl mx-auto px-6 lg:px-8">
         <div className="grid lg:grid-cols-2 gap-12 lg:gap-16 items-center">
           
           <div className="reveal group relative order-2 lg:order-1">
@@ -30,7 +30,7 @@ export default function SolutionsApproachSection() {
           <div className="reveal order-1 lg:order-2">
             <h2 className="section-title text-slate-900 leading-tight">Cybersecurity-Driven IT Solutions For A Resilient Digital Future</h2>
             
-            <div className="mt-8 space-y-6 text-slate-600 leading-relaxed text-lg">
+            <div className="mt-8 space-y-6 text-slate-600 leading-relaxed text-lg" style={{ textAlign: 'justify', textJustify: 'inter-word' as const }}>
               <p>
                 At Ssquad Global, cybersecurity isn't just a service; it's the foundation of everything we build. 
                 As IT environments grow more complex and threats evolve at an unprecedented scale, reactive 

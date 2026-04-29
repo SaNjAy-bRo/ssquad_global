@@ -31,7 +31,7 @@ export default function ServiceSolutionsGrid({
             {title}
           </h2>
           {subtitle && (
-            <p className="text-slate-600 text-[1.1rem] leading-relaxed max-w-3xl mx-auto">
+            <p className="text-slate-600 text-[1.1rem] leading-relaxed max-w-3xl mx-auto" style={{ textAlign: 'justify', textJustify: 'inter-word' }}>
               {subtitle}
             </p>
           )}

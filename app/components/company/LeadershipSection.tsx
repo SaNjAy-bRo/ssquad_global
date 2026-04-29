@@ -8,7 +8,7 @@ import { managementData } from '@/app/data/management';
 export default function LeadershipSection() {
   return (
     <section className="bg-white py-20 lg:py-28 border-t border-slate-100">
-      <div className="max-w-container mx-auto px-6 lg:px-8">
+      <div className="max-w-7xl mx-auto px-6 lg:px-8">
         
         {/* Header matching original site vibe */}
         <div className="flex flex-col md:flex-row md:items-end justify-between mb-16 gap-6 reveal">

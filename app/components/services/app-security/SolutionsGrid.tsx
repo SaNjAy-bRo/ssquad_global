@@ -56,8 +56,8 @@ export default function SolutionsGrid() {
             Comprehensive Application Security Solutions
           </h2>
           <p 
-            className="text-slate-600 text-[1.1rem] leading-relaxed text-balance max-w-2xl mx-auto"
-            style={{ textWrap: 'balance' }}
+            className="text-slate-600 text-[1.1rem] leading-relaxed max-w-2xl mx-auto"
+            style={{ textAlign: 'justify', textJustify: 'inter-word' }}
           >
             Deploy a full spectrum of security layers covering your applications from source code repository to production deployment.
           </p>

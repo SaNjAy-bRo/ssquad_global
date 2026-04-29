@@ -34,7 +34,7 @@ export default function ServiceFeatureGrid({
           {eyebrow && <p className="section-eyebrow text-center mx-auto">{eyebrow}</p>}
           <h2 className="section-title text-slate-900 text-center mx-auto max-w-4xl">{title}</h2>
           {subtitle && (
-            <p className="mt-4 text-slate-600 max-w-3xl mx-auto text-[1.1rem] leading-relaxed">
+            <p className="mt-4 text-slate-600 max-w-3xl mx-auto text-[1.1rem] leading-relaxed" style={{ textAlign: 'justify', textJustify: 'inter-word' }}>
               {subtitle}
             </p>
           )}

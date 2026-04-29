@@ -42,7 +42,7 @@ export const managementData: ManagementProfile[] = [
     id: "aishah-mohd-suhaimi",
     name: "Aishah Mohd Suhaimi",
     title: "Board of Director",
-    image: "/management/Aishah Mohd Suhaimi.jpg",
+    image: "/management/Aishah Mohd Suhaimi.jpeg",
     imagePosition: "center 30%",
     linkedin: "#",
     bio: [
