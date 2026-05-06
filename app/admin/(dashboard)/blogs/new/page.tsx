@@ -1,50 +1,29 @@
 "use client";
 
-import { useState, useEffect, use } from "react";
+import { useState } from "react";
 import { useRouter } from "next/navigation";
 import Link from "next/link";
-import { getBlogById, updateBlog } from "../../../../../actions/blogActions";
-import { BlogCategory, BlogPost } from "../../../../../data/blogs";
+import { addBlog } from "../../../../actions/blogActions";
+import { BlogCategory } from "../../../../data/blogs";
 import HtmlEditor from "@/app/admin/components/HtmlEditor";
 
-export default function EditBlog({ params }: { params: Promise<{ id: string }> }) {
+export default function NewBlog() {
   const router = useRouter();
-  const { id } = use(params);
-  const [isLoading, setIsLoading] = useState(true);
   const [isSaving, setIsSaving] = useState(false);
-  const [notFound, setNotFound] = useState(false);
 
   // Form states
   const [title, setTitle] = useState("");
   const [summary, setSummary] = useState("");
   const [image, setImage] = useState("");
   const [category, setCategory] = useState<BlogCategory>("Latest Insights");
-  const [date, setDate] = useState("");
+  const [date, setDate] = useState(new Date().toISOString().split("T")[0]);
   const [content, setContent] = useState("");
-
-  useEffect(() => {
-    async function load() {
-      const b = await getBlogById(id);
-      if (b) {
-        setTitle(b.title);
-        setSummary(b.summary);
-        setImage(b.image);
-        if (b.category) setCategory(b.category as BlogCategory);
-        if (b.date) setDate(b.date);
-        if (b.content) setContent(b.content);
-      } else {
-        setNotFound(true);
-      }
-      setIsLoading(false);
-    }
-    load();
-  }, [id]);
 
   const handleSave = async (e: React.FormEvent) => {
     e.preventDefault();
     setIsSaving(true);
 
-    const res = await updateBlog(id, {
+    const res = await addBlog({
       title,
       summary,
       image,
@@ -56,38 +35,25 @@ export default function EditBlog({ params }: { params: Promise<{ id: string }> }
     setIsSaving(false);
 
     if (res.success) {
-      alert("Post details saved successfully!");
+      alert("Post created successfully!");
       router.push("/admin");
     } else {
-      alert(res.message || "Failed to save post");
+      alert(res.message || "Failed to create post");
     }
   };
-
-  if (isLoading) {
-    return <div className="p-8">Loading post details...</div>;
-  }
-
-  if (notFound) {
-    return (
-      <div className="p-8 text-center">
-        <h2 className="text-xl font-bold text-slate-800">Post not found</h2>
-        <Link href="/admin" className="text-ssg-cyber mt-4 inline-block">Return to Dashboard</Link>
-      </div>
-    );
-  }
 
   return (
     <div className="p-8 max-w-4xl mx-auto">
       <div className="mb-6 flex items-center gap-3 text-sm text-slate-500">
         <Link href="/admin" className="hover:text-ssg-cyber transition-colors">Insights Management</Link>
         <i className="ph ph-caret-right text-xs"></i>
-        <span className="text-slate-900 font-medium truncate max-w-[200px]">{title}</span>
+        <span className="text-slate-900 font-medium truncate max-w-[200px]">New Post</span>
       </div>
 
       <div className="flex flex-col md:flex-row md:items-center justify-between gap-4 mb-8">
         <div>
-          <h1 className="text-3xl font-heading font-bold text-slate-900">Edit Post</h1>
-          <p className="text-slate-500 mt-2">Update the content, imagery, and details for this insight.</p>
+          <h1 className="text-3xl font-heading font-bold text-slate-900">Create New Post</h1>
+          <p className="text-slate-500 mt-2">Publish a new insight or news event.</p>
         </div>
         <div className="flex items-center gap-3">
           <Link 
@@ -105,8 +71,8 @@ export default function EditBlog({ params }: { params: Promise<{ id: string }> }
               <div className="w-5 h-5 border-2 border-white/30 border-t-white rounded-full animate-spin" />
             ) : (
               <>
-                <i className="ph ph-floppy-disk"></i>
-                Save Changes
+                <i className="ph ph-check"></i>
+                Publish
               </>
             )}
           </button>

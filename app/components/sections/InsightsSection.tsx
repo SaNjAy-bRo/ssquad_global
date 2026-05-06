@@ -1,7 +1,11 @@
 import Image from 'next/image';
-import { mockBlogs } from '../../data/blogs';
+import Link from 'next/link';
+import { getBlogs } from '../../actions/blogActions';
 
-export default function InsightsSection() {
+export default async function InsightsSection() {
+  const allBlogs = await getBlogs();
+  const blogs = allBlogs.slice(0, 3); // Take top 3
+
   return (
     <section className="bg-ssg-light py-20 lg:py-24">
       <div className="max-w-container mx-auto px-6 lg:px-8">
@@ -10,26 +14,32 @@ export default function InsightsSection() {
             <p className="section-eyebrow">Insights</p>
             <h2 className="section-title">Latest Cybersecurity News</h2>
           </div>
-          <a href="https://ssquad.com/blog/" target="_blank" rel="noopener noreferrer" className="text-ssg-red font-semibold inline-flex items-center gap-2">View all insights <span>&rarr;</span></a>
+          <Link href="/insights" className="text-ssg-red font-semibold inline-flex items-center gap-2">View all insights <span>&rarr;</span></Link>
         </div>
 
         <div className="mt-10 grid md:grid-cols-2 lg:grid-cols-3 gap-6">
-          {mockBlogs.map((blog) => (
-            <article key={blog.id} className="insight-card reveal">
-              <Image 
-                src={blog.image} 
-                unoptimized 
-                alt={`${blog.title} visual from Ssquad Global`} 
-                width={570} 
-                height={600} 
-                className="w-full h-auto aspect-[570/600] object-cover" 
-              />
-              <div className="content p-6">
-                <h3 className="font-bold text-lg mb-3">{blog.title}</h3>
-                <p className="text-gray-600 mb-4">{blog.summary}</p>
-                <a href={blog.link} target="_blank" rel="noopener noreferrer" className="text-ssg-red font-semibold flex items-center gap-1 hover:gap-2 transition-all">
-                  Read more <span>&rarr;</span>
-                </a>
+          {blogs.map((blog) => (
+            <article key={blog.id} className="reveal group relative bg-white rounded-2xl overflow-hidden border border-slate-200 shadow-sm hover:shadow-md transition-shadow flex flex-col">
+              <div className="relative w-full aspect-[16/9] overflow-hidden bg-slate-100">
+                <Image 
+                  src={blog.image || "/placeholder.jpg"} 
+                  unoptimized 
+                  alt={`${blog.title} visual from Ssquad Global`} 
+                  fill 
+                  className="object-cover transition-transform duration-500 group-hover:scale-105" 
+                />
+                {blog.category && (
+                  <div className="absolute top-4 left-4 bg-ssg-red text-white text-[10px] font-bold uppercase tracking-wider px-3 py-1 rounded-full z-10 shadow-md">
+                    {blog.category}
+                  </div>
+                )}
+              </div>
+              <div className="p-6 flex flex-col flex-grow">
+                <h3 className="font-heading font-bold text-lg mb-3 line-clamp-2 text-slate-900 group-hover:text-ssg-red transition-colors">{blog.title}</h3>
+                <p className="text-slate-600 mb-6 line-clamp-3 text-sm flex-grow">{blog.summary}</p>
+                <Link href={`/insights/${blog.id}`} className="text-ssg-red font-bold text-sm flex items-center gap-1.5 hover:gap-2.5 transition-all mt-auto">
+                  Read more <i className="ph ph-arrow-right"></i>
+                </Link>
               </div>
             </article>
           ))}

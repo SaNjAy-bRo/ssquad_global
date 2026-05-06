@@ -1,9 +1,13 @@
+export type BlogCategory = "News & Events" | "Latest Insights";
+
 export interface BlogPost {
   id: string;
   title: string;
   summary: string;
+  content?: string;
   image: string;
-  link: string;
+  category?: BlogCategory | string;
+  date?: string;
 }
 
 export const mockBlogs: BlogPost[] = [
@@ -14,7 +18,6 @@ export const mockBlogs: BlogPost[] = [
       "In today's volatile cyber landscape, expert guidance helps organizations reduce risk and improve resilience.",
     image:
       "https://ssquad.com/wp-content/uploads/2025/05/securtity-advisory-570x600.jpg",
-    link: "https://ssquad.com/security-advisory-strengthen-your-cyber-defenses-with-expert-guidance/",
   },
   {
     id: "blog-2",
@@ -23,7 +26,6 @@ export const mockBlogs: BlogPost[] = [
     summary:
       "Understand how the NIST framework provides a structured path to identify, protect, detect, respond, and recover.",
     image: "https://ssquad.com/wp-content/uploads/2020/11/nist-570x600.jpg",
-    link: "https://ssquad.com/how-can-organizations-use-the-nist-cybersecurity-framework-to-strengthen-their-security/",
   },
   {
     id: "blog-3",
@@ -32,6 +34,5 @@ export const mockBlogs: BlogPost[] = [
       "Learn key ransomware risks and practical controls small and mid-sized businesses should implement first.",
     image:
       "https://ssquad.com/wp-content/uploads/2020/11/ransom_banner-570x600.jpg",
-    link: "https://ssquad.com/ransomware-for-small-business-everything-you-need-to-know-about/",
   },
 ];

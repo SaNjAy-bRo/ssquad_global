@@ -3,22 +3,28 @@
 import { useState } from "react";
 import { useRouter } from "next/navigation";
 import Image from "next/image";
+import { login } from "@/app/actions/authActions";
 
 export default function AdminLogin() {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const [isLoading, setIsLoading] = useState(false);
+  const [error, setError] = useState("");
   const router = useRouter();
 
-  const handleMockLogin = (e: React.FormEvent) => {
+  const handleLogin = async (e: React.FormEvent) => {
     e.preventDefault();
     setIsLoading(true);
+    setError("");
 
-    // Mock an api delay
-    setTimeout(() => {
-      // For the mock phase, any submission goes to the dashboard
+    const result = await login(email, password);
+
+    if (result.success) {
       router.push("/admin");
-    }, 800);
+    } else {
+      setError(result.message);
+      setIsLoading(false);
+    }
   };
 
   return (
@@ -30,20 +36,29 @@ export default function AdminLogin() {
       <div className="w-full max-w-md p-8 relative z-10">
         <div className="bg-white rounded-2xl shadow-premium border border-slate-200 p-8">
           <div className="mb-10 text-center flex flex-col items-center">
-            <div className="bg-ssg-dark px-4 py-2 rounded-lg mb-6 inline-block">
+            <div className="bg-ssg-dark px-5 py-3 rounded-xl mb-6 inline-block shadow-md border border-slate-800">
               <Image 
                 src="/images/logon.png" 
                 alt="Ssquad Global" 
-                width={120} 
-                height={30} 
-                className="h-7 w-auto object-contain brightness-0 invert" 
+                width={140} 
+                height={35} 
+                className="h-8 w-auto object-contain" 
               />
             </div>
             <h1 className="text-2xl font-heading font-bold text-slate-900">Admin Portal</h1>
             <p className="text-sm text-slate-500 mt-2">Sign in to manage insights and website content.</p>
           </div>
 
-          <form onSubmit={handleMockLogin} className="flex flex-col gap-5">
+          {error && (
+            <div className="mb-6 p-3.5 bg-red-50 border border-red-200 rounded-xl flex items-center gap-3">
+              <div className="w-8 h-8 bg-red-100 rounded-full flex items-center justify-center shrink-0">
+                <i className="ph ph-warning text-red-600 text-sm"></i>
+              </div>
+              <p className="text-sm text-red-700 font-medium">{error}</p>
+            </div>
+          )}
+
+          <form onSubmit={handleLogin} className="flex flex-col gap-5">
             <div>
               <label className="block text-sm font-semibold text-slate-700 mb-1.5" htmlFor="email">
                 Email Address
@@ -86,7 +101,7 @@ export default function AdminLogin() {
             </button>
             
             <p className="text-xs text-center text-slate-400 mt-4">
-              Mock Phase: Enter any credentials to proceed.
+              Secure access for authorized administrators only.
             </p>
           </form>
         </div>
