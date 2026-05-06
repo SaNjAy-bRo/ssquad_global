@@ -1,6 +1,3 @@
-"use client";
-
-import { useEffect } from 'react';
 import HeroSectionV3 from '../components/hero/HeroSectionV3';
 import TrustSection from '../components/sections/TrustSection';
 import SolutionsSection from '../components/sections/SolutionsSection';
@@ -10,29 +7,12 @@ import PlatformSpotlightSection from '../components/sections/PlatformSpotlightSe
 import InsightsSection from '../components/sections/InsightsSection';
 import CertificationsSection from '../components/sections/CertificationsSection';
 import ContactCTASection from '../components/sections/ContactCTASection';
+import RevealObserver from '../components/utils/RevealObserver';
 
 export default function HomeV3() {
-  useEffect(() => {
-    const reveals = document.querySelectorAll('.reveal');
-    const observer = new IntersectionObserver(
-      (entries) => {
-        entries.forEach((entry) => {
-          if (entry.isIntersecting) entry.target.classList.add('visible');
-        });
-      },
-      { threshold: 0.12 }
-    );
-
-    reveals.forEach((el, index) => {
-      (el as HTMLElement).style.transitionDelay = `${Math.min(index * 35, 220)}ms`;
-      observer.observe(el);
-    });
-
-    return () => observer.disconnect();
-  }, []);
-
   return (
     <main>
+      <RevealObserver />
       <HeroSectionV3 />
       <TrustSection />
       <SolutionsSection />
