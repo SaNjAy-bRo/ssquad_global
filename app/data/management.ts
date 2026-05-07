@@ -18,7 +18,7 @@ export const managementData: ManagementProfile[] = [
     title: "CEO & Founder",
     image: "/management/arun.jpg",
     imagePosition: "30% center",
-    linkedin: "#",
+    linkedin: "https://www.linkedin.com/in/arun-gopakumar-4418652b/",
     bio: [
       "Arun is the Managing Director of Ssquad Global. Driven by his passion for building a world-class IT company to offer innovative solutions to public and private organizations, he founded Ssquad Global in 2012.",
       "Prior to Ssquad, Arun held leadership positions at several multinational companies. Under Arun's leadership, Ssquad has expanded its footprint to 14 countries globally. With more than 20+ years of experience, he has developed meaningful partnerships with some of the Fortune 500 companies & MNCs in various industries including telcos, financial institutions, retail and manufacturing, amongst others.",
@@ -31,7 +31,7 @@ export const managementData: ManagementProfile[] = [
     name: "Kiran Gopakumar",
     title: "Chief Operating Officer",
     image: "/management/kiran.jpg",
-    linkedin: "#",
+    linkedin: "https://www.linkedin.com/in/kiran-gopakumar-703a5552/",
     bio: [
       "Kiran Gopakumar is a versatile professional with over 15+ years of experience in Operations Management. As the COO at Ssquad Global, he oversees all aspects of the company's Day-to-Day Operations, ensuring efficiency, productivity, and cost-effectiveness.",
       "Kiran's strategic mindset and strong leadership skills have led to significant improvements in process optimization, supply chain management, and resource allocation. With a keen eye for identifying areas of improvement, he has implemented strategic initiatives that have resulted in significant cost savings and increased productivity. With a proven track record of streamlining operations and driving growth, he has successfully implemented innovative solutions that have positively impacted the organization's bottom line.",
@@ -58,7 +58,7 @@ export const managementData: ManagementProfile[] = [
     title: "Director - Technical Services",
     image: "/management/ravi.jpg",
     imagePosition: "36% center",
-    linkedin: "#",
+    linkedin: "https://www.linkedin.com/in/ravi-prakasha-291848b/",
     bio: [
       "Ravi Prakasha is an accomplished and experienced Technical Services Director with a passion for leveraging technology to drive business growth. With a solid background in computer knowledge and over 17+ years of professional experience, Ravi has established himself as a respected leader in the field.",
       "Throughout his career, Ravi has held key positions in leading technology companies, where he has demonstrated a strong ability to align technical strategies with business objectives. His expertise lies in overseeing the planning, implementation, and maintenance of complex technical systems and infrastructure.",
@@ -86,7 +86,7 @@ export const managementData: ManagementProfile[] = [
     image: "/management/mali.jpg",
     imagePosition: "center",
     imageStyle: { transform: "scale(1) translateY(2%)", backgroundColor: "#fbdada" },
-    linkedin: "#",
+    linkedin: "https://www.linkedin.com/in/pitchai-mohamed-ali-01307523/",
     bio: [
       "Mohamed Ali is a seasoned Information Technology professional with over 15+ years of experience in managing IT operations, support services, and delivering complex projects across diverse technical domains. Known for his consistent track record of meeting and exceeding client expectations, he combines deep technical knowledge with strong leadership, communication, and presentation skills.",
       "Throughout his career, Ali has worked across multiple levels of IT support—both independently and within high-performing teams—demonstrating a strong ability to solve complex technical challenges while ensuring seamless service delivery. His hands-on expertise, people-centric management style, and commitment to operational excellence make him a trusted leader in driving efficiency and client satisfaction across global IT environments."
@@ -97,7 +97,7 @@ export const managementData: ManagementProfile[] = [
     name: "Ng Swee Leong",
     title: "Sales Operations Director",
     image: "/management/Ng Swee Leong.jpg",
-    linkedin: "#",
+    linkedin: "https://www.linkedin.com/in/swee-leong-ng-315626/",
     bio: [
       "Ng Swee Leong is a seasoned sales operations leader with over 25 years of experience across APAC and global markets. He has built his career at the intersection of sales, operations, and business transformation, working with leading multinational organizations to enhance commercial performance, sales effectiveness, and operational efficiency. His background spans sales operations, CRM and partner ecosystem enablement, and large-scale program delivery, where he has successfully led cross-functional initiatives and supported complex, multi-country sales environments.",
       "As Sales Operations Director, Swee Leong works closely with internal teams, customers, and partners to strengthen sales execution and support the end-to-end customer journey. His goal is to enable effective pre-sales engagement and smooth post-sales delivery, helping to build strong customer relationships and long-term value. With a practical and collaborative approach, he contributes to consistent business performance and sustainable growth for the organisation."
