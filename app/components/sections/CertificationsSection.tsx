@@ -24,7 +24,8 @@ export default function CertificationsSection() {
                   { src: "/certificate/Certification-7-1.png", alt: "ISO 45001" },
                   { src: "/certificate/Malaysia-Digital-Logo-new.jpg", alt: "Malaysia Digital" },
                   { src: "/certificate/crest-pentesting.png", alt: "CREST Pentesting" },
-                  { src: "/certificate/logo-CSMCP-v1-final_CSMCP-strategic.png", alt: "CSMCP Strategic" }
+                  { src: "/certificate/logo-CSMCP-v1-final_CSMCP-strategic.png", alt: "CSMCP Strategic" },
+                  { src: "/certificate/soc 2 type 2.jpeg", alt: "SOC 2 Type 2" }
                 ].map((cert, i) => (
                   <article key={`${setIndex}-${i}`} className="cert-slide" aria-hidden={setIndex === 2 ? "true" : undefined}>
                     <Image 
