@@ -25,7 +25,7 @@ export default function CertificationsSection() {
                   { src: "/certificate/Malaysia-Digital-Logo-new.jpg", alt: "Malaysia Digital" },
                   { src: "/certificate/crest-pentesting.png", alt: "CREST Pentesting" },
                   { src: "/certificate/logo-CSMCP-v1-final_CSMCP-strategic.png", alt: "CSMCP Strategic" },
-                  { src: "/certificate/soc 2 type 2.jpeg", alt: "SOC 2 Type 2", style: { transform: "scale(1.15) translateX(-8%)" } }
+                  { src: "/certificate/soc 2 type 2.jpeg", alt: "SOC 2 Type 2" }
                 ].map((cert, i) => (
                   <article key={`${setIndex}-${i}`} className="cert-slide" aria-hidden={setIndex === 2 ? "true" : undefined}>
                     <Image 
@@ -34,7 +34,6 @@ export default function CertificationsSection() {
                       alt={cert.alt} 
                       width={160} 
                       height={90} 
-                      style={cert.style}
                     />
                   </article>
                 ))
