@@ -41,7 +41,7 @@ async function deploy() {
     console.log(pm2Delete.stdout, pm2Delete.stderr);
 
     console.log("Starting PM2 service ssquad_global...");
-    const pm2Start = await ssh.execCommand('pm2 start npm --name "ssquad_global" -- start', { cwd });
+    const pm2Start = await ssh.execCommand('PORT=8001 pm2 start npm --name "ssquad_global" -- start', { cwd });
     console.log(pm2Start.stdout, pm2Start.stderr);
 
     console.log("Restarting PM2 service ssquad_global...");
