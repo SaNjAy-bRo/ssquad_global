@@ -196,7 +196,7 @@ export default function CisoRoundtable() {
                     </div>
                   )}
 
-                  <form onSubmit={handleSubmit} className="space-y-6">
+                  <form onSubmit={handleSubmit} className="space-y-6" autoComplete="off">
                     {/* RSVP Status */}
                     <div className="ciso-form-group space-y-3">
                       <label className="ciso-form-label">RSVP <span className="text-ssg-red">*</span></label>
@@ -215,22 +215,22 @@ export default function CisoRoundtable() {
                     <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
                       <div className="ciso-form-group">
                         <label htmlFor="first_name" className="ciso-form-label">First Name <span className="text-ssg-red">*</span></label>
-                        <input type="text" id="first_name" name="first_name" required placeholder="John" className="ciso-form-input" />
+                        <input type="text" id="first_name" name="first_name" required placeholder="John" autoComplete="off" className="ciso-form-input" />
                       </div>
                       <div className="ciso-form-group">
                         <label htmlFor="last_name" className="ciso-form-label">Last Name <span className="text-ssg-red">*</span></label>
-                        <input type="text" id="last_name" name="last_name" required placeholder="Doe" className="ciso-form-input" />
+                        <input type="text" id="last_name" name="last_name" required placeholder="Doe" autoComplete="off" className="ciso-form-input" />
                       </div>
                     </div>
 
                     <div className="ciso-form-group">
                       <label htmlFor="company_name" className="ciso-form-label">Company Name <span className="text-ssg-red">*</span></label>
-                      <input type="text" id="company_name" name="company_name" required placeholder="Your Organization Ltd." className="ciso-form-input" />
+                      <input type="text" id="company_name" name="company_name" required placeholder="Your Organization Ltd." autoComplete="off" className="ciso-form-input" />
                     </div>
 
                     <div className="ciso-form-group">
                       <label htmlFor="designation" className="ciso-form-label">Designation <span className="text-ssg-red">*</span></label>
-                      <input type="text" id="designation" name="designation" required placeholder="Chief Information Security Officer" className="ciso-form-input" />
+                      <input type="text" id="designation" name="designation" required placeholder="Chief Information Security Officer" autoComplete="off" className="ciso-form-input" />
                     </div>
 
                     <div className="ciso-form-group">
@@ -251,11 +251,11 @@ export default function CisoRoundtable() {
                     <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
                       <div className="ciso-form-group">
                         <label htmlFor="email" className="ciso-form-label">Corporate Email <span className="text-ssg-red">*</span></label>
-                        <input type="email" id="email" name="email" required placeholder="john.doe@company.com" className="ciso-form-input" />
+                        <input type="email" id="email" name="email" required placeholder="john.doe@company.com" autoComplete="off" className="ciso-form-input" />
                       </div>
                       <div className="ciso-form-group">
                         <label htmlFor="phone" className="ciso-form-label">Phone Number <span className="text-ssg-red">*</span></label>
-                        <input type="tel" id="phone" name="phone" required placeholder="+60 12-345 6789" className="ciso-form-input" />
+                        <input type="tel" id="phone" name="phone" required placeholder="+60 12-345 6789" autoComplete="off" className="ciso-form-input" />
                       </div>
                     </div>
 

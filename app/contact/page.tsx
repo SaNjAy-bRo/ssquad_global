@@ -146,25 +146,25 @@ export default function ContactPage() {
                 
                 <h3 className="text-2xl font-bold text-slate-900 mb-8 tracking-tight">Direct Transmission</h3>
                 
-                <form className="space-y-6 relative z-10" onSubmit={handleSubmit}>
+                <form className="space-y-6 relative z-10" onSubmit={handleSubmit} autoComplete="off">
                   <div className="grid md:grid-cols-2 gap-6">
                     <div className="space-y-2">
                       <label htmlFor="name" className="text-xs font-bold text-slate-500 uppercase tracking-wider ml-1">Full Name *</label>
-                      <input id="name" type="text" required value={formData.name} onChange={handleChange} placeholder="John Doe" className="w-full bg-slate-50 text-slate-900 border border-slate-200 rounded-xl px-4 py-3.5 focus:bg-white focus:ring-4 focus:ring-red-500/10 focus:border-ssg-red outline-none transition-all placeholder:text-slate-400 font-medium text-[15px]" />
+                      <input id="name" type="text" required value={formData.name} onChange={handleChange} placeholder="John Doe" autoComplete="off" className="w-full bg-slate-50 text-slate-900 border border-slate-200 rounded-xl px-4 py-3.5 focus:bg-white focus:ring-4 focus:ring-red-500/10 focus:border-ssg-red outline-none transition-all placeholder:text-slate-400 font-medium text-[15px]" />
                     </div>
                     <div className="space-y-2">
                       <label htmlFor="email" className="text-xs font-bold text-slate-500 uppercase tracking-wider ml-1">Work Email *</label>
-                      <input id="email" type="email" required value={formData.email} onChange={handleChange} placeholder="john@enterprise.com" className="w-full bg-slate-50 text-slate-900 border border-slate-200 rounded-xl px-4 py-3.5 focus:bg-white focus:ring-4 focus:ring-red-500/10 focus:border-ssg-red outline-none transition-all placeholder:text-slate-400 font-medium text-[15px]" />
+                      <input id="email" type="email" required value={formData.email} onChange={handleChange} placeholder="john@enterprise.com" autoComplete="off" className="w-full bg-slate-50 text-slate-900 border border-slate-200 rounded-xl px-4 py-3.5 focus:bg-white focus:ring-4 focus:ring-red-500/10 focus:border-ssg-red outline-none transition-all placeholder:text-slate-400 font-medium text-[15px]" />
                     </div>
                   </div>
                   <div className="grid md:grid-cols-2 gap-6">
                     <div className="space-y-2">
                       <label htmlFor="number" className="text-xs font-bold text-slate-500 uppercase tracking-wider ml-1">Phone Number</label>
-                      <input id="number" type="tel" value={formData.number} onChange={handleChange} placeholder="+1 (555) 000-0000" className="w-full bg-slate-50 text-slate-900 border border-slate-200 rounded-xl px-4 py-3.5 focus:bg-white focus:ring-4 focus:ring-red-500/10 focus:border-ssg-red outline-none transition-all placeholder:text-slate-400 font-medium text-[15px]" />
+                      <input id="number" type="tel" value={formData.number} onChange={handleChange} placeholder="+1 (555) 000-0000" autoComplete="off" className="w-full bg-slate-50 text-slate-900 border border-slate-200 rounded-xl px-4 py-3.5 focus:bg-white focus:ring-4 focus:ring-red-500/10 focus:border-ssg-red outline-none transition-all placeholder:text-slate-400 font-medium text-[15px]" />
                     </div>
                     <div className="space-y-2">
                       <label htmlFor="subject" className="text-xs font-bold text-slate-500 uppercase tracking-wider ml-1">Subject</label>
-                      <input id="subject" type="text" value={formData.subject} onChange={handleChange} placeholder="Inquiry Type" className="w-full bg-slate-50 text-slate-900 border border-slate-200 rounded-xl px-4 py-3.5 focus:bg-white focus:ring-4 focus:ring-red-500/10 focus:border-ssg-red outline-none transition-all placeholder:text-slate-400 font-medium text-[15px]" />
+                      <input id="subject" type="text" value={formData.subject} onChange={handleChange} placeholder="Inquiry Type" autoComplete="off" className="w-full bg-slate-50 text-slate-900 border border-slate-200 rounded-xl px-4 py-3.5 focus:bg-white focus:ring-4 focus:ring-red-500/10 focus:border-ssg-red outline-none transition-all placeholder:text-slate-400 font-medium text-[15px]" />
                     </div>
                   </div>
                   <div className="space-y-2">
