@@ -5,7 +5,7 @@ import AppServiceHeader from '@/app/components/inner/AppServiceHeader';
 
 export default function ContactPage() {
   const [formData, setFormData] = useState({
-    name: '', email: '', number: '', subject: '', message: '', terms: false
+    fname: '', wemail: '', pnumber: '', csubject: '', cmessage: '', terms: false
   });
   const [status, setStatus] = useState<'idle' | 'loading' | 'success' | 'error'>('idle');
   const [errorMessage, setErrorMessage] = useState('');
@@ -30,10 +30,19 @@ export default function ContactPage() {
     setErrorMessage('');
 
     try {
+      const payload = {
+        name: formData.fname,
+        email: formData.wemail,
+        number: formData.pnumber,
+        subject: formData.csubject,
+        message: formData.cmessage,
+        terms: formData.terms
+      };
+
       const res = await fetch('/api/contact', {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify(formData)
+        body: JSON.stringify(payload)
       });
 
       const data = await res.json();
@@ -43,7 +52,7 @@ export default function ContactPage() {
       }
 
       setStatus('success');
-      setFormData({ name: '', email: '', number: '', subject: '', message: '', terms: false });
+      setFormData({ fname: '', wemail: '', pnumber: '', csubject: '', cmessage: '', terms: false });
       
       // Reset success message after 5 seconds
       setTimeout(() => setStatus('idle'), 5000);
@@ -149,27 +158,27 @@ export default function ContactPage() {
                 <form className="space-y-6 relative z-10" onSubmit={handleSubmit} autoComplete="off">
                   <div className="grid md:grid-cols-2 gap-6">
                     <div className="space-y-2">
-                      <label htmlFor="name" className="text-xs font-bold text-slate-500 uppercase tracking-wider ml-1">Full Name *</label>
-                      <input id="name" type="text" required value={formData.name} onChange={handleChange} placeholder="John Doe" autoComplete="off" className="w-full bg-slate-50 text-slate-900 border border-slate-200 rounded-xl px-4 py-3.5 focus:bg-white focus:ring-4 focus:ring-red-500/10 focus:border-ssg-red outline-none transition-all placeholder:text-slate-400 font-medium text-[15px]" />
+                      <label htmlFor="fname" className="text-xs font-bold text-slate-500 uppercase tracking-wider ml-1">Full Name *</label>
+                      <input id="fname" type="text" required value={formData.fname} onChange={handleChange} placeholder="John Doe" autoComplete="new-password" className="w-full bg-slate-50 text-slate-900 border border-slate-200 rounded-xl px-4 py-3.5 focus:bg-white focus:ring-4 focus:ring-red-500/10 focus:border-ssg-red outline-none transition-all placeholder:text-slate-400 font-medium text-[15px]" />
                     </div>
                     <div className="space-y-2">
-                      <label htmlFor="email" className="text-xs font-bold text-slate-500 uppercase tracking-wider ml-1">Work Email *</label>
-                      <input id="email" type="email" required value={formData.email} onChange={handleChange} placeholder="john@enterprise.com" autoComplete="off" className="w-full bg-slate-50 text-slate-900 border border-slate-200 rounded-xl px-4 py-3.5 focus:bg-white focus:ring-4 focus:ring-red-500/10 focus:border-ssg-red outline-none transition-all placeholder:text-slate-400 font-medium text-[15px]" />
+                      <label htmlFor="wemail" className="text-xs font-bold text-slate-500 uppercase tracking-wider ml-1">Work Email *</label>
+                      <input id="wemail" type="email" required value={formData.wemail} onChange={handleChange} placeholder="john@enterprise.com" autoComplete="new-password" className="w-full bg-slate-50 text-slate-900 border border-slate-200 rounded-xl px-4 py-3.5 focus:bg-white focus:ring-4 focus:ring-red-500/10 focus:border-ssg-red outline-none transition-all placeholder:text-slate-400 font-medium text-[15px]" />
                     </div>
                   </div>
                   <div className="grid md:grid-cols-2 gap-6">
                     <div className="space-y-2">
-                      <label htmlFor="number" className="text-xs font-bold text-slate-500 uppercase tracking-wider ml-1">Phone Number</label>
-                      <input id="number" type="tel" value={formData.number} onChange={handleChange} placeholder="+1 (555) 000-0000" autoComplete="off" className="w-full bg-slate-50 text-slate-900 border border-slate-200 rounded-xl px-4 py-3.5 focus:bg-white focus:ring-4 focus:ring-red-500/10 focus:border-ssg-red outline-none transition-all placeholder:text-slate-400 font-medium text-[15px]" />
+                      <label htmlFor="pnumber" className="text-xs font-bold text-slate-500 uppercase tracking-wider ml-1">Phone Number</label>
+                      <input id="pnumber" type="tel" value={formData.pnumber} onChange={handleChange} placeholder="+1 (555) 000-0000" autoComplete="new-password" className="w-full bg-slate-50 text-slate-900 border border-slate-200 rounded-xl px-4 py-3.5 focus:bg-white focus:ring-4 focus:ring-red-500/10 focus:border-ssg-red outline-none transition-all placeholder:text-slate-400 font-medium text-[15px]" />
                     </div>
                     <div className="space-y-2">
-                      <label htmlFor="subject" className="text-xs font-bold text-slate-500 uppercase tracking-wider ml-1">Subject</label>
-                      <input id="subject" type="text" value={formData.subject} onChange={handleChange} placeholder="Inquiry Type" autoComplete="off" className="w-full bg-slate-50 text-slate-900 border border-slate-200 rounded-xl px-4 py-3.5 focus:bg-white focus:ring-4 focus:ring-red-500/10 focus:border-ssg-red outline-none transition-all placeholder:text-slate-400 font-medium text-[15px]" />
+                      <label htmlFor="csubject" className="text-xs font-bold text-slate-500 uppercase tracking-wider ml-1">Subject</label>
+                      <input id="csubject" type="text" value={formData.csubject} onChange={handleChange} placeholder="Inquiry Type" autoComplete="new-password" className="w-full bg-slate-50 text-slate-900 border border-slate-200 rounded-xl px-4 py-3.5 focus:bg-white focus:ring-4 focus:ring-red-500/10 focus:border-ssg-red outline-none transition-all placeholder:text-slate-400 font-medium text-[15px]" />
                     </div>
                   </div>
                   <div className="space-y-2">
-                    <label htmlFor="message" className="text-xs font-bold text-slate-500 uppercase tracking-wider ml-1">Transmission Detail *</label>
-                    <textarea id="message" required rows={5} value={formData.message} onChange={handleChange} placeholder="Describe your operational requirements..." className="w-full bg-slate-50 text-slate-900 border border-slate-200 rounded-xl px-4 py-3.5 focus:bg-white focus:ring-4 focus:ring-red-500/10 focus:border-ssg-red outline-none transition-all placeholder:text-slate-400 font-medium text-[15px] resize-none"></textarea>
+                    <label htmlFor="cmessage" className="text-xs font-bold text-slate-500 uppercase tracking-wider ml-1">Transmission Detail *</label>
+                    <textarea id="cmessage" required rows={5} value={formData.cmessage} onChange={handleChange} placeholder="Describe your operational requirements..." className="w-full bg-slate-50 text-slate-900 border border-slate-200 rounded-xl px-4 py-3.5 focus:bg-white focus:ring-4 focus:ring-red-500/10 focus:border-ssg-red outline-none transition-all placeholder:text-slate-400 font-medium text-[15px] resize-none"></textarea>
                   </div>
                   <div className="flex items-start gap-3 px-1 pt-1">
                     <input type="checkbox" id="terms" checked={formData.terms} onChange={handleChange} className="mt-1 w-4 h-4 rounded border-slate-300 text-ssg-red shadow-sm focus:ring-ssg-red focus:ring-offset-1 transition-all cursor-pointer" />
