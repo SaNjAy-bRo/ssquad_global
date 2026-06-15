@@ -4,8 +4,8 @@ const ssh = new NodeSSH();
 async function runCheck() {
   try {
     await ssh.connect({
-      host: '103.185.75.166',
-      port: 2222,
+      host: '103.185.74.166',
+      port: 8395,
       username: 'root',
       password: 'Hj8743VN@Jb&%$3@!'
     });
