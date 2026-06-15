@@ -39,11 +39,11 @@ async function runCheck() {
     console.log(pm2.stdout);
 
     console.log("\n=== 8. SOC2 cert in built page? ===");
-    const soc = await ssh.execCommand('curl -s http://localhost:3000 | grep -o "soc 2 type 2"');
+    const soc = await ssh.execCommand('curl -s http://localhost:8001 | grep -o "soc 2 type 2"');
     console.log("SOC2 in homepage:", soc.stdout || "NOT FOUND");
 
     console.log("\n=== 9. Kuwait in live contact? ===");
-    const kwLive = await ssh.execCommand('curl -s http://localhost:3000/contact | grep -o "Kuwait"');
+    const kwLive = await ssh.execCommand('curl -s http://localhost:8001/contact | grep -o "Kuwait"');
     console.log("Kuwait in live contact:", kwLive.stdout || "NOT FOUND");
 
   } catch (err) {
