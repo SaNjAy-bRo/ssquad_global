@@ -20,6 +20,9 @@ const plusJakartaSans = Plus_Jakarta_Sans({
 export const metadata: Metadata = {
   title: 'Ssquad Global | Enterprise Cybersecurity',
   description: 'Ssquad Global delivers enterprise-grade cybersecurity, cloud, infrastructure, and managed security services for modern threat landscapes.',
+  verification: {
+    google: 'v90I0PUZa531VInOqruqXnDT_08ZrA-GACf5up5h_do',
+  },
 };
 
 export default function RootLayout({
