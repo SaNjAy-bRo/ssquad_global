@@ -91,16 +91,5 @@ export const managementData: ManagementProfile[] = [
       "Mohamed Ali is a seasoned Information Technology professional with over 15+ years of experience in managing IT operations, support services, and delivering complex projects across diverse technical domains. Known for his consistent track record of meeting and exceeding client expectations, he combines deep technical knowledge with strong leadership, communication, and presentation skills.",
       "Throughout his career, Ali has worked across multiple levels of IT support—both independently and within high-performing teams—demonstrating a strong ability to solve complex technical challenges while ensuring seamless service delivery. His hands-on expertise, people-centric management style, and commitment to operational excellence make him a trusted leader in driving efficiency and client satisfaction across global IT environments."
     ]
-  },
-  {
-    id: "ng-swee-leong",
-    name: "Ng Swee Leong",
-    title: "Sales Operations Director",
-    image: "/management/Ng Swee Leong.jpg",
-    linkedin: "https://www.linkedin.com/in/swee-leong-ng-315626/",
-    bio: [
-      "Ng Swee Leong is a seasoned sales operations leader with over 25 years of experience across APAC and global markets. He has built his career at the intersection of sales, operations, and business transformation, working with leading multinational organizations to enhance commercial performance, sales effectiveness, and operational efficiency. His background spans sales operations, CRM and partner ecosystem enablement, and large-scale program delivery, where he has successfully led cross-functional initiatives and supported complex, multi-country sales environments.",
-      "As Sales Operations Director, Swee Leong works closely with internal teams, customers, and partners to strengthen sales execution and support the end-to-end customer journey. His goal is to enable effective pre-sales engagement and smooth post-sales delivery, helping to build strong customer relationships and long-term value. With a practical and collaborative approach, he contributes to consistent business performance and sustainable growth for the organisation."
-    ]
   }
 ];
