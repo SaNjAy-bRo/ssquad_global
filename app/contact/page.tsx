@@ -85,8 +85,6 @@ export default function ContactPage() {
     { country: "India", code: "in", company: "Ssquad Information Systems Pvt Ltd", address: "JBR Tech Park, Plot No. 77, 6th Road, EPIP Zone, Whitefield, Bengaluru, Karnataka 560066" },
     { country: "Indonesia", code: "id", company: "PT Ssquad Information Systems", address: "AXA Tower Lt. 36, Unit 5-6, Kuningan City, Jl. Prof Dr. Satrio Kav 18, Kuningan, Jakarta Selatan, 12940" },
     { country: "Malaysia", code: "my", company: "Ssquad Sdn Bhd", address: "25-7, Level 28-03, Q Sentral, Jalan Stesen Sentral 2, Kuala Lumpur Sentral, 50470" },
-    { country: "Taiwan", code: "tw", company: "Ssquad Limited", address: "11F, No. 235, Section 4, Zhong Xiao East Road, Da An District, Taipei City 106, Taiwan (ROC)" },
-    { country: "Thailand", code: "th", company: "Ssquad Limited", address: "No.30 Sukhumvit soi 61 Klongton Nua, Wattana, Bangkok 10110" },
     { country: "UK", code: "gb", company: "Ssquad Limited", address: "128 City Road, London, EC1V 2NX, UK" },
     { country: "USA", code: "us", company: "Ssquad Inc", address: "98 Cuttermill Road, Ste 466, Great Neck NY 11021" },
     { country: "Kuwait", code: "kw", company: "Kuwait Agent Partner : Directional Universal For General Trade and Construction", address: "P.O BOX 66803 BAYAN, ALSHARQ 43759", phone: "96522204051-965" },
